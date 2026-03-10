@@ -101,3 +101,16 @@ interactiveButtonDeploymentZones = 1
 interactiveButton9InchZone = 1
 
 CPMissionBook_GUID = "731ec4"
+
+function onPlayerChangeColor(player_color)
+    promotePlayers()
+end
+
+function promotePlayers()
+    local colors={"Red", "Blue", "Orange", "Yellow"}
+    for i, color in ipairs(colors) do
+        if Player[color].seated and  Player[color].host == false and not Player[color].promoted then
+            Player[color].promote()
+        end
+    end
+end
