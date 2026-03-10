@@ -1,0 +1,55 @@
+{
+  "GUID": "d2d632",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Transform": {
+    "posX": 24.13,
+    "posY": 0.9930215,
+    "posZ": -35.8,
+    "rotX": -6.16715852E-07,
+    "rotY": 105.011467,
+    "rotZ": 2.326517E-06,
+    "scaleX": 1.69722211,
+    "scaleY": 0.130555719,
+    "scaleZ": 1.69722211
+  },
+  "Nickname": "Hide token",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 0.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/1666858152071991282/5C391C2599AE5F6972D6EFA7BFC04B41D6E821E3/",
+    "DiffuseURL": "",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 0,
+    "TypeIndex": 7,
+    "CastShadows": true
+  }
+}

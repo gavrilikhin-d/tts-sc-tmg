@@ -1,0 +1,55 @@
+{
+  "GUID": "9cd5bc",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 39.55179,
+    "posY": 0.9135718,
+    "posZ": -69.1283951,
+    "rotX": 0.000377568649,
+    "rotY": 179.970551,
+    "rotZ": -0.00110471284,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Zealot",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 147200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1472": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/10198429703887957961/845AF6C7B027C30F6FA20D1FF6F6983104769904/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/15134606888008242039/34C62BEE660E6D370E4C91DF918893B1408E69F5/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

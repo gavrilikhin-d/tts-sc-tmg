@@ -1,0 +1,58 @@
+{
+  "GUID": "f27133",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": -46.4952545,
+    "posY": 0.9525083,
+    "posZ": 55.85232,
+    "rotX": 4.08153355E-05,
+    "rotY": 0.0157563388,
+    "rotZ": 358.732056,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Raynor's Raiders",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 147900,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1479": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16488965321268589008/90D56C3762CEF2ED23A14F232EA7AECD0B66D7A2/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12018734542705647727/C283E602EEA01C2CCF4FC34F20A906ED940885AC/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "GUID": "45981e",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 45.14276,
+    "posY": 0.913295567,
+    "posZ": -68.05903,
+    "rotX": 0.00340022123,
+    "rotY": 179.990219,
+    "rotZ": 359.99,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Marine",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 148100,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1481": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/9353565744313410844/2BAA466F683CFC4F1CB22B165DC3CC95B4548353/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14645895197869794845/8357A53CC93E0DF3A23D139C95237E18E924C8FF/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

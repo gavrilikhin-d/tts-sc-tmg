@@ -1,0 +1,49 @@
+{
+  "GUID": "48dcae",
+  "Name": "Custom_Assetbundle",
+  "Transform": {
+    "posX": -31.0101719,
+    "posY": 1.14999032,
+    "posZ": -36.7212,
+    "rotX": 0.000105784064,
+    "rotY": 0.0488407239,
+    "rotZ": -1.49339194E-05,
+    "scaleX": 1.5,
+    "scaleY": 1.0,
+    "scaleZ": 1.5
+  },
+  "Nickname": "Red dice cam",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.0,
+    "g": 0.0,
+    "b": 0.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomAssetbundle": {
+    "AssetbundleURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/cameras/cam_p3_screenh.unity3d",
+    "AssetbundleSecondaryURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/cameras/cam_mat.unity3d",
+    "MaterialIndex": 2,
+    "TypeIndex": 1,
+    "LoopingEffectIndex": 0
+  }
+}

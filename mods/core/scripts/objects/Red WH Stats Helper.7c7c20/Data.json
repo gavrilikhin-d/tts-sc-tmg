@@ -1,0 +1,42 @@
+{
+  "GUID": "7c7c20",
+  "Name": "Chip_100",
+  "Transform": {
+    "posX": -4.078736,
+    "posY": 0.87,
+    "posZ": 34.7377625,
+    "rotX": -7.755247E-06,
+    "rotY": 180.01973,
+    "rotZ": 5.326229E-07,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Red WH Stats Helper",
+  "Description": "This is a helper for Warhammer stats made by Ricu.\n\nIt will show you the stats of the weapon you select.\n\nYou can also draw a range to see how far it is.",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false
+}

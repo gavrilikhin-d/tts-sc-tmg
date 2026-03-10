@@ -1,0 +1,55 @@
+{
+  "GUID": "8ac6f3",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 50.4070663,
+    "posY": 0.913300037,
+    "posZ": -69.43768,
+    "rotX": 0.00320452335,
+    "rotY": 179.970917,
+    "rotZ": 359.990234,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Kerrigan Brood Raptor (Zergling)",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 144300,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1443": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17145990180248834688/A778ECB905C232937F07E5BF519A4D0329DD8E32/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/9384155985076245480/E6A0297E7BC9228D31504C6B4B57742ADE33ECEF/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

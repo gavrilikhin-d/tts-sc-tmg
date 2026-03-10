@@ -1,0 +1,58 @@
+{
+  "GUID": "873ed7",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 45.9597778,
+    "posY": 1.0460906,
+    "posZ": -65.45096,
+    "rotX": -0.000463661272,
+    "rotY": 179.978,
+    "rotZ": -0.00356953265,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Supply Depot ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 147600,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1476": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15613197921122719093/51A38CF68B8582E6C4BB93B5AA5FDB6CE45E1BF1/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12018734542705647727/C283E602EEA01C2CCF4FC34F20A906ED940885AC/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

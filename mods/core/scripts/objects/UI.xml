@@ -1,0 +1,28 @@
+<Defaults>
+  <Button width="550" height="300" fontSize="40" onClick="" fontStyle="Bold"/>
+  <Text fontSize="100" color="#000000" fontStyle="Bold"/>
+</Defaults>
+
+<Panel id="redirect" active="false" position="0 0 0" scale="0.6 0.6 0.6" offsetXY="0 0" color="#dbeaf9" width="1200" height="800" rectAlignment="MiddleCenter">
+  <Text offsetXY="0 350" fontSize="80" color="#E74C3C" fontStyle="Bold">WARNING</Text>
+  <Text id="coreRedirect" offsetXY="0 0" fontSize="40" color="#ECF0F1">PLEASE WAIT FOR LOADING</Text>
+  <Button id="closeRedirectBtn" active="true" offsetXY="0 -400" color="#1A1A1A" textColor="#FFFFFF" width="500" height="100" fontSize="40" fontStyle="Bold" onClick="closeMenu" outline="#E74C3C" outlineSize="5" roundEdges="true">CLOSE</Button>
+</Panel>
+
+<Panel id="main" active="false" position="0 0 0" scale="0.5 0.5 0.5" offsetXY="0 0" color="#dbeaf9" outline="#34495E" outlineSize="8" width="1600" height="1000" rectAlignment="MiddleCenter" visibility="Diamonds">
+  <Text offsetXY="0 400" fontSize="70" color="#2C3E50" fontStyle="Bold">CHOOSE YOUR SEAT</Text>
+
+  <Button id="redBtn" offsetXY="-400 150" color="#DA1917" textColor="#FFFFFF" width="500" height="150" fontSize="45" roundEdges="true" onClick="placeToRed">Red Player</Button>
+  <Button id="blueBtn" offsetXY="400 150" color="#1E87FF" textColor="#FFFFFF" width="500" height="150" fontSize="45" roundEdges="true" onClick="placeToBlue">Blue Player</Button>
+
+  <Text fontSize="50" color="#E74C3C" offsetXY="0 -50" fontStyle="Bold">USE OTHER PLAYER COLORS AT YOUR OWN RISK!</Text>
+
+  <Button id="greyBtn" offsetXY="0 -200" color="#BDC3C7" textColor="#2C3E50" width="1000" height="150" fontSize="45" roundEdges="true" onClick="placeToGray">Spectator</Button>
+
+  <Button id="closeBtn" offsetXY="0 -500" color="#2C3E50" textColor="#FFFFFF" width="500" height="100" fontSize="40" fontStyle="Bold" onClick="closeMenu" outline="#34495E" outlineSize="5" roundEdges="true">CLOSE MENU</Button>
+</Panel>
+
+<Panel id="passTurn" active="false" position="525 495 0" scale="0.5 0.5 0.5" offsetXY="40 0" color="#00000000">
+  <Button id="passTurnBtn" offsetXY="0 0" color="#C0392B" textColor="#FFFFFF" width="200" height="180" fontSize="40" fontStyle="Bold" roundEdges="true" onClick="nextPhase"></Button>
+  <Text id="passTurnTxt" offsetXY="0 0" color="#FFFFFF" width="180" height="180" fontSize="35" fontStyle="Bold">NEXT PHASE</Text>
+</Panel>

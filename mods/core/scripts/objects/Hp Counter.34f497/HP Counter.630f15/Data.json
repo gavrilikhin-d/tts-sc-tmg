@@ -1,0 +1,54 @@
+{
+  "GUID": "630f15",
+  "Name": "Custom_Token",
+  "Transform": {
+    "posX": 22.4796085,
+    "posY": 1.16707754,
+    "posZ": -35.6206,
+    "rotX": 359.5742,
+    "rotY": 312.454742,
+    "rotZ": 0.192357108,
+    "scaleX": 0.49,
+    "scaleY": 1.0,
+    "scaleZ": 0.49
+  },
+  "Nickname": "HP Counter",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomImage": {
+    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/17380646275510807767/91BB5015258C6DCD9D1E4E7A561CB7A2A02E6FCD/",
+    "ImageSecondaryURL": "",
+    "ImageScalar": 1.0,
+    "WidthScale": 0.0,
+    "CustomToken": {
+      "Thickness": 0.2,
+      "MergeDistancePixels": 15.0,
+      "StandUp": false,
+      "Stackable": false
+    }
+  }
+}

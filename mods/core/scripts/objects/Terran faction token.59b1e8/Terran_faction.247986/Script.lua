@@ -1,0 +1,108 @@
+self.max_typed_number = 2
+local typedBuffer = ""
+local waitID = nil
+
+-- НАСТРОЙКИ РАЗМЕРА БАЗЫ
+local baseSizeMM = 28 -- Укажите здесь диаметр вашей подставки в миллиметрах
+local mtoi = 0.0393701 -- Константа перевода мм в дюймы
+
+local modelMeasureLineRadius = 0.05
+local baseLineRadius = 0.0125
+local baseLineHeight = 0.01
+local rangeShown = true
+local measureColor = {0.5, 0.5, 0.5}
+local measureRange = 1
+local lastRange = 0
+
+function onNumberTyped(player_color, number)
+    if waitID then Wait.stop(waitID) end
+    typedBuffer = typedBuffer .. tostring(number)
+    
+    if #typedBuffer >= self.max_typed_number then
+        processTypedNumber(player_color)
+    else
+        waitID = Wait.time(function() processTypedNumber(player_color) end, 0.5)
+    end
+end
+
+function processTypedNumber(pc)
+    local n = tonumber(typedBuffer)
+    typedBuffer = ""
+    waitID = nil
+    if not n then return end
+
+    rangeShown = n > 0
+    measureColor = Color.fromString(pc)
+    measureRange = n
+
+    local scaleFactor = 1 / self.getScale().x
+
+    if lastRange == measureRange then
+        local sphereRange = getCircleVectorPoints(measureRange + 0.05, 0.125, 1)[1].x * 2 / scaleFactor
+        Physics.cast({
+            origin       = self.getPosition(),
+            direction    = {0, 1, 0},
+            type         = 2,
+            size         = {sphereRange, sphereRange, sphereRange},
+            max_distance = 0,
+            debug        = true,
+        })
+    end
+    
+    lastRange = measureRange
+    refreshVectors(pc)
+end
+
+function refreshVectors(pc, norotate)
+    local op = pc and Player[pc]
+    local scaleFactor = 1 / self.getScale().x
+    local rotation = self.getRotation()
+    norotate = true
+
+    local newLines = {
+        {
+            -- Внутренний круг (по краю подставки)
+            points = getCircleVectorPoints(0, baseLineHeight), 
+            color = op and Color.fromString(op.color) or {0.3, 0.3, 0.3},
+            thickness = baseLineRadius * scaleFactor
+        }
+    }
+
+    if rangeShown and measureRange > 0 then
+        table.insert(newLines, {
+            points = getCircleVectorPoints(measureRange, 0.01),
+            color = measureColor,
+            thickness = modelMeasureLineRadius * scaleFactor,
+            rotation = (norotate and {0, 0, 0} or {-rotation.x, 0, -rotation.z})
+        })
+    end
+
+    self.setVectorLines(newLines)
+end
+
+function getCircleVectorPoints(radiusInInches, height, segments)
+    local result = {}
+    local s = self.getScale()
+    -- TTS учитывает масштаб объекта, поэтому мы его компенсируем
+    local scaleFactorX, scaleFactorY, scaleFactorZ = 1/s.x, 1/s.y, 1/s.z
+    
+    local steps = segments or 64
+    local degrees, sin, cos, toRads = 360/steps, math.sin, math.cos, math.rad
+    
+    -- Вычисляем радиус самой подставки в дюймах (радиус = диаметр / 2)
+    local baseRadiusInInches = (baseSizeMM * 0.5) * mtoi
+
+    for i = 0, steps do
+        -- Итоговый радиус = радиус подставки + дистанция замера
+        local currentRadius = (baseRadiusInInches + radiusInInches)
+        
+        table.insert(result, {
+            x = cos(toRads(degrees * i)) * (currentRadius * scaleFactorX),
+            z = sin(toRads(degrees * i)) * (currentRadius * scaleFactorZ),
+            y = height+0.2 * scaleFactorY
+        })
+    end
+    return result
+end
+
+refreshVectors()

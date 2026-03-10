@@ -1,0 +1,58 @@
+{
+  "GUID": "7b28ef",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 41.0383034,
+    "posY": 1.017098,
+    "posZ": -76.19738,
+    "rotX": 0.00300659821,
+    "rotY": 180.000183,
+    "rotZ": -0.0020046297,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Accelerating Creep",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 145200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1452": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12222652359841011759/DD62DFF401B6601FDEC6832724C67C0F838CFB26/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/18032977612742865998/678AB6D1D8BA7CDF4C8C1FDF2E45F5E52AB27843/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

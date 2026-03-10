@@ -1,0 +1,58 @@
+{
+  "GUID": "bb4547",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 35.36578,
+    "posY": 0.9136056,
+    "posZ": -55.1846237,
+    "rotX": -1.558027E-06,
+    "rotY": 179.9994,
+    "rotZ": 5.127373E-07,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Daelaam",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 146600,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1466": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/13799460267458066381/2C858A2D4B27D33DC679FA728B8A4FDBFA7DFBBB/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

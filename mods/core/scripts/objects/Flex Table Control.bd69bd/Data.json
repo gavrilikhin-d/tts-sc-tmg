@@ -1,0 +1,43 @@
+{
+  "GUID": "bd69bd",
+  "Name": "Chinese_Checkers_Piece",
+  "Transform": {
+    "posX": 81.0,
+    "posY": -1.2,
+    "posZ": -94.0,
+    "rotX": 0.00190076465,
+    "rotY": 180.0,
+    "rotZ": 0.000379891542,
+    "scaleX": 6.0,
+    "scaleY": 3.0,
+    "scaleZ": 3.0
+  },
+  "Nickname": "Flex Table Control",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": 1
+}

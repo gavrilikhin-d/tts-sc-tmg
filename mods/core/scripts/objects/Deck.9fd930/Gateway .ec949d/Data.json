@@ -1,0 +1,58 @@
+{
+  "GUID": "ec949d",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 35.6786346,
+    "posY": 0.9138343,
+    "posZ": -65.19565,
+    "rotX": -0.00135459821,
+    "rotY": 180.0,
+    "rotZ": 0.009328813,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Gateway ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 144000,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1440": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/14062236100475959765/D7BDEEE7CD9C6F35C7D105328B333FF47C0262AC/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

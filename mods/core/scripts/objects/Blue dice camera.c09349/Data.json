@@ -1,0 +1,49 @@
+{
+  "GUID": "c09349",
+  "Name": "Custom_Assetbundle",
+  "Transform": {
+    "posX": 31.0983677,
+    "posY": 1.14999807,
+    "posZ": 36.65884,
+    "rotX": -1.59877766E-06,
+    "rotY": 180.015915,
+    "rotZ": 5.434207E-07,
+    "scaleX": 1.5,
+    "scaleY": 1.0,
+    "scaleZ": 1.5
+  },
+  "Nickname": "Blue dice camera",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.0,
+    "g": 0.0,
+    "b": 0.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomAssetbundle": {
+    "AssetbundleURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/cameras/cam_p2_screenh.unity3d",
+    "AssetbundleSecondaryURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/cameras/cam_mat.unity3d",
+    "MaterialIndex": 2,
+    "TypeIndex": 1,
+    "LoopingEffectIndex": 0
+  }
+}

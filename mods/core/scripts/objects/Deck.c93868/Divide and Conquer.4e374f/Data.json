@@ -1,0 +1,58 @@
+{
+  "GUID": "4e374f",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 0.0,
+    "posY": 0.0,
+    "posZ": 250.0,
+    "rotX": -5.0096827E-07,
+    "rotY": 270.0,
+    "rotZ": -1.61058551E-06,
+    "scaleX": 2.499999,
+    "scaleY": 1.0,
+    "scaleZ": 2.499999
+  },
+  "Nickname": "Divide and Conquer",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 131200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1312": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15154223997053847006/ABB2F9D81A652D1D64773C5994815E4B4423C85F/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/15586988399195328540/C694C5ED795416389BA15D2506E5B8B55D237821/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

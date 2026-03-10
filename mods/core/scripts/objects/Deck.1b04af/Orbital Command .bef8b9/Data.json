@@ -1,0 +1,58 @@
+{
+  "GUID": "bef8b9",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 45.6470947,
+    "posY": 1.0556227,
+    "posZ": -64.65449,
+    "rotX": 0.00161917589,
+    "rotY": 180.000031,
+    "rotZ": -0.00316179544,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Orbital Command ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 147700,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1477": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/10033679018670652343/6FCAB7D77CFD35356EC9F40A3287D901BC90451A/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12018734542705647727/C283E602EEA01C2CCF4FC34F20A906ED940885AC/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

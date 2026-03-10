@@ -1,0 +1,55 @@
+{
+  "GUID": "7d2f9f",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 55.7559624,
+    "posY": 0.913224638,
+    "posZ": -64.73052,
+    "rotX": 0.00406146329,
+    "rotY": 179.9709,
+    "rotZ": 359.9878,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Raptor (Zergling)",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 144100,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1441": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16599914168906744313/0C755EEDFFCE2E571D7C2A04CEA372FEE1005FEF/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/16852896935210576977/29643FA13DE84A963FFD59CCDBC08D700B01F1EC/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

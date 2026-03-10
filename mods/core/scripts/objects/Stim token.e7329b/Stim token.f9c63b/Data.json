@@ -1,0 +1,54 @@
+{
+  "GUID": "f9c63b",
+  "Name": "Custom_Tile",
+  "Transform": {
+    "posX": 17.2371922,
+    "posY": 1.09166157,
+    "posZ": -35.84289,
+    "rotX": -0.005447311,
+    "rotY": 45.01305,
+    "rotZ": 0.000230291247,
+    "scaleX": 0.5750004,
+    "scaleY": 1.0,
+    "scaleZ": 0.5750004
+  },
+  "Nickname": "Stim token",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.0,
+    "g": 0.0,
+    "b": 0.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomImage": {
+    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/10628432101232759467/AD870D5DEADFCFEDE49C048B71B9C4EBE03F0A68/",
+    "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/10628432101232759467/AD870D5DEADFCFEDE49C048B71B9C4EBE03F0A68/",
+    "ImageScalar": 1.0,
+    "WidthScale": 0.0,
+    "CustomTile": {
+      "Type": 2,
+      "Thickness": 0.2,
+      "Stackable": false,
+      "Stretch": true
+    }
+  }
+}

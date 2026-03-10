@@ -1,0 +1,114 @@
+{
+  "GUID": "022eaa",
+  "Name": "Custom_Dice",
+  "Transform": {
+    "posX": 27.0230675,
+    "posY": 3.33475518,
+    "posZ": 26.9663067,
+    "rotX": 271.0124,
+    "rotY": 161.154724,
+    "rotZ": 18.7448444,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "BCB-D3",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": false,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomImage": {
+    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/786374678935714518/5D8654504536CD97FEA40F29B6446E43556B2432/",
+    "ImageSecondaryURL": "",
+    "ImageScalar": 1.0,
+    "WidthScale": 0.0,
+    "CustomDice": {
+      "Type": 1
+    }
+  },
+  "PhysicsMaterial": {
+    "StaticFriction": 0.6,
+    "DynamicFriction": 0.6,
+    "Bounciness": 0.0,
+    "FrictionCombine": 0,
+    "BounceCombine": 0
+  },
+  "Rigidbody": {
+    "Mass": 1.0,
+    "Drag": 0.1,
+    "AngularDrag": 0.1,
+    "UseGravity": true
+  },
+  "RotationValues": [
+    {
+      "Value": "1",
+      "Rotation": {
+        "x": -90.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "Value": "2",
+      "Rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "Value": "3",
+      "Rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -90.0
+      }
+    },
+    {
+      "Value": "4",
+      "Rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 90.0
+      }
+    },
+    {
+      "Value": "5",
+      "Rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -180.0
+      }
+    },
+    {
+      "Value": "6",
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ]
+}

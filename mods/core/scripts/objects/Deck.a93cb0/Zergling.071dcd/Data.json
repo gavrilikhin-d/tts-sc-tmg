@@ -1,0 +1,55 @@
+{
+  "GUID": "071dcd",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 35.0431366,
+    "posY": 0.913246155,
+    "posZ": -69.08648,
+    "rotX": 0.00377870467,
+    "rotY": 179.971085,
+    "rotZ": 359.9885,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Zergling",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 145000,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1450": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/13244156575286406118/A785552E9C707ECD7598787E03A35A0898DC05D0/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/10055133036641649138/267ED9559111C3691586352142D91E1EEECDC5CE/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

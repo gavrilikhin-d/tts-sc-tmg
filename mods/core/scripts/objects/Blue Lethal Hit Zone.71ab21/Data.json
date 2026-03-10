@@ -1,0 +1,54 @@
+{
+  "GUID": "71ab21",
+  "Name": "Custom_Tile",
+  "Transform": {
+    "posX": -5.0,
+    "posY": 0.2,
+    "posZ": -23.6,
+    "rotX": 0.0,
+    "rotY": 0.0,
+    "rotZ": 0.0,
+    "scaleX": 15.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.5
+  },
+  "Nickname": "Blue Lethal Hit Zone",
+  "Description": "Detection zone for blue lethal hits",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.0,
+    "g": 0.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": false,
+  "Autoraise": false,
+  "Sticky": false,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomImage": {
+    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/10999971493210988498/816850E4BDE53749AFAB905E28859EEDFC72310F/",
+    "ImageSecondaryURL": "",
+    "ImageScalar": 1.0,
+    "WidthScale": 0.0,
+    "CustomTile": {
+      "Type": 0,
+      "Thickness": 0.2,
+      "Stackable": false,
+      "Stretch": true
+    }
+  }
+}

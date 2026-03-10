@@ -1,0 +1,55 @@
+{
+  "GUID": "a632c6",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Transform": {
+    "posX": -18.7673988,
+    "posY": 0.9930199,
+    "posZ": 34.2220154,
+    "rotX": 1.480805E-06,
+    "rotY": 0.0200304482,
+    "rotZ": -5.538775E-07,
+    "scaleX": 1.697222,
+    "scaleY": 0.130555719,
+    "scaleZ": 1.697222
+  },
+  "Nickname": "Zerg faction token",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 0.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/1666858152071991282/5C391C2599AE5F6972D6EFA7BFC04B41D6E821E3/",
+    "DiffuseURL": "",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 0,
+    "TypeIndex": 7,
+    "CastShadows": true
+  }
+}

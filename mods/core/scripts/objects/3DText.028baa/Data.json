@@ -1,0 +1,52 @@
+{
+  "GUID": "028baa",
+  "Name": "3DText",
+  "Transform": {
+    "posX": 52.5000267,
+    "posY": -3.24005842,
+    "posZ": -37.50032,
+    "rotX": 90.0,
+    "rotY": 89.9637146,
+    "rotZ": 0.0,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "Text": {
+    "Text": "Team 2 Player B CP",
+    "OwnerSteamID": 0,
+    "colorstate": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0
+    },
+    "fontSize": 60
+  }
+}
