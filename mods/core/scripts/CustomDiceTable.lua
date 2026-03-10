@@ -1222,28 +1222,6 @@ function spawnDice(n,player)
     end
 end
 
--- function toggleSustainedHitsThreshold()
---     if sustainedHitsThreshold == 6 then
---         sustainedHitsThreshold = 5
---         self.editButton({
---             index = 35,
---             label = selectAllLabel,  -- "Sustained Hits 5+"
---             tooltip = selectAllTooltip  -- "Left-click to copy dice >= 5+. Right-click to switch to 6+."
---         })
---         print("DEBUG: Sustained Hits threshold set to 5+")
---     else
---         sustainedHitsThreshold = 6
---         -- Update button label and tooltip for 6+ threshold
---         self.editButton({
---             index = 35,
---             label = rollAllLabel,  -- "Sustained Hits 6+"
---             tooltip = rollAllTooltip  -- "Left-click to copy dice >= 6+. Right-click to switch to 5+."
---         })
---         print("DEBUG: Sustained Hits threshold set to 6+")
---     end
--- end
-
-
 function sustainedHitsAction(_, color, alt)
     -- Left-click: apply 6+. Right-click (alt): apply 5+. No toggle.
     local threshold = alt and 5 or 6
@@ -1428,57 +1406,7 @@ function restorePositionClicked(playerColor)
   end
 end
 
--- function toggleFloatingIcon(playerColor, hoveredObject)
---     if not hoveredObject then return end
---     local existing = hoveredObject.getTable("floating_icon")
---     if existing and existing.obj then
---         if existing.updateID then Wait.stop(existing.updateID) end
---         existing.obj.destroy()
---         hoveredObject.setTable("floating_icon", nil)
---         return
---     end
-
---     local p = hoveredObject.getPosition()
---     local b = hoveredObject.getBounds()
---     local topY = b.center.y + b.size.y/2
---     local spawnPos = { x = p.x, y = topY + 5, z = p.z }
-
---     local icon = spawnObject({
---         type     = "Custom_Token",
---         position = spawnPos,
---         rotation = {90, 0, 0},
---         scale    = {0.6, 0.6, 0.6}
---     })
-
---     icon.setCustomObject({
---         image          = "https://steamusercontent-a.akamaihd.net/ugc/13501243924066232860/7D430689576B83A46A2669F2404B1DA70BC8998E/",
---         thickness      = 0.2,
---         merge_distance = 0.2,
---         stand_up       = false,
---         stackable      = false
---     })
-    
---     icon.setLock(true)
---     Wait.frames(function()
---         Wait.frames(function()
---             local bb = hoveredObject.getBounds()
---             local newTop = bb.center.y + bb.size.y/2
---             icon.setPosition({ x = bb.center.x, y = newTop + 5, z = bb.center.z })
---         end, 2)
---     end, 1)
---     local function followObject()
---         if not hoveredObject or not icon then return end
---         local bb = hoveredObject.getBounds()
---         local top = bb.center.y + bb.size.y/2
---         icon.setPosition({ x = bb.center.x, y = top + 5, z = bb.center.z })
---     end
---     local updateID = Wait.time(followObject, 0.2, -1)
---     hoveredObject.setTable("floating_icon", { obj = icon, updateID = updateID })
--- end
-
 function onload()
-    -- addHotkey("Toggle Floating Icon", toggleFloatingIcon)
-
     addHotkey("Auto 2 Inch Gap", arrangeModelsWith2Inch)
     addHotkey('Save position', savePositionClicked)
     addHotkey('Restore position', restorePositionClicked)
