@@ -1,5 +1,10 @@
--- ВСТАВЬТЕ GUID ВАШЕЙ ЗОНЫ ТУТ:
-ZONE_GUID = "7614bb" 
+BLUE_ZONE_GUID = "7614bb" 
+RED_ZONE_GUID = "9b8186" 
+if self.getPosition().z < 0 then
+    ZONE_GUID = BLUE_ZONE_GUID
+else
+    ZONE_GUID = RED_ZONE_GUID
+end
 
 -- Настройки положений
 HIDDEN_Y = -10   -- Зона под столом
