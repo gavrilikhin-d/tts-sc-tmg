@@ -10,6 +10,10 @@
 -- yes it should. Unfortunately, I saw the documentation for Object.getVar said
 -- "Cannot return a table", and missed that Object.getTable existed, and now I'm
 -- too lazy to change it all again.
+
+
+-- new code
+
 centerCircle_GUID = "51ee2f"
 
 templateObjective_GUID = "573333"
