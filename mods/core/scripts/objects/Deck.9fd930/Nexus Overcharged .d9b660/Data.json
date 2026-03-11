@@ -1,0 +1,58 @@
+{
+  "GUID": "d9b660",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 41.3320541,
+    "posY": 0.959924459,
+    "posZ": -64.76564,
+    "rotX": 0.05802493,
+    "rotY": 180.0,
+    "rotZ": 359.926758,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Nexus Overcharged ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 146500,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1465": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/13205905314367267904/8C9B758B5BE875CFEFABC4DB442F1FF8ED881AA3/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

@@ -1,0 +1,407 @@
+[
+  {
+    "path": "./Blue dice camera.c09349"
+  },
+  {
+    "path": "./Red Lethal Hit Zone.7ac8ba"
+  },
+  {
+    "path": "./Blue Lethal Hit Zone.71ab21"
+  },
+  {
+    "path": "./Blue Custom Dice Table.839fcc"
+  },
+  {
+    "path": "./d6.176bc4"
+  },
+  {
+    "path": "./d6.7a3612"
+  },
+  {
+    "path": "./d6.a65625"
+  },
+  {
+    "path": "./Red Custom Counter.021302"
+  },
+  {
+    "path": "./Custom_Assetbundle.afc863"
+  },
+  {
+    "path": "./Custom_Assetbundle.c8edca"
+  },
+  {
+    "path": "./Custom_Assetbundle.393bf7"
+  },
+  {
+    "path": "./Custom_Assetbundle.12c65e"
+  },
+  {
+    "path": "./Custom_Assetbundle.f938a2"
+  },
+  {
+    "path": "./Custom_Assetbundle.9f95fd"
+  },
+  {
+    "path": "./Custom_Assetbundle.35b95f"
+  },
+  {
+    "path": "./Custom_Assetbundle.5af8f2"
+  },
+  {
+    "path": "./3DText.7ab8ca"
+  },
+  {
+    "path": "./Extract terrain.70b9f6"
+  },
+  {
+    "path": "./3DText.838abc"
+  },
+  {
+    "path": "./3DText.028baa"
+  },
+  {
+    "path": "./Red Selection Highlighter.27de4f"
+  },
+  {
+    "path": "./Blue Selection Highligher.84c3a4"
+  },
+  {
+    "path": "./Red Custom Dice Table.acae21"
+  },
+  {
+    "path": "./d3.2d9705"
+  },
+  {
+    "path": "./d6.2ff2db"
+  },
+  {
+    "path": "./d6.34366b"
+  },
+  {
+    "path": "./d3.4c054e"
+  },
+  {
+    "path": "./d6.791e47"
+  },
+  {
+    "path": "./3DText.a90146"
+  },
+  {
+    "path": "./3DText.dbfb5c"
+  },
+  {
+    "path": "./3DText.6c101e"
+  },
+  {
+    "path": "./3DText.3e4433"
+  },
+  {
+    "path": "./3DText.769e81"
+  },
+  {
+    "path": "./3DText.835251"
+  },
+  {
+    "path": "./Flex Table Control.bd69bd"
+  },
+  {
+    "path": "./Spawn game tools.a76485"
+  },
+  {
+    "path": "./Squad activation.229946"
+  },
+  {
+    "path": "./Wounds Remaining.ad63ba"
+  },
+  {
+    "path": "./Red Kustom 40k Dice Roller Mk3.beae28"
+  },
+  {
+    "path": "./Red Custom Kustom 40k Dice Roller Mk3.17ca2b"
+  },
+  {
+    "path": "./Blue Kustom 40k Dice Roller Mk3.4e0e0b"
+  },
+  {
+    "path": "./Blue Custom Kustom 40k Dice Roller Mk3.927ca1"
+  },
+  {
+    "path": "./RedHiddenZone.28419e"
+  },
+  {
+    "path": "./BlueHiddenZone.e1e91a"
+  },
+  {
+    "path": "./Custom_Tile.28865a"
+  },
+  {
+    "path": "./Blue dice camera.d8030f"
+  },
+  {
+    "path": "./Blue dice cam.96a319"
+  },
+  {
+    "path": "./Red dice camera.19b9bf"
+  },
+  {
+    "path": "./Red dice cam.48dcae"
+  },
+  {
+    "path": "./Red Trash bin.be2cdb"
+  },
+  {
+    "path": "./Blue Trash bin.4b1a7b"
+  },
+  {
+    "path": "./Reinforcements and Reserves Board.85f0cf"
+  },
+  {
+    "path": "./Reinforcements and Reserves Board.fe7926"
+  },
+  {
+    "path": "./Blue WH Stats Helper.b7ac7a"
+  },
+  {
+    "path": "./Red WH Stats Helper.7c7c20"
+  },
+  {
+    "path": "./Zerg faction token.9c35a1"
+  },
+  {
+    "path": "./Terran faction token.9b246c"
+  },
+  {
+    "path": "./Protoss faction token.34c978"
+  },
+  {
+    "path": "./Buff-Debuff.8ede8a"
+  },
+  {
+    "path": "./Activation token.495bfe"
+  },
+  {
+    "path": "./Zerg faction token.a632c6"
+  },
+  {
+    "path": "./Terran faction token.59b1e8"
+  },
+  {
+    "path": "./Protoss faction token.b1e0c0"
+  },
+  {
+    "path": "./Buff-Debuff.c0d160"
+  },
+  {
+    "path": "./Activation token.6f0f21"
+  },
+  {
+    "path": "./Stim token.0fbfc9"
+  },
+  {
+    "path": "./Stim token.e7329b"
+  },
+  {
+    "path": "./Shield Counter.52f132"
+  },
+  {
+    "path": "./Shield Counter.33019e"
+  },
+  {
+    "path": "./Hp Counter.437704"
+  },
+  {
+    "path": "./Hp Counter.34f497"
+  },
+  {
+    "path": "./Burrow token.dfaf68"
+  },
+  {
+    "path": "./Burrow token.a58662"
+  },
+  {
+    "path": "./Hide token.4fa421"
+  },
+  {
+    "path": "./Hide token.d2d632"
+  },
+  {
+    "path": "./Model saver.17767a"
+  },
+  {
+    "path": "./Tactic Cards.009ad1"
+  },
+  {
+    "path": "./Tactic Cards.229ae6"
+  },
+  {
+    "path": "./Tactic Cards.e65a29"
+  },
+  {
+    "path": "./Tactic Cards.dcf4dd"
+  },
+  {
+    "path": "./Tactic Cards.71e446"
+  },
+  {
+    "path": "./Tactic Cards.fc7699"
+  },
+  {
+    "path": "./Tactic Cards.82af6d"
+  },
+  {
+    "path": "./Tactic Cards.a4698b"
+  },
+  {
+    "path": "./Tactic Cards.615e6f"
+  },
+  {
+    "path": "./Tactic Cards.3add2d"
+  },
+  {
+    "path": "./Tactic Cards.69d9cc"
+  },
+  {
+    "path": "./Tactic Cards.fc4ef7"
+  },
+  {
+    "path": "./Tactic Cards.789251"
+  },
+  {
+    "path": "./Tactic Cards.07c92e"
+  },
+  {
+    "path": "./Tactic Cards.97d3d2"
+  },
+  {
+    "path": "./Tactic Cards.00ff2e"
+  },
+  {
+    "path": "./Tactic Cards.31b827"
+  },
+  {
+    "path": "./Tactic Cards.8789e2"
+  },
+  {
+    "path": "./HandTrigger.174e3c"
+  },
+  {
+    "path": "./HandTrigger.3aed13"
+  },
+  {
+    "path": "./Custom_PDF.126d01"
+  },
+  {
+    "path": "./Daelaam.bb4547"
+  },
+  {
+    "path": "./Khalai.19d765"
+  },
+  {
+    "path": "./Terran Armed Forces.30fbb1"
+  },
+  {
+    "path": "./Raynor's Raiders.a882e9"
+  },
+  {
+    "path": "./Kerrigan's Swarm.764292"
+  },
+  {
+    "path": "./Zerg Swarm.ede8f4"
+  },
+  {
+    "path": "./Deck.76119e"
+  },
+  {
+    "path": "./Deck.c93868"
+  },
+  {
+    "path": "./{8-8} Tychus (BFG).e7935d"
+  },
+  {
+    "path": "./Custom_PDF.358ab5"
+  },
+  {
+    "path": "./Manual.12c02c"
+  },
+  {
+    "path": "./3DText.370390"
+  },
+  {
+    "path": "./HandTrigger.e4acf4"
+  },
+  {
+    "path": "./HandTrigger.eca639"
+  },
+  {
+    "path": "./Custom_Tile.81aef2"
+  },
+  {
+    "path": "./Deck.bff9f1"
+  },
+  {
+    "path": "./Deck.6fefe5"
+  },
+  {
+    "path": "./Deck.9fd930"
+  },
+  {
+    "path": "./Deck.be2817"
+  },
+  {
+    "path": "./Deck.20ebac"
+  },
+  {
+    "path": "./Deck.b7845a"
+  },
+  {
+    "path": "./Khalai.0f245f"
+  },
+  {
+    "path": "./Deck.99d300"
+  },
+  {
+    "path": "./Kerrigan's Swarm.87d675"
+  },
+  {
+    "path": "./Zerg Swarm.2e5cfd"
+  },
+  {
+    "path": "./Daelaam.b416a6"
+  },
+  {
+    "path": "./Deck.0938da"
+  },
+  {
+    "path": "./Deck.a93cb0"
+  },
+  {
+    "path": "./Deck.987599"
+  },
+  {
+    "path": "./Terran Armed Forces.c461d1"
+  },
+  {
+    "path": "./Deck.1b04af"
+  },
+  {
+    "path": "./Raynor's Raiders.f27133"
+  },
+  {
+    "path": "./Deck.c9f3ba"
+  },
+  {
+    "path": "./Custom_PDF.2012ff"
+  },
+  {
+    "path": "./Custom_Token.d457a0"
+  },
+  {
+    "path": "./Custom_Token.bbf348"
+  },
+  {
+    "path": "./FogOfWarTrigger.7614bb"
+  },
+  {
+    "path": "./FogOfWarTrigger.9b8186"
+  }
+]

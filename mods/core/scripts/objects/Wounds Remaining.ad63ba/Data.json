@@ -1,0 +1,42 @@
+{
+  "GUID": "ad63ba",
+  "Name": "BlockSquare",
+  "Transform": {
+    "posX": 80.0,
+    "posY": -5.0,
+    "posZ": 3.0,
+    "rotX": 1.57089744E-06,
+    "rotY": 1.57317049E-06,
+    "rotZ": -2.55128867E-07,
+    "scaleX": 0.4,
+    "scaleY": 0.1,
+    "scaleZ": 0.4
+  },
+  "Nickname": "Wounds Remaining",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": false,
+  "Sticky": false,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false
+}

@@ -1,0 +1,55 @@
+{
+  "GUID": "c0d160",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Transform": {
+    "posX": -22.36184,
+    "posY": 0.993019938,
+    "posZ": 34.22202,
+    "rotX": 1.56378087E-06,
+    "rotY": 0.020030478,
+    "rotZ": -4.572159E-07,
+    "scaleX": 1.697222,
+    "scaleY": 0.130555421,
+    "scaleZ": 1.697222
+  },
+  "Nickname": "Buff/Debuff",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 0.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/1666858152071991282/5C391C2599AE5F6972D6EFA7BFC04B41D6E821E3/",
+    "DiffuseURL": "",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 0,
+    "TypeIndex": 7,
+    "CastShadows": true
+  }
+}

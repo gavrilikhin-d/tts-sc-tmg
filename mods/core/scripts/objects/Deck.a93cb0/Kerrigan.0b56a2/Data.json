@@ -1,0 +1,55 @@
+{
+  "GUID": "0b56a2",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 35.2121353,
+    "posY": 1.0653348,
+    "posZ": -68.98585,
+    "rotX": -0.0006491412,
+    "rotY": 179.983536,
+    "rotZ": -0.0006418632,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Kerrigan",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 144500,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1445": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/14088832984573305206/45CC3C8AA6A00A75DA97294D21B3A06350533571/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11686079397045686331/80EF4F6A69382449621162C8A94D720518C13532/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "GUID": "a0d321",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 49.35915,
+    "posY": 0.949483931,
+    "posZ": -62.06485,
+    "rotX": 0.150193229,
+    "rotY": 180.019714,
+    "rotZ": 359.784027,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Marauder",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 141800,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1418": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/9438753810867624633/354DF4A26733D0596A3DDBC96D2A645E419382D4/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/13473745765266574344/267A8B481AB1DD9EA34C744F7DD774D097E344E2/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

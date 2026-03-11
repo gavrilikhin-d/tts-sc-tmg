@@ -1,0 +1,55 @@
+{
+  "GUID": "a58662",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Transform": {
+    "posX": -18.77,
+    "posY": 0.993019938,
+    "posZ": 36.06,
+    "rotX": -4.789311E-07,
+    "rotY": 300.0126,
+    "rotZ": -1.33021069E-06,
+    "scaleX": 1.69722211,
+    "scaleY": 0.130555719,
+    "scaleZ": 1.69722211
+  },
+  "Nickname": "Burrow token",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 0.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/1666858152071991282/5C391C2599AE5F6972D6EFA7BFC04B41D6E821E3/",
+    "DiffuseURL": "",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 0,
+    "TypeIndex": 7,
+    "CastShadows": true
+  }
+}

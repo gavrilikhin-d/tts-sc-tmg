@@ -1,0 +1,58 @@
+{
+  "GUID": "2e5cfd",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": -31.6874619,
+    "posY": 0.913603067,
+    "posZ": 56.1332474,
+    "rotX": 1.56020769E-06,
+    "rotY": 0.0096038375,
+    "rotZ": -4.95612539E-07,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Zerg Swarm",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 145800,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1458": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15111069088555080619/3071B6296E046788E79889AC29AD661E39D69F7B/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/18032977612742865998/678AB6D1D8BA7CDF4C8C1FDF2E45F5E52AB27843/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

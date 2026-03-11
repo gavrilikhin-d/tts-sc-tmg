@@ -1,0 +1,100 @@
+--123123  
+          self.max_typed_number = 2
+
+            modelMeasureLineRadius = 0.05
+            base                   = {}
+            baseLineRadius         = 0.0125
+            baseLineHeight         = 0.01
+            
+            rangeShown             = true
+            measureColor           = {0.5, 0.5, 0.5}
+            measureRange           = 1
+            
+            function onNumberTyped( pc, n )
+                rangeShown = n > 0
+                measureColor = Color.fromString(pc)
+                measureRange = n
+            
+                scaleFactor = 1/self.getScale().x
+            
+                if lastRange == measureRange then
+                    sphereRange = getCircleVectorPoints(measureRange + 0.05, 0.125, 1)[1].x * 2 / scaleFactor
+                    Physics.cast({
+                        origin       = self.getPosition(),
+                        direction    = {0,1,0},
+                        type         = 2,
+                        size         = {sphereRange,sphereRange,sphereRange},
+                        max_distance = 0,
+                        debug        = true,
+                    })
+                end
+                lastRange = measureRange
+                refreshVectors(pc)
+            end
+            
+            function refreshVectors(pc, norotate)
+                local op = pc and Player[pc]
+                local circ = {}
+                local scaleFactor = 1/self.getScale().x
+            
+                local rotation = self.getRotation()
+                norotate = true
+            
+                local newLines = {
+                {
+                    points = getCircleVectorPoints(0 - baseLineRadius, baseLineHeight),
+                    color = op and Color.fromString(op.color) or {0.3, 0.3, 0.3},
+                    thickness = baseLineRadius*1*scaleFactor
+                }
+                }
+            
+                if rangeShown then
+                    if measureRange > 0 then
+                        table.insert(newLines,{
+                        points=getCircleVectorPoints(measureRange - modelMeasureLineRadius + 0.05, 0.01),
+                        color = measureColor,
+                        thickness = modelMeasureLineRadius*1*scaleFactor,
+                        rotation = (norotate and {0, 0, 0} or {-rotation.x, 0, -rotation.z})
+                        })
+                    else
+                        for _,r in pairs(ranges) do
+                            local range = r.range
+                            table.insert(newLines,{
+                                points=getCircleVectorPoints(range - modelMeasureLineRadius + 0.05, 0.01),
+                                color = r.color,
+                                thickness = modelMeasureLineRadius*1*scaleFactor,
+                                rotation = (norotate and {0, 0, 0} or {-rotation.x, 0, -rotation.z})
+                                }
+                            )
+                        end
+                    end
+                end
+            
+                self.setVectorLines(newLines)
+            end
+            
+            function getCircleVectorPoints(radius, height, segments)
+                local result = {}
+                local scaleFactorX = 1/self.getScale().x
+                local scaleFactorY = 1/self.getScale().y
+                local scaleFactorZ = 1/self.getScale().z
+                local steps = segments or 64
+                local degrees,sin,cos,toRads = 360/steps, math.sin, math.cos, math.rad
+                local modelBase = {x=20,y=0,z=20}
+            
+                local mtoi = 0.0393701
+                local baseX = modelBase.x * 0.5 * mtoi
+                local baseZ = modelBase.z * 0.5 * mtoi
+            
+                for i = 0,steps do
+                    table.insert(result,{
+                        x = cos(toRads(degrees*i))*((radius+baseX)*scaleFactorX),
+                        z = sin(toRads(degrees*i))*((radius+baseZ)*scaleFactorZ),
+                        y = height*scaleFactorY
+                    })
+                end
+            
+                return result
+            end
+            
+            refreshVectors()

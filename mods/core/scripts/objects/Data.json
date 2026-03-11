@@ -1,0 +1,657 @@
+{
+  "SaveName": "Mod development",
+  "EpochTime": 1773169270,
+  "Date": "3/10/2026 10:01:10 PM",
+  "VersionNumber": "v14.2.1",
+  "GameMode": "Starcraft TMG beta",
+  "GameType": "Game",
+  "GameComplexity": "Low Complexity",
+  "PlayingTime": [
+    120,
+    120
+  ],
+  "PlayerCounts": [
+    2,
+    2
+  ],
+  "Tags": [
+    "Miniature Games",
+    "Strategy Games",
+    "Wargames",
+    "FTC",
+    "Map",
+    "Base",
+    "Map Base",
+    "Competitive",
+    "Starcraft TMG",
+    "SCTMG"
+  ],
+  "Gravity": 0.5000001,
+  "PlayArea": 1.0,
+  "Table": "Table_None",
+  "Sky": "Sky_Museum",
+  "SkyURL": "https://steamusercontent-a.akamaihd.net/ugc/17246481413568114125/5BE6AFBEEE1FA75ADFD172ECCB97F35E47587B8E/",
+  "Note": "",
+  "TabStates": {
+    "0": {
+      "title": "Rules",
+      "body": "",
+      "color": "Grey",
+      "visibleColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+      },
+      "id": 0
+    },
+    "1": {
+      "title": "White",
+      "body": "",
+      "color": "White",
+      "visibleColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "id": 1
+    },
+    "2": {
+      "title": "Brown",
+      "body": "",
+      "color": "Brown",
+      "visibleColor": {
+        "r": 0.443,
+        "g": 0.231,
+        "b": 0.09
+      },
+      "id": 2
+    },
+    "3": {
+      "title": "Red",
+      "body": "",
+      "color": "Red",
+      "visibleColor": {
+        "r": 0.856,
+        "g": 0.1,
+        "b": 0.094
+      },
+      "id": 3
+    },
+    "4": {
+      "title": "Orange",
+      "body": "",
+      "color": "Orange",
+      "visibleColor": {
+        "r": 0.956,
+        "g": 0.392,
+        "b": 0.113
+      },
+      "id": 4
+    },
+    "5": {
+      "title": "Yellow",
+      "body": "",
+      "color": "Yellow",
+      "visibleColor": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.172
+      },
+      "id": 5
+    },
+    "6": {
+      "title": "Green",
+      "body": "",
+      "color": "Green",
+      "visibleColor": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168
+      },
+      "id": 6
+    },
+    "7": {
+      "title": "Blue",
+      "body": "",
+      "color": "Blue",
+      "visibleColor": {
+        "r": 0.118,
+        "g": 0.53,
+        "b": 1.0
+      },
+      "id": 7
+    },
+    "8": {
+      "title": "Teal",
+      "body": "",
+      "color": "Teal",
+      "visibleColor": {
+        "r": 0.129,
+        "g": 0.694,
+        "b": 0.607
+      },
+      "id": 8
+    },
+    "9": {
+      "title": "Purple",
+      "body": "",
+      "color": "Purple",
+      "visibleColor": {
+        "r": 0.627,
+        "g": 0.125,
+        "b": 0.941
+      },
+      "id": 9
+    },
+    "10": {
+      "title": "Pink",
+      "body": "",
+      "color": "Pink",
+      "visibleColor": {
+        "r": 0.96,
+        "g": 0.439,
+        "b": 0.807
+      },
+      "id": 10
+    },
+    "11": {
+      "title": "Black",
+      "body": "",
+      "color": "Black",
+      "visibleColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+      },
+      "id": 11
+    }
+  },
+  "MusicPlayer": {
+    "RepeatSong": false,
+    "PlaylistEntry": 20,
+    "CurrentAudioTitle": "Awakening",
+    "CurrentAudioURL": "https://steamusercontent-a.akamaihd.net/ugc/792010997184359809/DA27CF611C537C0C6A94893C0330B24358296475/",
+    "AudioLibrary": [
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184359809/DA27CF611C537C0C6A94893C0330B24358296475/",
+        "Item2": "Awakening"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184371128/145B47EC47D331B4AE1CB59FDE75E0116E10280D/",
+        "Item2": "Calm"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184371906/F8E4FC7CBD21DD2430F906F77055819AD0474996/",
+        "Item2": "Day Travel"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184374182/B0FF76DCB3D979C6A3A630F45A9FD58E7390D6C6/",
+        "Item2": "Death"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184376716/0407BB616E681D199DDEC384058B3CBF3DD3FEAD/",
+        "Item2": "Epilude"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184379961/314F9E57AF4CF475B86BAF58AD5A006DB16CE86D/",
+        "Item2": "Goblin Combat"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184385296/1A83AFF3AF0959546E8444D9A3F4174BC35E5336/",
+        "Item2": "Human Combat 1"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184387091/0554504FC54BACCAA83CAB542EB33FC41C87346B/",
+        "Item2": "Human Combat 2"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184389261/F753ACB43BA28C799B808388D6A6E4A71BDB78CB/",
+        "Item2": "Intrigue"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184392871/C1ACD1C3E628B836F6DEFF643B618418A339EECC/",
+        "Item2": "Map"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184394727/6212F5FF59B6D980AA95CCF1B06BE32F8DFF3366/",
+        "Item2": "Mistique"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184397131/B462582B327D41981E3A3893AED045C9DFA37D68/",
+        "Item2": "Night Travel"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184398544/F8246EDA891BDFDE3CE9183A139D514F78A582CF/",
+        "Item2": "Orc Combat 1"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184400189/F25ADB6B0FA920C0D9F6A67546DAD85C70C9504E/",
+        "Item2": "Orc Combat 2"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184402108/415A2E2F690E8241A23FBBAFB8D9BAB0D469F8F4/",
+        "Item2": "Prelude"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184404898/8956C1A3A9A41B0F54B4DE400EC76F7723332310/",
+        "Item2": "Reflective"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184406070/21B923240147A1785E49CAE3AFA27C045405694C/",
+        "Item2": "Setting Up"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184407878/A2458FAB2EE78A3AA4B26271485982FA02665FDA/",
+        "Item2": "Tension"
+      },
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/792010997184409426/32FB9FCA1D2DD24CF88150A31E16108CEB21559D/",
+        "Item2": "Undead Combat"
+      }
+    ]
+  },
+  "Grid": {
+    "Type": 0,
+    "Lines": false,
+    "Color": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0
+    },
+    "Opacity": 0.75,
+    "ThickLines": true,
+    "Snapping": false,
+    "Offset": false,
+    "BothSnapping": false,
+    "xSize": 1.0,
+    "ySize": 1.0,
+    "PosOffset": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0
+    }
+  },
+  "Lighting": {
+    "LightIntensity": 0.54,
+    "LightColor": {
+      "r": 1.0,
+      "g": 0.9804,
+      "b": 0.8902
+    },
+    "AmbientIntensity": 1.3,
+    "AmbientType": 0,
+    "AmbientSkyColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "AmbientEquatorColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "AmbientGroundColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "ReflectionIntensity": 1.0,
+    "LutIndex": 0,
+    "LutContribution": 1.0
+  },
+  "Hands": {
+    "Enable": true,
+    "DisableUnused": true,
+    "Hiding": 0
+  },
+  "ComponentTags": {
+    "labels": [
+      {
+        "displayed": "primaryCard",
+        "normalized": "primaryCard"
+      },
+      {
+        "displayed": "secondaryCard",
+        "normalized": "secondaryCard"
+      },
+      {
+        "displayed": "secondaryCard",
+        "normalized": "secondaryCard"
+      },
+      {
+        "displayed": "deploymentCard",
+        "normalized": "deploymentCard"
+      },
+      {
+        "displayed": "gambitCard",
+        "normalized": "gambitCard"
+      },
+      {
+        "displayed": "secondaryCard",
+        "normalized": "secondarycard"
+      },
+      {
+        "displayed": "gambitCard",
+        "normalized": "gambitcard"
+      },
+      {
+        "displayed": "primaryCard",
+        "normalized": "primarycard"
+      },
+      {
+        "displayed": "deploymentCard",
+        "normalized": "deploymentcard"
+      },
+      {
+        "displayed": "challengerCard",
+        "normalized": "challengercard"
+      },
+      {
+        "displayed": "_Inquisitorial_Agents",
+        "normalized": "_inquisitorial_agents"
+      },
+      {
+        "displayed": "Astra Militarum",
+        "normalized": "astra_militarum"
+      },
+      {
+        "displayed": "ddl3qjq",
+        "normalized": "ddl3qjq"
+      },
+      {
+        "displayed": "Gunner",
+        "normalized": "gunner"
+      },
+      {
+        "displayed": "Gunner or Sharpshooter",
+        "normalized": "gunner_or_sharpshooter"
+      },
+      {
+        "displayed": "Imperium",
+        "normalized": "imperium"
+      },
+      {
+        "displayed": "Kasrkin",
+        "normalized": "kasrkin"
+      },
+      {
+        "displayed": "Operative",
+        "normalized": "operative"
+      },
+      {
+        "displayed": "KT_Objective",
+        "normalized": "kt_objective"
+      },
+      {
+        "displayed": "69715512a005457b49fd707a",
+        "normalized": "69715512a005457b49fd707a"
+      },
+      {
+        "displayed": "Chaos",
+        "normalized": "chaos"
+      },
+      {
+        "displayed": "Heretic Astartes",
+        "normalized": "heretic_astartes"
+      },
+      {
+        "displayed": "leader",
+        "normalized": "leader"
+      },
+      {
+        "displayed": "NEMESIS CLAW",
+        "normalized": "nemesis_claw"
+      },
+      {
+        "displayed": "Psyker",
+        "normalized": "psyker"
+      },
+      {
+        "displayed": "Visionary",
+        "normalized": "visionary"
+      },
+      {
+        "displayed": "htorr1",
+        "normalized": "htorr1"
+      },
+      {
+        "displayed": "69715510a005457b49fd7075",
+        "normalized": "69715510a005457b49fd7075"
+      },
+      {
+        "displayed": "ay4thw6",
+        "normalized": "ay4thw6"
+      },
+      {
+        "displayed": "Fearmonger",
+        "normalized": "fearmonger"
+      },
+      {
+        "displayed": "q604gz7",
+        "normalized": "q604gz7"
+      },
+      {
+        "displayed": "Screecher",
+        "normalized": "screecher"
+      },
+      {
+        "displayed": "KTUIToken",
+        "normalized": "ktuitoken"
+      },
+      {
+        "displayed": "KTUITokenSimple",
+        "normalized": "ktuitokensimple"
+      },
+      {
+        "displayed": "Lodestar",
+        "normalized": "lodestar"
+      },
+      {
+        "displayed": "T'au Empire",
+        "normalized": "t'au_empire"
+      },
+      {
+        "displayed": "upgqwja",
+        "normalized": "upgqwja"
+      },
+      {
+        "displayed": "XV26 STEALTH BATTLESUIT",
+        "normalized": "xv26_stealth_battlesuit"
+      },
+      {
+        "displayed": "Shas'vre",
+        "normalized": "shas'vre"
+      },
+      {
+        "displayed": "wvwcfgt",
+        "normalized": "wvwcfgt"
+      },
+      {
+        "displayed": "plu47u7",
+        "normalized": "plu47u7"
+      },
+      {
+        "displayed": "Burrowers",
+        "normalized": "burrowers"
+      },
+      {
+        "displayed": "Character",
+        "normalized": "character"
+      },
+      {
+        "displayed": "Faction: Tyranids",
+        "normalized": "faction:_tyranids"
+      },
+      {
+        "displayed": "Great Devourer",
+        "normalized": "great_devourer"
+      },
+      {
+        "displayed": "Hyperadapted Raveners",
+        "normalized": "hyperadapted_raveners"
+      },
+      {
+        "displayed": "Infantry",
+        "normalized": "infantry"
+      },
+      {
+        "displayed": "q5csx6b",
+        "normalized": "q5csx6b"
+      },
+      {
+        "displayed": "Vanguard Invader",
+        "normalized": "vanguard_invader"
+      },
+      {
+        "displayed": "rczsgqg",
+        "normalized": "rczsgqg"
+      },
+      {
+        "displayed": "Vox-Trooper",
+        "normalized": "vox-trooper"
+      },
+      {
+        "displayed": "WeaponModel",
+        "normalized": "weaponmodel"
+      },
+      {
+        "displayed": "KT_Ploy_Holders",
+        "normalized": "kt_ploy_holders"
+      },
+      {
+        "displayed": "Kill Team Scoreboard",
+        "normalized": "kill_team_scoreboard"
+      }
+    ]
+  },
+  "Turns": {
+    "Enable": false,
+    "Type": 1,
+    "TurnOrder": [
+      "Red",
+      "Blue"
+    ],
+    "Reverse": false,
+    "SkipEmpty": false,
+    "DisableInteractions": false,
+    "PassTurns": true,
+    "TurnColor": ""
+  },
+  "CameraStates": [
+    {
+      "Position": {
+        "x": 0.0,
+        "y": -2.5,
+        "z": 0.0
+      },
+      "Rotation": {
+        "x": 68.66522,
+        "y": 89.79739,
+        "z": 0.0
+      },
+      "Distance": 84.375,
+      "Zoomed": false,
+      "AbsolutePosition": {
+        "x": -30.6968479,
+        "y": 76.09283,
+        "z": -0.108546481
+      }
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "DecalPallet": [],
+  "CustomUIAssets": [
+    {
+      "Type": 0,
+      "Name": "initiativeOff",
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/1750182972143392609/48283228AFC1906F43CD6D39A402B3DC29EAE371/"
+    },
+    {
+      "Type": 0,
+      "Name": "initiativeOn",
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/1750182972143393402/5BE39A862B6C1F71A467892906E21C0CD54C257E/"
+    },
+    {
+      "Type": 0,
+      "Name": "primaryOff",
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/1750182972143392609/48283228AFC1906F43CD6D39A402B3DC29EAE371/"
+    },
+    {
+      "Type": 0,
+      "Name": "primaryOn",
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/1750182972143393402/5BE39A862B6C1F71A467892906E21C0CD54C257E/"
+    }
+  ],
+  "SnapPoints": [
+    {
+      "Position": {
+        "x": 79.25,
+        "y": 0.9611349,
+        "z": 8.05
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.0,
+        "z": 180.0
+      },
+      "Tags": [
+        "secondaryCard",
+        "gambitCard"
+      ]
+    },
+    {
+      "Position": {
+        "x": 79.25,
+        "y": 0.9611349,
+        "z": -8.05
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.0,
+        "z": 180.0
+      },
+      "Tags": [
+        "secondaryCard",
+        "gambitCard"
+      ]
+    },
+    {
+      "Position": {
+        "x": 70.25,
+        "y": 0.9611349,
+        "z": 8.05
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.0,
+        "z": 180.0
+      },
+      "Tags": [
+        "gambitCard"
+      ]
+    },
+    {
+      "Position": {
+        "x": 70.25,
+        "y": 0.9611349,
+        "z": -8.05
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.0,
+        "z": 180.0
+      },
+      "Tags": [
+        "gambitCard"
+      ]
+    }
+  ]
+}

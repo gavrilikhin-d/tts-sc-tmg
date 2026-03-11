@@ -1,0 +1,55 @@
+{
+  "GUID": "be2cdb",
+  "Name": "Custom_Assetbundle_Bag",
+  "Transform": {
+    "posX": 23.1715679,
+    "posY": 0.6,
+    "posZ": 36.7632561,
+    "rotX": 0.0,
+    "rotY": 224.999756,
+    "rotZ": 0.0,
+    "scaleX": 0.7000003,
+    "scaleY": 0.7000003,
+    "scaleZ": 0.7000003
+  },
+  "Nickname": "Red Trash bin",
+  "Description": "Click to open or close.",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.838235259,
+    "g": 0.838235259,
+    "b": 0.838235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "Number": 0,
+  "CustomAssetbundle": {
+    "AssetbundleURL": "https://chry.me/tts/misc/new_blackhole_test.unity3d",
+    "AssetbundleSecondaryURL": "",
+    "MaterialIndex": 2,
+    "TypeIndex": 6,
+    "LoopingEffectIndex": 1
+  },
+  "Bag": {
+    "Order": 0
+  }
+}

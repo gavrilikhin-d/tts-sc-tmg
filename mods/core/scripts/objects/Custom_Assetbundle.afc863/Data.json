@@ -1,0 +1,49 @@
+{
+  "GUID": "afc863",
+  "Name": "Custom_Assetbundle",
+  "Transform": {
+    "posX": -29.9000015,
+    "posY": -9.53,
+    "posZ": -80.0,
+    "rotX": 6.536436E-07,
+    "rotY": -2.39176334E-05,
+    "rotZ": -3.84849864E-06,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomAssetbundle": {
+    "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978795929/723C50F43FAB3DE3DC12CB8460536E8CB34B60A3/",
+    "AssetbundleSecondaryURL": "",
+    "MaterialIndex": 2,
+    "TypeIndex": 4,
+    "LoopingEffectIndex": 0
+  }
+}

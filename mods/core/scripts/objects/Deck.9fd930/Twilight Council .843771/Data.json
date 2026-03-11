@@ -1,0 +1,58 @@
+{
+  "GUID": "843771",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 41.2279778,
+    "posY": 0.9882042,
+    "posZ": -64.18201,
+    "rotX": 0.00329373777,
+    "rotY": 180.000092,
+    "rotZ": -0.002603437,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Twilight Council ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 146400,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1464": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17855309095946645721/022CA3AAF3CBBBC7B093029ABD89ADAC9CAD37BF/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

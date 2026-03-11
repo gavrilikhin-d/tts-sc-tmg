@@ -1,0 +1,54 @@
+{
+  "GUID": "a6424f",
+  "Name": "Custom_Token",
+  "Transform": {
+    "posX": 21.1141586,
+    "posY": 1.19974732,
+    "posZ": -36.28196,
+    "rotX": 3.31307751E-06,
+    "rotY": 44.30402,
+    "rotZ": -7.25028258E-07,
+    "scaleX": 0.4923045,
+    "scaleY": 1.0,
+    "scaleZ": 0.4923045
+  },
+  "Nickname": "Shield Counter",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomImage": {
+    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/11133662983834295038/96333F7838CC1B5753125631E9509477DB16F76D/",
+    "ImageSecondaryURL": "",
+    "ImageScalar": 1.0,
+    "WidthScale": 0.0,
+    "CustomToken": {
+      "Thickness": 0.2,
+      "MergeDistancePixels": 15.0,
+      "StandUp": false,
+      "Stackable": false
+    }
+  }
+}

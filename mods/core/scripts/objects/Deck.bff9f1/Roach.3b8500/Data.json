@@ -1,0 +1,55 @@
+{
+  "GUID": "3b8500",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 45.74265,
+    "posY": 0.9132853,
+    "posZ": -64.46764,
+    "rotX": 0.00326382928,
+    "rotY": 179.970856,
+    "rotZ": 359.989838,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Roach",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 144800,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1448": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/14225937001024017795/6DC839E85FC931695DD7D6C23CD3B8F1B9BF3DAE/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/13296128369532614275/D07CF74EC28A0FFC939567FB9039858E0B35B943/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

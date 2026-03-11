@@ -1,0 +1,71 @@
+{
+  "GUID": "07c92e",
+  "Name": "Custom_Tile",
+  "Transform": {
+    "posX": -32.9715576,
+    "posY": 0.899998248,
+    "posZ": 36.0924454,
+    "rotX": 0.0,
+    "rotY": 0.0,
+    "rotZ": 9.229089E-08,
+    "scaleX": 3.6,
+    "scaleY": 1.0,
+    "scaleZ": 3.6
+  },
+  "Nickname": "Tactic Cards",
+  "Description": "21",
+  "GMNotes": "a6bedd",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "Tags": [
+    "KT_Ploy_Holders"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomImage": {
+    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/12215651850141980286/44D4580EC4668AB1C512F42CDB3BDC6405DE29A3/",
+    "ImageSecondaryURL": "",
+    "ImageScalar": 1.0,
+    "WidthScale": 0.0,
+    "CustomTile": {
+      "Type": 0,
+      "Thickness": 0.1,
+      "Stackable": false,
+      "Stretch": true
+    }
+  },
+  "AttachedSnapPoints": [
+    {
+      "Position": {
+        "x": 0.00259859371,
+        "y": 0.00114434841,
+        "z": -0.0008717385
+      },
+      "Rotation": {
+        "x": 1.65228255E-06,
+        "y": 0.00170817261,
+        "z": -4.09783723E-07
+      }
+    }
+  ]
+}

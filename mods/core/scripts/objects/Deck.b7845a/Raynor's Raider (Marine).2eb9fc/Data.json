@@ -1,0 +1,55 @@
+{
+  "GUID": "2eb9fc",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 39.1458778,
+    "posY": 0.971158,
+    "posZ": -64.9148,
+    "rotX": 0.0025230255,
+    "rotY": 179.9888,
+    "rotZ": -0.0007936435,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Raynor's Raider (Marine)",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 148000,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1480": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/13601713879888366934/E765FFFD97E8596794ECEA9C2F2E24F74299171E/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/15133253744618566406/71E8CB0916B1458FD8E71734C4DAB2E2F7AFCFFD/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

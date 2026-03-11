@@ -1,0 +1,55 @@
+{
+  "GUID": "a55cc4",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 39.335453,
+    "posY": 0.913590848,
+    "posZ": -65.07797,
+    "rotX": 0.0001526223,
+    "rotY": 179.99,
+    "rotZ": -0.000475425622,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Drone",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 148200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1482": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16160975436189086363/F0A7E0EE8D64C21106C235345FD6B145C47A592F/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/15136982196245141367/5F44E915D5DE090DBDADBB639801AB78B8BF1D54/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

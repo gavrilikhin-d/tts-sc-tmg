@@ -1,0 +1,47 @@
+{
+  "GUID": "7614bb",
+  "Name": "FogOfWarTrigger",
+  "Transform": {
+    "posX": 0.43819046,
+    "posY": 4.5,
+    "posZ": -60.9022751,
+    "rotX": 0.0,
+    "rotY": 90.0,
+    "rotZ": 0.0,
+    "scaleX": 28.1196022,
+    "scaleY": 6.945876,
+    "scaleZ": 49.8790627
+  },
+  "Nickname": "",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.117999978,
+    "g": 0.53,
+    "b": 1.0,
+    "a": 0.75
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "FogColor": "Blue",
+  "FogHidePointers": false,
+  "FogReverseHiding": false,
+  "FogSeethrough": true
+}

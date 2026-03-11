@@ -1,0 +1,58 @@
+{
+  "GUID": "a921ca",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 40.22596,
+    "posY": 1.026605,
+    "posZ": -75.9751053,
+    "rotX": -0.000147344923,
+    "rotY": 180.000519,
+    "rotZ": 359.9931,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Hatchery ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 143400,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1434": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/10940600173548935893/2003F6994FE3969FE5239C7823297361B6B11B42/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/18032977612742865998/678AB6D1D8BA7CDF4C8C1FDF2E45F5E52AB27843/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

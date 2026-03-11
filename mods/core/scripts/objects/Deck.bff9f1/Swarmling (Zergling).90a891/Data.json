@@ -1,0 +1,55 @@
+{
+  "GUID": "90a891",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 56.1720772,
+    "posY": 0.9135082,
+    "posZ": -69.57592,
+    "rotX": 0.002446927,
+    "rotY": 179.9709,
+    "rotZ": -0.00406686123,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Swarmling (Zergling)",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 144200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1442": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11715846170594882652/7494DB0593BEE54320383E1271F913765E4ACB3E/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/16838973361743725718/D5D56C043D6EE920367BA63FAC04E37DA2C2DDF7/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

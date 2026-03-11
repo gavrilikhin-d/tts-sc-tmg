@@ -1,0 +1,55 @@
+{
+  "GUID": "59b1e8",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Transform": {
+    "posX": -16.9702015,
+    "posY": 0.9930198,
+    "posZ": 34.222023,
+    "rotX": 1.43785871E-06,
+    "rotY": 0.0199197382,
+    "rotZ": -3.43060861E-07,
+    "scaleX": 1.697222,
+    "scaleY": 0.130555719,
+    "scaleZ": 1.697222
+  },
+  "Nickname": "Terran faction token",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 0.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/1666858152071991282/5C391C2599AE5F6972D6EFA7BFC04B41D6E821E3/",
+    "DiffuseURL": "",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 0,
+    "TypeIndex": 7,
+    "CastShadows": true
+  }
+}

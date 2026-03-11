@@ -1,0 +1,54 @@
+{
+  "GUID": "85f0cf",
+  "Name": "Custom_Token",
+  "Transform": {
+    "posX": 0.531149268,
+    "posY": 1.0,
+    "posZ": -60.959404,
+    "rotX": -1.59654621E-06,
+    "rotY": 180.0,
+    "rotZ": 5.099938E-07,
+    "scaleX": 10.0,
+    "scaleY": 1.0,
+    "scaleZ": 10.0
+  },
+  "Nickname": "Reinforcements and Reserves Board",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomImage": {
+    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/15342176816018227765/1319E7181AC26CB64E8F14ECB113F5AEFB50B5D2/",
+    "ImageSecondaryURL": "",
+    "ImageScalar": 1.0,
+    "WidthScale": 0.0,
+    "CustomToken": {
+      "Thickness": 0.2,
+      "MergeDistancePixels": 15.0,
+      "StandUp": false,
+      "Stackable": false
+    }
+  }
+}

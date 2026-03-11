@@ -1,0 +1,54 @@
+{
+  "GUID": "6ef3ff",
+  "Name": "Custom_Tile",
+  "Transform": {
+    "posX": 22.34727,
+    "posY": 1.07750475,
+    "posZ": -33.2804871,
+    "rotX": -6.89085255E-07,
+    "rotY": 359.991669,
+    "rotZ": -1.98239286E-06,
+    "scaleX": 0.5750004,
+    "scaleY": 1.0,
+    "scaleZ": 0.5750004
+  },
+  "Nickname": "Buff/debuff",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomImage": {
+    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/14048774241204451367/5639522560C3A128EBDB080244666BDD42A87D78/",
+    "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/17843609169374929477/D6CAB024075A3DC35DE9B6454DDE9CE4EE384296/",
+    "ImageScalar": 1.0,
+    "WidthScale": 0.0,
+    "CustomTile": {
+      "Type": 2,
+      "Thickness": 0.2,
+      "Stackable": false,
+      "Stretch": true
+    }
+  }
+}
