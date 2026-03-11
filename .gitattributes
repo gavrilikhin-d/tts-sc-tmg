@@ -1,1 +1,2 @@
 *.ttslua linguist-language=Lua
+*.ttslua diff=lua
