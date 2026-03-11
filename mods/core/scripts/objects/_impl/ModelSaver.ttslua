@@ -10,12 +10,10 @@ function onLoad()
 end
 
 function saveAll()
-    local count = 0
-    for _, obj in ipairs(getAllObjects()) do
-        if obj.hasTag("WeaponModel") then
-            obj.call("savePositionInternal")
-            count = count + 1
-        end
+    -- TODO: use more appropriate tag ("Model" or "Savable")
+    local models = getObjectsWithTag("WeaponModel")
+    for _, model in ipairs(models) do
+        model.call("savePositionInternal")
     end
-    broadcastToAll("Saved " .. count .. " models!", {0, 1, 0})
+    broadcastToAll("Saved " .. #models .. " models!", {0, 1, 0})
 end
