@@ -1,5 +1,6 @@
 text_color = {1,1,1}
 background_color = {53/255,56/255,57/255}
+backround_color_hex = "#353839"
 initiative = "None"
 avsup = 0
 blue_supdestr = 0
@@ -56,150 +57,150 @@ function onLoad(save_state)
         blue_total = parsedData.blue_total
     end
 
-	self.createButton({
-        click_function = "setRedInitiative",
-        function_owner = self,
-        label = "Red",
-        position = {-2, 0.1, -1.6},
-        width = 1050, 
-		height = 350, 
-		font_size = 180,
-        color = getInitiativeButtonColor("Red"), 
-		font_color = "Red"
-    })
-	self.createButton({
-        click_function = "none",
-        function_owner = self,
-        label = "Initiative",
-        position = {0, 0.1, -1.6},
-        width = 900, 
-		height = 350, 
-		font_size = 180,
-        color = background_color, 
-		font_color = text_color
-    })	
-	self.createButton({
-        click_function = "setBlueInitiative",
-        function_owner = self,
-        label = "Blue",
-        position = {2, 0.1, -1.6},
-        width = 1050, 
-		height = 350, 
-		font_size = 180,
-        color = getInitiativeButtonColor("Blue"), 
-		font_color = "Blue"
-    })		
-	self.createButton({
-        click_function = "toggle_round",
-        function_owner = self,
-        label = "Round".." "..round_num,
-        position = {0, 0.1, -0.9},
-        width = full_width, 
-		height = 350, 
-		font_size = 180,
-        color = background_color, 
-		font_color = text_color
-    })
-	self.createButton({
-        click_function = "toggle_avsup",
-        function_owner = self,
-        label = "Available Supply\n"..avsup,
-        position = {0, 0.1, -0.2},
-        width = full_width, 
-		fontStyle="Times",
-		height = 350, 
-		font_size = 150,
-        color = background_color, 
-		font_color = text_color
-    })		
-	self.createButton({
-        click_function = "toggle_red_ActSup",
-        function_owner = self,
-        label = "Active Supply\n"..red_ActSup,
-        position = {-1.55, 0.1, 0.5},
-        width = full_width/2-4, 
-		height = 350, 
-		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
-	self.createButton({
-        click_function = "toggle_blue_ActSup",
-        function_owner = self,
-        label = "Active Supply\n"..blue_ActSup,
-        position = {1.55, 0.1, 0.5},
-        width = full_width/2-4, 
-		height = 350, 
-		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
-	self.createButton({
-        click_function = "toggle_red_supdestr",
-        function_owner = self,
-        label = "Supply Destroyed\n"..red_supdestr,
-        position = {-1.55, 0.1, 1.9},
-        width = full_width/2-4, 
-		height = 350, 
-		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
-	self.createButton({
-        click_function = "toggle_blue_supdestr",
-        function_owner = self,
-        label = "Supply Destroyed\n"..blue_supdestr,
-        position = {1.55, 0.1, 1.9},
-        width = full_width/2-4, 
-		height = 350, 
-		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
-	self.createButton({
-        click_function = "toggle_red_MissVP",
-        function_owner = self,
-        label = "Mission VP\n"..red_MissVP,
-        position = {-1.55, 0.1, 1.2},
-        width = full_width/2-4, 
-		height = 350, 
-		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
-	self.createButton({
-        click_function = "toggle_blue_MissVP",
-        function_owner = self,
-        label = "Mission VP\n"..blue_MissVP,
-        position = {1.55, 0.1, 1.2},
-        width = full_width/2-4, 
-		height = 350, 
-		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })		
-	self.createButton({
-        click_function = "none",
-        function_owner = self,
-        label = getTotal("Red"),
-        position = {-1.3, 0.1, 2.8},
-        width = 550, 
-		height = 550, 
-		font_size = 500,
-        color = background_color, 
-		font_color = text_color
-    })	
-	self.createButton({
-        click_function = "none",
-        function_owner = self,
-        label = getTotal("Blue"),
-        position = {1.3, 0.1, 2.8},
-        width = 550, 
-		height = 550, 
-		font_size = 500,
-        color = background_color, 
-		font_color = text_color
-    })
+	-- self.createButton({
+    --     click_function = "setRedInitiative",
+    --     function_owner = self,
+    --     label = "Red",
+    --     position = {-2, 0.1, -1.6},
+    --     width = 1050, 
+	-- 	height = 350, 
+	-- 	font_size = 180,
+    --     color = getInitiativeButtonColor("Red"), 
+	-- 	font_color = "Red"
+    -- })
+	-- self.createButton({
+    --     click_function = "none",
+    --     function_owner = self,
+    --     label = "Initiative",
+    --     position = {0, 0.1, -1.6},
+    --     width = 900, 
+	-- 	height = 350, 
+	-- 	font_size = 180,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })	
+	-- self.createButton({
+    --     click_function = "setBlueInitiative",
+    --     function_owner = self,
+    --     label = "Blue",
+    --     position = {2, 0.1, -1.6},
+    --     width = 1050, 
+	-- 	height = 350, 
+	-- 	font_size = 180,
+    --     color = getInitiativeButtonColor("Blue"), 
+	-- 	font_color = "Blue"
+    -- })		
+	-- self.createButton({
+    --     click_function = "toggle_round",
+    --     function_owner = self,
+    --     label = "Round".." "..round_num,
+    --     position = {0, 0.1, -0.9},
+    --     width = full_width, 
+	-- 	height = 350, 
+	-- 	font_size = 180,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })
+	-- self.createButton({
+    --     click_function = "toggle_avsup",
+    --     function_owner = self,
+    --     label = "Available Supply\n"..avsup,
+    --     position = {0, 0.1, -0.2},
+    --     width = full_width, 
+	-- 	fontStyle="Times",
+	-- 	height = 350, 
+	-- 	font_size = 150,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })		
+	-- self.createButton({
+    --     click_function = "toggle_red_ActSup",
+    --     function_owner = self,
+    --     label = "Active Supply\n"..red_ActSup,
+    --     position = {-1.55, 0.1, 0.5},
+    --     width = full_width/2-4, 
+	-- 	height = 350, 
+	-- 	font_size = 115,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })	
+	-- self.createButton({
+    --     click_function = "toggle_blue_ActSup",
+    --     function_owner = self,
+    --     label = "Active Supply\n"..blue_ActSup,
+    --     position = {1.55, 0.1, 0.5},
+    --     width = full_width/2-4, 
+	-- 	height = 350, 
+	-- 	font_size = 115,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })	
+	-- self.createButton({
+    --     click_function = "toggle_red_supdestr",
+    --     function_owner = self,
+    --     label = "Supply Destroyed\n"..red_supdestr,
+    --     position = {-1.55, 0.1, 1.9},
+    --     width = full_width/2-4, 
+	-- 	height = 350, 
+	-- 	font_size = 115,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })	
+	-- self.createButton({
+    --     click_function = "toggle_blue_supdestr",
+    --     function_owner = self,
+    --     label = "Supply Destroyed\n"..blue_supdestr,
+    --     position = {1.55, 0.1, 1.9},
+    --     width = full_width/2-4, 
+	-- 	height = 350, 
+	-- 	font_size = 115,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })	
+	-- self.createButton({
+    --     click_function = "toggle_red_MissVP",
+    --     function_owner = self,
+    --     label = "Mission VP\n"..red_MissVP,
+    --     position = {-1.55, 0.1, 1.2},
+    --     width = full_width/2-4, 
+	-- 	height = 350, 
+	-- 	font_size = 115,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })	
+	-- self.createButton({
+    --     click_function = "toggle_blue_MissVP",
+    --     function_owner = self,
+    --     label = "Mission VP\n"..blue_MissVP,
+    --     position = {1.55, 0.1, 1.2},
+    --     width = full_width/2-4, 
+	-- 	height = 350, 
+	-- 	font_size = 115,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })		
+	-- self.createButton({
+    --     click_function = "none",
+    --     function_owner = self,
+    --     label = getTotal("Red"),
+    --     position = {-1.3, 0.1, 2.8},
+    --     width = 550, 
+	-- 	height = 550, 
+	-- 	font_size = 500,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })	
+	-- self.createButton({
+    --     click_function = "none",
+    --     function_owner = self,
+    --     label = getTotal("Blue"),
+    --     position = {1.3, 0.1, 2.8},
+    --     width = 550, 
+	-- 	height = 550, 
+	-- 	font_size = 500,
+    --     color = background_color, 
+	-- 	font_color = text_color
+    -- })
 end
 
 function none()
@@ -335,8 +336,39 @@ function toggle_blue_MissVP (_, _, alt_click)
 	})	
 end
 
-RED_INITIATIVE_BUTTON_INDEX = 0
-BLUE_INITIATIVE_BUTTON_INDEX = 2
+RED_INITIATIVE_BUTTON_ID = "redInitiativeButton"
+BLUE_INITIATIVE_BUTTON_ID = "blueInitiativeButton"
+
+function setInteractable(id, interactable)
+    -- In documentation they are fucking lying 
+    -- about `setAttribute` not overriding other attributes
+    -- So we need to get all attributes first
+    -- and then set the desired attribute
+    local attributes = self.UI.getAttributes(id)
+    attributes.interactable = interactable
+    self.UI.setAttributes(id, attributes)
+end
+
+function highlightInitiativeButton(id)
+   -- Disabled initiative button will be highlighted
+   setInteractable(id, false)
+end
+
+function unhighlightInitiativeButton(id)
+    -- Enabled initiative button will be unhighlighted
+    setInteractable(id, true)
+end
+
+function setInitiative(_, _, id)    
+    highlightInitiativeButton(id)
+    if id == RED_INITIATIVE_BUTTON_ID then
+        initiative = "Red"
+        unhighlightInitiativeButton(BLUE_INITIATIVE_BUTTON_ID)
+    else
+        initiative = "Blue"
+        unhighlightInitiativeButton(RED_INITIATIVE_BUTTON_ID)
+    end
+end
 
 function setRedInitiative()
     initiative = "Red"
