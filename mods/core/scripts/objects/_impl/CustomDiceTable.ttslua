@@ -664,18 +664,6 @@ function redoRoll(obj, player, alt)
     printToColor("Redone to roll #" .. tostring(previousRollIndex) .. " of " .. tostring(#previousRollStack), player, "Green")
     previousRollData = previousRollStack[previousRollIndex] or {}
 end
-function moveDiceToRoller(color, dice)
-    roller.call("setPlayerColor", { color = color })
-    for _, die in ipairs(dice) do
-        roller.call("setLastHolder", { obj = die, color = color })
-        roller.putObject(die)
-    end
-
-    -- Add this line at the end:
-    storeCurrentDiceAsPreviousRoll()
-    -- Infer roll phase and calculate stats
-    inferRollPhase(dice)
-end
 
 -- Evaluate a simple arithmetic expression safely (digits, + - * / and parentheses)
 -- Returns number on success, or nil + error message on failure
