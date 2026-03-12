@@ -300,7 +300,7 @@ function onCollisionEnter(collision_info)
 	end
 end
 
-function takeDiceOut(tab)
+function takeDiceOut()
 	local data = JSON.decode(self.getDescription())
 	if data == nil then
 		setDefaultState()
