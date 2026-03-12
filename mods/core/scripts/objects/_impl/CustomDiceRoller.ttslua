@@ -262,42 +262,30 @@ function hasGuid(t, g)
 	return false
 end
 
-function onObjectEnterContainer(container, obj)
-    if container == self then
-        if obj.tag == "Dice" then
-            collision_info = {collision_object = obj}
-            onCollisionEnter(collision_info)
-            Wait.time(|| takeDiceOut(), 0.1)
-        else
-            local pos = self.getPosition()
-            local f = self.getTransformRight()
-            self.takeObject({
-                position          = {pos.x+20,pos.y+50,pos.z+20},
-                smooth            = false,
-            })
-        end
+function getFaces(dice)
+    return tonumber(string.match(dice.name, '.*(%d+).*'))
+end
+
+-- Forbid objects other than dice from entering the dice roller
+function tryObjectEnter(object)
+    if object.tag != "Dice" then
+        return false
     end
+    return true
 end
 
 function onCollisionEnter(collision_info)
-	playerColor = lastHolder[collision_info.collision_object]
-	if collision_info.collision_object.getGUID() == nil then return end
-    clearDataForGC(diceGuidFaces)
-    clearDataForGC(sortedKeys)
-	diceGuidFaces = {}
-	sortedKeys = {}
+    local obj = collision_info.collision_object
+    -- onCollisionEnter is called even when the object is not a dice
+    -- and it is fired every frame, so let's get rid of this object
+    if obj.tag != "Dice" then
+        obj.destruct()
+        return
+    end
 
-	for k, v in ipairs(getAllObjects()) do
-		if v.tag == 'Dice' then
-			objType = tostring(v)
-			faces = tonumber(string.match(objType, 'Die_(%d+).*'))
-			if faces == nil then
-				faces = tonumber(customFace[v.getCustomObject().type + 1])
-			end
-            diceGuidFaces[v.getGUID()] = faces
-            table.insert(sortedKeys, v.getGUID())
-		end
-	end
+    self.putObject(obj)
+
+    takeDiceOut()
 end
 
 function takeDiceOut()
@@ -316,11 +304,9 @@ function takeDiceOut()
 
     clearDataForGC(diceGuids)
 	diceGuids = {}
-	for k, v in pairs(self.getObjects()) do
-		faces = diceGuidFaces[v.guid]
-		if v.name =="BCB-D3" then
-			faces=3
-		end
+    objs = self.getObjects()
+	for k, v in pairs(objs) do
+		faces = getFaces(v)
 		r = math.random(faces)
 		diceGuids[v.guid] = r
 	end

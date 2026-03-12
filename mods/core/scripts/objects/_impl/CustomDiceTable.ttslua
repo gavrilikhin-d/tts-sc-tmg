@@ -1080,6 +1080,8 @@ function moveDiceToRoller(color, dice)
         roller.call("setLastHolder", {obj=die, color=color})
         roller.putObject(die)
     end
+
+    roller.call("takeDiceOut")
 end
 
 function clearDiceAll(obj, color, alt)
