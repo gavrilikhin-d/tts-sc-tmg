@@ -6,8 +6,8 @@ avsup = 0
 blue_supdestr = 0
 red_supdestr = 0
 round_num = 1
-min_round_num = 1
-max_round_num = 5
+MIN_ROUND = 1
+MAX_ROUND = 5
 blue_MissVP = 0
 red_MissVP = 0
 blue_ActSup = 0
@@ -25,6 +25,67 @@ end
 
 function getInitiativeButtonColor(button_color)
     return initiative == button_color and ini_color or background_color
+end
+
+
+RED_INITIATIVE_BUTTON_ID = "redInitiativeButton"
+BLUE_INITIATIVE_BUTTON_ID = "blueInitiativeButton"
+ROUND_BUTTON_ID = "roundButton"
+
+-- In documentation they are fucking lying 
+-- about `setAttribute` not overriding other attributes
+-- So we need to get all attributes first
+-- and then set the desired attribute
+function setAttribute(id, attribute, value)
+    local attributes = self.UI.getAttributes(id)
+    attributes[attribute] = value
+    self.UI.setAttributes(id, attributes)
+end
+
+function setInteractable(id, interactable)
+    setAttribute(id, "interactable", interactable)
+end
+
+function highlightInitiativeButton(id)
+   -- Disabled initiative button will be highlighted
+   setInteractable(id, false)
+end
+
+function unhighlightInitiativeButton(id)
+    -- Enabled initiative button will be unhighlighted
+    setInteractable(id, true)
+end
+
+function setInitiative(_, _, id)    
+    highlightInitiativeButton(id)
+    if id == RED_INITIATIVE_BUTTON_ID then
+        initiative = "Red"
+        unhighlightInitiativeButton(BLUE_INITIATIVE_BUTTON_ID)
+    else
+        initiative = "Blue"
+        unhighlightInitiativeButton(RED_INITIATIVE_BUTTON_ID)
+    end
+end
+
+LEFT_MOUSE_CLICK = "-1"
+RIGHT_MOUSE_CLICK = "-2"
+
+function clickDelta(clickType)
+    return clickType == LEFT_MOUSE_CLICK and 1 or -1
+end
+
+function toggleRound(_, clickType)
+    round_num = round_num + clickDelta(clickType)
+    if round_num < MIN_ROUND then
+        round_num = MIN_ROUND
+    elseif round_num > MAX_ROUND then
+        round_num = MAX_ROUND
+    end
+    renderRound()
+end
+
+function renderRound()
+    setAttribute(ROUND_BUTTON_ID, "text", "Round "..round_num)
 end
 
 function onSave()
@@ -57,50 +118,8 @@ function onLoad(save_state)
         blue_total = parsedData.blue_total
     end
 
-	-- self.createButton({
-    --     click_function = "setRedInitiative",
-    --     function_owner = self,
-    --     label = "Red",
-    --     position = {-2, 0.1, -1.6},
-    --     width = 1050, 
-	-- 	height = 350, 
-	-- 	font_size = 180,
-    --     color = getInitiativeButtonColor("Red"), 
-	-- 	font_color = "Red"
-    -- })
-	-- self.createButton({
-    --     click_function = "none",
-    --     function_owner = self,
-    --     label = "Initiative",
-    --     position = {0, 0.1, -1.6},
-    --     width = 900, 
-	-- 	height = 350, 
-	-- 	font_size = 180,
-    --     color = background_color, 
-	-- 	font_color = text_color
-    -- })	
-	-- self.createButton({
-    --     click_function = "setBlueInitiative",
-    --     function_owner = self,
-    --     label = "Blue",
-    --     position = {2, 0.1, -1.6},
-    --     width = 1050, 
-	-- 	height = 350, 
-	-- 	font_size = 180,
-    --     color = getInitiativeButtonColor("Blue"), 
-	-- 	font_color = "Blue"
-    -- })		
-	-- self.createButton({
-    --     click_function = "toggle_round",
-    --     function_owner = self,
-    --     label = "Round".." "..round_num,
-    --     position = {0, 0.1, -0.9},
-    --     width = full_width, 
-	-- 	height = 350, 
-	-- 	font_size = 180,
-    --     color = background_color, 
-	-- 	font_color = text_color
-    -- })
+    renderRound()
+	
 	-- self.createButton({
     --     click_function = "toggle_avsup",
     --     function_owner = self,
@@ -334,62 +353,4 @@ function toggle_blue_MissVP (_, _, alt_click)
 		index = 12,
 		label = blue_MissVP + blue_supdestr
 	})	
-end
-
-RED_INITIATIVE_BUTTON_ID = "redInitiativeButton"
-BLUE_INITIATIVE_BUTTON_ID = "blueInitiativeButton"
-
-function setInteractable(id, interactable)
-    -- In documentation they are fucking lying 
-    -- about `setAttribute` not overriding other attributes
-    -- So we need to get all attributes first
-    -- and then set the desired attribute
-    local attributes = self.UI.getAttributes(id)
-    attributes.interactable = interactable
-    self.UI.setAttributes(id, attributes)
-end
-
-function highlightInitiativeButton(id)
-   -- Disabled initiative button will be highlighted
-   setInteractable(id, false)
-end
-
-function unhighlightInitiativeButton(id)
-    -- Enabled initiative button will be unhighlighted
-    setInteractable(id, true)
-end
-
-function setInitiative(_, _, id)    
-    highlightInitiativeButton(id)
-    if id == RED_INITIATIVE_BUTTON_ID then
-        initiative = "Red"
-        unhighlightInitiativeButton(BLUE_INITIATIVE_BUTTON_ID)
-    else
-        initiative = "Blue"
-        unhighlightInitiativeButton(RED_INITIATIVE_BUTTON_ID)
-    end
-end
-
-function setRedInitiative()
-    initiative = "Red"
-	self.editButton({
-		index = RED_INITIATIVE_BUTTON_INDEX,
-		color = ini_color,
-	})
-	self.editButton({	
-		index = BLUE_INITIATIVE_BUTTON_INDEX,
-		color = background_color
-	})
-end
-
-function setBlueInitiative()
-    initiative = "Blue"
-	self.editButton({
-		index = BLUE_INITIATIVE_BUTTON_INDEX,
-		color = ini_color,
-	})
-	self.editButton({	
-		index = RED_INITIATIVE_BUTTON_INDEX,
-		color = background_color
-	})
 end
