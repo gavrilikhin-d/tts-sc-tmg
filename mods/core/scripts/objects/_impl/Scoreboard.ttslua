@@ -43,10 +43,12 @@ ROUND_BUTTON_ID = "roundButton"
 AVAILABLE_SUPPLY_BUTTON_ID = "availableSupplyButton"
 RED_SUPPLY_BUTTON_ID = "redSupply"
 BLUE_SUPPLY_BUTTON_ID = "blueSupply"
+RED_SUPPLY_DESTROYED_BUTTON_ID = "redSupplyDestroyed"
+BLUE_SUPPLY_DESTROYED_BUTTON_ID = "blueSupplyDestroyed"
 
 
 ---------------
--- Rendering --
+-- Rendering --w
 ---------------
 
 -- In documentation they are fucking lying 
@@ -73,6 +75,14 @@ end
 
 function renderBlueSupply()
     setAttribute(BLUE_SUPPLY_BUTTON_ID, "text", "Blue Supply "..blue_ActSup)
+end
+
+function renderRedSupplyDestroyed()
+    setAttribute(RED_SUPPLY_DESTROYED_BUTTON_ID, "text", "Red Supply Destroyed "..red_supdestr)
+end
+
+function renderBlueSupplyDestroyed()
+    setAttribute(BLUE_SUPPLY_DESTROYED_BUTTON_ID, "text", "Blue Supply Destroyed "..blue_supdestr)
 end
 
 ---------------
@@ -140,6 +150,22 @@ function toggleBlueSupply(_, clickType)
     renderBlueSupply()
 end
 
+function toggleRedSupplyDestroyed(_, clickType)
+    red_supdestr = red_supdestr + clickDelta(clickType)
+    if red_supdestr < MIN_SUPPLY then
+        red_supdestr = MIN_SUPPLY
+    end
+    renderRedSupplyDestroyed()
+end
+
+function toggleBlueSupplyDestroyed(_, clickType)
+    blue_supdestr = blue_supdestr + clickDelta(clickType)
+    if blue_supdestr < MIN_SUPPLY then
+        blue_supdestr = MIN_SUPPLY
+    end
+    renderBlueSupplyDestroyed()
+end
+
 function onSave()
     return JSON.encode({
         initiative = initiative,
@@ -175,28 +201,6 @@ function onLoad(save_state)
     renderRedSupply()
     renderBlueSupply()
 
-	-- self.createButton({
-    --     click_function = "toggle_red_supdestr",
-    --     function_owner = self,
-    --     label = "Supply Destroyed\n"..red_supdestr,
-    --     position = {-1.55, 0.1, 1.9},
-    --     width = full_width/2-4, 
-	-- 	height = 350, 
-	-- 	font_size = 115,
-    --     color = background_color, 
-	-- 	font_color = text_color
-    -- })	
-	-- self.createButton({
-    --     click_function = "toggle_blue_supdestr",
-    --     function_owner = self,
-    --     label = "Supply Destroyed\n"..blue_supdestr,
-    --     position = {1.55, 0.1, 1.9},
-    --     width = full_width/2-4, 
-	-- 	height = 350, 
-	-- 	font_size = 115,
-    --     color = background_color, 
-	-- 	font_color = text_color
-    -- })	
 	-- self.createButton({
     --     click_function = "toggle_red_MissVP",
     --     function_owner = self,
@@ -241,42 +245,6 @@ function onLoad(save_state)
     --     color = background_color, 
 	-- 	font_color = text_color
     -- })
-end
-
-function toggle_red_supdestr (_, _, alt_click)
-	mod = alt_click and -1 or 1
-	new_value=red_supdestr+mod
-	if  new_value < 0 then
-		red_supdestr = 0	
-	else		
-		red_supdestr = new_value
-	end
-	self.editButton({
-		index = 7,
-		label = "Supply Destroyed\n"..red_supdestr
-	})
-	self.editButton({
-		index = 11,
-		label = getTotal("Red")
-	})	
-end
-
-function toggle_blue_supdestr (_, _, alt_click)
-	mod = alt_click and -1 or 1
-	new_value=blue_supdestr+mod
-	if  new_value < 0 then
-		blue_supdestr = 0	
-	else		
-		blue_supdestr = new_value
-	end
-	self.editButton({
-		index = 8,
-		label = "Supply Destroyed\n"..blue_supdestr
-	})
-	self.editButton({
-		index = 12,
-		label = getTotal("Blue")
-	})	
 end
 
 function toggle_red_MissVP (_, _, alt_click)

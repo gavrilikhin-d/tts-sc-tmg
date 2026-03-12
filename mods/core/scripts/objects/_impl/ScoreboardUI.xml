@@ -2,7 +2,7 @@
     <Button fontSize="18" textColor="#FFFFFF" colors="#353839|#353839|#353839|#353839" />
 </Defaults>
 
-<VerticalLayout position="0 0 -20" width="350" height="100">
+<VerticalLayout position="0 0 -20" width="350" height="200">
     <HorizontalLayout height="35">
         <Button id="redInitiativeButton" onClick="setInitiative" textColor="Red" colors="#353839|#353839|#353839|White" preferredWidth="105">
             Red
@@ -19,5 +19,9 @@
     <HorizontalLayout height="35">
         <Button id="redSupply" onClick="toggleRedSupply">Red Supply 0</Button>
         <Button id="blueSupply" onClick="toggleBlueSupply">Blue Supply 0</Button>
+    </HorizontalLayout>
+    <HorizontalLayout height="50">
+        <Button id="redSupplyDestroyed" onClick="toggleRedSupplyDestroyed">Red Supply Destroyed 0</Button>
+        <Button id="blueSupplyDestroyed" onClick="toggleBlueSupplyDestroyed">Blue Supply Destroyed 0</Button>
     </HorizontalLayout>
 </VerticalLayout>
