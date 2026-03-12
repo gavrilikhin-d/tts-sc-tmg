@@ -23,7 +23,7 @@ stats = {
     redSupplyDestroyed = 0,
     blueSupplyDestroyed = 0,
     redMissionVP = 0,
-    blueMissionVp = 0
+    blueMissionVP = 0
 }
 
 function getTotal(color)
