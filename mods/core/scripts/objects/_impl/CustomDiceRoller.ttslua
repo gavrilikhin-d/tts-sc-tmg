@@ -400,7 +400,7 @@ function takeDiceOut()
     	end
     end
 
-	printresultsTable()
+	printResultsTable()
     Wait.time(function()
         -- "objectToPlaceDiceOn" is your dice-mat object
         objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
@@ -423,7 +423,7 @@ function setLastHolder(params)
     lastHolder[params.obj] = params.color
 end
 
-function printresultsTable()
+function printResultsTable()
     local data = JSON.decode(self.getDescription())
     local description = {
         'Ones.', 'Twos.', 'Threes.', 'Fours.', 'Fives.', 'Sixes.',
