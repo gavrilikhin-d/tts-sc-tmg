@@ -1,5 +1,6 @@
 text_color = {1,1,1}
 background_color = {53/255,56/255,57/255}
+initiative = "None"
 avsup = 0
 blue_supdestr = 0
 red_supdestr = 0
@@ -15,7 +16,20 @@ red_total = 0
 ini_color = "White"
 full_width = 3000
 
-function onLoad()
+function getInitiativeButtonColor(button_color)
+    return initiative == button_color and ini_color or background_color
+end
+	self.createButton({
+        click_function = "setRedInitiative",
+        function_owner = self,
+        label = "Red",
+        position = {-2, 0.1, -1.6},
+        width = 1050, 
+		height = 350, 
+		font_size = 180,
+        color = getInitiativeButtonColor("Red"), 
+		font_color = "Red"
+    })
 	self.createButton({
         click_function = "none",
         function_owner = self,
@@ -28,25 +42,14 @@ function onLoad()
 		font_color = text_color
     })	
 	self.createButton({
-        click_function = "toggle_red_ini",
-        function_owner = self,
-        label = "Red",
-        position = {-2, 0.1, -1.6},
-        width = 1050, 
-		height = 350, 
-		font_size = 180,
-        color = background_color, 
-		font_color = "Red"
-    })	
-	self.createButton({
-        click_function = "toggle_blue_ini",
+        click_function = "setBlueInitiative",
         function_owner = self,
         label = "Blue",
         position = {2, 0.1, -1.6},
         width = 1050, 
 		height = 350, 
 		font_size = 180,
-        color = background_color, 
+        color = getInitiativeButtonColor("Blue"), 
 		font_color = "Blue"
     })		
 	self.createButton({
@@ -160,7 +163,6 @@ function onLoad()
         color = background_color, 
 		font_color = text_color
     })				
-	
 end
 
 function none()
@@ -296,24 +298,29 @@ function toggle_blue_MissVP (_, _, alt_click)
 	})	
 end
 
-function toggle_red_ini ()
+RED_INITIATIVE_BUTTON_INDEX = 0
+BLUE_INITIATIVE_BUTTON_INDEX = 2
+
+function setRedInitiative()
+    initiative = "Red"
 	self.editButton({
-		index = 1,
+		index = RED_INITIATIVE_BUTTON_INDEX,
 		color = ini_color,
 	})
 	self.editButton({	
-		index = 2,
+		index = BLUE_INITIATIVE_BUTTON_INDEX,
 		color = background_color
 	})
 end
 
-function toggle_blue_ini ()
+function setBlueInitiative()
+    initiative = "Blue"
 	self.editButton({
-		index = 2,
+		index = BLUE_INITIATIVE_BUTTON_INDEX,
 		color = ini_color,
 	})
 	self.editButton({	
-		index = 1,
+		index = RED_INITIATIVE_BUTTON_INDEX,
 		color = background_color
 	})
 end
