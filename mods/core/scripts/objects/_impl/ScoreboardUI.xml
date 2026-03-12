@@ -4,13 +4,13 @@
 
 <VerticalLayout position="0 0 -20" width="350" height="200">
     <HorizontalLayout height="35">
-        <Button id="redInitiativeButton" onClick="setInitiative" textColor="Red" colors="#353839|#353839|#353839|White" preferredWidth="105">
+        <Button id="redInitiativeButton" onClick="setInitiative(Red)" textColor="Red" colors="#353839|#353839|#353839|White" preferredWidth="105">
             Red
         </Button>
         <Button interactible="false" preferredWidth="90">
             Initiative
         </Button>
-        <Button id="blueInitiativeButton" onClick="setInitiative" textColor="Blue" colors="#353839|#353839|#353839|White" preferredWidth="105">
+        <Button id="blueInitiativeButton" onClick="setInitiative(Blue)" textColor="Blue" colors="#353839|#353839|#353839|White" preferredWidth="105">
             Blue
         </Button>
     </HorizontalLayout>

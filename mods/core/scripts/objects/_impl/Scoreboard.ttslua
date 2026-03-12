@@ -25,6 +25,16 @@ end
 function getInitiativeButtonColor(button_color)
     return initiative == button_color and ini_color or background_color
 end
+
+colorMap = {
+    Red = {
+        INITIATIVE_BUTTON_ID = "redInitiativeButton",
+    },
+    Blue = {
+        INITIATIVE_BUTTON_ID = "blueInitiativeButton",
+    }
+}
+
 ---------------
 -- Constants --
 ---------------
@@ -103,15 +113,15 @@ function unhighlightInitiativeButton(id)
     setInteractable(id, true)
 end
 
-function setInitiative(_, _, id)    
+function oppositeColor(color)
+    return color == "Red" and "Blue" or "Red"
+end
+
+function setInitiative(_, color, id)
+    initiative = color
     highlightInitiativeButton(id)
-    if id == RED_INITIATIVE_BUTTON_ID then
-        initiative = "Red"
-        unhighlightInitiativeButton(BLUE_INITIATIVE_BUTTON_ID)
-    else
-        initiative = "Blue"
-        unhighlightInitiativeButton(RED_INITIATIVE_BUTTON_ID)
-    end
+    other = oppositeColor(color)
+    unhighlightInitiativeButton(colorMap[other].INITIATIVE_BUTTON_ID)  
 end
 
 function clickDelta(clickType)
