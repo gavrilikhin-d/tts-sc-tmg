@@ -1,19 +1,3 @@
-text_color = {1,1,1}
-background_color = {53/255,56/255,57/255}
-backround_color_hex = "#353839"
-initiative = "None"
-avsup = 6
-MIN_SUPPLY = 0
-blue_supdestr = 0
-red_supdestr = 0
-round_num = 1
-blue_MissVP = 0
-red_MissVP = 0
-blue_ActSup = 0
-red_ActSup = 0
-ini_color = "White"
-full_width = 3000
-
 stats = {
     initiative = "None",
     round = 1,
@@ -22,52 +6,36 @@ stats = {
     blueSupply = 0,
     redSupplyDestroyed = 0,
     blueSupplyDestroyed = 0,
-    redMissionVP = 0,
-    blueMissionVP = 0
+    -- redMissionVP = 0,
+    -- blueMissionVP = 0
 }
 
-function getTotal(color)
-    if color == "Red" then
-        return red_MissVP + red_supdestr
-    else
-        return blue_MissVP + blue_supdestr
-    end
-end
-
-function getInitiativeButtonColor(button_color)
-    return initiative == button_color and ini_color or background_color
-end
-
-colorMap = {
-    Red = {
-        INITIATIVE_BUTTON_ID = "redInitiativeButton",
+CONSTANTS = {
+    round = {
+        BUTTON_ID = "roundButton",
+        LABEL = "Round "
     },
-    Blue = {
-        INITIATIVE_BUTTON_ID = "blueInitiativeButton",
+    availableSupply = {
+        BUTTON_ID = "availableSupplyButton",
+        LABEL = "Available Supply "
+    },
+    redSupply = {
+        BUTTON_ID = "redSupply",
+        LABEL = "Red Supply "
+    },
+    blueSupply = {
+        BUTTON_ID = "blueSupply",
+        LABEL = "Blue Supply "
+    },
+    redSupplyDestroyed = {
+        BUTTON_ID = "redSupplyDestroyed",
+        LABEL = "Red Supply Destroyed "
+    },
+    blueSupplyDestroyed = {
+        BUTTON_ID = "blueSupplyDestroyed",
+        LABEL = "Blue Supply Destroyed "
     }
 }
-
----------------
--- Constants --
----------------
-LEFT_MOUSE_CLICK = "-1"
-RIGHT_MOUSE_CLICK = "-2"
-
-MIN_ROUND = 1
-MIN_SUPPLY = 0
-
--------------
--- Buttons --
--------------
-RED_INITIATIVE_BUTTON_ID = "redInitiativeButton"
-BLUE_INITIATIVE_BUTTON_ID = "blueInitiativeButton"
-ROUND_BUTTON_ID = "roundButton"
-AVAILABLE_SUPPLY_BUTTON_ID = "availableSupplyButton"
-RED_SUPPLY_BUTTON_ID = "redSupply"
-BLUE_SUPPLY_BUTTON_ID = "blueSupply"
-RED_SUPPLY_DESTROYED_BUTTON_ID = "redSupplyDestroyed"
-BLUE_SUPPLY_DESTROYED_BUTTON_ID = "blueSupplyDestroyed"
-
 
 ---------------
 -- Rendering --w
@@ -83,34 +51,18 @@ function setAttribute(id, attribute, value)
     self.UI.setAttributes(id, attributes)
 end
 
-function renderRound()
-    setAttribute(ROUND_BUTTON_ID, "text", "Round "..stats.round)
+function renderStat(stat)
+    if stat == "initiative" then
+        return
+    end
+
+    const = CONSTANTS[stat]
+    setAttribute(const.BUTTON_ID, "text", const.LABEL..stats[stat])
 end
 
-function renderAvailableSupply()
-    setAttribute(AVAILABLE_SUPPLY_BUTTON_ID, "text", "Available Supply "..stats.availableSupply)
-end
-
-function renderRedSupply()
-    setAttribute(RED_SUPPLY_BUTTON_ID, "text", "Red Supply "..stats.redSupply)
-end
-
-function renderBlueSupply()
-    setAttribute(BLUE_SUPPLY_BUTTON_ID, "text", "Blue Supply "..stats.blueSupply)
-end
-
-function renderRedSupplyDestroyed()
-    setAttribute(RED_SUPPLY_DESTROYED_BUTTON_ID, "text", "Red Supply Destroyed "..stats.redSupplyDestroyed)
-end
-
-function renderBlueSupplyDestroyed()
-    setAttribute(BLUE_SUPPLY_DESTROYED_BUTTON_ID, "text", "Blue Supply Destroyed "..stats.blueSupplyDestroyed)
-end
-
----------------
--- Callbacks --
----------------
-
+------------------------
+-- Initialive Toggles -- 
+------------------------
 function setInteractable(id, interactable)
     setAttribute(id, "interactable", interactable)
 end
@@ -135,30 +87,41 @@ function setInitiative(_, color, id)
     other = oppositeColor(color)
     unhighlightInitiativeButton(colorMap[other].INITIATIVE_BUTTON_ID)  
 end
+------------------------
 
+---------------
+-- Counters  --
+---------------
+LEFT_MOUSE_CLICK = "-1"
+RIGHT_MOUSE_CLICK = "-2"
 function clickDelta(clickType)
     return clickType == LEFT_MOUSE_CLICK and 1 or -1
 end
 
-function counter(stat, render) 
+function counter(stat)
     function callback(_, clickType)
         stats[stat] = stats[stat] + clickDelta(clickType)
         if stats[stat] < 0 then
             stats[stat] = 0
         end
-        render()
+        renderStat(stat)
     end
 
     return callback
 end
 
-toggleRound = counter("round", renderRound)
-toggleAvailableSupply = counter("availableSupply", renderAvailableSupply)
-toggleRedSupply = counter("redSupply", renderRedSupply)
-toggleBlueSupply = counter("blueSupply", renderBlueSupply)
-toggleRedSupplyDestroyed = counter("redSupplyDestroyed", renderRedSupplyDestroyed)
-toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed", renderBlueSupplyDestroyed)
+toggleRound = counter("round")
+toggleAvailableSupply = counter("availableSupply")
+toggleRedSupply = counter("redSupply")
+toggleBlueSupply = counter("blueSupply")
+toggleRedSupplyDestroyed = counter("redSupplyDestroyed")
+toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed")
+---------------
 
+
+---------------
+-- Save/Load --
+---------------
 function onSave()
     return JSON.encode(stats)
 end
@@ -168,89 +131,9 @@ function onLoad(saveStats)
         stats = JSON.decode(savedStats)
     end
 
-    renderRound()
-    renderAvailableSupply()
-    renderRedSupply()
-    renderBlueSupply()
 
-	-- self.createButton({
-    --     click_function = "toggle_red_MissVP",
-    --     function_owner = self,
-    --     label = "Mission VP\n"..red_MissVP,
-    --     position = {-1.55, 0.1, 1.2},
-    --     width = full_width/2-4, 
-	-- 	height = 350, 
-	-- 	font_size = 115,
-    --     color = background_color, 
-	-- 	font_color = text_color
-    -- })	
-	-- self.createButton({
-    --     click_function = "toggle_blue_MissVP",
-    --     function_owner = self,
-    --     label = "Mission VP\n"..blue_MissVP,
-    --     position = {1.55, 0.1, 1.2},
-    --     width = full_width/2-4, 
-	-- 	height = 350, 
-	-- 	font_size = 115,
-    --     color = background_color, 
-	-- 	font_color = text_color
-    -- })		
-	-- self.createButton({
-    --     click_function = "none",
-    --     function_owner = self,
-    --     label = getTotal("Red"),
-    --     position = {-1.3, 0.1, 2.8},
-    --     width = 550, 
-	-- 	height = 550, 
-	-- 	font_size = 500,
-    --     color = background_color, 
-	-- 	font_color = text_color
-    -- })	
-	-- self.createButton({
-    --     click_function = "none",
-    --     function_owner = self,
-    --     label = getTotal("Blue"),
-    --     position = {1.3, 0.1, 2.8},
-    --     width = 550, 
-	-- 	height = 550, 
-	-- 	font_size = 500,
-    --     color = background_color, 
-	-- 	font_color = text_color
-    -- })
+    for stat, _ in pairs(stats) do
+        renderStat(stat)
+    end
 end
-
-function toggle_red_MissVP (_, _, alt_click)
-	mod = alt_click and -1 or 1
-	new_value=red_MissVP+mod
-	if  new_value < 0 then
-		red_MissVP = 0	
-	else		
-		red_MissVP = new_value
-	end
-	self.editButton({
-		index = 9,
-		label = "Mission VP\n"..red_MissVP
-	})
-	self.editButton({
-		index = 11,
-		label = red_MissVP + red_supdestr
-	})		
-end
-
-function toggle_blue_MissVP (_, _, alt_click)
-	mod = alt_click and -1 or 1
-	new_value=blue_MissVP+mod
-	if  new_value < 0 then
-		blue_MissVP = 0	
-	else		
-		blue_MissVP = new_value
-	end
-	self.editButton({
-		index = 10,
-		label = "Mission VP\n"..blue_MissVP
-	})
-	self.editButton({
-		index = 12,
-		label = blue_MissVP + blue_supdestr
-	})	
-end
+---------------
