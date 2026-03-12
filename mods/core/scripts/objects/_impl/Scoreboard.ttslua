@@ -2,12 +2,11 @@ text_color = {1,1,1}
 background_color = {53/255,56/255,57/255}
 backround_color_hex = "#353839"
 initiative = "None"
-avsup = 0
+avsup = 6
+MIN_SUPPLY = 0
 blue_supdestr = 0
 red_supdestr = 0
 round_num = 1
-MIN_ROUND = 1
-MAX_ROUND = 5
 blue_MissVP = 0
 red_MissVP = 0
 blue_ActSup = 0
@@ -26,11 +25,27 @@ end
 function getInitiativeButtonColor(button_color)
     return initiative == button_color and ini_color or background_color
 end
+---------------
+-- Constants --
+---------------
+LEFT_MOUSE_CLICK = "-1"
+RIGHT_MOUSE_CLICK = "-2"
 
+MIN_ROUND = 1
+MIN_SUPPLY = 0
 
+-------------
+-- Buttons --
+-------------
 RED_INITIATIVE_BUTTON_ID = "redInitiativeButton"
 BLUE_INITIATIVE_BUTTON_ID = "blueInitiativeButton"
 ROUND_BUTTON_ID = "roundButton"
+AVAILABLE_SUPPLY_BUTTON_ID = "availableSupplyButton"
+
+
+---------------
+-- Rendering --
+---------------
 
 -- In documentation they are fucking lying 
 -- about `setAttribute` not overriding other attributes
@@ -41,6 +56,18 @@ function setAttribute(id, attribute, value)
     attributes[attribute] = value
     self.UI.setAttributes(id, attributes)
 end
+
+function renderRound()
+    setAttribute(ROUND_BUTTON_ID, "text", "Round "..round_num)
+end
+
+function renderAvailableSupply()
+    setAttribute(AVAILABLE_SUPPLY_BUTTON_ID, "text", "Available Supply "..avsup)
+end
+
+---------------
+-- Callbacks --
+---------------
 
 function setInteractable(id, interactable)
     setAttribute(id, "interactable", interactable)
@@ -67,9 +94,6 @@ function setInitiative(_, _, id)
     end
 end
 
-LEFT_MOUSE_CLICK = "-1"
-RIGHT_MOUSE_CLICK = "-2"
-
 function clickDelta(clickType)
     return clickType == LEFT_MOUSE_CLICK and 1 or -1
 end
@@ -78,14 +102,16 @@ function toggleRound(_, clickType)
     round_num = round_num + clickDelta(clickType)
     if round_num < MIN_ROUND then
         round_num = MIN_ROUND
-    elseif round_num > MAX_ROUND then
-        round_num = MAX_ROUND
     end
     renderRound()
 end
 
-function renderRound()
-    setAttribute(ROUND_BUTTON_ID, "text", "Round "..round_num)
+function toggleAvailableSupply(_, clickType)
+    avsup = avsup + clickDelta(clickType)
+    if avsup < MIN_SUPPLY then
+        avsup = MIN_SUPPLY
+    end
+    renderAvailableSupply()
 end
 
 function onSave()
@@ -119,6 +145,7 @@ function onLoad(save_state)
     end
 
     renderRound()
+    renderAvailableSupply()
 	
 	-- self.createButton({
     --     click_function = "toggle_avsup",

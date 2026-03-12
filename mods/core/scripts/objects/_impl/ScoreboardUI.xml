@@ -15,4 +15,5 @@
         </Button>
     </HorizontalLayout>
     <Button id="roundButton" onClick="toggleRound">Round 1</Button>
+    <Button id="availableSupplyButton" onClick="toggleAvailableSupply">Available Supply 6</Button>
 </VerticalLayout>
