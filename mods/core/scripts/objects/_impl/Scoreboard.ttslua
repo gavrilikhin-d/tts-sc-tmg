@@ -14,6 +14,18 @@ red_ActSup = 0
 ini_color = "White"
 full_width = 3000
 
+stats = {
+    initiative = "None",
+    round = 1,
+    availableSupply = 6,
+    redSupply = 0,
+    blueSupply = 0,
+    redSupplyDestroyed = 0,
+    blueSupplyDestroyed = 0,
+    redMissionVP = 0,
+    blueMissionVp = 0
+}
+
 function getTotal(color)
     if color == "Red" then
         return red_MissVP + red_supdestr
@@ -72,27 +84,27 @@ function setAttribute(id, attribute, value)
 end
 
 function renderRound()
-    setAttribute(ROUND_BUTTON_ID, "text", "Round "..round_num)
+    setAttribute(ROUND_BUTTON_ID, "text", "Round "..stats.round)
 end
 
 function renderAvailableSupply()
-    setAttribute(AVAILABLE_SUPPLY_BUTTON_ID, "text", "Available Supply "..avsup)
+    setAttribute(AVAILABLE_SUPPLY_BUTTON_ID, "text", "Available Supply "..stats.availableSupply)
 end
 
 function renderRedSupply()
-    setAttribute(RED_SUPPLY_BUTTON_ID, "text", "Red Supply "..red_ActSup)
+    setAttribute(RED_SUPPLY_BUTTON_ID, "text", "Red Supply "..stats.redSupply)
 end
 
 function renderBlueSupply()
-    setAttribute(BLUE_SUPPLY_BUTTON_ID, "text", "Blue Supply "..blue_ActSup)
+    setAttribute(BLUE_SUPPLY_BUTTON_ID, "text", "Blue Supply "..stats.blueSupply)
 end
 
 function renderRedSupplyDestroyed()
-    setAttribute(RED_SUPPLY_DESTROYED_BUTTON_ID, "text", "Red Supply Destroyed "..red_supdestr)
+    setAttribute(RED_SUPPLY_DESTROYED_BUTTON_ID, "text", "Red Supply Destroyed "..stats.redSupplyDestroyed)
 end
 
 function renderBlueSupplyDestroyed()
-    setAttribute(BLUE_SUPPLY_DESTROYED_BUTTON_ID, "text", "Blue Supply Destroyed "..blue_supdestr)
+    setAttribute(BLUE_SUPPLY_DESTROYED_BUTTON_ID, "text", "Blue Supply Destroyed "..stats.blueSupplyDestroyed)
 end
 
 ---------------
@@ -128,82 +140,32 @@ function clickDelta(clickType)
     return clickType == LEFT_MOUSE_CLICK and 1 or -1
 end
 
-function toggleRound(_, clickType)
-    round_num = round_num + clickDelta(clickType)
-    if round_num < MIN_ROUND then
-        round_num = MIN_ROUND
+function counter(stat, render) 
+    function callback(_, clickType)
+        stats[stat] = stats[stat] + clickDelta(clickType)
+        if stats[stat] < 0 then
+            stats[stat] = 0
+        end
+        render()
     end
-    renderRound()
+
+    return callback
 end
 
-function toggleAvailableSupply(_, clickType)
-    avsup = avsup + clickDelta(clickType)
-    if avsup < MIN_SUPPLY then
-        avsup = MIN_SUPPLY
-    end
-    renderAvailableSupply()
-end
-
-function toggleRedSupply(_, clickType)
-    red_ActSup = red_ActSup + clickDelta(clickType)
-    if red_ActSup < MIN_SUPPLY then
-        red_ActSup = MIN_SUPPLY
-    end
-    renderRedSupply()
-end
-
-function toggleBlueSupply(_, clickType)
-    blue_ActSup = blue_ActSup + clickDelta(clickType)
-    if blue_ActSup < MIN_SUPPLY then
-        blue_ActSup = MIN_SUPPLY
-    end
-    renderBlueSupply()
-end
-
-function toggleRedSupplyDestroyed(_, clickType)
-    red_supdestr = red_supdestr + clickDelta(clickType)
-    if red_supdestr < MIN_SUPPLY then
-        red_supdestr = MIN_SUPPLY
-    end
-    renderRedSupplyDestroyed()
-end
-
-function toggleBlueSupplyDestroyed(_, clickType)
-    blue_supdestr = blue_supdestr + clickDelta(clickType)
-    if blue_supdestr < MIN_SUPPLY then
-        blue_supdestr = MIN_SUPPLY
-    end
-    renderBlueSupplyDestroyed()
-end
+toggleRound = counter("round", renderRound)
+toggleAvailableSupply = counter("availableSupply", renderAvailableSupply)
+toggleRedSupply = counter("redSupply", renderRedSupply)
+toggleBlueSupply = counter("blueSupply", renderBlueSupply)
+toggleRedSupplyDestroyed = counter("redSupplyDestroyed", renderRedSupplyDestroyed)
+toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed", renderBlueSupplyDestroyed)
 
 function onSave()
-    return JSON.encode({
-        initiative = initiative,
-        round_num = round_num,
-        avsup = avsup,
-        red_ActSup = red_ActSup,
-        blue_ActSup = blue_ActSup,
-        red_supdestr = red_supdestr,
-        blue_supdestr = blue_supdestr,
-        red_MissVP = red_MissVP,
-        blue_MissVP = blue_MissVP,
-    })
+    return JSON.encode(stats)
 end
 
-function onLoad(save_state)
-    if save_state != '' then
-        local parsedData = JSON.decode(save_state)
-        initiative = parsedData.initiative
-        round_num = parsedData.round_num
-        avsup = parsedData.avsup
-        red_ActSup = parsedData.red_ActSup
-        blue_ActSup = parsedData.blue_ActSup
-        red_supdestr = parsedData.red_supdestr
-        blue_supdestr = parsedData.blue_supdestr
-        red_MissVP = parsedData.red_MissVP
-        blue_MissVP = parsedData.blue_MissVP
-        red_total = parsedData.red_total
-        blue_total = parsedData.blue_total
+function onLoad(saveStats)
+    if savedStats then
+        stats = JSON.decode(savedStats)
     end
 
     renderRound()
