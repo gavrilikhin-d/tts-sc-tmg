@@ -11,10 +11,16 @@ blue_MissVP = 0
 red_MissVP = 0
 blue_ActSup = 0
 red_ActSup = 0
-blue_total = 0
-red_total = 0
 ini_color = "White"
 full_width = 3000
+
+function getTotal(color)
+    if color == "Red" then
+        return red_MissVP + red_supdestr
+    else
+        return blue_MissVP + blue_supdestr
+    end
+end
 
 function getInitiativeButtonColor(button_color)
     return initiative == button_color and ini_color or background_color
@@ -144,7 +150,7 @@ end
 	self.createButton({
         click_function = "none",
         function_owner = self,
-        label = red_total,
+        label = getTotal("Red"),
         position = {-1.3, 0.1, 2.8},
         width = 550, 
 		height = 550, 
@@ -155,7 +161,7 @@ end
 	self.createButton({
         click_function = "none",
         function_owner = self,
-        label = blue_total,
+        label = getTotal("Blue"),
         position = {1.3, 0.1, 2.8},
         width = 550, 
 		height = 550, 
@@ -240,7 +246,7 @@ function toggle_red_supdestr (_, _, alt_click)
 	})
 	self.editButton({
 		index = 11,
-		label = red_MissVP + red_supdestr
+		label = getTotal("Red")
 	})	
 end
 
@@ -258,7 +264,7 @@ function toggle_blue_supdestr (_, _, alt_click)
 	})
 	self.editButton({
 		index = 12,
-		label = blue_MissVP + blue_supdestr
+		label = getTotal("Blue")
 	})	
 end
 
