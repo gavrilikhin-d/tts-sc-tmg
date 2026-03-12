@@ -25,6 +25,37 @@ end
 function getInitiativeButtonColor(button_color)
     return initiative == button_color and ini_color or background_color
 end
+
+function onSave()
+    return JSON.encode({
+        initiative = initiative,
+        round_num = round_num,
+        avsup = avsup,
+        red_ActSup = red_ActSup,
+        blue_ActSup = blue_ActSup,
+        red_supdestr = red_supdestr,
+        blue_supdestr = blue_supdestr,
+        red_MissVP = red_MissVP,
+        blue_MissVP = blue_MissVP,
+    })
+end
+
+function onLoad(save_state)
+    if save_state != '' then
+        local parsedData = JSON.decode(save_state)
+        initiative = parsedData.initiative
+        round_num = parsedData.round_num
+        avsup = parsedData.avsup
+        red_ActSup = parsedData.red_ActSup
+        blue_ActSup = parsedData.blue_ActSup
+        red_supdestr = parsedData.red_supdestr
+        blue_supdestr = parsedData.blue_supdestr
+        red_MissVP = parsedData.red_MissVP
+        blue_MissVP = parsedData.blue_MissVP
+        red_total = parsedData.red_total
+        blue_total = parsedData.blue_total
+    end
+
 	self.createButton({
         click_function = "setRedInitiative",
         function_owner = self,
@@ -168,7 +199,7 @@ end
 		font_size = 500,
         color = background_color, 
 		font_color = text_color
-    })				
+    })
 end
 
 function none()
