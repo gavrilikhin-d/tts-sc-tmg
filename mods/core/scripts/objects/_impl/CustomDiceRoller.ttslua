@@ -268,10 +268,7 @@ end
 
 -- Forbid objects other than dice from entering the dice roller
 function tryObjectEnter(object)
-    if object.tag != "Dice" then
-        return false
-    end
-    return true
+    return object.tag == "Dice" 
 end
 
 function onCollisionEnter(collision_info)
