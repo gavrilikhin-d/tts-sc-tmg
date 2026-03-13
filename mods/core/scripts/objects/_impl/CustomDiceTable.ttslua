@@ -158,32 +158,7 @@ lowerUpperBtn={
 }
 lowerUpper=true
 oneTimeUpper=true
-lethalButtonsOffset = -4
 
-lethalLabel = "Lethal Hits"
-lethalTip   = "Left-click: move dice >= 6. Right-click: move dice >= 5."
-lethalHitsBtn={
-    label=lethalLabel, tooltip=lethalTip, click_function="lethalHitsAction", function_owner=self,
-    position={lethalButtonsOffset, Yoffset ,1.1}, rotation={0,0,0}, height=0, width=0, scale={0,0,0},
-    font_size=0, color="White", font_color={0,0,0}
-}
-
-susLabel = "Sustained Hits"
-susTip   = "Left-click: move dice >= 6. Right-click: move dice >= 5."
-sustainedHitsBtn={
-    label=susLabel, tooltip=susTip, click_function="sustainedHitsAction", function_owner=self,
-    position={lethalButtonsOffset + 0.7, Yoffset ,1.1}, rotation={0,0,0}, height=0, width=0, scale={0,0,0},
-    font_size=0, color="White", font_color={0,0,0}
-}
-
-susLethalLabel = "Sustained & Lethal"
-susLethalTip   = "Left-click: move dice >= 6. Right-click: move dice >= 5. Applies to sustained and lethal combined."
-
-sustainedLethalHitsBtn = {
-    label=susLethalLabel, tooltip=susLethalTip, click_function="sustainedLethalHitsAction", function_owner=self,
-    position={lethalButtonsOffset + 1.61, Yoffset ,1.1}, rotation={0,0,0}, height=0, width=0, scale={0,0,0},
-    font_size=0, color="White", font_color={0,0,0}
-}
 copyOthersDiceBtn = {
     tooltip="Copy opposite player's dice",
     click_function = "importOpposDice",
@@ -1378,6 +1353,9 @@ function onload()
 	data2 = JSON.decode(self.getDescription())
 	Wait.time(checkDice, data2.Update_Frequency*1,-1)
 
+    ------------
+    -- Topbar --
+    ------------
     self.createButton(clearAllDiceBtn)
     self.createButton(rollOrSelectAllBtn)
     self.createButton(add1d6Btn)
@@ -1392,6 +1370,24 @@ function onload()
     self.createButton(color3Btn)
     self.createButton(color4Btn)
     self.createButton(pipColorBtn)
+    self.createButton(customDiceBtn)
+    ------------
+
+    ----------------
+    -- Left Panel --
+    ----------------
+    self.createButton(customDiceInputBG)
+    self.createInput(customDiceInput)
+    self.createButton(customDiceSpawnButton)
+    self.createButton(revertRollBtn) 
+    self.createButton(auto2D6)
+    self.createButton(auto1D6)
+    self.createButton(copyOthersDiceBtn)
+    ----------------
+
+    -----------
+    -- Rolls --
+    ----------- 
     local sign=""
     for i=1, 6 do
         if lowerUpper then sign= lowerSign else sign=upperSign end
@@ -1406,33 +1402,14 @@ function onload()
         rollOrSelectDiceBtn.click_function = "RollOrSelectDeleteDice" .. i
         self.createButton(rollOrSelectDiceBtn)
     end
-    self.createButton(lowerUpperBtn)
-    self.createButton(customDiceBtn)
-    self.createButton(lethalHitsBtn)
-    self.createButton(sustainedHitsBtn)
-    self.createButton(sustainedLethalHitsBtn)
-    self.createButton(copyOthersDiceBtn)
-    self.createButton(auto1D6)
-    self.createButton(auto2D6)
-    self.createButton(revertRollBtn)  -- Add this near the end of the button creations
-    self.createButton(saveBtn)
-    self.createButton(restoreBtn)
-    self.createButton(measure1Btn)
-    self.createButton(measure3Btn)
-    self.createButton(measure6Btn)
-    self.createButton(measure9Btn)
-    self.createButton(measure12Btn)
-    self.createButton(customBubbleInputBG)
-    self.createInput(customBubbleInput)
-    self.createButton(customBubbleBtn)
-    self.createButton(clearMeasureAllBtn)
-    self.createButton(gap2Btn)
-    self.createButton(gap1Btn)
-    self.createInput(customDiceInput)
-    self.createButton(customDiceSpawnButton)
-    self.createButton(customDiceInputBG)
-    if self.getPosition().z < 0 then selectedColor="Blue" else selectedColor="Red" end modifyMenu(selectedColor)
-
+    ----------- 
+    
+    if self.getPosition().z < 0 then 
+        selectedColor="Blue" 
+    else 
+        selectedColor="Red" 
+    end 
+    modifyMenu(selectedColor)
 end
 
 local lethalHitsImageURL = "https://steamusercontent-a.akamaihd.net/ugc/10593277004116480902/D0CC2FC9091B2A05F33B6C76BD78E9C2EEAA62C8/"
