@@ -292,75 +292,40 @@ if self.guid == Global.getVar("blueCustomDiceMat_GUID") then
 end
 roller = getObjectFromGUID(rollerGUID)
 
+function oppositeColor(color)
+    return (color == "Red") and "Blue" or "Red"
+end
+
 function importOpposDice(obj, player, alt)
     -- clear existing dice
-    for _, d in ipairs(getDice()) do d.destroy() end
-
-    -- get opposite mat and its bounds
-    local oppMatGUID = (currentMat=="Red")
-        and Global.getVar("blueCustomDiceMat_GUID")
-        or   Global.getVar("redCustomDiceMat_GUID")
-    local oppMat = getObjectFromGUID(oppMatGUID)
-    if not oppMat then
-        printToColor("Opposite dice mat not found.", player, "Orange")
-        return
+    for _, d in ipairs(getDice()) do 
+        d.destroy()
     end
-    local mb = oppMat.getBounds()
-    local mL, mR = mb.center.x - mb.size.x/2, mb.center.x + mb.size.x/2
-    local mLo, mUp = mb.center.z - mb.size.z/2, mb.center.z + mb.size.z/2
-    local mYl, mYh = mb.center.y - mb.size.y/2, mb.center.y + mb.size.y/2 + 3
 
-    local toImport = {}
-    local seen = {}
+    valueToCounter = { 0, 0, 0, 0, 0, 0 }
+    totalDice = 0
+    diceSum = 0
 
-    -- gather dice: check lethal zone first, then main mat
-    for _, o in ipairs(getAllObjects()) do
-        if o.tag=="Dice" and o.resting then
-            local p = o.getPosition()
-            -- lethal zone?
-            if lb
-            and p.x > lL and p.x < lR
-            and p.z > lLo and p.z < lUp
-            and p.y > lYl and p.y < lYh
-            then
-                seen[o.getGUID()] = true
-                table.insert(toImport, { die=o, origin=lb.center, lethal=true })
-            -- main mat (excluding any already seen in lethal)
-            elseif p.x > mL and p.x < mR
-            and p.z > mLo and p.z < mUp
-            and p.y > mYl and p.y < mYh
-            and not seen[o.getGUID()]
-            then
-                seen[o.getGUID()] = true
-                table.insert(toImport, { die=o, origin=mb.center, lethal=false })
-            end
-        end
-    end
+    local toImport = getDice(oppositeColor(currentMat))
 
     if #toImport == 0 then
         printToColor("No dice found on the opposite mat.", player, "Yellow")
+        renderStats()
         return
     end
 
     -- clone into this mat: shift lethal dice by (-3, -3) in X/Z
     local mc = self.getBounds().center
     local count = 0
-    for _, entry in ipairs(toImport) do
-        local dp = entry.die.getPosition()
-        local cb = entry.origin
-        local relX, relY, relZ = -(dp.x - cb.x), dp.y - cb.y, -(dp.z - cb.z)
-        local nx, ny, nz = mc.x + relX, mc.y + relY, mc.z + relZ
-        if entry.lethal then
-            local dx = (currentMat == "Red") and -6 or 6
-            local dz = (currentMat == "Red") and 4.2 or -4.2
-            nx = nx + dx
-            nz = nz + dz
-        end
-        entry.die.clone({ position={nx, ny, nz}, snap_to_grid=false })
+    for _, die in ipairs(toImport) do
+        local dp = die.getPosition()
+        local nx, ny, nz = mc.x - dp.x, mc.y + dp.y, mc.z - dp.z
+        die.clone({ position={nx, ny, nz}, snap_to_grid=false })
         count = count + 1
     end
 
     printToAll("Imported "..count.." dice from the opposite mat", {1,1,1})
+    renderStats()
 end
 
 
@@ -673,9 +638,10 @@ function autoRoll2D6(obj, player, alt)
     autoRoll(obj, player, alt, 2)
 end
 
-function getDice()
+function getDice(color)
+    color = color or currentMat
     local dice = {}
-    local objects = ZONES[currentMat].getObjects()
+    local objects = ZONES[color].getObjects()
     for _, obj in ipairs(objects) do
         if obj.tag == "Dice" then
             table.insert(dice, obj)
