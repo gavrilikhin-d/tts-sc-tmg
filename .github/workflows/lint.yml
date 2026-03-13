@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       luaVersion: '5.2'
-    name: Test on Lua ${{ matrix.luaVersions }}
+    name: Lint
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Lua
         uses: leafo/gh-actions-lua@v9
         with:
-          luaVersion: $luaVersion
+          luaVersion: ${{ env.luaVersion }}
 
       - name: Setup LuaRocks
         uses: leafo/gh-actions-luarocks@v2
