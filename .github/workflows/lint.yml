@@ -16,6 +16,8 @@ jobs:
         uses: leafo/gh-actions-lua@v9
         with:
           luaVersion: ${{ env.luaVersion }}
+          # With cache there is a 400 HTTP Response
+          buildCache: false
 
       - name: Setup LuaRocks
         uses: leafo/gh-actions-luarocks@v2
