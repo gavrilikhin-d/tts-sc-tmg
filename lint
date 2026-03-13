@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+if ! command -v stylua >/dev/null 2>&1; then
+  echo "stylua is required. Install: cargo install stylua" >&2
+  exit 1
+fi
+
+if ! command -v luacheck >/dev/null 2>&1; then
+  echo "luacheck is required. Install: luarocks install luacheck" >&2
+  exit 1
+fi
+
+echo "Formatting .ttslua files with StyLua..."
+find . -type f -name "*.ttslua" -print0 | xargs -0 -r stylua
+
+echo "Running luacheck..."
+find . -type f -name "*.ttslua" -print0 | xargs -0 -r luacheck --codes --no-color
+
+echo "Lint complete."
