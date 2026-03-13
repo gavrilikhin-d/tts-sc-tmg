@@ -61,28 +61,6 @@ rollOrSelectAllBtn={
     font_size=60, color={1,1,1}, font_color={0,0,0}
 }
 
-orderedRollLabel = "Ordered roll"
-orderedRollTooltip = "Roll all dice, and display them in the order they're rolled in rather than by results."
-orderedRollBtn={
-    label=orderedRollLabel, tooltip=orderedRollTooltip, click_function="RollDiceOrdered", function_owner=self,
-    position={-2.4, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=520,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
-}
-orderedRollGroup2Label = "In 2s"
-orderedRollGroup2Tooltip = "Roll all dice, and display them in the order they're rolled in rather than by results, grouped into 2s."
-orderedRollGroup2Btn={
-    label=orderedRollGroup2Label, tooltip=orderedRollGroup2Tooltip, click_function="RollDiceOrderedGroup2", function_owner=self,
-    position={-1.6, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
-}
-orderedRollGroup3Label = "In 3s"
-orderedRollGroup3Tooltip = "Roll all dice, and display them in the order they're rolled in rather than by results, grouped into 3s."
-orderedRollGroup3Btn={
-    label=orderedRollGroup3Label, tooltip=orderedRollGroup3Tooltip, click_function="RollDiceOrderedGroup3", function_owner=self,
-    position={-1.1, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
-}
-
 add1d6Btn={
     label="+ 1d6", click_function="spawnDice1", function_owner=self,
     position={-0.5, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
@@ -143,7 +121,7 @@ color4Btn={
 }
 pipColorBtn=
 {
-  index=17, label="White", click_function="swapPipColor", function_owner=self,
+  index=14, label="White", click_function="swapPipColor", function_owner=self,
   position={colorBtnOffset + 0.35 * 4 + 0.1, Yoffset, -0.87}, rotation={0, 0, 0}, height=50, width=250,
   font_size=60, color="White", font_color="Black"
 }
@@ -1003,22 +981,6 @@ function RollOrSelectDice(obj, player, alt)
     end
 end
 
-function RollDiceOrdered(_, player, _)
-    Player[player].clearSelectedObjects()
-    roller.setVar("orderedOnNextRoll", true)
-    moveDiceToRoller(player, getDice())
-end
-
-function RollDiceOrderedGroup2(obj, player, alt)
-    roller.setVar("groupSizeOnNextRoll", 2)
-    RollDiceOrdered(obj, player, alt)
-end
-
-function RollDiceOrderedGroup3(obj, player, alt)
-    roller.setVar("groupSizeOnNextRoll", 3)
-    RollDiceOrdered(obj, player, alt)
-end
-
 function RollOrSelectDeleteDice1(obj, color, alt)
     SelectDeleteDiceX("Sel", 1, alt, lowerUpper, color)
 end
@@ -1445,9 +1407,6 @@ function onload()
 
     self.createButton(clearAllDiceBtn)
     self.createButton(rollOrSelectAllBtn)
-    self.createButton(orderedRollBtn)
-    self.createButton(orderedRollGroup2Btn)
-    self.createButton(orderedRollGroup3Btn)
     self.createButton(add1d6Btn)
     self.createButton(add2d6Btn)
     self.createButton(add5d6Btn)
@@ -1972,16 +1931,16 @@ function modifyMenu(color)
     customDiceImage = nil
     selectedColor = color
     setDiceType()
+    self.editButton({index=4, color=color})
+    self.editButton({index=5, color=color})
+    self.editButton({index=6, color=color})
     self.editButton({index=7, color=color})
     self.editButton({index=8, color=color})
-    self.editButton({index=9, color=color})
-    self.editButton({index=10, color=color})
-    self.editButton({index=11, color=color})
-    self.editButton({index=32, color=color})
-    self.editButton({index=33, color=color})
-    self.editButton({index=34, color="White"})
-    self.editButton({index=35, color="White"})
-    self.editButton({index=36, color="White"})
+    self.editButton({index=29, color=color})
+    self.editButton({index=30, color=color})
+    self.editButton({index=31, color="White"})
+    self.editButton({index=32, color="White"})
+    self.editButton({index=33, color="White"})
 end
 
 function setDiceType()
