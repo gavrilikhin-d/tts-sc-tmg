@@ -10,9 +10,17 @@ jobs:
     name: Lint
     steps:
       - uses: actions/checkout@v4
-      
-      - uses: JohnnyMorganz/stylua-action@v4
+
+      - name: Lint
+        uses: JohnnyMorganz/stylua-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
-          args: --check --glob "**/*.ttslua" .
+          args: --glob "**/*.ttslua" .
+
+      - name: Commit and push formatting fixes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "lint"
+          file_pattern: "**/*.ttslua"
+
