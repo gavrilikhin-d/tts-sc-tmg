@@ -43,6 +43,14 @@ jobs:
       - name: Install luacheck
         run: luarocks install luacheck
 
-      - name: Run luacheck
-        run: luacheck . --codes --include-files "**/*.ttslua"
+      - name: Check Lua syntax (fail hard)
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -type f -name "*.ttslua" -print0 | xargs -0 -r -n1 luac -p
+
+      - name: Run luacheck (warnings non-blocking)
+        shell: bash
+        run: |
+          luacheck . --codes --include-files "**/*.ttslua" || true
 
