@@ -318,6 +318,7 @@ function importOpposDice(obj, player, alt)
     local mc = self.getBounds().center
     local count = 0
     for _, die in ipairs(toImport) do
+        -- TODO: doesn't work. Fix it
         local dp = die.getPosition()
         local nx, ny, nz = mc.x - dp.x, mc.y + dp.y, mc.z - dp.z
         die.clone({ position={nx, ny, nz}, snap_to_grid=false })
