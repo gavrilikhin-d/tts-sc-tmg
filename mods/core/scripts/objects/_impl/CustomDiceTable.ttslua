@@ -1212,28 +1212,6 @@ function spawnDice(n,player)
     end
 end
 
--- function toggleSustainedHitsThreshold()
---     if sustainedHitsThreshold == 6 then
---         sustainedHitsThreshold = 5
---         self.editButton({
---             index = 35,
---             label = selectAllLabel,  -- "Sustained Hits 5+"
---             tooltip = selectAllTooltip  -- "Left-click to copy dice >= 5+. Right-click to switch to 6+."
---         })
---         print("DEBUG: Sustained Hits threshold set to 5+")
---     else
---         sustainedHitsThreshold = 6
---         -- Update button label and tooltip for 6+ threshold
---         self.editButton({
---             index = 35,
---             label = rollAllLabel,  -- "Sustained Hits 6+"
---             tooltip = rollAllTooltip  -- "Left-click to copy dice >= 6+. Right-click to switch to 5+."
---         })
---         print("DEBUG: Sustained Hits threshold set to 6+")
---     end
--- end
-
-
 function sustainedHitsAction(_, color, alt)
     -- Left-click: apply 6+. Right-click (alt): apply 5+. No toggle.
     local threshold = alt and 5 or 6
