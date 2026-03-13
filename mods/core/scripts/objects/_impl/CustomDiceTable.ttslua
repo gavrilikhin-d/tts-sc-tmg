@@ -5,6 +5,11 @@ Yoffset=0.1
 
 MAX_DICE_ON_MAT = 128
 
+ZONES = {
+    Blue = getObjectFromGUID("b10f7b"),
+    Red = getObjectFromGUID("b10f7b") -- TODO: don't reuse blue guid
+}
+
 diceOnMat = {}
 valueToCounter = { 0, 0, 0, 0, 0, 0 }
 totalDice = 0
@@ -670,15 +675,14 @@ function autoRoll2D6(obj, player, alt)
 end
 
 function getDice()
-    result = {}
-    print(#diceOnMat)
-    for _, obj in ipairs(diceOnMat) do
-        if obj then
-            table.insert(result, obj)
+    local dice = {}
+    local objects = ZONES[currentMat].getObjects()
+    for _, obj in ipairs(objects) do
+        if obj.tag == "Dice" then
+            table.insert(dice, obj)
         end
     end
-    print(#result)
-    return result
+    return dice
 end
 
 

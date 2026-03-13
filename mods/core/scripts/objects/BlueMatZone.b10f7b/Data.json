@@ -2,15 +2,15 @@
   "GUID": "b10f7b",
   "Name": "ScriptingTrigger",
   "Transform": {
-    "posX": 0.114215851,
-    "posY": 3.51113486,
-    "posZ": -28.9618225,
+    "posX": 0.0,
+    "posY": 0.87,
+    "posZ": -29.0,
     "rotX": 0.0,
-    "rotY": 268.036743,
+    "rotY": 180.0,
     "rotZ": 0.0,
-    "scaleX": 5.837671,
-    "scaleY": 5.1,
-    "scaleZ": 51.4268875
+    "scaleX": 50,
+    "scaleY": 1.0,
+    "scaleZ": 10
   },
   "Nickname": "",
   "Description": "",
