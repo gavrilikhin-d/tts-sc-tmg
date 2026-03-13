@@ -1,0 +1,21 @@
+name: Lint
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      luaVersion: '5.2'
+    name: Test on Lua ${{ matrix.luaVersions }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Lua
+        uses: leafo/gh-actions-lua@v9
+        with:
+          luaVersion: $luaVersion
+
+      - name: Setup LuaRocks
+        uses: leafo/gh-actions-luarocks@v2
