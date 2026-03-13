@@ -120,17 +120,15 @@ end
 
 --Sets default description.
 function setDefaultState()
-	self.setDescription(
-		JSON.encode_pretty({
-			Results = "no",
-			SmoothDice = "no",
-			RotateDice = "no",
-			Rows = "yes",
-			SortNoRows = "asc",
-			Step = 1.05,
-			Version = ver,
-		})
-	)
+	self.setDescription(JSON.encode_pretty({
+		Results = "no",
+		SmoothDice = "no",
+		RotateDice = "no",
+		Rows = "yes",
+		SortNoRows = "asc",
+		Step = 1.05,
+		Version = ver,
+	}))
 end
 
 --Creates a table and sorts the dice guids by value.
