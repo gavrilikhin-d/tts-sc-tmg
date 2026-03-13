@@ -1462,7 +1462,7 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
 
 	for i, val in ipairs(counter) do
 		if val > 0 then
-			text = text .. " \u{00B7} " .. counter[i] .. " " .. numberName[i]
+			text = text .. " · " .. counter[i] .. " " .. numberName[i]
 			somethingToPrint = true
 		end
 	end
@@ -1530,7 +1530,7 @@ function clearDiceX(n, deleteLower, color)
 	end
 	for i, val in ipairs(counter) do
 		if val > 0 then
-			text = text .. " \u{00B7} " .. counter[i] .. " " .. numberName[i]
+			text = text .. " · " .. counter[i] .. " " .. numberName[i]
 			somethingToPrint = true
 		end
 	end
