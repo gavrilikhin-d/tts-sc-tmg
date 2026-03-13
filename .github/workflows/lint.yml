@@ -9,15 +9,10 @@ jobs:
       luaVersion: '5.2'
     name: Lint
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Lua
-        uses: leafo/gh-actions-lua@v9
+      - uses: actions/checkout@v4
+      
+      - uses: JohnnyMorganz/stylua-action@v4
         with:
-          luaVersion: ${{ env.luaVersion }}
-          # With cache there is a 400 HTTP Response
-          buildCache: false
-
-      - name: Setup LuaRocks
-        uses: leafo/gh-actions-luarocks@v2
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: ${{ env.luaVersion }}
+          args: --check --glob "**/*.ttslua" .
