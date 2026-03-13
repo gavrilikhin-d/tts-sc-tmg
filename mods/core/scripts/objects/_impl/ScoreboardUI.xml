@@ -28,4 +28,8 @@
         <Button id="redMissionVP" onClick="toggleRedMissionVP">Red Mission VP 0</Button>
         <Button id="blueMissionVP" onClick="toggleBlueMissionVP">Blue Mission VP 0</Button>
     </HorizontalLayout>
+    <HorizontalLayout height="35">
+        <Button id="redTotal">0</Button>
+        <Button id="blueTotal">0</Button>
+    </HorizontalLayout>
 </VerticalLayout>

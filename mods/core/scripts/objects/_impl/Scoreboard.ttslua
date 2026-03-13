@@ -7,7 +7,9 @@ stats = {
     redSupplyDestroyed = 0,
     blueSupplyDestroyed = 0,
     redMissionVP = 0,
-    blueMissionVP = 0
+    blueMissionVP = 0,
+    redTotal = 0,
+    blueTotal = 0
 }
 
 CONSTANTS = {
@@ -42,6 +44,14 @@ CONSTANTS = {
     blueMissionVP = {
         BUTTON_ID = "blueMissionVP",
         LABEL = "Blue Mission VP "
+    },
+    redTotal = {
+        BUTTON_ID = "redTotal",
+        LABEL = ""
+    },
+    blueTotal = {
+        BUTTON_ID = "blueTotal",
+        LABEL = ""
     }
 }
 
@@ -106,15 +116,29 @@ function clickDelta(clickType)
     return clickType == LEFT_MOUSE_CLICK and 1 or -1
 end
 
-function counter(stat)
+function counter(stat, onChange)
     function callback(_, clickType)
         stats[stat] = stats[stat] + clickDelta(clickType)
         if stats[stat] < 0 then
             stats[stat] = 0
         end
         renderStat(stat)
+        if onChange then
+            onChange()
+        end
     end
 
+    return callback
+end
+
+function updateTotal(colorPrefix)
+    function callback()
+        supplyDestroyed = stats[colorPrefix.."SupplyDestroyed"]
+        missionVP = stats[colorPrefix.."MissionVP"]
+        total = supplyDestroyed + missionVP
+        stats[colorPrefix.."Total"] = total
+        renderStat(colorPrefix.."Total")
+    end
     return callback
 end
 
@@ -122,10 +146,10 @@ toggleRound = counter("round")
 toggleAvailableSupply = counter("availableSupply")
 toggleRedSupply = counter("redSupply")
 toggleBlueSupply = counter("blueSupply")
-toggleRedSupplyDestroyed = counter("redSupplyDestroyed")
-toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed")
-toggleRedMissionVP = counter("redMissionVP")
-toggleBlueMissionVP = counter("blueMissionVP")
+toggleRedSupplyDestroyed = counter("redSupplyDestroyed", updateTotal("red"))
+toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed", updateTotal("blue"))
+toggleRedMissionVP = counter("redMissionVP", updateTotal("red"))
+toggleBlueMissionVP = counter("blueMissionVP", updateTotal("blue"))
 ---------------
 
 
