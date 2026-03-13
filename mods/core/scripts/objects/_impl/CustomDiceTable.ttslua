@@ -388,6 +388,7 @@ function revertRoll(obj, player, alt)
             diceTypeToSpawn = "Die_6"
         end
         local spawned = spawnObject({ type = diceTypeToSpawn, position = data.pos, rotation = data.rot })
+        spawned.setTags({ "Dice" })
         if data.customImage then spawned.setCustomObject({ image = data.customImage, type = 1 }) end
         spawned.setColorTint(data.tint)
         spawned.setValue(data.val)
@@ -424,6 +425,7 @@ function redoRoll(obj, player, alt)
             diceTypeToSpawn = "Die_6"
         end
         local spawned = spawnObject({ type = diceTypeToSpawn, position = data.pos, rotation = data.rot })
+        spawned.setTags({ "Dice" })
         if data.customImage then spawned.setCustomObject({ image = data.customImage, type = 1 }) end
         spawned.setColorTint(data.tint)
         spawned.setValue(data.val)
@@ -597,6 +599,7 @@ function autoRoll(obj, player, alt, numDice)
             position = position,
             rotation = {0, 180, 0}
         })
+        die.setTags({ "Dice" })
         if die then
             die.setValue(result)
             die.setColorTint(rollColor)
@@ -641,14 +644,9 @@ end
 
 function getDice(color)
     color = color or currentMat
-    local dice = {}
-    local objects = ZONES[color].getObjects()
-    for _, obj in ipairs(objects) do
-        if obj.tag == "Dice" then
-            table.insert(dice, obj)
-        end
-    end
-    return dice
+    -- Zone with the tag "Dice" only tracks object with "Dice" tag
+    -- So it is important to generate all dices with this tag
+    return ZONES[color].getObjects()
 end
 
 
@@ -905,6 +903,7 @@ function spawnDice(n,player)
         position          = self.positionToWorld({4-grid*1.5-col*0.25,0.5,-0.3+row*0.25}),
         rotation          = self.getRotation() + Vector(0.0, 180.0, 0.0),
         })
+    die.setTags({ "Dice" })
         col=col+1
         if col>4 then
             col=0

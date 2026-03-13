@@ -39,5 +39,8 @@
   "Tooltip": true,
   "GridProjection": false,
   "HideWhenFaceDown": false,
-  "Hands": false
+  "Hands": false,
+  "Tags": [
+    "Dice"
+  ]
 }
