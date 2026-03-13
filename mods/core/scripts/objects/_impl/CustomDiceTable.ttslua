@@ -3,6 +3,13 @@ function none()
 end
 Yoffset=0.1
 
+MAX_DICE_ON_MAT = 128
+
+diceOnMat = {}
+valueToCounter = { 0, 0, 0, 0, 0, 0 }
+totalDice = 0
+diceSum = 0
+
 local currentMat
 if self.getPosition().z < 0 then
     currentMat="Blue"
@@ -561,7 +568,7 @@ function setCustomDiceCount(_, player, value, _)
     local result, err = evalSimpleExpr(tostring(value or ""))
     if result then num = result end
   end
-  if num and num > 0 and num <= 128 then
+  if num and num > 0 and num <= MAX_DICE_ON_MAT then
     customDiceCount = math.floor(num)
   else
     printToColor("Invalid Number! Enter a number or expression between 1 and 128.", player, "Red")
@@ -662,44 +669,16 @@ function autoRoll2D6(obj, player, alt)
     autoRoll(obj, player, alt, 2)
 end
 
--- Todo: unify with getDice
 function getDice()
-    local dice = {}
-    local b = self.getBounds()
-    local left  = b.center.x - b.size.x/2
-    local right = b.center.x + b.size.x/2
-    local back  = b.center.z - b.size.z/2
-    local front = b.center.z + b.size.z/2
-    local ybot  = b.center.y - b.size.y/2
-    local ytop  = b.center.y + b.size.y/2 + 3
-
-    
-    if currentMat == "Red" then
-        right = right - 5
-        back  = back  + 2.9
-        front = front - 0.5
-    else
-        left  = left  + 5
-        back  = back  + 0.5
-        front = front - 2.9
-    end
-    print("Bounds left" .. left .. " right " .. right .. " back " .. back .. " front " .. front)
-
-    dice = getObjectsWithTag("Dice")
-    print(#dice)
-    for _, o in ipairs(dice) do
-        if o.resting then
-            local p = o.getPosition()
-            if p.x > left and p.x < right
-            and p.z > back and p.z < front
-            and p.y > ybot and p.y < ytop
-            then
-                table.insert(dice, o)
-            end
+    result = {}
+    print(#diceOnMat)
+    for _, obj in ipairs(diceOnMat) do
+        if obj then
+            table.insert(result, obj)
         end
     end
-
-    return dice
+    print(#result)
+    return result
 end
 
 
@@ -709,7 +688,7 @@ function customDice(obj, player, alt)
     newImage = nil
     newTint = nil
 
-    dice = getDice()
+    local dice = getDice()
     for _, die in ipairs(dice) do
         local image = die.getCustomObject()["image"]
         if image ~= nil then
@@ -968,7 +947,7 @@ function spawnDice(n,player)
     end
 end
 
-function onload()
+function onLoad()
     lastClick=os.time()
     defaultFontSize=500
     fontSize=defaultFontSize
@@ -994,9 +973,6 @@ function onload()
 	end
 
     emptyText = ' '
-	data2 = JSON.decode(self.getDescription())
-    -- TODO: onObjectEnterZone or onCollisionEnter
-	Wait.time(checkDice, data2.Update_Frequency*1,-1)
 
     ------------
     -- Topbar --
@@ -1051,6 +1027,8 @@ function onload()
 
     selectedColor=currentMat
     modifyMenu(selectedColor)
+
+    renderStats()
 end
 
 function modifyMenu1()
@@ -1088,78 +1066,11 @@ function setDiceType()
     end
 end
 
-function setDefaultState()
-	self.setDescription(JSON.encode_pretty({
-		Cumulative = 'no',Update_Frequency = '0.2'
-	}))
-end
-
-function checkDice()
-    local data = JSON.decode(self.getDescription())
-    if not data then
-        setDefaultState()
-        data = JSON.decode(self.getDescription())
-        printToAll('Warning - invalid description. Restored default configuration.', {0.8,0.5,0})
-    end
-    if not self.resting then return end
-
-    local b = self.getBounds()
-    -- TODO: bounds are incorrect
-    local leftBound  = b.center.x - b.size.x/2
-    local rightBound = b.center.x + b.size.x/2
-    local lowerBound = b.center.z - b.size.z/2
-    local upperBound = b.center.z + b.size.z/2
-    if currentMat == "Red" then
-        rightBound = rightBound - 5
-        lowerBound = lowerBound + 2.9
-        upperBound = upperBound - 0.5
-    else
-        leftBound  = leftBound  + 5
-        lowerBound = lowerBound + 0.5
-        upperBound = upperBound - 2.9
-    end
-    local ylowerBound = b.center.y - b.size.y/2
-
-    local valueToCounter, valuesToSort, totaldice, diceSum = {}, {}, 0, 0
-    getObject
-    -- TODO: don't iterate over object
-    for _, obj in pairs(getAllObjects()) do
-        if obj.tag == 'Dice' and obj.resting then
-            print("Found")
-            local p = obj.getPosition()
-            if p.x > leftBound and p.x < rightBound
-            and p.z > lowerBound and p.z < upperBound
-            and p.y > ylowerBound then
-                local v = obj.getValue()
-                if v then
-                    if not valueToCounter[v] then
-                        valueToCounter[v] = 0
-                        table.insert(valuesToSort, v)
-                    end
-                    valueToCounter[v] = valueToCounter[v] + 1
-                    diceSum    = diceSum + v
-                    totaldice  = totaldice + 1
-                end
-            end
-        end
-    end
-
+function renderStats() 
     local textLines, lineCount = {}, 0
-    if data.Cumulative == 'yes' then
-        table.sort(valuesToSort)
-        for i = 1, 12 do valueToCounter[i] = valueToCounter[i] or 0 end
-        for i = 11, 1, -1 do
-            valueToCounter[i] = valueToCounter[i] + valueToCounter[i+1]
-        end
-        for _, v in ipairs(valuesToSort) do
-            local suffix = (v == 1) and "'s: " or "+: "
-            table.insert(textLines, tostring(v) .. suffix .. valueToCounter[v])
-            lineCount = lineCount + 1
-        end
-    else
-        table.sort(valuesToSort)
-        for _, v in ipairs(valuesToSort) do
-            table.insert(textLines, "#" .. v .. ": " .. valueToCounter[v])
+    for roll, num in pairs(valueToCounter) do
+        if num > 0 then
+            table.insert(textLines, "#" .. roll .. ": " .. num)
             lineCount = lineCount + 1
         end
     end
@@ -1169,18 +1080,49 @@ function checkDice()
 
     local text = table.concat(textLines, "\n")
     if text == "" then text = emptyText end
-    local totaltext = (totaldice == 0) and "" or ("\n" .. totaldice .. "∑" .. diceSum)
+    local totalText = (totalDice == 0) and "" or ("\n" .. totalDice .. "∑" .. diceSum)
 
-    if lineCount > 6 then
-        fontSize      = defaultFontSize - ((lineCount-6)*37)
-        divisionLabel = defaultDivisionLabel
-    else
-        fontSize      = defaultFontSize
-        divisionLabel = ""
+    fontSize      = defaultFontSize
+    divisionLabel = ""
+
+    self.editButton({ index = 0, label = text .. totalText, font_size = fontSize })
+    self.editButton({ index = 1, label = divisionLabel })
+end
+
+function onCollisionEnter(info)
+    local obj = info.collision_object
+    if obj.tag ~= "Dice" then
+        return
     end
 
-    self.editButton({ index = 0, label = text .. totaltext, font_size = fontSize })
-    self.editButton({ index = 1, label = divisionLabel })
+    local v = obj.getValue()
+    table.insert(diceOnMat, obj)
+    self.putObject(obj)
+    valueToCounter[v] = valueToCounter[v] + 1
+    diceSum    = diceSum + v
+    totalDice  = totalDice + 1
+
+    print(#diceOnMat)
+
+    renderStats()
+end
+
+function onCollisionExit(info)
+    local obj = info.collision_object
+    if obj.tag ~= "Dice" then
+        return
+    end
+
+    local v = obj.getValue()
+    valueToCounter[v] = valueToCounter[v] - 1
+    diceSum    = diceSum - v
+    totalDice  = totalDice - 1
+
+    table.remove(diceOnMat, obj.getGUID())
+
+    print(#diceOnMat)
+
+    renderStats()
 end
 
 function swapPipColor()
