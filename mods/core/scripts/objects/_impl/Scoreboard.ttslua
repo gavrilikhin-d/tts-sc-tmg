@@ -56,7 +56,7 @@ CONSTANTS = {
 }
 
 ---------------
--- Rendering --w
+-- Rendering --
 ---------------
 
 -- In documentation they are fucking lying 
@@ -69,18 +69,6 @@ function setAttribute(id, attribute, value)
     self.UI.setAttributes(id, attributes)
 end
 
-function renderStat(stat)
-    if stat == "initiative" then
-        return
-    end
-
-    const = CONSTANTS[stat]
-    setAttribute(const.BUTTON_ID, "text", const.LABEL..stats[stat])
-end
-
-------------------------
--- Initialive Toggles -- 
-------------------------
 function setInteractable(id, interactable)
     setAttribute(id, "interactable", interactable)
 end
@@ -99,13 +87,36 @@ function oppositeColor(color)
     return color == "Red" and "Blue" or "Red"
 end
 
-function setInitiative(_, color, id)
-    initiative = color
-    highlightInitiativeButton(id)
-    other = oppositeColor(color)
-    unhighlightInitiativeButton(colorMap[other].INITIATIVE_BUTTON_ID)  
+INITIATIVE_BUTTON_ID = "InitiativeButton"
+function renderInitiative()
+    initiative = stats.initiative
+    if initiative == "None" then
+        return
+    end
+
+    highlightInitiativeButton(initiative..INITIATIVE_BUTTON_ID)
+    
+    other = oppositeColor(initiative)
+    unhighlightInitiativeButton(string.lower(other)..INITIATIVE_BUTTON_ID)
 end
+
+function renderStat(stat)
+    if stat == "initiative" then
+        renderInitiative()
+        return
+    end
+
+    const = CONSTANTS[stat]
+    setAttribute(const.BUTTON_ID, "text", const.LABEL..stats[stat])
+end
+
 ------------------------
+-- Initialive Toggle  -- 
+------------------------
+function setInitiative(_, color)
+    stats.initiative = color
+    renderInitiative()
+end
 
 ---------------
 -- Counters  --
@@ -160,8 +171,8 @@ function onSave()
     return JSON.encode(stats)
 end
 
-function onLoad(saveStats)
-    if savedStats then
+function onLoad(savedStats)
+    if savedStats != '' then
         stats = JSON.decode(savedStats)
     end
 
