@@ -1,6 +1,5 @@
-
-text_color = {1,1,1}
-background_color = {53/255,56/255,57/255}
+text_color = { 1, 1, 1 }
+background_color = { 53 / 255, 56 / 255, 57 / 255 }
 avsup = 0
 blue_supdestr = 0
 red_supdestr = 0
@@ -18,304 +17,301 @@ full_width = 3000
 
 function onLoad()
 	self.createButton({
-        click_function = "none",
-        function_owner = self,
-        label = "Initiative",
-        position = {0, 0.1, -1.6},
-        width = 900, 
-		height = 350, 
+		click_function = "none",
+		function_owner = self,
+		label = "Initiative",
+		position = { 0, 0.1, -1.6 },
+		width = 900,
+		height = 350,
 		font_size = 180,
-        color = background_color, 
-		font_color = text_color
-    })	
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "toggle_red_ini",
-        function_owner = self,
-        label = "Red",
-        position = {-2, 0.1, -1.6},
-        width = 1050, 
-		height = 350, 
+		click_function = "toggle_red_ini",
+		function_owner = self,
+		label = "Red",
+		position = { -2, 0.1, -1.6 },
+		width = 1050,
+		height = 350,
 		font_size = 180,
-        color = background_color, 
-		font_color = "Red"
-    })	
+		color = background_color,
+		font_color = "Red",
+	})
 	self.createButton({
-        click_function = "toggle_blue_ini",
-        function_owner = self,
-        label = "Blue",
-        position = {2, 0.1, -1.6},
-        width = 1050, 
-		height = 350, 
+		click_function = "toggle_blue_ini",
+		function_owner = self,
+		label = "Blue",
+		position = { 2, 0.1, -1.6 },
+		width = 1050,
+		height = 350,
 		font_size = 180,
-        color = background_color, 
-		font_color = "Blue"
-    })		
+		color = background_color,
+		font_color = "Blue",
+	})
 	self.createButton({
-        click_function = "toggle_round",
-        function_owner = self,
-        label = "Round".." "..round_num,
-        position = {0, 0.1, -0.9},
-        width = full_width, 
-		height = 350, 
+		click_function = "toggle_round",
+		function_owner = self,
+		label = "Round" .. " " .. round_num,
+		position = { 0, 0.1, -0.9 },
+		width = full_width,
+		height = 350,
 		font_size = 180,
-        color = background_color, 
-		font_color = text_color
-    })
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "toggle_avsup",
-        function_owner = self,
-        label = "Available Supply\n"..avsup,
-        position = {0, 0.1, -0.2},
-        width = full_width, 
-		fontStyle="Times",
-		height = 350, 
+		click_function = "toggle_avsup",
+		function_owner = self,
+		label = "Available Supply\n" .. avsup,
+		position = { 0, 0.1, -0.2 },
+		width = full_width,
+		fontStyle = "Times",
+		height = 350,
 		font_size = 150,
-        color = background_color, 
-		font_color = text_color
-    })		
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "toggle_red_ActSup",
-        function_owner = self,
-        label = "Active Supply\n"..red_ActSup,
-        position = {-1.55, 0.1, 0.5},
-        width = full_width/2-4, 
-		height = 350, 
+		click_function = "toggle_red_ActSup",
+		function_owner = self,
+		label = "Active Supply\n" .. red_ActSup,
+		position = { -1.55, 0.1, 0.5 },
+		width = full_width / 2 - 4,
+		height = 350,
 		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "toggle_blue_ActSup",
-        function_owner = self,
-        label = "Active Supply\n"..blue_ActSup,
-        position = {1.55, 0.1, 0.5},
-        width = full_width/2-4, 
-		height = 350, 
+		click_function = "toggle_blue_ActSup",
+		function_owner = self,
+		label = "Active Supply\n" .. blue_ActSup,
+		position = { 1.55, 0.1, 0.5 },
+		width = full_width / 2 - 4,
+		height = 350,
 		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "toggle_red_supdestr",
-        function_owner = self,
-        label = "Supply Destroyed\n"..red_supdestr,
-        position = {-1.55, 0.1, 1.9},
-        width = full_width/2-4, 
-		height = 350, 
+		click_function = "toggle_red_supdestr",
+		function_owner = self,
+		label = "Supply Destroyed\n" .. red_supdestr,
+		position = { -1.55, 0.1, 1.9 },
+		width = full_width / 2 - 4,
+		height = 350,
 		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "toggle_blue_supdestr",
-        function_owner = self,
-        label = "Supply Destroyed\n"..blue_supdestr,
-        position = {1.55, 0.1, 1.9},
-        width = full_width/2-4, 
-		height = 350, 
+		click_function = "toggle_blue_supdestr",
+		function_owner = self,
+		label = "Supply Destroyed\n" .. blue_supdestr,
+		position = { 1.55, 0.1, 1.9 },
+		width = full_width / 2 - 4,
+		height = 350,
 		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "toggle_red_MissVP",
-        function_owner = self,
-        label = "Mission VP\n"..red_MissVP,
-        position = {-1.55, 0.1, 1.2},
-        width = full_width/2-4, 
-		height = 350, 
+		click_function = "toggle_red_MissVP",
+		function_owner = self,
+		label = "Mission VP\n" .. red_MissVP,
+		position = { -1.55, 0.1, 1.2 },
+		width = full_width / 2 - 4,
+		height = 350,
 		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })	
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "toggle_blue_MissVP",
-        function_owner = self,
-        label = "Mission VP\n"..blue_MissVP,
-        position = {1.55, 0.1, 1.2},
-        width = full_width/2-4, 
-		height = 350, 
+		click_function = "toggle_blue_MissVP",
+		function_owner = self,
+		label = "Mission VP\n" .. blue_MissVP,
+		position = { 1.55, 0.1, 1.2 },
+		width = full_width / 2 - 4,
+		height = 350,
 		font_size = 115,
-        color = background_color, 
-		font_color = text_color
-    })		
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "none",
-        function_owner = self,
-        label = red_total,
-        position = {-1.3, 0.1, 2.8},
-        width = 550, 
-		height = 550, 
+		click_function = "none",
+		function_owner = self,
+		label = red_total,
+		position = { -1.3, 0.1, 2.8 },
+		width = 550,
+		height = 550,
 		font_size = 500,
-        color = background_color, 
-		font_color = text_color
-    })	
+		color = background_color,
+		font_color = text_color,
+	})
 	self.createButton({
-        click_function = "none",
-        function_owner = self,
-        label = blue_total,
-        position = {1.3, 0.1, 2.8},
-        width = 550, 
-		height = 550, 
+		click_function = "none",
+		function_owner = self,
+		label = blue_total,
+		position = { 1.3, 0.1, 2.8 },
+		width = 550,
+		height = 550,
 		font_size = 500,
-        color = background_color, 
-		font_color = text_color
-    })				
-	
+		color = background_color,
+		font_color = text_color,
+	})
 end
 
-function none()
-end
+function none() end
 
-function toggle_round (_, _, alt_click)
+function toggle_round(_, _, alt_click)
 	mod = alt_click and -1 or 1
-	new_value=round_num+mod
-	if  new_value > max_round_num then
+	new_value = round_num + mod
+	if new_value > max_round_num then
 		round_num = 1
 	elseif new_value < min_round_num then
 		round_num = 5
 	else
 		round_num = new_value
-		end
+	end
 	self.editButton({
 		index = 3,
-		label = "Round".." "..round_num
+		label = "Round" .. " " .. round_num,
 	})
 end
 
-function toggle_avsup (_, _, alt_click)
+function toggle_avsup(_, _, alt_click)
 	mod = alt_click and -1 or 1
-	new_value=avsup+mod
-	if  new_value < 0 then
-		avsup = 0	
-	else		
+	new_value = avsup + mod
+	if new_value < 0 then
+		avsup = 0
+	else
 		avsup = new_value
 	end
 	self.editButton({
 		index = 4,
-		label = "Available Supply\n"..avsup
+		label = "Available Supply\n" .. avsup,
 	})
 end
 
-function toggle_red_ActSup (_, _, alt_click)
+function toggle_red_ActSup(_, _, alt_click)
 	mod = alt_click and -1 or 1
-	new_value=red_ActSup+mod
-	if  new_value < 0 then
-		red_ActSup = 0	
-	else		
+	new_value = red_ActSup + mod
+	if new_value < 0 then
+		red_ActSup = 0
+	else
 		red_ActSup = new_value
 	end
 	self.editButton({
 		index = 5,
-		label = "Active Supply\n"..red_ActSup
+		label = "Active Supply\n" .. red_ActSup,
 	})
 end
 
-function toggle_blue_ActSup (_, _, alt_click)
+function toggle_blue_ActSup(_, _, alt_click)
 	mod = alt_click and -1 or 1
-	new_value=blue_ActSup+mod
-	if  new_value < 0 then
-		blue_ActSup = 0	
-	else		
+	new_value = blue_ActSup + mod
+	if new_value < 0 then
+		blue_ActSup = 0
+	else
 		blue_ActSup = new_value
 	end
 	self.editButton({
 		index = 6,
-		label = "Active Supply\n"..blue_ActSup
+		label = "Active Supply\n" .. blue_ActSup,
 	})
 end
 
-function toggle_red_supdestr (_, _, alt_click)
+function toggle_red_supdestr(_, _, alt_click)
 	mod = alt_click and -1 or 1
-	new_value=red_supdestr+mod
-	if  new_value < 0 then
-		red_supdestr = 0	
-	else		
+	new_value = red_supdestr + mod
+	if new_value < 0 then
+		red_supdestr = 0
+	else
 		red_supdestr = new_value
 	end
 	self.editButton({
 		index = 7,
-		label = "Supply Destroyed\n"..red_supdestr
+		label = "Supply Destroyed\n" .. red_supdestr,
 	})
 	self.editButton({
 		index = 11,
-		label = red_MissVP + red_supdestr
-	})	
+		label = red_MissVP + red_supdestr,
+	})
 end
 
-function toggle_blue_supdestr (_, _, alt_click)
+function toggle_blue_supdestr(_, _, alt_click)
 	mod = alt_click and -1 or 1
-	new_value=blue_supdestr+mod
-	if  new_value < 0 then
-		blue_supdestr = 0	
-	else		
+	new_value = blue_supdestr + mod
+	if new_value < 0 then
+		blue_supdestr = 0
+	else
 		blue_supdestr = new_value
 	end
 	self.editButton({
 		index = 8,
-		label = "Supply Destroyed\n"..blue_supdestr
+		label = "Supply Destroyed\n" .. blue_supdestr,
 	})
 	self.editButton({
 		index = 12,
-		label = blue_MissVP + blue_supdestr
-	})	
+		label = blue_MissVP + blue_supdestr,
+	})
 end
 
-function toggle_red_MissVP (_, _, alt_click)
+function toggle_red_MissVP(_, _, alt_click)
 	mod = alt_click and -1 or 1
-	new_value=red_MissVP+mod
-	if  new_value < 0 then
-		red_MissVP = 0	
-	else		
+	new_value = red_MissVP + mod
+	if new_value < 0 then
+		red_MissVP = 0
+	else
 		red_MissVP = new_value
 	end
 	self.editButton({
 		index = 9,
-		label = "Mission VP\n"..red_MissVP
+		label = "Mission VP\n" .. red_MissVP,
 	})
 	self.editButton({
 		index = 11,
-		label = red_MissVP + red_supdestr
-	})		
+		label = red_MissVP + red_supdestr,
+	})
 end
 
-function toggle_blue_MissVP (_, _, alt_click)
+function toggle_blue_MissVP(_, _, alt_click)
 	mod = alt_click and -1 or 1
-	new_value=blue_MissVP+mod
-	if  new_value < 0 then
-		blue_MissVP = 0	
-	else		
+	new_value = blue_MissVP + mod
+	if new_value < 0 then
+		blue_MissVP = 0
+	else
 		blue_MissVP = new_value
 	end
 	self.editButton({
 		index = 10,
-		label = "Mission VP\n"..blue_MissVP
+		label = "Mission VP\n" .. blue_MissVP,
 	})
 	self.editButton({
 		index = 12,
-		label = blue_MissVP + blue_supdestr
-	})	
+		label = blue_MissVP + blue_supdestr,
+	})
 end
 
-function toggle_red_ini ()
+function toggle_red_ini()
 	self.editButton({
 		index = 1,
 		color = ini_color,
 	})
-	self.editButton({	
+	self.editButton({
 		index = 2,
-		color = background_color
+		color = background_color,
 	})
 end
 
-function toggle_blue_ini ()
+function toggle_blue_ini()
 	self.editButton({
 		index = 2,
 		color = ini_color,
 	})
-	self.editButton({	
+	self.editButton({
 		index = 1,
-		color = background_color
+		color = background_color,
 	})
 end
-
