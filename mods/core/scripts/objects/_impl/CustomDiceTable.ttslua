@@ -662,6 +662,7 @@ function autoRoll2D6(obj, player, alt)
     autoRoll(obj, player, alt, 2)
 end
 
+-- Todo: unify with getDice
 function getDice()
     local dice = {}
     local b = self.getBounds()
@@ -672,6 +673,7 @@ function getDice()
     local ybot  = b.center.y - b.size.y/2
     local ytop  = b.center.y + b.size.y/2 + 3
 
+    
     if currentMat == "Red" then
         right = right - 5
         back  = back  + 2.9
@@ -681,9 +683,12 @@ function getDice()
         back  = back  + 0.5
         front = front - 2.9
     end
+    print("Bounds left" .. left .. " right " .. right .. " back " .. back .. " front " .. front)
 
-    for _, o in ipairs(getAllObjects()) do
-        if o.tag == "Dice" and o.resting then
+    dice = getObjectsWithTag("Dice")
+    print(#dice)
+    for _, o in ipairs(dice) do
+        if o.resting then
             local p = o.getPosition()
             if p.x > left and p.x < right
             and p.z > back and p.z < front
@@ -990,6 +995,7 @@ function onload()
 
     emptyText = ' '
 	data2 = JSON.decode(self.getDescription())
+    -- TODO: onObjectEnterZone or onCollisionEnter
 	Wait.time(checkDice, data2.Update_Frequency*1,-1)
 
     ------------
@@ -1098,6 +1104,7 @@ function checkDice()
     if not self.resting then return end
 
     local b = self.getBounds()
+    -- TODO: bounds are incorrect
     local leftBound  = b.center.x - b.size.x/2
     local rightBound = b.center.x + b.size.x/2
     local lowerBound = b.center.z - b.size.z/2
@@ -1114,8 +1121,11 @@ function checkDice()
     local ylowerBound = b.center.y - b.size.y/2
 
     local valueToCounter, valuesToSort, totaldice, diceSum = {}, {}, 0, 0
+    getObject
+    -- TODO: don't iterate over object
     for _, obj in pairs(getAllObjects()) do
         if obj.tag == 'Dice' and obj.resting then
+            print("Found")
             local p = obj.getPosition()
             if p.x > leftBound and p.x < rightBound
             and p.z > lowerBound and p.z < upperBound
