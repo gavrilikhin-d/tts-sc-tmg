@@ -138,7 +138,7 @@ function onObjectEnterContainer(container, obj)
             onCollisionEnter(collision_info)
 
             --Creates a timer to take the dice out and position them.
-        	Wait.time(|| takeDiceOut(), 0.3)
+        	Wait.time(function() takeDiceOut() end, 0.3)
         else
             local pos = self.getPosition()
             local f = self.getTransformRight()

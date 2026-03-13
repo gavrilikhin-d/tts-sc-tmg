@@ -267,7 +267,7 @@ function onObjectEnterContainer(container, obj)
         if obj.tag == "Dice" then
             collision_info = {collision_object = obj}
             onCollisionEnter(collision_info)
-            Wait.time(|| takeDiceOut(), 0.1)
+            Wait.time(function() takeDiceOut() end, 0.1)
         else
             local pos = self.getPosition()
             local f = self.getTransformRight()
