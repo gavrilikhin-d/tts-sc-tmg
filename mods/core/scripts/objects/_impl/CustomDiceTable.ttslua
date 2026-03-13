@@ -10,7 +10,6 @@ ZONES = {
     Red = getObjectFromGUID("a7d7bc")
 }
 
-diceOnMat = {}
 valueToCounter = { 0, 0, 0, 0, 0, 0 }
 totalDice = 0
 diceSum = 0
@@ -790,12 +789,16 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
     local somethingToPrint = false
 
     for i, die in ipairs(getDice()) do
-        if die.getValue() == n or (selectOthers and lowUp and die.getValue()< n)  or (selectOthers and not lowUp and die.getValue()> n) then
+        value = die.getValue()
+        if value == n or (selectOthers and lowUp and value< n)  or (selectOthers and not lowUp and value> n) then
             if selDel then
                 die.addToPlayerSelection(color)
             else
                 die.destroy()
-                counter[die.getValue()]=counter[die.getValue()]+1
+                counter[value]=counter[value]+1
+                valueToCounter[value] = valueToCounter[value] - 1
+                totalDice = totalDice - 1
+                diceSum = diceSum - value
             end
 
         end
@@ -813,6 +816,8 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
     if selDel and rollMode then
         moveDiceToRoller(color, Player[color].getSelectedObjects())
     end
+
+    renderStats()
 end
 
 function moveDiceToRoller(color, dice)
@@ -858,10 +863,14 @@ function clearDiceX(n, deleteLower, color)
     local numberName={"ones", "twos", "threes", "fours", "fives", "sixes"}
     local text = Player[color].steam_name .. " deleted "
     local somethingToPrint=false
-        for i, die in ipairs(getDice()) do
-        if die.getValue() == n or (deleteLower and die.getValue()< n) then
+    for i, die in ipairs(getDice()) do
+        value = die.getValue()
+        if value == n or (deleteLower and value< n) then
             die.destroy()
-            counter[die.getValue()]=counter[die.getValue()]+1
+            counter[value]=counter[value]+1
+            valueToCounter[value] = valueToCounter[value] - 1
+            totalDice = totalDice - 1
+            diceSum = diceSum - value
         end
     end
     for i, val in ipairs(counter) do
@@ -871,6 +880,7 @@ function clearDiceX(n, deleteLower, color)
         end
     end
     if somethingToPrint then printToAll(text , "Yellow") end
+    renderStats()
 end
 
 function spawnDice1(obj, player, alt)
@@ -1100,13 +1110,9 @@ function onCollisionEnter(info)
     end
 
     local v = obj.getValue()
-    table.insert(diceOnMat, obj)
-    self.putObject(obj)
     valueToCounter[v] = valueToCounter[v] + 1
     diceSum    = diceSum + v
     totalDice  = totalDice + 1
-
-    print(#diceOnMat)
 
     renderStats()
 end
@@ -1121,10 +1127,6 @@ function onCollisionExit(info)
     valueToCounter[v] = valueToCounter[v] - 1
     diceSum    = diceSum - v
     totalDice  = totalDice - 1
-
-    table.remove(diceOnMat, obj.getGUID())
-
-    print(#diceOnMat)
 
     renderStats()
 end
