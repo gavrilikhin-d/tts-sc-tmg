@@ -151,7 +151,7 @@ function onShowRangeEditEnd(player, value, id)
 end
 
 function onCleanClicked(player)
-  if (#player.getSelectedObjects() != 0) then
+  if (#player.getSelectedObjects() ~= 0) then
     currentSelection = player.getSelectedObjects()
   end
   cleanCurrentVectorLines()
@@ -432,10 +432,10 @@ function getBonusAttackValue(bonusAttack)
 end
 
 function getBonusAttackAppendum(appendum)
-  if tonumber(appendum) != nil then
+  if tonumber(appendum) ~= nil then
     return tonumber(appendum)
   end
-  if string.find(appendum, "D") != nil then
+  if string.find(appendum, "D") ~= nil then
     local split = splitStr(appendum, "D")
     local count = (#split == 2) and tonumber(split[1]) or 1
     local value = (#split == 2) and tonumber(split[2]) or tonumber(split[1])
@@ -470,7 +470,7 @@ function drawRangeForWeapon(name, figures)
   local figuresData = createFiguresData(figures)
   for i,v in ipairs(figuresData) do
     local weapon = getFigureWeaponByName(v, name)
-    if weapon != nil then
+    if weapon ~= nil then
       drawFigureRange(weapon.range, figures[i])
     end
   end
@@ -602,7 +602,7 @@ function parseFigureData(figure)
     melee = {}
   }
   for i,v in ipairs(arr) do
-    if (getBlockName(v) != nil) and (getBlockName(v) != "abilities") then
+    if (getBlockName(v) ~= nil) and (getBlockName(v) ~= "abilities") then
       result[getBlockName(v)] = parseWeaponBlock(arr, i)
     end
   end
@@ -742,7 +742,7 @@ end
 
 function parseRange(stats)
   local inches = string.find(stats, "″") or string.find(stats, '"')
-  if inches != nil then
+  if inches ~= nil then
     return tonumber(string.sub(stats, 1, inches - 1))
   end
 end
@@ -751,13 +751,13 @@ function getBlockName(str)
   if str == nil then
     return
   end
-  if (string.find(str, "[rR]anged [wW]eapons") != nil) then
+  if (string.find(str, "[rR]anged [wW]eapons") ~= nil) then
     return "ranged"
   end
-  if (string.find(str, "[mM]elee [wW]eapons") != nil) then
+  if (string.find(str, "[mM]elee [wW]eapons") ~= nil) then
     return "melee"
   end
-  if (string.find(str, "[aA]bilities") != nil) then
+  if (string.find(str, "[aA]bilities") ~= nil) then
     return "abilities"
   end
 end

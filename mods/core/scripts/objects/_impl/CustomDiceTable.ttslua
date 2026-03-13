@@ -1390,9 +1390,9 @@ function sustainedLethalHitsAction(_, color, alt)
 end
 
 function getObjectsPositionToSave(player, hoveredObject)
-  if #player.getSelectedObjects() != 0 then
+  if #player.getSelectedObjects() ~= 0 then
     return player.getSelectedObjects()
-  elseif hoveredObject != nil then
+  elseif hoveredObject ~= nil then
     return table.insert({}, hoveredObject)
   end
   return nil
@@ -1421,7 +1421,7 @@ end
 function restorePositionClicked(playerColor)
   for i,v in ipairs(savedPositions) do
     local obj = getObjectFromGUID(v.guid)
-    if obj != nil then
+    if obj ~= nil then
       obj.setRotation(v.rotation)
       obj.setPositionSmooth(v.position, false, true)
     end
