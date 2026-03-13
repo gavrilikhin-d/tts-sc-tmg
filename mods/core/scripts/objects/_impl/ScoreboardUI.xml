@@ -24,4 +24,8 @@
         <Button id="redSupplyDestroyed" onClick="toggleRedSupplyDestroyed">Red Supply Destroyed 0</Button>
         <Button id="blueSupplyDestroyed" onClick="toggleBlueSupplyDestroyed">Blue Supply Destroyed 0</Button>
     </HorizontalLayout>
+    <HorizontalLayout height="50">
+        <Button id="redMissionVP" onClick="toggleRedMissionVP">Red Mission VP 0</Button>
+        <Button id="blueMissionVP" onClick="toggleBlueMissionVP">Blue Mission VP 0</Button>
+    </HorizontalLayout>
 </VerticalLayout>

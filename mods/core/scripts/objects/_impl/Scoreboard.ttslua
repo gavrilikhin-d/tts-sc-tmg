@@ -6,8 +6,8 @@ stats = {
     blueSupply = 0,
     redSupplyDestroyed = 0,
     blueSupplyDestroyed = 0,
-    -- redMissionVP = 0,
-    -- blueMissionVP = 0
+    redMissionVP = 0,
+    blueMissionVP = 0
 }
 
 CONSTANTS = {
@@ -34,6 +34,14 @@ CONSTANTS = {
     blueSupplyDestroyed = {
         BUTTON_ID = "blueSupplyDestroyed",
         LABEL = "Blue Supply Destroyed "
+    },
+    redMissionVP = {
+        BUTTON_ID = "redMissionVP",
+        LABEL = "Red Mission VP "
+    },
+    blueMissionVP = {
+        BUTTON_ID = "blueMissionVP",
+        LABEL = "Blue Mission VP "
     }
 }
 
@@ -116,6 +124,8 @@ toggleRedSupply = counter("redSupply")
 toggleBlueSupply = counter("blueSupply")
 toggleRedSupplyDestroyed = counter("redSupplyDestroyed")
 toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed")
+toggleRedMissionVP = counter("redMissionVP")
+toggleBlueMissionVP = counter("blueMissionVP")
 ---------------
 
 
