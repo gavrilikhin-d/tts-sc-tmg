@@ -19,31 +19,31 @@ CONSTANTS = {
     },
     availableSupply = {
         BUTTON_ID = "availableSupplyButton",
-        LABEL = "Available Supply "
+        LABEL = "Available Supply\n"
     },
     redSupply = {
         BUTTON_ID = "redSupply",
-        LABEL = "Red Supply "
+        LABEL = "Active Supply\n"
     },
     blueSupply = {
         BUTTON_ID = "blueSupply",
-        LABEL = "Blue Supply "
+        LABEL = "Active Supply\n"
     },
     redSupplyDestroyed = {
         BUTTON_ID = "redSupplyDestroyed",
-        LABEL = "Red Supply Destroyed "
+        LABEL = "Supply Destroyed\n"
     },
     blueSupplyDestroyed = {
         BUTTON_ID = "blueSupplyDestroyed",
-        LABEL = "Blue Supply Destroyed "
+        LABEL = "Supply Destroyed\n"
     },
     redMissionVP = {
         BUTTON_ID = "redMissionVP",
-        LABEL = "Red Mission VP "
+        LABEL = "Mission VP\n"
     },
     blueMissionVP = {
         BUTTON_ID = "blueMissionVP",
-        LABEL = "Blue Mission VP "
+        LABEL = "Mission VP\n"
     },
     redTotal = {
         BUTTON_ID = "redTotal",
