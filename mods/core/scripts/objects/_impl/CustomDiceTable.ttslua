@@ -7,7 +7,7 @@ MAX_DICE_ON_MAT = 128
 
 ZONES = {
     Blue = getObjectFromGUID("b10f7b"),
-    Red = getObjectFromGUID("b10f7b") -- TODO: don't reuse blue guid
+    Red = getObjectFromGUID("a7d7bc")
 }
 
 diceOnMat = {}
