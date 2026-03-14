@@ -21,41 +21,6 @@ else
     currentMat="Red"
 end
 
-local MM_TO_INCH = 0.0393701
-local MEASURING_RING_Y_OFFSET = 0.17
-local VALID_BASE_SIZES_IN_MM = {
-    {x = 25, z = 25},
-    {x = 28, z = 28},
-    {x = 30, z = 30},
-    {x = 32, z = 32},
-    {x = 40, z = 40},
-    {x = 50, z = 50},
-    {x = 55, z = 55},
-    {x = 60, z = 60},
-    {x = 65, z = 65},
-    {x = 80, z = 80},
-    {x = 90, z = 90},
-    {x = 100, z = 100},
-    {x = 130, z = 130},
-    {x = 160, z = 160},
-    {x = 25, z = 75},
-    {x = 75, z = 25},
-    {x = 35.5, z = 60},
-    {x = 60, z = 35.5},
-    {x = 40, z = 95},
-    {x = 95, z = 40},
-    {x = 52, z = 90},
-    {x = 90, z = 52},
-    {x = 70, z = 105},
-    {x = 105, z = 70},
-    {x = 92, z = 120},
-    {x = 120, z = 92},
-    {x = 95, z = 150},
-    {x = 150, z = 95},
-    {x = 109, z = 170},
-    {x = 170, z = 109}
-}
-
 clearAllDiceBtn={
     label="Clear mat\n(right click)", click_function="clearDiceAll", function_owner=self,
     position={-4.6, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=400,
@@ -167,8 +132,6 @@ lowerUpperBtn={
     position={-5.62, Yoffset ,1.1}, rotation={0,0,0}, height=0, width=0, scale={0,0,0},
     font_size=500, color="White", font_color={0,0,0}
 }
-lowerUpper=true
-oneTimeUpper=true
 
 copyOthersDiceBtn = {
     tooltip="Copy opposite player's dice",
@@ -281,7 +244,6 @@ rollMode = true
 selectedColor = "White"
 diceType = "Die_6_Rounded"
 customDiceImage = nil
-scaleBtn = 0.1
 previousRollData = {}
 previousRollStack = {}
 previousRollIndex = 0
