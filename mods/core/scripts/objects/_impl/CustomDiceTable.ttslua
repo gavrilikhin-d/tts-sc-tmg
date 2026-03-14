@@ -244,6 +244,7 @@ rollMode = true
 selectedColor = "White"
 diceType = "Die_6_Rounded"
 customDiceImage = nil
+customDiceName = nil
 previousRollData = {}
 previousRollStack = {}
 previousRollIndex = 0
@@ -547,6 +548,7 @@ function autoRoll(obj, player, alt, numDice)
             val = result,
             tint = rollColor,
             customImage = customDiceImage,
+            name = customDiceName,
         })
         if die then
             diceCount = diceCount + 1
@@ -601,6 +603,7 @@ function customDice(obj, player, alt)
     die = dice[1]
     color = die.getColorTint()
     img = die.getCustomObject()["image"]
+    customDiceName = die.getName()
     modifyMenu(color, img)
     message = (img ~= nil) and "You have set a custom die!" or "You have set a custom colour!"
     printToColor(message, player, "Yellow")
@@ -857,6 +860,7 @@ function spawnDice(n,player)
             val = 1,
             tint = selectedColor,
             customImage = customDiceImage,
+            name = customDiceName,
         })
         col=col+1
         if col>4 then
