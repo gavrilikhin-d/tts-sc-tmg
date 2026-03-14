@@ -301,11 +301,15 @@ function storeCurrentDiceAsPreviousRoll()
     for _, die in ipairs(getDice()) do
         local c = die.getCustomObject()
         local d = {
+            -- Not the same as getName(), as getName() returns the nickname of the die
+            -- while Name is a type of the object, that we can use to spawn it later
+            type = die.getData().Name,
             pos  = die.getPosition(),
             rot  = die.getRotation(),
             val  = die.getValue(),
             tint = die.getColorTint(),
-            customImage = nil
+            customImage = nil,
+            name = die.getName()
         }
         if c then d.customImage = c.image end
         table.insert(snapshot, d)
@@ -343,17 +347,7 @@ function revertRoll(obj, player, alt)
     -- Destroy current dice and spawn snapshot dice
     for _, die in ipairs(getDice()) do die.destroy() end
     for _, data in ipairs(snapshot) do
-        local diceTypeToSpawn = "Die_6_Rounded"
-        if data.customImage then
-            diceTypeToSpawn = "Custom_Dice"
-        elseif pipColorBtn.color == "Black" then
-            diceTypeToSpawn = "Die_6"
-        end
-        local spawned = spawnObject({ type = diceTypeToSpawn, position = data.pos, rotation = data.rot })
-        spawned.setTags({ "Dice" })
-        if data.customImage then spawned.setCustomObject({ image = data.customImage, type = 1 }) end
-        spawned.setColorTint(data.tint)
-        spawned.setValue(data.val)
+        spawnDie(data)
     end
 
     printToColor("Reverted to roll #" .. tostring(previousRollIndex) .. " of " .. tostring(#previousRollStack), player, "Green")
@@ -380,17 +374,7 @@ function redoRoll(obj, player, alt)
     end
     for _, die in ipairs(getDice()) do die.destroy() end
     for _, data in ipairs(snapshot) do
-        local diceTypeToSpawn = "Die_6_Rounded"
-        if data.customImage then
-            diceTypeToSpawn = "Custom_Dice"
-        elseif pipColorBtn.color == "Black" then
-            diceTypeToSpawn = "Die_6"
-        end
-        local spawned = spawnObject({ type = diceTypeToSpawn, position = data.pos, rotation = data.rot })
-        spawned.setTags({ "Dice" })
-        if data.customImage then spawned.setCustomObject({ image = data.customImage, type = 1 }) end
-        spawned.setColorTint(data.tint)
-        spawned.setValue(data.val)
+        spawnDie(data)
     end
     printToColor("Redone to roll #" .. tostring(previousRollIndex) .. " of " .. tostring(#previousRollStack), player, "Green")
     previousRollData = previousRollStack[previousRollIndex] or {}
@@ -556,21 +540,15 @@ function autoRoll(obj, player, alt, numDice)
             y = startY,
             z = startZ
         }
-        local die = spawnObject({
+        local die = spawnDie({
             type = "Die_6_Rounded",
-            position = position,
-            rotation = {0, 180, 0}
+            pos = position,
+            rot = {0, 180, 0},
+            val = result,
+            tint = rollColor,
+            customImage = customDiceImage,
         })
-        die.setTags({ "Dice" })
         if die then
-            die.setValue(result)
-            die.setColorTint(rollColor)
-            die.setCustomObject({
-                type = 1,
-                image = customDiceImage,
-                face = 1,
-                font_color = {0, 0, 0}
-            })
             diceCount = diceCount + 1
             lastSpawnPosition = {
                 x = position.x + directionMultiplier * 1.5,
@@ -819,6 +797,31 @@ function spawnDice25(obj, player, alt)
     spawnDice(25,player)
 end
 
+-- Same data as in snapshot:
+-- type, pos, rot, val, tint, customImage, name
+function spawnDie(data)
+    local die = spawnObject({
+        type = data.type,
+        position = data.pos,
+        rotation = data.rot
+    })
+    die.setValue(data.val)
+    die.setTags({ "Dice" })
+    if data.name then
+        die.setName(data.name)
+    end
+    if data.customImage then
+        die.setCustomObject({
+            image = data.customImage,
+            type = 1
+        })
+    end
+    if data.tint then
+        die.setColorTint(data.tint)
+    end
+    return die
+end
+
 function spawnDice(n,player)
     local playerDiceSpeed = player == "Red" and Global.getVar("redDiceSpawnTime") or Global.getVar("blueDiceSpawnTime")
     local currentTime = os.time()
@@ -847,12 +850,14 @@ function spawnDice(n,player)
 
     if offset+n>128 then n=128-offset end
     for i=1, n do
-    local die=spawnObject({
-        type              = diceType,
-        position          = self.positionToWorld({4-grid*1.5-col*0.25,0.5,-0.3+row*0.25}),
-        rotation          = self.getRotation() + Vector(0.0, 180.0, 0.0),
+        local die = spawnDie({
+            type = diceType,
+            pos = self.positionToWorld({4-grid*1.5-col*0.25,0.5,-0.3+row*0.25}),
+            rot = self.getRotation() + Vector(0.0, 180.0, 0.0),
+            val = 1,
+            tint = selectedColor,
+            customImage = customDiceImage,
         })
-    die.setTags({ "Dice" })
         col=col+1
         if col>4 then
             col=0
@@ -861,17 +866,6 @@ function spawnDice(n,player)
                 row=0
                 grid=grid+1
             end
-        end
-
-        if customDiceImage ~= nil then
-            die.setCustomObject({
-                image = customDiceImage,
-                type = 1
-            })
-        end
-
-        if selectedColor ~= nil then
-            die.setColorTint(selectedColor)
         end
     end
 end
