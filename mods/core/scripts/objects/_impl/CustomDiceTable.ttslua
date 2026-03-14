@@ -652,31 +652,18 @@ end
 
 
 function customDice(obj, player, alt)
-    found = false
-    newImage = nil
-    newTint = nil
-
     local dice = getDice()
-    for _, die in ipairs(dice) do
-        local image = die.getCustomObject()["image"]
-        if image ~= nil then
-            found = true
-            newTint = die.getColorTint()
-            newImage = image
-            printToColor("You have set a custom die!", player, "Yellow")
-            break
-        else
-            found = true
-            newTint = die.getColorTint()
-            printToColor("You have set a custom colour!", player, "Yellow")
-        end
+    if #dice != 1 then
+        printToColor("To set custom die template, place a single die on the mat", player, "Yellow")
+        return
     end
 
-    if found then
-        customDiceImage = newImage
-        selectedColor = newTint
-        setDiceType()
-    end
+    die = dice[1]
+    color = die.getColorTint()
+    img = die.getCustomObject()["image"]
+    modifyMenu(color, img)
+    message = (img ~= nil) and "You have set a custom die!" or "You have set a custom colour!"
+    printToColor(message, player, "Yellow")
 end
 
 function toggleLowerUpper()
@@ -1023,8 +1010,8 @@ end
 function modifyMenu4()
     modifyMenu("Green")
 end
-function modifyMenu(color)
-    customDiceImage = nil
+function modifyMenu(color, img)
+    customDiceImage = img
     selectedColor = color
     setDiceType()
     self.editButton({index=4, color=color})
