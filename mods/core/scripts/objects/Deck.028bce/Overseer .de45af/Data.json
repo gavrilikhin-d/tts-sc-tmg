@@ -1,0 +1,58 @@
+{
+  "GUID": "de45af",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 41.15441,
+    "posY": 0.959792,
+    "posZ": -78.10472,
+    "rotX": 0.02671743,
+    "rotY": 179.993759,
+    "rotZ": 0.00025212008,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Overseer ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 153900,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1539": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16959936058411375171/FBBF972CAF35322E6ABCEB13FEE3F84BE35461D6/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/18032977612742865998/678AB6D1D8BA7CDF4C8C1FDF2E45F5E52AB27843/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}
