@@ -324,6 +324,7 @@ function getFaces(dice)
 end
 
 -- Forbid objects other than dice from entering the dice roller
+-- @tts
 function tryObjectEnter(object)
 	return object.tag == "Dice"
 end
