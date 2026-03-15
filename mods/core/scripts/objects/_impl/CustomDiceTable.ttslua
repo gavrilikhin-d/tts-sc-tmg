@@ -249,8 +249,7 @@ maxPreviousRolls = 10
 rollerGUID = Global.getVar(currentMat .. "CustomDiceRoller_GUID")
 roller = getObjectFromGUID(rollerGUID)
 
-function importOpposDice(obj, player, alt)
-    -- clear existing dice
+function clearMat()
     for _, d in ipairs(getDice()) do 
         d.destroy()
     end
@@ -258,6 +257,10 @@ function importOpposDice(obj, player, alt)
     valueToCounter = { 0, 0, 0, 0, 0, 0 }
     totalDice = 0
     diceSum = 0
+end
+
+function importOpposDice(obj, player, alt)
+    clearMat()
 
     local toImport = getDice(oppositeColor(currentMat))
 
@@ -338,7 +341,8 @@ function revertRoll(obj, player, alt)
     end
 
     -- Destroy current dice and spawn snapshot dice
-    for _, die in ipairs(getDice()) do die.destroy() end
+    clearMat()
+    
     for _, data in ipairs(snapshot) do
         spawnDie(data)
     end
@@ -365,7 +369,8 @@ function redoRoll(obj, player, alt)
         printToColor("No roll data at this index.", player, "Red")
         return
     end
-    for _, die in ipairs(getDice()) do die.destroy() end
+
+    clearMat()
     for _, data in ipairs(snapshot) do
         spawnDie(data)
     end
