@@ -15,6 +15,9 @@ diceSum = 0
 
 local currentMat = inferColorFromObjectPosition(self)
 
+local oppMatGUID = Global.getVar(oppositeColor(currentMat) .. "CustomDiceMat_GUID")
+local oppMat = getObjectFromGUID(oppMatGUID)
+
 clearAllDiceBtn={
     label="Clear mat\n(right click)", click_function="clearDiceAll", function_owner=self,
     position={-4.6, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=400,
@@ -243,10 +246,7 @@ previousRollData = {}
 previousRollStack = {}
 previousRollIndex = 0
 maxPreviousRolls = 10
-rollerGUID = Global.getVar("redCustomDiceRoller_GUID")
-if self.guid == Global.getVar("blueCustomDiceMat_GUID") then
-    rollerGUID = Global.getVar("blueCustomDiceRoller_GUID")
-end
+rollerGUID = Global.getVar(currentMat .. "CustomDiceRoller_GUID")
 roller = getObjectFromGUID(rollerGUID)
 
 function importOpposDice(obj, player, alt)
@@ -267,13 +267,15 @@ function importOpposDice(obj, player, alt)
         return
     end
 
-    -- clone into this mat: shift lethal dice by (-3, -3) in X/Z
     local mc = self.getBounds().center
+    local cb = oppMat.getBounds().center
+   
     local count = 0
     for _, die in ipairs(toImport) do
         -- TODO: doesn't work. Fix it
         local dp = die.getPosition()
-        local nx, ny, nz = mc.x - dp.x, mc.y + dp.y, mc.z - dp.z
+        local relX, relY, relZ = -(dp.x - cb.x), dp.y - cb.y, -(dp.z - cb.z)
+        local nx, ny, nz = mc.x + relX, mc.y + relY, mc.z + relZ
         die.clone({ position={nx, ny, nz}, snap_to_grid=false })
         count = count + 1
     end

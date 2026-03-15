@@ -187,14 +187,14 @@ resultsTable = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 resultsTotal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 seedCounter = 0
 
-thisBoxIsBlue = (self.guid == Global.getVar("blueCustomDiceRoller_GUID")) and true or false
+thisBoxIsBlue = (self.guid == Global.getVar("BlueCustomDiceRoller_GUID")) and true or false
 seed = os.time() + (thisBoxIsBlue and 1 or 0)
 math.randomseed(seed)
 
 orderedOnNextRoll = false
 groupSizeOnNextRoll = 1
 
-objectToPlaceDiceOnGUID = thisBoxIsBlue and Global.getVar("blueCustomDiceMat_GUID") or Global.getVar("redCustomDiceMat_GUID")
+objectToPlaceDiceOnGUID = thisBoxIsBlue and Global.getVar("BlueCustomDiceMat_GUID") or Global.getVar("RedCustomDiceMat_GUID")
 objectToPlaceDiceOn = getObjectFromGUID(objectToPlaceDiceOnGUID)
 if objectToPlaceDiceOn == nil then
     objectToPlaceDiceOn = self
