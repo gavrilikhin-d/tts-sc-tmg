@@ -1,6 +1,7 @@
 -- Shared helper functions
 
--- TODO: rename to `noop`
+-- TODO: remove this once UI is migrated to XML.
+-- Currently callback function name is required for noop buttons in old UI
 function none() end
 
 function getOppositeColor(color)
