@@ -1,0 +1,18 @@
+-- Shared helper functions
+
+-- TODO: remove this once UI is migrated to XML.
+-- Currently callback function name is required for noop buttons in old UI
+function none() end
+
+function getOppositeColor(color)
+	return (color == "Red") and "Blue" or "Red"
+end
+
+-- TODO: stop relying on this
+function getColorFromObjectPosition(obj)
+	if obj.getPosition().z < 0 then
+		return "Blue"
+	end
+
+	return "Red"
+end

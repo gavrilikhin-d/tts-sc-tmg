@@ -114,13 +114,7 @@
     "path": "./Wounds Remaining.ad63ba"
   },
   {
-    "path": "./Red Kustom 40k Dice Roller Mk3.beae28"
-  },
-  {
     "path": "./Red Custom Kustom 40k Dice Roller Mk3.17ca2b"
-  },
-  {
-    "path": "./Blue Kustom 40k Dice Roller Mk3.4e0e0b"
   },
   {
     "path": "./Blue Custom Kustom 40k Dice Roller Mk3.927ca1"
@@ -349,6 +343,12 @@
   },
   {
     "path": "./FogOfWarTrigger.9b8186"
+  },
+  {
+    "path": "./BlueMatZone.b10f7b"
+  },
+  {
+    "path": "./RedMatZone.a7d7bc"
   },
   {
     "path": "./Deck.af8cdd"
