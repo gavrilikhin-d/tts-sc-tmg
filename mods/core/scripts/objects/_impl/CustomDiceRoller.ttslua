@@ -359,11 +359,9 @@ function takeDiceOut()
 
 	clearDataForGC(diceGuids)
 	diceGuids = {}
-	objs = self.getObjects()
-	for k, v in pairs(objs) do
-		faces = getFaces(v)
-		r = math.random(faces)
-		diceGuids[v.guid] = r
+	local objs = self.getObjects()
+	for _, die in pairs(objs) do
+		diceGuids[die.guid] = math.random(getFaces(die))
 	end
 
 	local ordered = orderedOnNextRoll
@@ -371,7 +369,6 @@ function takeDiceOut()
 	local groupSize = groupSizeOnNextRoll
 	groupSizeOnNextRoll = 1
 
-	local objs = self.getObjects()
 	local position = objectToPlaceDiceOn.getPosition()
 	rotation = objectToPlaceDiceOn.getRotation()
 	local displayInRows = true
