@@ -1,6 +1,5 @@
--- FTC-GUID: acae21,839fcc
-function none()
-end
+require("_impl/Utility")
+
 Yoffset=0.1
 
 MAX_DICE_ON_MAT = 128
@@ -14,12 +13,7 @@ valueToCounter = { 0, 0, 0, 0, 0, 0 }
 totalDice = 0
 diceSum = 0
 
-local currentMat
-if self.getPosition().z < 0 then
-    currentMat="Blue"
-else
-    currentMat="Red"
-end
+local currentMat = inferColorFromObjectPosition(self)
 
 clearAllDiceBtn={
     label="Clear mat\n(right click)", click_function="clearDiceAll", function_owner=self,
@@ -140,7 +134,7 @@ copyOthersDiceBtn = {
     position       = {-7.5, Yoffset, 0.86},
     rotation       = { 0, 0, 0 },
     width = 1300, height = 300, font_size = 150,
-    color = (currentMat == "Red" and "Blue" or "Red"), -- Button changes color based on current player
+    color = oppositeColor(currentMat), -- Button changes color based on current player
     font_color = {1, 1, 1}, -- White text for high contrast
     hover_color = (currentMat == "Red") and {0, 0, 1, 1} or {1, 0, 0, 1},
     label = (currentMat == "Red") and "Copy Blue's Dice" or "Copy Red's Dice",
@@ -254,10 +248,6 @@ if self.guid == Global.getVar("blueCustomDiceMat_GUID") then
     rollerGUID = Global.getVar("blueCustomDiceRoller_GUID")
 end
 roller = getObjectFromGUID(rollerGUID)
-
-function oppositeColor(color)
-    return (color == "Red") and "Blue" or "Red"
-end
 
 function importOpposDice(obj, player, alt)
     -- clear existing dice
