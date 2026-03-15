@@ -336,60 +336,6 @@
     "path": "./Scoreboard.81aef2"
   },
   {
-    "path": "./Deck.bff9f1"
-  },
-  {
-    "path": "./Deck.6fefe5"
-  },
-  {
-    "path": "./Deck.9fd930"
-  },
-  {
-    "path": "./Deck.be2817"
-  },
-  {
-    "path": "./Deck.20ebac"
-  },
-  {
-    "path": "./Deck.b7845a"
-  },
-  {
-    "path": "./Khalai.0f245f"
-  },
-  {
-    "path": "./Deck.99d300"
-  },
-  {
-    "path": "./Kerrigan's Swarm.87d675"
-  },
-  {
-    "path": "./Zerg Swarm.2e5cfd"
-  },
-  {
-    "path": "./Daelaam.b416a6"
-  },
-  {
-    "path": "./Deck.0938da"
-  },
-  {
-    "path": "./Deck.a93cb0"
-  },
-  {
-    "path": "./Deck.987599"
-  },
-  {
-    "path": "./Terran Armed Forces.c461d1"
-  },
-  {
-    "path": "./Deck.1b04af"
-  },
-  {
-    "path": "./Raynor's Raiders.f27133"
-  },
-  {
-    "path": "./Deck.c9f3ba"
-  },
-  {
     "path": "./Custom_PDF.2012ff"
   },
   {
@@ -403,5 +349,59 @@
   },
   {
     "path": "./FogOfWarTrigger.9b8186"
+  },
+  {
+    "path": "./Deck.af8cdd"
+  },
+  {
+    "path": "./Deck.6db3c9"
+  },
+  {
+    "path": "./Deck.5f02be"
+  },
+  {
+    "path": "./Deck.c0faca"
+  },
+  {
+    "path": "./Deck.72e21e"
+  },
+  {
+    "path": "./Deck.028bce"
+  },
+  {
+    "path": "./Daelaam.73be1b"
+  },
+  {
+    "path": "./Deck.b1cfff"
+  },
+  {
+    "path": "./Kerrigan's Swarm.ebc715"
+  },
+  {
+    "path": "./Zerg Swarm.00e907"
+  },
+  {
+    "path": "./Deck.e62939"
+  },
+  {
+    "path": "./Khalai.3bc0d4"
+  },
+  {
+    "path": "./Terran Armed Forces.fab743"
+  },
+  {
+    "path": "./Deck.0f0629"
+  },
+  {
+    "path": "./Deck.65e229"
+  },
+  {
+    "path": "./Deck.a78f93"
+  },
+  {
+    "path": "./Deck.a42004"
+  },
+  {
+    "path": "./Raynor's Raiders.8f5d31"
   }
 ]

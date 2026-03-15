@@ -1,0 +1,58 @@
+{
+  "GUID": "3bc0d4",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": -39.10965,
+    "posY": 0.9136031,
+    "posZ": 56.0576057,
+    "rotX": 1.570524E-06,
+    "rotY": 359.9916,
+    "rotZ": -5.162718E-07,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Khalai",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 151100,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1511": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12408711201168371169/A760BCB99496E1970A87FFDA93C652D2DC68E9BD/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "GUID": "8c160f",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 40.0894051,
+    "posY": 0.9122599,
+    "posZ": -67.28333,
+    "rotX": 0.0138609167,
+    "rotY": 179.9842,
+    "rotZ": 359.911072,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Roachling",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 148800,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1488": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12655359600474524396/AEA3A2EA95751BB7C51556E2B0EFA7DBF6B2792B/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12655359600474524396/AEA3A2EA95751BB7C51556E2B0EFA7DBF6B2792B/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

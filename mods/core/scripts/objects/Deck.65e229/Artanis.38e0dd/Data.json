@@ -1,0 +1,55 @@
+{
+  "GUID": "38e0dd",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 37.1617661,
+    "posY": 1.02676809,
+    "posZ": -59.9299622,
+    "rotX": 0.00301940669,
+    "rotY": 180.025574,
+    "rotZ": -0.00351045467,
+    "scaleX": 1.44999969,
+    "scaleY": 1.0,
+    "scaleZ": 1.44999969
+  },
+  "Nickname": "Artanis",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 149600,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1496": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15974163562868738951/7FF843B52C634E75EFA7B0E1406E6541BFAC1F26/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/15974163562868738951/7FF843B52C634E75EFA7B0E1406E6541BFAC1F26/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

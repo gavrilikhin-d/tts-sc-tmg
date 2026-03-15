@@ -1,0 +1,55 @@
+{
+  "GUID": "a9c9e6",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 38.9311,
+    "posY": 0.9882038,
+    "posZ": -71.33264,
+    "rotX": -0.000303464563,
+    "rotY": 179.9842,
+    "rotZ": 359.990051,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Corpser (Roach)",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 149100,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1491": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/14641499551167328526/36219015A07868DF513EC073ABD6BF3C4A95F160/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/10953684305049850208/FBE640EB3CB29CAD5AB0ECFC8607B8D6B4354F75/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

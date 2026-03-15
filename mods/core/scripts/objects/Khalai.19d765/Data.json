@@ -5,9 +5,9 @@
     "posX": 39.00661,
     "posY": 0.9136055,
     "posZ": -55.1846237,
-    "rotX": -1.62533183E-06,
+    "rotX": -1.59656543E-06,
     "rotY": 180.010971,
-    "rotZ": 4.42706039E-07,
+    "rotZ": 5.380521E-07,
     "scaleX": 1.59999955,
     "scaleY": 1.0,
     "scaleZ": 1.59999955
@@ -42,11 +42,11 @@
   "GridProjection": false,
   "HideWhenFaceDown": true,
   "Hands": true,
-  "CardID": 146700,
+  "CardID": 151100,
   "SidewaysCard": false,
   "CustomDeck": {
-    "1467": {
-      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/14943501271989446540/96D76261B616375490F4E033D3AC8EBED868B537/",
+    "1511": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12408711201168371169/A760BCB99496E1970A87FFDA93C652D2DC68E9BD/",
       "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
       "NumWidth": 1,
       "NumHeight": 1,

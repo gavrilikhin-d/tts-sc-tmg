@@ -1,0 +1,58 @@
+{
+  "GUID": "d16466",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 62.90228,
+    "posY": 0.9585437,
+    "posZ": -65.24984,
+    "rotX": 0.08686615,
+    "rotY": 179.999878,
+    "rotZ": 359.8566,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Dropship ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 152200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1522": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/18362091628158199435/56959F7C581C19746C4C9CC5A9833AF3F0E03186/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12018734542705647727/C283E602EEA01C2CCF4FC34F20A906ED940885AC/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

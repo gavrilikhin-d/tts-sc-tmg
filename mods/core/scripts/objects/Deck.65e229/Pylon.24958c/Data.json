@@ -1,0 +1,55 @@
+{
+  "GUID": "24958c",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 35.34243,
+    "posY": 0.98833257,
+    "posZ": -70.3449554,
+    "rotX": 0.00155359786,
+    "rotY": 179.970535,
+    "rotZ": -0.00125182525,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Pylon",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 149700,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1497": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15814893940204460012/0FC82DD9D291AB18620B915EB5CCCD48A973CFDE/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/15814893940204460012/0FC82DD9D291AB18620B915EB5CCCD48A973CFDE/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}
