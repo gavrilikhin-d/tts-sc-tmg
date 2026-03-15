@@ -1,18 +1,18 @@
 {
-  "GUID": "19d765",
+  "GUID": "73be1b",
   "Name": "CardCustom",
   "Transform": {
-    "posX": 39.00661,
-    "posY": 0.9136055,
-    "posZ": -55.1846237,
-    "rotX": -1.59656543E-06,
-    "rotY": 180.010971,
-    "rotZ": 5.380521E-07,
+    "posX": -35.46882,
+    "posY": 0.913603067,
+    "posZ": 56.0576019,
+    "rotX": 1.60128684E-06,
+    "rotY": 359.9916,
+    "rotZ": -5.271646E-07,
     "scaleX": 1.59999955,
     "scaleY": 1.0,
     "scaleZ": 1.59999955
   },
-  "Nickname": "Khalai",
+  "Nickname": "Daelaam",
   "Description": "",
   "GMNotes": "",
   "AltLookAngle": {
@@ -42,11 +42,11 @@
   "GridProjection": false,
   "HideWhenFaceDown": true,
   "Hands": true,
-  "CardID": 151100,
+  "CardID": 151000,
   "SidewaysCard": false,
   "CustomDeck": {
-    "1511": {
-      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12408711201168371169/A760BCB99496E1970A87FFDA93C652D2DC68E9BD/",
+    "1510": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12245275690207736362/1301B9BB3400F74003FBB0D06CFC46ED0A107F70/",
       "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
       "NumWidth": 1,
       "NumHeight": 1,

@@ -1,18 +1,18 @@
 {
-  "GUID": "19d765",
+  "GUID": "8f5d31",
   "Name": "CardCustom",
   "Transform": {
-    "posX": 39.00661,
-    "posY": 0.9136055,
-    "posZ": -55.1846237,
-    "rotX": -1.59656543E-06,
-    "rotY": 180.010971,
-    "rotZ": 5.380521E-07,
+    "posX": -46.43172,
+    "posY": 0.95125705,
+    "posZ": 56.0359955,
+    "rotX": -0.000252003258,
+    "rotY": 359.988434,
+    "rotZ": 358.7381,
     "scaleX": 1.59999955,
     "scaleY": 1.0,
     "scaleZ": 1.59999955
   },
-  "Nickname": "Khalai",
+  "Nickname": "Raynor's Raiders",
   "Description": "",
   "GMNotes": "",
   "AltLookAngle": {
@@ -42,12 +42,12 @@
   "GridProjection": false,
   "HideWhenFaceDown": true,
   "Hands": true,
-  "CardID": 151100,
+  "CardID": 154600,
   "SidewaysCard": false,
   "CustomDeck": {
-    "1511": {
-      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12408711201168371169/A760BCB99496E1970A87FFDA93C652D2DC68E9BD/",
-      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
+    "1546": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16481203725904687190/DAEF2206FBF0C08C3D90FF89F3628F71FCA5A08C/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12018734542705647727/C283E602EEA01C2CCF4FC34F20A906ED940885AC/",
       "NumWidth": 1,
       "NumHeight": 1,
       "BackIsHidden": true,
