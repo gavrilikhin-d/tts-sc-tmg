@@ -1,3 +1,5 @@
+require("_impl/Utility")
+
 stats = {
 	initiative = "None",
 	round = 1,
@@ -83,10 +85,6 @@ function unhighlightInitiativeButton(id)
 	setInteractable(id, true)
 end
 
-function oppositeColor(color)
-	return color == "Red" and "Blue" or "Red"
-end
-
 INITIATIVE_BUTTON_ID = "InitiativeButton"
 function renderInitiative()
 	initiative = stats.initiative
@@ -96,7 +94,7 @@ function renderInitiative()
 
 	highlightInitiativeButton(initiative .. INITIATIVE_BUTTON_ID)
 
-	other = oppositeColor(initiative)
+	other = getOppositeColor(initiative)
 	unhighlightInitiativeButton(string.lower(other) .. INITIATIVE_BUTTON_ID)
 end
 

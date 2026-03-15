@@ -13,9 +13,9 @@ valueToCounter = { 0, 0, 0, 0, 0, 0 }
 totalDice = 0
 diceSum = 0
 
-local currentMat = inferColorFromObjectPosition(self)
+local currentMat = getColorFromObjectPosition(self)
 
-local oppMatGUID = Global.getVar(oppositeColor(currentMat) .. "CustomDiceMat_GUID")
+local oppMatGUID = Global.getVar(getOppositeColor(currentMat) .. "CustomDiceMat_GUID")
 local oppMat = getObjectFromGUID(oppMatGUID)
 
 clearAllDiceBtn = {
@@ -272,7 +272,7 @@ copyOthersDiceBtn = {
 	width = 1300,
 	height = 300,
 	font_size = 150,
-	color = oppositeColor(currentMat), -- Button changes color based on current player
+	color = getOppositeColor(currentMat), -- Button changes color based on current player
 	font_color = { 1, 1, 1 }, -- White text for high contrast
 	hover_color = (currentMat == "Red") and { 0, 0, 1, 1 } or { 1, 0, 0, 1 },
 	label = (currentMat == "Red") and "Copy Blue's Dice" or "Copy Red's Dice",
@@ -404,7 +404,7 @@ end
 function importOpposDice(obj, player, alt)
 	clearMat()
 
-	local toImport = getDice(oppositeColor(currentMat))
+	local toImport = getDice(getOppositeColor(currentMat))
 
 	if #toImport == 0 then
 		printToColor("No dice found on the opposite mat.", player, "Yellow")

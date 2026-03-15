@@ -3,12 +3,12 @@
 -- TODO: rename to `noop`
 function none() end
 
-function oppositeColor(color)
+function getOppositeColor(color)
 	return (color == "Red") and "Blue" or "Red"
 end
 
 -- TODO: stop relying on this
-function inferColorFromObjectPosition(obj)
+function getColorFromObjectPosition(obj)
 	if obj.getPosition().z < 0 then
 		return "Blue"
 	end
