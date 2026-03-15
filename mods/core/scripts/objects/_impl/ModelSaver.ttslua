@@ -1,8 +1,8 @@
 function saveAll()
-    -- TODO: use more appropriate tag ("Model" or "Savable")
-    local models = getObjectsWithTag("WeaponModel")
-    for _, model in ipairs(models) do
-        model.call("savePositionInternal")
-    end
-    broadcastToAll("Saved " .. #models .. " models!", {0, 1, 0})
+	-- TODO: use more appropriate tag ("Model" or "Savable")
+	local models = getObjectsWithTag("WeaponModel")
+	for _, model in ipairs(models) do
+		model.call("savePositionInternal")
+	end
+	broadcastToAll("Saved " .. #models .. " models!", { 0, 1, 0 })
 end
