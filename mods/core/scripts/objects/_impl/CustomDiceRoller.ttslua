@@ -236,7 +236,8 @@ math.randomseed(seed)
 orderedOnNextRoll = false
 groupSizeOnNextRoll = 1
 
-objectToPlaceDiceOnGUID = thisBoxIsBlue and Global.getVar("BlueCustomDiceMat_GUID") or Global.getVar("RedCustomDiceMat_GUID")
+objectToPlaceDiceOnGUID = thisBoxIsBlue and Global.getVar("BlueCustomDiceMat_GUID")
+	or Global.getVar("RedCustomDiceMat_GUID")
 objectToPlaceDiceOn = getObjectFromGUID(objectToPlaceDiceOnGUID)
 if objectToPlaceDiceOn == nil then
 	objectToPlaceDiceOn = self
@@ -319,26 +320,26 @@ function hasGuid(t, g)
 end
 
 function getFaces(dice)
-    return tonumber(string.match(dice.name, '.*(%d+).*'))
+	return tonumber(string.match(dice.name, ".*(%d+).*"))
 end
 
 -- Forbid objects other than dice from entering the dice roller
 function tryObjectEnter(object)
-    return object.tag == "Dice" 
+	return object.tag == "Dice"
 end
 
 function onCollisionEnter(collision_info)
-    local obj = collision_info.collision_object
-    -- onCollisionEnter is called even when the object is not a dice
-    -- and it is fired every frame, so let's get rid of this object
-    if obj.tag != "Dice" then
-        obj.destruct()
-        return
-    end
+	local obj = collision_info.collision_object
+	-- onCollisionEnter is called even when the object is not a dice
+	-- and it is fired every frame, so let's get rid of this object
+	if obj.tag ~= "Dice" then
+		obj.destruct()
+		return
+	end
 
-    self.putObject(obj)
+	self.putObject(obj)
 
-    takeDiceOut()
+	takeDiceOut()
 end
 
 function takeDiceOut()
@@ -357,7 +358,7 @@ function takeDiceOut()
 
 	clearDataForGC(diceGuids)
 	diceGuids = {}
-    objs = self.getObjects()
+	objs = self.getObjects()
 	for k, v in pairs(objs) do
 		faces = getFaces(v)
 		r = math.random(faces)
@@ -450,10 +451,10 @@ function takeDiceOut()
 	end
 
 	printResultsTable()
-    Wait.time(function()
-        -- "objectToPlaceDiceOn" is your dice-mat object
-        objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
-    end, 1)
+	Wait.time(function()
+		-- "objectToPlaceDiceOn" is your dice-mat object
+		objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
+	end, 1)
 end
 
 function sum(t)
@@ -473,13 +474,29 @@ function setLastHolder(params)
 end
 
 function printResultsTable()
-    local data = JSON.decode(self.getDescription())
-    local description = {
-        'Ones.', 'Twos.', 'Threes.', 'Fours.', 'Fives.', 'Sixes.',
-        'Sevens.', 'Eights.', 'Nines.', 'Tens.', 'Elevens.', 'Twelves.',
-        'Thirteens.', 'Fourteens.', 'Fifteens.', 'Sixteens.', 'Seventeens.',
-        'Eighteens.', 'Nineteens.', 'Twenties.'
-    }
+	local data = JSON.decode(self.getDescription())
+	local description = {
+		"Ones.",
+		"Twos.",
+		"Threes.",
+		"Fours.",
+		"Fives.",
+		"Sixes.",
+		"Sevens.",
+		"Eights.",
+		"Nines.",
+		"Tens.",
+		"Elevens.",
+		"Twelves.",
+		"Thirteens.",
+		"Fourteens.",
+		"Fifteens.",
+		"Sixteens.",
+		"Seventeens.",
+		"Eighteens.",
+		"Nineteens.",
+		"Twenties.",
+	}
 
 	local msg = ""
 	local color = { 1, 1, 1 }

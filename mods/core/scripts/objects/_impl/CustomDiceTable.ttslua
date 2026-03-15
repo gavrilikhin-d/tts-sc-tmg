@@ -1,12 +1,12 @@
 require("_impl/Utility")
 
-Yoffset=0.1
+Yoffset = 0.1
 
 MAX_DICE_ON_MAT = 128
 
 ZONES = {
-    Blue = getObjectFromGUID("b10f7b"),
-    Red = getObjectFromGUID("a7d7bc")
+	Blue = getObjectFromGUID("b10f7b"),
+	Red = getObjectFromGUID("a7d7bc"),
 }
 
 valueToCounter = { 0, 0, 0, 0, 0, 0 }
@@ -184,11 +184,18 @@ color4Btn = {
 	color = "Green",
 	font_color = { 0, 0, 0 },
 }
-pipColorBtn=
-{
-  index=15, label="White", click_function="swapPipColor", function_owner=self,
-  position={colorBtnOffset + 0.35 * 4 + 0.1, Yoffset, -0.87}, rotation={0, 0, 0}, height=50, width=250,
-  font_size=60, color="White", font_color="Black"
+pipColorBtn = {
+	index = 15,
+	label = "White",
+	click_function = "swapPipColor",
+	function_owner = self,
+	position = { colorBtnOffset + 0.35 * 4 + 0.1, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 250,
+	font_size = 60,
+	color = "White",
+	font_color = "Black",
 }
 
 customDiceBtn = {
@@ -257,18 +264,20 @@ lowerUpperBtn = {
 }
 
 copyOthersDiceBtn = {
-    tooltip="Copy opposite player's dice",
-    click_function = "importOpposDice",
-    function_owner = self,
-    position       = {-7.5, Yoffset, 0.86},
-    rotation       = { 0, 0, 0 },
-    width = 1300, height = 300, font_size = 150,
-    color = oppositeColor(currentMat), -- Button changes color based on current player
-    font_color = {1, 1, 1}, -- White text for high contrast
-    hover_color = (currentMat == "Red") and {0, 0, 1, 1} or {1, 0, 0, 1},
-    label = (currentMat == "Red") and "Copy Blue's Dice" or "Copy Red's Dice",
-    press_color = {0.27, 0.27, 0.27, 1},
-    scale = {0.5, 0.5, 0.5}
+	tooltip = "Copy opposite player's dice",
+	click_function = "importOpposDice",
+	function_owner = self,
+	position = { -7.5, Yoffset, 0.86 },
+	rotation = { 0, 0, 0 },
+	width = 1300,
+	height = 300,
+	font_size = 150,
+	color = oppositeColor(currentMat), -- Button changes color based on current player
+	font_color = { 1, 1, 1 }, -- White text for high contrast
+	hover_color = (currentMat == "Red") and { 0, 0, 1, 1 } or { 1, 0, 0, 1 },
+	label = (currentMat == "Red") and "Copy Blue's Dice" or "Copy Red's Dice",
+	press_color = { 0.27, 0.27, 0.27, 1 },
+	scale = { 0.5, 0.5, 0.5 },
 }
 
 local auto1D6 = {
@@ -383,64 +392,66 @@ rollerGUID = Global.getVar(currentMat .. "CustomDiceRoller_GUID")
 roller = getObjectFromGUID(rollerGUID)
 
 function clearMat()
-    for _, d in ipairs(getDice()) do 
-        d.destroy()
-    end
+	for _, d in ipairs(getDice()) do
+		d.destroy()
+	end
 
-    valueToCounter = { 0, 0, 0, 0, 0, 0 }
-    totalDice = 0
-    diceSum = 0
+	valueToCounter = { 0, 0, 0, 0, 0, 0 }
+	totalDice = 0
+	diceSum = 0
 end
 
 function importOpposDice(obj, player, alt)
-    clearMat()
+	clearMat()
 
-    local toImport = getDice(oppositeColor(currentMat))
+	local toImport = getDice(oppositeColor(currentMat))
 
-    if #toImport == 0 then
-        printToColor("No dice found on the opposite mat.", player, "Yellow")
-        renderStats()
-        return
-    end
+	if #toImport == 0 then
+		printToColor("No dice found on the opposite mat.", player, "Yellow")
+		renderStats()
+		return
+	end
 
-    local mc = self.getBounds().center
-    local cb = oppMat.getBounds().center
-   
-    local count = 0
-    for _, die in ipairs(toImport) do
-        -- TODO: doesn't work. Fix it
-        local dp = die.getPosition()
-        local relX, relY, relZ = -(dp.x - cb.x), dp.y - cb.y, -(dp.z - cb.z)
-        local nx, ny, nz = mc.x + relX, mc.y + relY, mc.z + relZ
-        die.clone({ position={nx, ny, nz}, snap_to_grid=false })
-        count = count + 1
-    end
+	local mc = self.getBounds().center
+	local cb = oppMat.getBounds().center
 
-    printToAll("Imported "..count.." dice from the opposite mat", {1,1,1})
-    renderStats()
+	local count = 0
+	for _, die in ipairs(toImport) do
+		-- TODO: doesn't work. Fix it
+		local dp = die.getPosition()
+		local relX, relY, relZ = -(dp.x - cb.x), dp.y - cb.y, -(dp.z - cb.z)
+		local nx, ny, nz = mc.x + relX, mc.y + relY, mc.z + relZ
+		die.clone({ position = { nx, ny, nz }, snap_to_grid = false })
+		count = count + 1
+	end
+
+	printToAll("Imported " .. count .. " dice from the opposite mat", { 1, 1, 1 })
+	renderStats()
 end
 
 local lastSpawnPosition = nil -- Keep track of the last spawned dice position
 local diceCount = 0 -- Track the number of dice spawned in the current sequence
 function storeCurrentDiceAsPreviousRoll()
-    -- Build a snapshot of the current dice on the mat (positions, values, tints)
-    local snapshot = {}
-    for _, die in ipairs(getDice()) do
-        local c = die.getCustomObject()
-        local d = {
-            -- Not the same as getName(), as getName() returns the nickname of the die
-            -- while Name is a type of the object, that we can use to spawn it later
-            type = die.getData().Name,
-            pos  = die.getPosition(),
-            rot  = die.getRotation(),
-            val  = die.getValue(),
-            tint = die.getColorTint(),
-            customImage = nil,
-            name = die.getName()
-        }
-        if c then d.customImage = c.image end
-        table.insert(snapshot, d)
-    end
+	-- Build a snapshot of the current dice on the mat (positions, values, tints)
+	local snapshot = {}
+	for _, die in ipairs(getDice()) do
+		local c = die.getCustomObject()
+		local d = {
+			-- Not the same as getName(), as getName() returns the nickname of the die
+			-- while Name is a type of the object, that we can use to spawn it later
+			type = die.getData().Name,
+			pos = die.getPosition(),
+			rot = die.getRotation(),
+			val = die.getValue(),
+			tint = die.getColorTint(),
+			customImage = nil,
+			name = die.getName(),
+		}
+		if c then
+			d.customImage = c.image
+		end
+		table.insert(snapshot, d)
+	end
 
 	-- If we've undone some rolls and then store a new roll, drop any future redo history
 	if previousRollIndex < #previousRollStack then
@@ -471,12 +482,12 @@ function revertRoll(obj, player, alt)
 		return
 	end
 
-    -- Destroy current dice and spawn snapshot dice
-    clearMat()
-    
-    for _, data in ipairs(snapshot) do
-        spawnDie(data)
-    end
+	-- Destroy current dice and spawn snapshot dice
+	clearMat()
+
+	for _, data in ipairs(snapshot) do
+		spawnDie(data)
+	end
 
 	printToColor(
 		"Reverted to roll #" .. tostring(previousRollIndex) .. " of " .. tostring(#previousRollStack),
@@ -625,17 +636,19 @@ local function evalSimpleExpr(expr)
 end
 
 function setCustomDiceCount(_, player, value, _)
-  -- Accept either a plain number or a simple math expression
-  local num = tonumber(value)
-  if not num then
-    local result, err = evalSimpleExpr(tostring(value or ""))
-    if result then num = result end
-  end
-  if num and num > 0 and num <= MAX_DICE_ON_MAT then
-    customDiceCount = math.floor(num)
-  else
-    printToColor("Invalid Number! Enter a number or expression between 1 and 128.", player, "Red")
-  end
+	-- Accept either a plain number or a simple math expression
+	local num = tonumber(value)
+	if not num then
+		local result, err = evalSimpleExpr(tostring(value or ""))
+		if result then
+			num = result
+		end
+	end
+	if num and num > 0 and num <= MAX_DICE_ON_MAT then
+		customDiceCount = math.floor(num)
+	else
+		printToColor("Invalid Number! Enter a number or expression between 1 and 128.", player, "Red")
+	end
 end
 
 function spawnCustomDice(_, player, _)
@@ -674,42 +687,42 @@ function autoRoll(obj, player, alt, numDice)
 		{ 0.847, 0.647, 0.125 }, -- gold
 	}
 
-    local colorIndex = math.random(#diceColors)
-    local rollColor = diceColors[colorIndex]
-    for i = 1, numDice do
-        local result = math.random(6)
-        total = total + result
-        printToAll(player .. " rolled a D6: " .. result, stringColorToRGB(player))
-        local position = {
-            x = startX + directionMultiplier * (i - 1) * 1.5,
-            y = startY,
-            z = startZ
-        }
-        local die = spawnDie({
-            type = "Die_6_Rounded",
-            pos = position,
-            rot = {0, 180, 0},
-            val = result,
-            tint = rollColor,
-            customImage = customDiceImage,
-            name = customDiceName,
-        })
-        if die then
-            diceCount = diceCount + 1
-            lastSpawnPosition = {
-                x = position.x + directionMultiplier * 1.5,
-                y = position.y,
-                z = position.z
-            }
-            if diceCount >= 5 then
-                lastSpawnPosition = nil
-                diceCount = 0
-            end
-        else
-            printToColor("Failed to spawn a die for roll " .. i, player, "Red")
-        end
-    end
-    printToAll(player .. " rolled a total of " .. total .. " (" .. numDice .. "D6)", stringColorToRGB(player))
+	local colorIndex = math.random(#diceColors)
+	local rollColor = diceColors[colorIndex]
+	for i = 1, numDice do
+		local result = math.random(6)
+		total = total + result
+		printToAll(player .. " rolled a D6: " .. result, stringColorToRGB(player))
+		local position = {
+			x = startX + directionMultiplier * (i - 1) * 1.5,
+			y = startY,
+			z = startZ,
+		}
+		local die = spawnDie({
+			type = "Die_6_Rounded",
+			pos = position,
+			rot = { 0, 180, 0 },
+			val = result,
+			tint = rollColor,
+			customImage = customDiceImage,
+			name = customDiceName,
+		})
+		if die then
+			diceCount = diceCount + 1
+			lastSpawnPosition = {
+				x = position.x + directionMultiplier * 1.5,
+				y = position.y,
+				z = position.z,
+			}
+			if diceCount >= 5 then
+				lastSpawnPosition = nil
+				diceCount = 0
+			end
+		else
+			printToColor("Failed to spawn a die for roll " .. i, player, "Red")
+		end
+	end
+	printToAll(player .. " rolled a total of " .. total .. " (" .. numDice .. "D6)", stringColorToRGB(player))
 end
 
 -- Reset the last spawn position and dice count when the dice area is cleared
@@ -727,26 +740,26 @@ function autoRoll2D6(obj, player, alt)
 end
 
 function getDice(color)
-    color = color or currentMat
-    -- Zone with the tag "Dice" only tracks object with "Dice" tag
-    -- So it is important to generate all dices with this tag
-    return ZONES[color].getObjects()
+	color = color or currentMat
+	-- Zone with the tag "Dice" only tracks object with "Dice" tag
+	-- So it is important to generate all dices with this tag
+	return ZONES[color].getObjects()
 end
 
 function customDice(obj, player, alt)
-    local dice = getDice()
-    if #dice != 1 then
-        printToColor("To set custom die template, place a single die on the mat", player, "Yellow")
-        return
-    end
+	local dice = getDice()
+	if #dice ~= 1 then
+		printToColor("To set custom die template, place a single die on the mat", player, "Yellow")
+		return
+	end
 
-    die = dice[1]
-    color = die.getColorTint()
-    img = die.getCustomObject()["image"]
-    customDiceName = die.getName()
-    modifyMenu(color, img)
-    message = (img ~= nil) and "You have set a custom die!" or "You have set a custom colour!"
-    printToColor(message, player, "Yellow")
+	die = dice[1]
+	color = die.getColorTint()
+	img = die.getCustomObject()["image"]
+	customDiceName = die.getName()
+	modifyMenu(color, img)
+	message = (img ~= nil) and "You have set a custom die!" or "You have set a custom colour!"
+	printToColor(message, player, "Yellow")
 end
 
 function toggleLowerUpper()
@@ -760,17 +773,21 @@ end
 
 START_OF_ROLL_CONTROLLS = 21
 function modifyBtns()
-    local sign=""
-    for i=1, 6 do
-        if lowerUpper then sign = lowerSign else sign = upperSign end
-        self.editButton({ index = (START_OF_ROLL_CONTROLLS + i*2), label = clearDiceBtnLabel .. i .. sign })
+	local sign = ""
+	for i = 1, 6 do
+		if lowerUpper then
+			sign = lowerSign
+		else
+			sign = upperSign
+		end
+		self.editButton({ index = (START_OF_ROLL_CONTROLLS + i * 2), label = clearDiceBtnLabel .. i .. sign })
 
-        local selOrRollLabel = "Roll\n"
-        if not rollMode then
-            selOrRollLabel = "Sel\n"
-        end
-        self.editButton({ index = (START_OF_ROLL_CONTROLLS + i*2 + 1), label = selOrRollLabel .. i .. sign })
-    end
+		local selOrRollLabel = "Roll\n"
+		if not rollMode then
+			selOrRollLabel = "Sel\n"
+		end
+		self.editButton({ index = (START_OF_ROLL_CONTROLLS + i * 2 + 1), label = selOrRollLabel .. i .. sign })
+	end
 end
 
 function RollOrSelectDice(obj, player, alt)
@@ -825,21 +842,20 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
 	local text = Player[color].steam_name .. " deleted "
 	local somethingToPrint = false
 
-    for i, die in ipairs(getDice()) do
-        value = die.getValue()
-        if value == n or (selectOthers and lowUp and value< n)  or (selectOthers and not lowUp and value> n) then
-            if selDel then
-                die.addToPlayerSelection(color)
-            else
-                die.destroy()
-                counter[value]=counter[value]+1
-                valueToCounter[value] = valueToCounter[value] - 1
-                totalDice = totalDice - 1
-                diceSum = diceSum - value
-            end
-
-        end
-    end
+	for i, die in ipairs(getDice()) do
+		value = die.getValue()
+		if value == n or (selectOthers and lowUp and value < n) or (selectOthers and not lowUp and value > n) then
+			if selDel then
+				die.addToPlayerSelection(color)
+			else
+				die.destroy()
+				counter[value] = counter[value] + 1
+				valueToCounter[value] = valueToCounter[value] - 1
+				totalDice = totalDice - 1
+				diceSum = diceSum - value
+			end
+		end
+	end
 
 	for i, val in ipairs(counter) do
 		if val > 0 then
@@ -854,30 +870,30 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
 		setLowerUpper(true)
 	end
 
-    if selDel and rollMode then
-        moveDiceToRoller(color, Player[color].getSelectedObjects())
-    end
+	if selDel and rollMode then
+		moveDiceToRoller(color, Player[color].getSelectedObjects())
+	end
 
-    renderStats()
+	renderStats()
 end
 
 function moveDiceToRoller(color, dice)
 	roller.call("setPlayerColor", { color = color })
 
-    for _, die in ipairs(dice) do
-        roller.call("setLastHolder", {obj=die, color=color})
-        roller.putObject(die)
-    end
+	for _, die in ipairs(dice) do
+		roller.call("setLastHolder", { obj = die, color = color })
+		roller.putObject(die)
+	end
 
-    roller.call("takeDiceOut")
+	roller.call("takeDiceOut")
 end
 
 function clearDiceAll(obj, color, alt)
-    if not alt then
-        printToColor("Use right click!", color, "Orange")
-        return
-    end
-    clearDiceX(6, true, color)
+	if not alt then
+		printToColor("Use right click!", color, "Orange")
+		return
+	end
+	clearDiceX(6, true, color)
 end
 
 function clearDice1(obj, color, alt)
@@ -900,28 +916,30 @@ function clearDice6(obj, color, alt)
 end
 
 function clearDiceX(n, deleteLower, color)
-    local counter={0,0,0,0,0,0}
-    local numberName={"ones", "twos", "threes", "fours", "fives", "sixes"}
-    local text = Player[color].steam_name .. " deleted "
-    local somethingToPrint=false
-    for i, die in ipairs(getDice()) do
-        value = die.getValue()
-        if value == n or (deleteLower and value< n) then
-            die.destroy()
-            counter[value]=counter[value]+1
-            valueToCounter[value] = valueToCounter[value] - 1
-            totalDice = totalDice - 1
-            diceSum = diceSum - value
-        end
-    end
-    for i, val in ipairs(counter) do
-        if val > 0 then
-            text=text.." \u{00B7} "..counter[i].." "..numberName[i]
-            somethingToPrint=true
-        end
-    end
-    if somethingToPrint then printToAll(text , "Yellow") end
-    renderStats()
+	local counter = { 0, 0, 0, 0, 0, 0 }
+	local numberName = { "ones", "twos", "threes", "fours", "fives", "sixes" }
+	local text = Player[color].steam_name .. " deleted "
+	local somethingToPrint = false
+	for i, die in ipairs(getDice()) do
+		value = die.getValue()
+		if value == n or (deleteLower and value < n) then
+			die.destroy()
+			counter[value] = counter[value] + 1
+			valueToCounter[value] = valueToCounter[value] - 1
+			totalDice = totalDice - 1
+			diceSum = diceSum - value
+		end
+	end
+	for i, val in ipairs(counter) do
+		if val > 0 then
+			text = text .. " \u{00B7} " .. counter[i] .. " " .. numberName[i]
+			somethingToPrint = true
+		end
+	end
+	if somethingToPrint then
+		printToAll(text, "Yellow")
+	end
+	renderStats()
 end
 
 function spawnDice1(obj, player, alt)
@@ -943,32 +961,32 @@ function spawnDice10(obj, player, alt)
 	spawnDice(10, player)
 end
 function spawnDice25(obj, player, alt)
-    spawnDice(25,player)
+	spawnDice(25, player)
 end
 
 -- Same data as in snapshot:
 -- type, pos, rot, val, tint, customImage, name
 function spawnDie(data)
-    local die = spawnObject({
-        type = data.type,
-        position = data.pos,
-        rotation = data.rot
-    })
-    die.setValue(data.val)
-    die.setTags({ "Dice" })
-    if data.name then
-        die.setName(data.name)
-    end
-    if data.customImage then
-        die.setCustomObject({
-            image = data.customImage,
-            type = 1
-        })
-    end
-    if data.tint then
-        die.setColorTint(data.tint)
-    end
-    return die
+	local die = spawnObject({
+		type = data.type,
+		position = data.pos,
+		rotation = data.rot,
+	})
+	die.setValue(data.val)
+	die.setTags({ "Dice" })
+	if data.name then
+		die.setName(data.name)
+	end
+	if data.customImage then
+		die.setCustomObject({
+			image = data.customImage,
+			type = 1,
+		})
+	end
+	if data.tint then
+		die.setColorTint(data.tint)
+	end
+	return die
 end
 
 function spawnDice(n, player)
@@ -999,111 +1017,129 @@ function spawnDice(n, player)
 		end
 	end
 
-    if offset+n>128 then n=128-offset end
-    for i=1, n do
-        local die = spawnDie({
-            type = diceType,
-            pos = self.positionToWorld({4-grid*1.5-col*0.25,0.5,-0.3+row*0.25}),
-            rot = self.getRotation() + Vector(0.0, 180.0, 0.0),
-            val = 1,
-            tint = selectedColor,
-            customImage = customDiceImage,
-            name = customDiceName,
-        })
-        col=col+1
-        if col>4 then
-            col=0
-            row= row+1
-            if row > 4 then
-                row=0
-                grid=grid+1
-            end
-        end
-    end
+	if offset + n > 128 then
+		n = 128 - offset
+	end
+	for i = 1, n do
+		local die = spawnDie({
+			type = diceType,
+			pos = self.positionToWorld({ 4 - grid * 1.5 - col * 0.25, 0.5, -0.3 + row * 0.25 }),
+			rot = self.getRotation() + Vector(0.0, 180.0, 0.0),
+			val = 1,
+			tint = selectedColor,
+			customImage = customDiceImage,
+			name = customDiceName,
+		})
+		col = col + 1
+		if col > 4 then
+			col = 0
+			row = row + 1
+			if row > 4 then
+				row = 0
+				grid = grid + 1
+			end
+		end
+	end
 end
 
 function onLoad()
-    lastClick=os.time()
-    defaultFontSize=500
-    fontSize=defaultFontSize
-    lineCount=0
-    defaultDivisionLabel="|\n|"
-    self.createButton({
-        label="---", click_function="none", function_owner=Global,
-        position={-6.4,0.11,0.01}, rotation={0,0,0}, height=0, width=0, font_size=fontSize,
-        font_color={1, 1, 1},
-        scale={0.25, 0.25, 0.25},
-		alignment=2
-    })
-    self.createButton({
-        label="", click_function="none", function_owner=Global,
-        position={0.75,0.11,0.01}, rotation={0,0,0}, height=0, width=0, font_size=500,
-        font_color={1, 1, 1},
-        scale={0.25,2,1},
-		alignment=2
-    })
+	lastClick = os.time()
+	defaultFontSize = 500
+	fontSize = defaultFontSize
+	lineCount = 0
+	defaultDivisionLabel = "|\n|"
+	self.createButton({
+		label = "---",
+		click_function = "none",
+		function_owner = Global,
+		position = { -6.4, 0.11, 0.01 },
+		rotation = { 0, 0, 0 },
+		height = 0,
+		width = 0,
+		font_size = fontSize,
+		font_color = { 1, 1, 1 },
+		scale = { 0.25, 0.25, 0.25 },
+		alignment = 2,
+	})
+	self.createButton({
+		label = "",
+		click_function = "none",
+		function_owner = Global,
+		position = { 0.75, 0.11, 0.01 },
+		rotation = { 0, 0, 0 },
+		height = 0,
+		width = 0,
+		font_size = 500,
+		font_color = { 1, 1, 1 },
+		scale = { 0.25, 2, 1 },
+		alignment = 2,
+	})
 
 	if self.getDescription() == "" then
 		setDefaultState()
 	end
 
-    emptyText = ' '
+	emptyText = " "
 
-    ------------
-    -- Topbar --
-    ------------
-    self.createButton(clearAllDiceBtn)
-    self.createButton(rollOrSelectAllBtn)
-    self.createButton(add1d6Btn)
-    self.createButton(add2d6Btn)
-    self.createButton(add3d6Btn)
-    self.createButton(add4d6Btn)
-    self.createButton(add5d6Btn)
-    self.createButton(add10d6Btn)
-    self.createButton(add25d6Btn)
-    self.createButton(color1Btn)
-    self.createButton(color2Btn)
-    self.createButton(color3Btn)
-    self.createButton(color4Btn)
-    self.createButton(pipColorBtn)
-    self.createButton(customDiceBtn)
-    ------------
+	------------
+	-- Topbar --
+	------------
+	self.createButton(clearAllDiceBtn)
+	self.createButton(rollOrSelectAllBtn)
+	self.createButton(add1d6Btn)
+	self.createButton(add2d6Btn)
+	self.createButton(add3d6Btn)
+	self.createButton(add4d6Btn)
+	self.createButton(add5d6Btn)
+	self.createButton(add10d6Btn)
+	self.createButton(add25d6Btn)
+	self.createButton(color1Btn)
+	self.createButton(color2Btn)
+	self.createButton(color3Btn)
+	self.createButton(color4Btn)
+	self.createButton(pipColorBtn)
+	self.createButton(customDiceBtn)
+	------------
 
-    ----------------
-    -- Left Panel --
-    ----------------
-    self.createButton(customDiceInputBG)
-    self.createInput(customDiceInput)
-    self.createButton(customDiceSpawnButton)
-    self.createButton(revertRollBtn) 
-    self.createButton(auto2D6)
-    self.createButton(auto1D6)
-    self.createButton(copyOthersDiceBtn)
-    ----------------
+	----------------
+	-- Left Panel --
+	----------------
+	self.createButton(customDiceInputBG)
+	self.createInput(customDiceInput)
+	self.createButton(customDiceSpawnButton)
+	self.createButton(revertRollBtn)
+	self.createButton(auto2D6)
+	self.createButton(auto1D6)
+	self.createButton(copyOthersDiceBtn)
+	----------------
 
-    -----------
-    -- Rolls --
-    ----------- 
-    local sign=""
-    for i=1, 6 do
-        if lowerUpper then sign= lowerSign else sign=upperSign end
-        clearDiceBtn.position[3]=clearDiceBtn.position[3]+clearDiceBtnIncrement
-        clearDiceBtn.click_function="clearDice"..i
-        clearDiceBtn.label=clearDiceBtnLabel..i..sign
-        self.createButton(clearDiceBtn)
+	-----------
+	-- Rolls --
+	-----------
+	local sign = ""
+	for i = 1, 6 do
+		if lowerUpper then
+			sign = lowerSign
+		else
+			sign = upperSign
+		end
+		clearDiceBtn.position[3] = clearDiceBtn.position[3] + clearDiceBtnIncrement
+		clearDiceBtn.click_function = "clearDice" .. i
+		clearDiceBtn.label = clearDiceBtnLabel .. i .. sign
+		self.createButton(clearDiceBtn)
 
-        rollOrSelectDiceBtn.position[3] = rollOrSelectDiceBtn.position[3] + clearDiceBtnIncrement
-        rollOrSelectDiceBtn.label = "Roll\n" .. i .. sign
-        rollOrSelectDiceBtn.tooltip = "LMB Re-rolls this row\nRMB Re-rolls this row and lowers/uppers"
-        rollOrSelectDiceBtn.click_function = "RollOrSelectDeleteDice" .. i
-        self.createButton(rollOrSelectDiceBtn)
-    end
-    ----------- 
+		rollOrSelectDiceBtn.position[3] = rollOrSelectDiceBtn.position[3] + clearDiceBtnIncrement
+		rollOrSelectDiceBtn.label = "Roll\n" .. i .. sign
+		rollOrSelectDiceBtn.tooltip = "LMB Re-rolls this row\nRMB Re-rolls this row and lowers/uppers"
+		rollOrSelectDiceBtn.click_function = "RollOrSelectDeleteDice" .. i
+		self.createButton(rollOrSelectDiceBtn)
+	end
+	-----------
 
-    selectedColor=currentMat
-    modifyMenu(selectedColor)
+	selectedColor = currentMat
+	modifyMenu(selectedColor)
 
-    renderStats()
+	renderStats()
 end
 
 function modifyMenu1()
@@ -1119,16 +1155,16 @@ function modifyMenu4()
 	modifyMenu("Green")
 end
 function modifyMenu(color, img)
-    customDiceImage = img
-    selectedColor = color
-    setDiceType()
-    self.editButton({index=4, color=color})
-    self.editButton({index=5, color=color})
-    self.editButton({index=6, color=color})
-    self.editButton({index=7, color=color})
-    self.editButton({index=8, color=color})
-    self.editButton({index=9, color=color})
-    self.editButton({index=10, color=color})
+	customDiceImage = img
+	selectedColor = color
+	setDiceType()
+	self.editButton({ index = 4, color = color })
+	self.editButton({ index = 5, color = color })
+	self.editButton({ index = 6, color = color })
+	self.editButton({ index = 7, color = color })
+	self.editButton({ index = 8, color = color })
+	self.editButton({ index = 9, color = color })
+	self.editButton({ index = 10, color = color })
 end
 
 function setDiceType()
@@ -1141,70 +1177,72 @@ function setDiceType()
 	end
 end
 
-function renderStats() 
-    local textLines, lineCount = {}, 0
-    for roll, num in pairs(valueToCounter) do
-        if num > 0 then
-            table.insert(textLines, "#" .. roll .. ": " .. num)
-            lineCount = lineCount + 1
-        end
-    end
-    for i = lineCount+1, 6 do
-        table.insert(textLines, " ")
-    end
+function renderStats()
+	local textLines, lineCount = {}, 0
+	for roll, num in pairs(valueToCounter) do
+		if num > 0 then
+			table.insert(textLines, "#" .. roll .. ": " .. num)
+			lineCount = lineCount + 1
+		end
+	end
+	for i = lineCount + 1, 6 do
+		table.insert(textLines, " ")
+	end
 
-    local text = table.concat(textLines, "\n")
-    if text == "" then text = emptyText end
-    local totalText = (totalDice == 0) and "" or ("\n" .. totalDice .. "∑" .. diceSum)
+	local text = table.concat(textLines, "\n")
+	if text == "" then
+		text = emptyText
+	end
+	local totalText = (totalDice == 0) and "" or ("\n" .. totalDice .. "∑" .. diceSum)
 
-    fontSize      = defaultFontSize
-    divisionLabel = ""
+	fontSize = defaultFontSize
+	divisionLabel = ""
 
-    self.editButton({ index = 0, label = text .. totalText, font_size = fontSize })
-    self.editButton({ index = 1, label = divisionLabel })
+	self.editButton({ index = 0, label = text .. totalText, font_size = fontSize })
+	self.editButton({ index = 1, label = divisionLabel })
 end
 
 function onCollisionEnter(info)
-    local obj = info.collision_object
-    if obj.tag ~= "Dice" then
-        return
-    end
+	local obj = info.collision_object
+	if obj.tag ~= "Dice" then
+		return
+	end
 
-    local v = obj.getValue()
-    valueToCounter[v] = valueToCounter[v] + 1
-    diceSum    = diceSum + v
-    totalDice  = totalDice + 1
+	local v = obj.getValue()
+	valueToCounter[v] = valueToCounter[v] + 1
+	diceSum = diceSum + v
+	totalDice = totalDice + 1
 
-    renderStats()
+	renderStats()
 end
 
 function onCollisionExit(info)
-    local obj = info.collision_object
-    if obj.tag ~= "Dice" then
-        return
-    end
+	local obj = info.collision_object
+	if obj.tag ~= "Dice" then
+		return
+	end
 
-    local v = obj.getValue()
-    valueToCounter[v] = valueToCounter[v] - 1
-    diceSum    = diceSum - v
-    totalDice  = totalDice - 1
+	local v = obj.getValue()
+	valueToCounter[v] = valueToCounter[v] - 1
+	diceSum = diceSum - v
+	totalDice = totalDice - 1
 
-    renderStats()
+	renderStats()
 end
 
 function swapPipColor()
-    customDiceImage = nil
-    if pipColorBtn.color == "Black" then
-        pipColorBtn.label = "White"
-        pipColorBtn.color = "White"
-        pipColorBtn.font_color = "Black"
-    else
-        pipColorBtn.label = "Black"
-        pipColorBtn.color = "Black"
-        pipColorBtn.font_color = "White"
-    end
+	customDiceImage = nil
+	if pipColorBtn.color == "Black" then
+		pipColorBtn.label = "White"
+		pipColorBtn.color = "White"
+		pipColorBtn.font_color = "Black"
+	else
+		pipColorBtn.label = "Black"
+		pipColorBtn.color = "Black"
+		pipColorBtn.font_color = "White"
+	end
 
-    setDiceType()
+	setDiceType()
 
-    self.editButton(pipColorBtn)
+	self.editButton(pipColorBtn)
 end
