@@ -1,0 +1,56 @@
+name: Lint
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    name: Lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint
+        uses: JohnnyMorganz/stylua-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          args: --glob "**/*.ttslua" .
+
+      - name: Commit and push formatting fixes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "lint"
+          file_pattern: "**/*.ttslua"
+
+  static-analysis:
+    runs-on: ubuntu-latest
+    name: Static Analysis
+    env:
+      luaVersion: '5.2'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Lua
+        uses: leafo/gh-actions-lua@v10
+        with:
+          luaVersion: ${{ env.luaVersion }}
+
+      - name: Setup LuaRocks
+        uses: leafo/gh-actions-luarocks@v4
+
+      - name: Install luacheck
+        run: luarocks install luacheck
+
+      - name: Check Lua syntax (fail hard)
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -type f -name "*.ttslua" -print0 | xargs -0 -r -n1 luac -p
+
+      - name: Run luacheck (warnings non-blocking)
+        shell: bash
+        run: |
+          luacheck . --codes --include-files "**/*.ttslua" || true
+
