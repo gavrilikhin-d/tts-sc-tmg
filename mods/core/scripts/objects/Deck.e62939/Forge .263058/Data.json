@@ -1,0 +1,58 @@
+{
+  "GUID": "263058",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 36.7207642,
+    "posY": 1.0556035,
+    "posZ": -66.70786,
+    "rotX": 0.00217033527,
+    "rotY": 179.998428,
+    "rotZ": -0.00184662046,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Forge ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 152100,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1521": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12614674317654130931/DD56659EF00B1F8FB71CF44C2F697AF080F100E2/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}
