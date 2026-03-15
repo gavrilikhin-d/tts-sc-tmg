@@ -1,0 +1,55 @@
+{
+  "GUID": "6f29c7",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 41.1193,
+    "posY": 0.914069355,
+    "posZ": -74.53254,
+    "rotX": -0.003116494,
+    "rotY": 179.970459,
+    "rotZ": 0.0283114482,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Praetor Guard (Zealot)",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 150200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1502": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15340605211418505493/6EA20802A54FE26816BBCE1E267F4BD04D876407/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/15340605211418505493/6EA20802A54FE26816BBCE1E267F4BD04D876407/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

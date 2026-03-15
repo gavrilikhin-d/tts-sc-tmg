@@ -1,0 +1,58 @@
+{
+  "GUID": "3457ce",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 36.5405426,
+    "posY": 1.02672744,
+    "posZ": -67.6807,
+    "rotX": -0.002313249,
+    "rotY": 180.0,
+    "rotZ": -0.00287443958,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Warp Gate ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 151500,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1515": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/9891514257269124851/106369D275A86E5FBBE3D89DE59D39C376AA9E70/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14121502724396997723/146E5D6D2B0E6F585CF064D7972A629FF0FBF67F/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

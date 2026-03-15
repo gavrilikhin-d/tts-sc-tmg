@@ -1,0 +1,55 @@
+{
+  "GUID": "8ac6f3",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 42.0316,
+    "posY": 0.914314747,
+    "posZ": -74.67799,
+    "rotX": -0.005540442,
+    "rotY": 179.984451,
+    "rotZ": 0.0443769,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Kerrigan swarm Raptor (Zergling)",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 149400,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1494": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16250262040524524392/4D3C67ACA38CCB1A64BAEBA0C71F054A33CA8110/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/16250262040524524392/4D3C67ACA38CCB1A64BAEBA0C71F054A33CA8110/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

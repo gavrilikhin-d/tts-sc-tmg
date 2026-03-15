@@ -1,0 +1,55 @@
+{
+  "GUID": "1d4935",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 36.524456,
+    "posY": 0.913857,
+    "posZ": -75.19653,
+    "rotX": -0.00217046053,
+    "rotY": 180.026718,
+    "rotZ": 0.0159969367,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Queen",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 149300,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1493": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16270366214852657195/6510464DFEC4E8206AAC2D80377C1A1B4B1036E3/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11100353683951238556/5F6EE8835635ACA8545C926528084C23EBBCE935/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}
