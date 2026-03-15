@@ -1,0 +1,55 @@
+{
+  "GUID": "81c445",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 39.5670052,
+    "posY": 0.91359055,
+    "posZ": -71.31523,
+    "rotX": 0.000157085451,
+    "rotY": 179.983444,
+    "rotZ": -0.00101846142,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Omega Worm",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 149200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1492": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12637573904429910970/E144BDA9E5EC2E132EFBD33B4FDB580FE8E541D6/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12637573904429910970/E144BDA9E5EC2E132EFBD33B4FDB580FE8E541D6/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

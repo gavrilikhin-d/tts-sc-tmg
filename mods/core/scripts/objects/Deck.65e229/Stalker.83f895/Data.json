@@ -1,0 +1,55 @@
+{
+  "GUID": "83f895",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 39.750988,
+    "posY": 0.91249305,
+    "posZ": -70.62174,
+    "rotX": 0.0104129985,
+    "rotY": 179.9732,
+    "rotZ": 359.927917,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Stalker",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 150000,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1500": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17108324668317698091/43ED5794CB5909BC51CBF8AC2EC5F2D44798EC8C/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14535715547336171098/D9A1C67182AF043A4124A66B7687577FD381C9DB/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

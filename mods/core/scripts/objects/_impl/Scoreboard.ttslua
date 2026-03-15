@@ -1,0 +1,182 @@
+stats = {
+	initiative = "None",
+	round = 1,
+	availableSupply = 6,
+	redSupply = 0,
+	blueSupply = 0,
+	redSupplyDestroyed = 0,
+	blueSupplyDestroyed = 0,
+	redMissionVP = 0,
+	blueMissionVP = 0,
+	redTotal = 0,
+	blueTotal = 0,
+}
+
+CONSTANTS = {
+	round = {
+		BUTTON_ID = "roundButton",
+		LABEL = "Round ",
+	},
+	availableSupply = {
+		BUTTON_ID = "availableSupplyButton",
+		LABEL = "Available Supply\n",
+	},
+	redSupply = {
+		BUTTON_ID = "redSupply",
+		LABEL = "Active Supply\n",
+	},
+	blueSupply = {
+		BUTTON_ID = "blueSupply",
+		LABEL = "Active Supply\n",
+	},
+	redSupplyDestroyed = {
+		BUTTON_ID = "redSupplyDestroyed",
+		LABEL = "Supply Destroyed\n",
+	},
+	blueSupplyDestroyed = {
+		BUTTON_ID = "blueSupplyDestroyed",
+		LABEL = "Supply Destroyed\n",
+	},
+	redMissionVP = {
+		BUTTON_ID = "redMissionVP",
+		LABEL = "Mission VP\n",
+	},
+	blueMissionVP = {
+		BUTTON_ID = "blueMissionVP",
+		LABEL = "Mission VP\n",
+	},
+	redTotal = {
+		BUTTON_ID = "redTotal",
+		LABEL = "",
+	},
+	blueTotal = {
+		BUTTON_ID = "blueTotal",
+		LABEL = "",
+	},
+}
+
+---------------
+-- Rendering --
+---------------
+
+-- In documentation they are fucking lying
+-- about `setAttribute` not overriding other attributes
+-- So we need to get all attributes first
+-- and then set the desired attribute
+function setAttribute(id, attribute, value)
+	local attributes = self.UI.getAttributes(id)
+	attributes[attribute] = value
+	self.UI.setAttributes(id, attributes)
+end
+
+function setInteractable(id, interactable)
+	setAttribute(id, "interactable", interactable)
+end
+
+function highlightInitiativeButton(id)
+	-- Disabled initiative button will be highlighted
+	setInteractable(id, false)
+end
+
+function unhighlightInitiativeButton(id)
+	-- Enabled initiative button will be unhighlighted
+	setInteractable(id, true)
+end
+
+function oppositeColor(color)
+	return color == "Red" and "Blue" or "Red"
+end
+
+INITIATIVE_BUTTON_ID = "InitiativeButton"
+function renderInitiative()
+	initiative = stats.initiative
+	if initiative == "None" then
+		return
+	end
+
+	highlightInitiativeButton(initiative .. INITIATIVE_BUTTON_ID)
+
+	other = oppositeColor(initiative)
+	unhighlightInitiativeButton(string.lower(other) .. INITIATIVE_BUTTON_ID)
+end
+
+function renderStat(stat)
+	if stat == "initiative" then
+		renderInitiative()
+		return
+	end
+
+	const = CONSTANTS[stat]
+	setAttribute(const.BUTTON_ID, "text", const.LABEL .. stats[stat])
+end
+
+------------------------
+-- Initialive Toggle  --
+------------------------
+function setInitiative(_, color)
+	stats.initiative = color
+	renderInitiative()
+end
+
+---------------
+-- Counters  --
+---------------
+LEFT_MOUSE_CLICK = "-1"
+RIGHT_MOUSE_CLICK = "-2"
+function clickDelta(clickType)
+	return clickType == LEFT_MOUSE_CLICK and 1 or -1
+end
+
+function counter(stat, onChange)
+	function callback(_, clickType)
+		stats[stat] = stats[stat] + clickDelta(clickType)
+		if stats[stat] < 0 then
+			stats[stat] = 0
+		end
+		renderStat(stat)
+		if onChange then
+			onChange()
+		end
+	end
+
+	return callback
+end
+
+function updateTotal(colorPrefix)
+	function callback()
+		supplyDestroyed = stats[colorPrefix .. "SupplyDestroyed"]
+		missionVP = stats[colorPrefix .. "MissionVP"]
+		total = supplyDestroyed + missionVP
+		stats[colorPrefix .. "Total"] = total
+		renderStat(colorPrefix .. "Total")
+	end
+	return callback
+end
+
+toggleRound = counter("round")
+toggleAvailableSupply = counter("availableSupply")
+toggleRedSupply = counter("redSupply")
+toggleBlueSupply = counter("blueSupply")
+toggleRedSupplyDestroyed = counter("redSupplyDestroyed", updateTotal("red"))
+toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed", updateTotal("blue"))
+toggleRedMissionVP = counter("redMissionVP", updateTotal("red"))
+toggleBlueMissionVP = counter("blueMissionVP", updateTotal("blue"))
+---------------
+
+---------------
+-- Save/Load --
+---------------
+function onSave()
+	return JSON.encode(stats)
+end
+
+function onLoad(savedStats)
+	if savedStats ~= "" then
+		stats = JSON.decode(savedStats)
+	end
+
+	for stat, _ in pairs(stats) do
+		renderStat(stat)
+	end
+end
+---------------

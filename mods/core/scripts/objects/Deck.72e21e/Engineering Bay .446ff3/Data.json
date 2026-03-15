@@ -1,0 +1,58 @@
+{
+  "GUID": "446ff3",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 63.8437729,
+    "posY": 1.03646731,
+    "posZ": -65.60236,
+    "rotX": 0.0008261003,
+    "rotY": 180.0,
+    "rotZ": -0.00409215735,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Engineering Bay ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 152900,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1529": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17698899410126315351/5395ABF1B9464E94ACA42DC582DDE391D8E502BC/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12018734542705647727/C283E602EEA01C2CCF4FC34F20A906ED940885AC/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

@@ -18,79 +18,171 @@ local currentMat = inferColorFromObjectPosition(self)
 local oppMatGUID = Global.getVar(oppositeColor(currentMat) .. "CustomDiceMat_GUID")
 local oppMat = getObjectFromGUID(oppMatGUID)
 
-clearAllDiceBtn={
-    label="Clear mat\n(right click)", click_function="clearDiceAll", function_owner=self,
-    position={-4.6, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=400,
-    font_size=60, color={0,0,0}, font_color={1,1,1}
+clearAllDiceBtn = {
+	label = "Clear mat\n(right click)",
+	click_function = "clearDiceAll",
+	function_owner = self,
+	position = { -4.6, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 400,
+	font_size = 60,
+	color = { 0, 0, 0 },
+	font_color = { 1, 1, 1 },
 }
 
 rollAllLabel = "Roll all dice"
 rollAllTooltip = "Left-click to roll all dice. Right-click to switch to selecting dice."
 selectAllLabel = "Select all dice"
 selectAllTooltip = "Left-click to select all dice. Right-click to switch to rolling dice."
-rollOrSelectAllBtn={
-    label=rollAllLabel, tooltip=rollAllTooltip, click_function="RollOrSelectDice", function_owner=self,
-    position={-3.5, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=520,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+rollOrSelectAllBtn = {
+	label = rollAllLabel,
+	tooltip = rollAllTooltip,
+	click_function = "RollOrSelectDice",
+	function_owner = self,
+	position = { -3.5, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 520,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
 
-add1d6Btn={
-    label="+ 1d6", click_function="spawnDice1", function_owner=self,
-    position={-0.5, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+add1d6Btn = {
+	label = "+ 1d6",
+	click_function = "spawnDice1",
+	function_owner = self,
+	position = { -0.5, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 250,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
-add2d6Btn={
-    label="+ 2d6", click_function="spawnDice2", function_owner=self,
-    position={0.0, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+add2d6Btn = {
+	label = "+ 2d6",
+	click_function = "spawnDice2",
+	function_owner = self,
+	position = { 0.0, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 250,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
-add3d6Btn={
-    label="+ 3d6", click_function="spawnDice3", function_owner=self,
-    position={0.5, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+add3d6Btn = {
+	label = "+ 3d6",
+	click_function = "spawnDice3",
+	function_owner = self,
+	position = { 0.5, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 250,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
-add4d6Btn={
-    label="+ 4d6", click_function="spawnDice4", function_owner=self,
-    position={1.0, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+add4d6Btn = {
+	label = "+ 4d6",
+	click_function = "spawnDice4",
+	function_owner = self,
+	position = { 1.0, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 250,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
-add5d6Btn={
-    label="+ 5d6", click_function="spawnDice5", function_owner=self,
-    position={1.5, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+add5d6Btn = {
+	label = "+ 5d6",
+	click_function = "spawnDice5",
+	function_owner = self,
+	position = { 1.5, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 250,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
-add10d6Btn={
-    label="+ 10d6", click_function="spawnDice10", function_owner=self,
-    position={2.0, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+add10d6Btn = {
+	label = "+ 10d6",
+	click_function = "spawnDice10",
+	function_owner = self,
+	position = { 2.0, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 250,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
-add25d6Btn={
-    label="+ 25d6", click_function="spawnDice25", function_owner=self,
-    position={2.5, Yoffset ,-0.87}, rotation={0,0,0}, height=50, width=250,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+add25d6Btn = {
+	label = "+ 25d6",
+	click_function = "spawnDice25",
+	function_owner = self,
+	position = { 2.5, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 250,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
 
-colorBtnDimension=150
-colorBtnOffset=3.0
-color1Btn={
-    label="", click_function="modifyMenu1", function_owner=self,
-    position={colorBtnOffset, Yoffset ,-0.87}, rotation={0,0,0}, height=colorBtnDimension, width=colorBtnDimension,
-    font_size=60, color="Red", font_color={0,0,0}
+colorBtnDimension = 150
+colorBtnOffset = 3.0
+color1Btn = {
+	label = "",
+	click_function = "modifyMenu1",
+	function_owner = self,
+	position = { colorBtnOffset, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = colorBtnDimension,
+	width = colorBtnDimension,
+	font_size = 60,
+	color = "Red",
+	font_color = { 0, 0, 0 },
 }
-color2Btn={
-    label="", click_function="modifyMenu2", function_owner=self,
-    position={colorBtnOffset+0.35, Yoffset ,-0.87}, rotation={0,0,0}, height=colorBtnDimension, width=colorBtnDimension,
-    font_size=60, color="Blue", font_color={0,0,0}
+color2Btn = {
+	label = "",
+	click_function = "modifyMenu2",
+	function_owner = self,
+	position = { colorBtnOffset + 0.35, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = colorBtnDimension,
+	width = colorBtnDimension,
+	font_size = 60,
+	color = "Blue",
+	font_color = { 0, 0, 0 },
 }
-color3Btn={
-    label="", click_function="modifyMenu3", function_owner=self,
-    position={colorBtnOffset+0.35*2, Yoffset ,-0.87}, rotation={0,0,0}, height=colorBtnDimension, width=colorBtnDimension,
-    font_size=60, color="Black", font_color={0,0,0}
+color3Btn = {
+	label = "",
+	click_function = "modifyMenu3",
+	function_owner = self,
+	position = { colorBtnOffset + 0.35 * 2, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = colorBtnDimension,
+	width = colorBtnDimension,
+	font_size = 60,
+	color = "Black",
+	font_color = { 0, 0, 0 },
 }
-color4Btn={
-    label="", click_function="modifyMenu4", function_owner=self,
-    position={colorBtnOffset+0.35*3, Yoffset ,-0.87}, rotation={0,0,0}, height=colorBtnDimension, width=colorBtnDimension,
-    font_size=60, color="Green", font_color={0,0,0}
+color4Btn = {
+	label = "",
+	click_function = "modifyMenu4",
+	function_owner = self,
+	position = { colorBtnOffset + 0.35 * 3, Yoffset, -0.87 },
+	rotation = { 0, 0, 0 },
+	height = colorBtnDimension,
+	width = colorBtnDimension,
+	font_size = 60,
+	color = "Green",
+	font_color = { 0, 0, 0 },
 }
 pipColorBtn=
 {
@@ -99,35 +191,69 @@ pipColorBtn=
   font_size=60, color="White", font_color="Black"
 }
 
-customDiceBtn={
-    label="Custom Dice", click_function="customDice", function_owner=self,
-    position={colorBtnOffset+0.35*9, Yoffset ,-0.85}, rotation={0,0,0}, height=50, width=420,
-    font_size=60, color={1,1,1}, font_color={0,0,0}
+customDiceBtn = {
+	label = "Custom Dice",
+	click_function = "customDice",
+	function_owner = self,
+	position = { colorBtnOffset + 0.35 * 9, Yoffset, -0.85 },
+	rotation = { 0, 0, 0 },
+	height = 50,
+	width = 420,
+	font_size = 60,
+	color = { 1, 1, 1 },
+	font_color = { 0, 0, 0 },
 }
 
-clearDiceBtnIncrement=0.28
-clearDiceBtnLabel="Del\n"
-clearDiceBtntooltip="LMB Delete this row\nRMB Delete this row and lowers/uppers"
-clearDiceBtn={
-    label=clearDiceBtnLabel, tooltip=clearDiceBtntooltip, click_function="filledInLater", function_owner=self,
-    position={-5.8, Yoffset ,-0.85}, rotation={0,0,0}, height=1000, width=1300, scale={0.1,0.1,0.1},
-    font_size=350, color="Black", font_color="Red"
+clearDiceBtnIncrement = 0.28
+clearDiceBtnLabel = "Del\n"
+clearDiceBtntooltip = "LMB Delete this row\nRMB Delete this row and lowers/uppers"
+clearDiceBtn = {
+	label = clearDiceBtnLabel,
+	tooltip = clearDiceBtntooltip,
+	click_function = "filledInLater",
+	function_owner = self,
+	position = { -5.8, Yoffset, -0.85 },
+	rotation = { 0, 0, 0 },
+	height = 1000,
+	width = 1300,
+	scale = { 0.1, 0.1, 0.1 },
+	font_size = 350,
+	color = "Black",
+	font_color = "Red",
 }
 
-rollOrSelectDiceBtn={
-    label="filled in later", tooltip="filled in later", click_function="filledInLater", function_owner=self,
-    position={-5.45, Yoffset ,-0.85}, rotation={0,0,0}, height=1000, width=1300, scale={0.1,0.1,0.1},
-    font_size=350, color="White", font_color={0,0,0}
+rollOrSelectDiceBtn = {
+	label = "filled in later",
+	tooltip = "filled in later",
+	click_function = "filledInLater",
+	function_owner = self,
+	position = { -5.45, Yoffset, -0.85 },
+	rotation = { 0, 0, 0 },
+	height = 1000,
+	width = 1300,
+	scale = { 0.1, 0.1, 0.1 },
+	font_size = 350,
+	color = "White",
+	font_color = { 0, 0, 0 },
 }
 
-lowerUpper=true
-oneTimeUpper=true
-lowerSign=" (-)"
-upperSign=" (+)"
-lowerUpperBtn={
-    label="RMB\n- / +", tooltip="Changes to upper for the next click", click_function="toggleLowerUpper", function_owner=self,
-    position={-5.62, Yoffset ,1.1}, rotation={0,0,0}, height=0, width=0, scale={0,0,0},
-    font_size=500, color="White", font_color={0,0,0}
+lowerUpper = true
+oneTimeUpper = true
+lowerSign = " (-)"
+upperSign = " (+)"
+lowerUpperBtn = {
+	label = "RMB\n- / +",
+	tooltip = "Changes to upper for the next click",
+	click_function = "toggleLowerUpper",
+	function_owner = self,
+	position = { -5.62, Yoffset, 1.1 },
+	rotation = { 0, 0, 0 },
+	height = 0,
+	width = 0,
+	scale = { 0, 0, 0 },
+	font_size = 500,
+	color = "White",
+	font_color = { 0, 0, 0 },
 }
 
 copyOthersDiceBtn = {
@@ -146,79 +272,101 @@ copyOthersDiceBtn = {
 }
 
 local auto1D6 = {
-    label          = "Instant 1D6",
-    tooltip="Roll 1D6 Instantly",
-    click_function = "autoRoll1D6",
-    function_owner = self,
-    position       = {-7.5, Yoffset, 0.52},
-    rotation       = { 0, 0, 0 },
-    width = 1300, height = 300, font_size = 150,
-    color = {0.13, 0.13, 0.13, 1}, -- Black button (not pure black for smoother look)
-    font_color = {1, 1, 1}, -- White text for high contrast
-    hover_color = {0.2, 0.2, 0.2, 1}, -- Dark gray when hovered
-    press_color = {0.27, 0.27, 0.27, 1}, -- Slightly lighter gray when pressed
-    scale = {0.5, 0.5, 0.5}
+	label = "Instant 1D6",
+	tooltip = "Roll 1D6 Instantly",
+	click_function = "autoRoll1D6",
+	function_owner = self,
+	position = { -7.5, Yoffset, 0.52 },
+	rotation = { 0, 0, 0 },
+	width = 1300,
+	height = 300,
+	font_size = 150,
+	color = { 0.13, 0.13, 0.13, 1 }, -- Black button (not pure black for smoother look)
+	font_color = { 1, 1, 1 }, -- White text for high contrast
+	hover_color = { 0.2, 0.2, 0.2, 1 }, -- Dark gray when hovered
+	press_color = { 0.27, 0.27, 0.27, 1 }, -- Slightly lighter gray when pressed
+	scale = { 0.5, 0.5, 0.5 },
 }
 
 local auto2D6 = {
-    label          = "Instant 2D6",
-    tooltip="Roll 2D6 Instantly",
-    click_function = "autoRoll2D6",
-    function_owner = self,
-    position       = {-7.5, Yoffset, 0.18},
-    rotation       = { 0, 0, 0 },
-    width = 1300, height = 300, font_size = 150,
-    color = {0.13, 0.13, 0.13, 1}, -- Black button (not pure black for smoother look)
-    font_color = {1, 1, 1}, -- White text for high contrast
-    hover_color = {0.2, 0.2, 0.2, 1}, -- Dark gray when hovered
-    press_color = {0.27, 0.27, 0.27, 1}, -- Slightly lighter gray when pressed
-    scale = {0.5, 0.5, 0.5}
+	label = "Instant 2D6",
+	tooltip = "Roll 2D6 Instantly",
+	click_function = "autoRoll2D6",
+	function_owner = self,
+	position = { -7.5, Yoffset, 0.18 },
+	rotation = { 0, 0, 0 },
+	width = 1300,
+	height = 300,
+	font_size = 150,
+	color = { 0.13, 0.13, 0.13, 1 }, -- Black button (not pure black for smoother look)
+	font_color = { 1, 1, 1 }, -- White text for high contrast
+	hover_color = { 0.2, 0.2, 0.2, 1 }, -- Dark gray when hovered
+	press_color = { 0.27, 0.27, 0.27, 1 }, -- Slightly lighter gray when pressed
+	scale = { 0.5, 0.5, 0.5 },
 }
 
-
 local revertRollBtn = {
-    label          = "Revert Roll",
-    tooltip="It takes 1 second after rolling to 'lock in'",
-    click_function = "revertRoll",
-    function_owner = self,
-    position       = {-7.5, Yoffset, -0.16},
-    rotation       = { 0, 0, 0 },
-    width = 1300, height = 300, font_size = 150,
-    color = {0.13, 0.13, 0.13, 1}, -- Black button (not pure black for smoother look)
-    font_color = {1, 1, 1}, -- White text for high contrast
-    hover_color = {0.2, 0.2, 0.2, 1}, -- Dark gray when hovered
-    press_color = {0.27, 0.27, 0.27, 1}, -- Slightly lighter gray when pressed
-    scale = {0.5, 0.5, 0.5}
+	label = "Revert Roll",
+	tooltip = "It takes 1 second after rolling to 'lock in'",
+	click_function = "revertRoll",
+	function_owner = self,
+	position = { -7.5, Yoffset, -0.16 },
+	rotation = { 0, 0, 0 },
+	width = 1300,
+	height = 300,
+	font_size = 150,
+	color = { 0.13, 0.13, 0.13, 1 }, -- Black button (not pure black for smoother look)
+	font_color = { 1, 1, 1 }, -- White text for high contrast
+	hover_color = { 0.2, 0.2, 0.2, 1 }, -- Dark gray when hovered
+	press_color = { 0.27, 0.27, 0.27, 1 }, -- Slightly lighter gray when pressed
+	scale = { 0.5, 0.5, 0.5 },
 }
 
 -- Background Box (Soft Off-White for a Professional Look)
 local customDiceInputBG = {
-    label = "", click_function = "none", function_owner = self,
-    position = {-7.5, Yoffset, -0.82}, rotation = {0, 0, 0},
-    width = 1300, height = 375, font_size = 100,
-    color = {0.95, 0.95, 0.95, 1}, -- Soft off-white
-    scale = {0.5, 0.5, 0.5}
+	label = "",
+	click_function = "none",
+	function_owner = self,
+	position = { -7.5, Yoffset, -0.82 },
+	rotation = { 0, 0, 0 },
+	width = 1300,
+	height = 375,
+	font_size = 100,
+	color = { 0.95, 0.95, 0.95, 1 }, -- Soft off-white
+	scale = { 0.5, 0.5, 0.5 },
 }
 
 -- Input Field (Bright White)
 local customDiceInput = {
-    label = "Enter Dice #", input_function = "setCustomDiceCount", function_owner = self,
-    position = {-7.5, Yoffset, -0.82}, rotation = {0, 0, 0},
-    width = 1100, height = 225, font_size = 180, alignment = 2, scale = {0.5, 0.5, 0.5},
-    color = {1, 1, 1, 1}, -- Pure white
-    font_color = {0.2, 0.2, 0.2} -- Dark gray text
+	label = "Enter Dice #",
+	input_function = "setCustomDiceCount",
+	function_owner = self,
+	position = { -7.5, Yoffset, -0.82 },
+	rotation = { 0, 0, 0 },
+	width = 1100,
+	height = 225,
+	font_size = 180,
+	alignment = 2,
+	scale = { 0.5, 0.5, 0.5 },
+	color = { 1, 1, 1, 1 }, -- Pure white
+	font_color = { 0.2, 0.2, 0.2 }, -- Dark gray text
 }
 
 -- Modern Black "Spawn Dice" Button
 local customDiceSpawnButton = {
-    label = "Spawn Dice", click_function = "spawnCustomDice", function_owner = self,
-    position = {-7.5, Yoffset, -0.50}, rotation = {0, 0, 0},
-    width = 1300, height = 300, font_size = 150,
-    color = {0.13, 0.13, 0.13, 1}, -- Black button (not pure black for smoother look)
-    font_color = {1, 1, 1}, -- White text for high contrast
-    hover_color = {0.2, 0.2, 0.2, 1}, -- Dark gray when hovered
-    press_color = {0.27, 0.27, 0.27, 1}, -- Slightly lighter gray when pressed
-    scale = {0.5, 0.5, 0.5}
+	label = "Spawn Dice",
+	click_function = "spawnCustomDice",
+	function_owner = self,
+	position = { -7.5, Yoffset, -0.50 },
+	rotation = { 0, 0, 0 },
+	width = 1300,
+	height = 300,
+	font_size = 150,
+	color = { 0.13, 0.13, 0.13, 1 }, -- Black button (not pure black for smoother look)
+	font_color = { 1, 1, 1 }, -- White text for high contrast
+	hover_color = { 0.2, 0.2, 0.2, 1 }, -- Dark gray when hovered
+	press_color = { 0.27, 0.27, 0.27, 1 }, -- Slightly lighter gray when pressed
+	scale = { 0.5, 0.5, 0.5 },
 }
 local customDiceCount = 1 -- Default number of dice
 
@@ -272,8 +420,6 @@ function importOpposDice(obj, player, alt)
     renderStats()
 end
 
-
-
 local lastSpawnPosition = nil -- Keep track of the last spawned dice position
 local diceCount = 0 -- Track the number of dice spawned in the current sequence
 function storeCurrentDiceAsPreviousRoll()
@@ -296,34 +442,34 @@ function storeCurrentDiceAsPreviousRoll()
         table.insert(snapshot, d)
     end
 
-    -- If we've undone some rolls and then store a new roll, drop any future redo history
-    if previousRollIndex < #previousRollStack then
-        for i = #previousRollStack, previousRollIndex + 1, -1 do
-            table.remove(previousRollStack, i)
-        end
-    end
+	-- If we've undone some rolls and then store a new roll, drop any future redo history
+	if previousRollIndex < #previousRollStack then
+		for i = #previousRollStack, previousRollIndex + 1, -1 do
+			table.remove(previousRollStack, i)
+		end
+	end
 
-    table.insert(previousRollStack, snapshot)
-    -- Trim stack to maximum size
-    while #previousRollStack > maxPreviousRolls do
-        table.remove(previousRollStack, 1)
-    end
-    previousRollIndex = #previousRollStack
-    previousRollData = previousRollStack[previousRollIndex] or {}
+	table.insert(previousRollStack, snapshot)
+	-- Trim stack to maximum size
+	while #previousRollStack > maxPreviousRolls do
+		table.remove(previousRollStack, 1)
+	end
+	previousRollIndex = #previousRollStack
+	previousRollData = previousRollStack[previousRollIndex] or {}
 end
 
 function revertRoll(obj, player, alt)
-    -- Undo one step in the previousRollStack. Use previousRollIndex to track position.
-    if previousRollIndex == 0 or not previousRollStack or #previousRollStack == 0 then
-        printToColor("No previous roll found.", player, "Red")
-        return
-    end
+	-- Undo one step in the previousRollStack. Use previousRollIndex to track position.
+	if previousRollIndex == 0 or not previousRollStack or #previousRollStack == 0 then
+		printToColor("No previous roll found.", player, "Red")
+		return
+	end
 
-    local snapshot = previousRollStack[previousRollIndex]
-    if not snapshot or #snapshot == 0 then
-        printToColor("No previous roll data available.", player, "Red")
-        return
-    end
+	local snapshot = previousRollStack[previousRollIndex]
+	if not snapshot or #snapshot == 0 then
+		printToColor("No previous roll data available.", player, "Red")
+		return
+	end
 
     -- Destroy current dice and spawn snapshot dice
     clearMat()
@@ -332,109 +478,150 @@ function revertRoll(obj, player, alt)
         spawnDie(data)
     end
 
-    printToColor("Reverted to roll #" .. tostring(previousRollIndex) .. " of " .. tostring(#previousRollStack), player, "Green")
-    -- Move pointer back so another click reverts another step
-    previousRollIndex = math.max(0, previousRollIndex - 1)
-    previousRollData = previousRollStack[previousRollIndex] or {}
+	printToColor(
+		"Reverted to roll #" .. tostring(previousRollIndex) .. " of " .. tostring(#previousRollStack),
+		player,
+		"Green"
+	)
+	-- Move pointer back so another click reverts another step
+	previousRollIndex = math.max(0, previousRollIndex - 1)
+	previousRollData = previousRollStack[previousRollIndex] or {}
 end
 
 -- Evaluate a simple arithmetic expression safely (digits, + - * / and parentheses)
 -- Returns number on success, or nil + error message on failure
 local function evalSimpleExpr(expr)
-  if type(expr) ~= "string" then return nil, "invalid input" end
-  local s = expr:gsub("[xX]", "*")
-  s = s:gsub("%s+", "")
-  if s == "" then return nil, "empty" end
-  -- allow only digits, operators and parentheses
-  if s:find("[^%d%+%-%*/%(%)]") then return nil, "invalid characters" end
+	if type(expr) ~= "string" then
+		return nil, "invalid input"
+	end
+	local s = expr:gsub("[xX]", "*")
+	s = s:gsub("%s+", "")
+	if s == "" then
+		return nil, "empty"
+	end
+	-- allow only digits, operators and parentheses
+	if s:find("[^%d%+%-%*/%(%)]") then
+		return nil, "invalid characters"
+	end
 
-  -- tokenize
-  local tokens = {}
-  local i, n = 1, #s
-  while i <= n do
-    local c = s:sub(i, i)
-    if c:match("%d") then
-      local j = i
-      while j <= n and s:sub(j, j):match("%d") do j = j + 1 end
-      table.insert(tokens, tonumber(s:sub(i, j - 1)))
-      i = j
-    elseif c == '-' then
-      -- handle unary minus by inserting 0 before '-'
-      local prev = tokens[#tokens]
-      local prevIsOp = (prev == nil) or (prev == '+') or (prev == '-') or (prev == '*') or (prev == '/') or (prev == '(')
-      if prevIsOp then table.insert(tokens, 0) end
-      table.insert(tokens, '-')
-      i = i + 1
-    elseif c == '+' or c == '*' or c == '/' or c == '(' or c == ')' then
-      table.insert(tokens, c)
-      i = i + 1
-    else
-      return nil, "invalid token"
-    end
-  end
+	-- tokenize
+	local tokens = {}
+	local i, n = 1, #s
+	while i <= n do
+		local c = s:sub(i, i)
+		if c:match("%d") then
+			local j = i
+			while j <= n and s:sub(j, j):match("%d") do
+				j = j + 1
+			end
+			table.insert(tokens, tonumber(s:sub(i, j - 1)))
+			i = j
+		elseif c == "-" then
+			-- handle unary minus by inserting 0 before '-'
+			local prev = tokens[#tokens]
+			local prevIsOp = (prev == nil)
+				or (prev == "+")
+				or (prev == "-")
+				or (prev == "*")
+				or (prev == "/")
+				or (prev == "(")
+			if prevIsOp then
+				table.insert(tokens, 0)
+			end
+			table.insert(tokens, "-")
+			i = i + 1
+		elseif c == "+" or c == "*" or c == "/" or c == "(" or c == ")" then
+			table.insert(tokens, c)
+			i = i + 1
+		else
+			return nil, "invalid token"
+		end
+	end
 
-  -- shunting-yard to RPN
-  local output, ops = {}, {}
-  local prec = { ['+'] = 1, ['-'] = 1, ['*'] = 2, ['/'] = 2 }
-  local function isop(x) return prec[x] ~= nil end
-  for _, t in ipairs(tokens) do
-    if type(t) == 'number' then
-      table.insert(output, t)
-    elseif t == '(' then
-      table.insert(ops, t)
-    elseif t == ')' then
-      local found = false
-      while #ops > 0 do
-        local top = ops[#ops]
-        table.remove(ops)
-        if top == '(' then found = true break end
-        table.insert(output, top)
-      end
-      if not found then return nil, "mismatched parentheses" end
-    elseif isop(t) then
-      while #ops > 0 and isop(ops[#ops]) and prec[ops[#ops]] >= prec[t] do
-        table.insert(output, ops[#ops])
-        table.remove(ops)
-      end
-      table.insert(ops, t)
-    else
-      return nil, "invalid token"
-    end
-  end
-  while #ops > 0 do
-    local top = ops[#ops]
-    table.remove(ops)
-    if top == '(' then return nil, "mismatched parentheses" end
-    table.insert(output, top)
-  end
+	-- shunting-yard to RPN
+	local output, ops = {}, {}
+	local prec = { ["+"] = 1, ["-"] = 1, ["*"] = 2, ["/"] = 2 }
+	local function isop(x)
+		return prec[x] ~= nil
+	end
+	for _, t in ipairs(tokens) do
+		if type(t) == "number" then
+			table.insert(output, t)
+		elseif t == "(" then
+			table.insert(ops, t)
+		elseif t == ")" then
+			local found = false
+			while #ops > 0 do
+				local top = ops[#ops]
+				table.remove(ops)
+				if top == "(" then
+					found = true
+					break
+				end
+				table.insert(output, top)
+			end
+			if not found then
+				return nil, "mismatched parentheses"
+			end
+		elseif isop(t) then
+			while #ops > 0 and isop(ops[#ops]) and prec[ops[#ops]] >= prec[t] do
+				table.insert(output, ops[#ops])
+				table.remove(ops)
+			end
+			table.insert(ops, t)
+		else
+			return nil, "invalid token"
+		end
+	end
+	while #ops > 0 do
+		local top = ops[#ops]
+		table.remove(ops)
+		if top == "(" then
+			return nil, "mismatched parentheses"
+		end
+		table.insert(output, top)
+	end
 
-  -- evaluate RPN
-  local stack = {}
-  local function pop2()
-    local b = stack[#stack]; stack[#stack] = nil
-    local a = stack[#stack]; stack[#stack] = nil
-    if a == nil or b == nil then return nil end
-    return a, b
-  end
-  for _, t in ipairs(output) do
-    if type(t) == 'number' then
-      table.insert(stack, t)
-    else
-      local a, b = pop2()
-      if a == nil then return nil, "invalid expression" end
-      if t == '+' then table.insert(stack, a + b)
-      elseif t == '-' then table.insert(stack, a - b)
-      elseif t == '*' then table.insert(stack, a * b)
-      elseif t == '/' then
-        if b == 0 then return nil, "division by zero" end
-        table.insert(stack, a / b)
-      else
-        return nil, "invalid operator"
-      end
-    end
-  end
-  if #stack ~= 1 then return nil, "invalid expression" end
-  return stack[1]
+	-- evaluate RPN
+	local stack = {}
+	local function pop2()
+		local b = stack[#stack]
+		stack[#stack] = nil
+		local a = stack[#stack]
+		stack[#stack] = nil
+		if a == nil or b == nil then
+			return nil
+		end
+		return a, b
+	end
+	for _, t in ipairs(output) do
+		if type(t) == "number" then
+			table.insert(stack, t)
+		else
+			local a, b = pop2()
+			if a == nil then
+				return nil, "invalid expression"
+			end
+			if t == "+" then
+				table.insert(stack, a + b)
+			elseif t == "-" then
+				table.insert(stack, a - b)
+			elseif t == "*" then
+				table.insert(stack, a * b)
+			elseif t == "/" then
+				if b == 0 then
+					return nil, "division by zero"
+				end
+				table.insert(stack, a / b)
+			else
+				return nil, "invalid operator"
+			end
+		end
+	end
+	if #stack ~= 1 then
+		return nil, "invalid expression"
+	end
+	return stack[1]
 end
 
 function setCustomDiceCount(_, player, value, _)
@@ -452,40 +639,40 @@ function setCustomDiceCount(_, player, value, _)
 end
 
 function spawnCustomDice(_, player, _)
-    if customDiceCount and customDiceCount > 0 then
-        spawnDice(customDiceCount, player)
-        customDiceCount = nil -- Reset custom dice count
-        self.editInput({index = 0, value = ""}) -- Clear the input field (replace index if needed)
-        printToColor("Custom Dice Count reset after spawning.", player, "Yellow")
-    else
-        printToColor("No valid custom dice count set.", player, "Red")
-    end
+	if customDiceCount and customDiceCount > 0 then
+		spawnDice(customDiceCount, player)
+		customDiceCount = nil -- Reset custom dice count
+		self.editInput({ index = 0, value = "" }) -- Clear the input field (replace index if needed)
+		printToColor("Custom Dice Count reset after spawning.", player, "Yellow")
+	else
+		printToColor("No valid custom dice count set.", player, "Red")
+	end
 end
 
 function autoRoll(obj, player, alt, numDice)
-    numDice = numDice or 1
-    local total = 0
-    local directionMultiplier = (currentMat == "Blue") and 1 or -1
-    local startX = self.getPosition().x + (currentMat == "Blue" and -16 or 16)
-    local startY = self.getPosition().y + 1
-    local startZ = self.getPosition().z
-    if lastSpawnPosition then
-        startX = lastSpawnPosition.x
-        startY = lastSpawnPosition.y
-        startZ = lastSpawnPosition.z
-    end
-    local diceColors = {
-        {0.627, 0.124, 0.941}, -- purple
-        {1, 0.341, 0.2},       -- orange
-        {0.203, 0.674, 0.325}, -- green
-        {0.160, 0.596, 0.965}, -- blue
-        {0.898, 0.223, 0.509}, -- pink
-        {0.254, 0.211, 0.098}, -- brown
-        {1, 0.298, 0.298},     -- red
-        {0.345, 0.184, 0.506}, -- indigo
-        {0.988, 0.761, 0.498}, -- light orange
-        {0.847, 0.647, 0.125}, -- gold
-    }
+	numDice = numDice or 1
+	local total = 0
+	local directionMultiplier = (currentMat == "Blue") and 1 or -1
+	local startX = self.getPosition().x + (currentMat == "Blue" and -16 or 16)
+	local startY = self.getPosition().y + 1
+	local startZ = self.getPosition().z
+	if lastSpawnPosition then
+		startX = lastSpawnPosition.x
+		startY = lastSpawnPosition.y
+		startZ = lastSpawnPosition.z
+	end
+	local diceColors = {
+		{ 0.627, 0.124, 0.941 }, -- purple
+		{ 1, 0.341, 0.2 }, -- orange
+		{ 0.203, 0.674, 0.325 }, -- green
+		{ 0.160, 0.596, 0.965 }, -- blue
+		{ 0.898, 0.223, 0.509 }, -- pink
+		{ 0.254, 0.211, 0.098 }, -- brown
+		{ 1, 0.298, 0.298 }, -- red
+		{ 0.345, 0.184, 0.506 }, -- indigo
+		{ 0.988, 0.761, 0.498 }, -- light orange
+		{ 0.847, 0.647, 0.125 }, -- gold
+	}
 
     local colorIndex = math.random(#diceColors)
     local rollColor = diceColors[colorIndex]
@@ -525,20 +712,18 @@ function autoRoll(obj, player, alt, numDice)
     printToAll(player .. " rolled a total of " .. total .. " (" .. numDice .. "D6)", stringColorToRGB(player))
 end
 
-
-
 -- Reset the last spawn position and dice count when the dice area is cleared
 function resetSpawnPosition()
-    lastSpawnPosition = nil
-    diceCount = 0
+	lastSpawnPosition = nil
+	diceCount = 0
 end
 
 function autoRoll1D6(obj, player, alt)
-    autoRoll(obj, player, alt, 1)
+	autoRoll(obj, player, alt, 1)
 end
 
 function autoRoll2D6(obj, player, alt)
-    autoRoll(obj, player, alt, 2)
+	autoRoll(obj, player, alt, 2)
 end
 
 function getDice(color)
@@ -547,8 +732,6 @@ function getDice(color)
     -- So it is important to generate all dices with this tag
     return ZONES[color].getObjects()
 end
-
-
 
 function customDice(obj, player, alt)
     local dice = getDice()
@@ -567,12 +750,12 @@ function customDice(obj, player, alt)
 end
 
 function toggleLowerUpper()
-    setLowerUpper(not lowerUpper)
+	setLowerUpper(not lowerUpper)
 end
 
-function setLowerUpper( value )
-    lowerUpper= value
-    modifyBtns()
+function setLowerUpper(value)
+	lowerUpper = value
+	modifyBtns()
 end
 
 START_OF_ROLL_CONTROLLS = 21
@@ -591,54 +774,56 @@ function modifyBtns()
 end
 
 function RollOrSelectDice(obj, player, alt)
-    if not alt then
-        Player[player].clearSelectedObjects()
-        if rollMode then
-            moveDiceToRoller( player, getDice() )
-        else
-            for i, die in ipairs(getDice()) do
-                die.addToPlayerSelection(player)
-            end
-        end
-    else
-        rollMode = not rollMode
+	if not alt then
+		Player[player].clearSelectedObjects()
+		if rollMode then
+			moveDiceToRoller(player, getDice())
+		else
+			for i, die in ipairs(getDice()) do
+				die.addToPlayerSelection(player)
+			end
+		end
+	else
+		rollMode = not rollMode
 
-        if rollMode then
-            self.editButton({index=3, label=rollAllLabel, tooltip=rollAllTooltip})
-        else
-            self.editButton({index=3, label=selectAllLabel, tooltip=selectAllTooltip})
-        end
-        modifyBtns()
-    end
+		if rollMode then
+			self.editButton({ index = 3, label = rollAllLabel, tooltip = rollAllTooltip })
+		else
+			self.editButton({ index = 3, label = selectAllLabel, tooltip = selectAllTooltip })
+		end
+		modifyBtns()
+	end
 end
 
 function RollOrSelectDeleteDice1(obj, color, alt)
-    SelectDeleteDiceX("Sel", 1, alt, lowerUpper, color)
+	SelectDeleteDiceX("Sel", 1, alt, lowerUpper, color)
 end
 function RollOrSelectDeleteDice2(obj, color, alt)
-    SelectDeleteDiceX("Sel", 2, alt, lowerUpper, color)
+	SelectDeleteDiceX("Sel", 2, alt, lowerUpper, color)
 end
 function RollOrSelectDeleteDice3(obj, color, alt)
-    SelectDeleteDiceX("Sel", 3, alt, lowerUpper, color)
+	SelectDeleteDiceX("Sel", 3, alt, lowerUpper, color)
 end
 function RollOrSelectDeleteDice4(obj, color, alt)
-    SelectDeleteDiceX("Sel", 4, alt, lowerUpper, color)
+	SelectDeleteDiceX("Sel", 4, alt, lowerUpper, color)
 end
 function RollOrSelectDeleteDice5(obj, color, alt)
-    SelectDeleteDiceX("Sel", 5, alt, lowerUpper, color)
+	SelectDeleteDiceX("Sel", 5, alt, lowerUpper, color)
 end
 function RollOrSelectDeleteDice6(obj, color, alt)
-    SelectDeleteDiceX("Sel", 6, alt, lowerUpper, color)
+	SelectDeleteDiceX("Sel", 6, alt, lowerUpper, color)
 end
 
 function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
-    Player[color].clearSelectedObjects()
-    selDel = true
-    if action == "Del" then selDel = false end
-    local counter = {0,0,0,0,0,0}
-    local numberName = {"ones", "twos", "threes", "fours", "fives", "sixes"}
-    local text = Player[color].steam_name .. " deleted "
-    local somethingToPrint = false
+	Player[color].clearSelectedObjects()
+	selDel = true
+	if action == "Del" then
+		selDel = false
+	end
+	local counter = { 0, 0, 0, 0, 0, 0 }
+	local numberName = { "ones", "twos", "threes", "fours", "fives", "sixes" }
+	local text = Player[color].steam_name .. " deleted "
+	local somethingToPrint = false
 
     for i, die in ipairs(getDice()) do
         value = die.getValue()
@@ -656,14 +841,18 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
         end
     end
 
-    for i, val in ipairs(counter) do
-        if val > 0 then
-            text = text.." \u{00B7} " .. counter[i] .. " " .. numberName[i]
-            somethingToPrint = true
-        end
-    end
-    if somethingToPrint then printToAll(text , "Yellow") end
-    if oneTimeUpper then setLowerUpper( true ) end
+	for i, val in ipairs(counter) do
+		if val > 0 then
+			text = text .. " · " .. counter[i] .. " " .. numberName[i]
+			somethingToPrint = true
+		end
+	end
+	if somethingToPrint then
+		printToAll(text, "Yellow")
+	end
+	if oneTimeUpper then
+		setLowerUpper(true)
+	end
 
     if selDel and rollMode then
         moveDiceToRoller(color, Player[color].getSelectedObjects())
@@ -673,7 +862,7 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
 end
 
 function moveDiceToRoller(color, dice)
-    roller.call("setPlayerColor", {color=color})
+	roller.call("setPlayerColor", { color = color })
 
     for _, die in ipairs(dice) do
         roller.call("setLastHolder", {obj=die, color=color})
@@ -692,22 +881,22 @@ function clearDiceAll(obj, color, alt)
 end
 
 function clearDice1(obj, color, alt)
-    SelectDeleteDiceX("Del", 1, alt, lowerUpper, color)
+	SelectDeleteDiceX("Del", 1, alt, lowerUpper, color)
 end
 function clearDice2(obj, color, alt)
-    SelectDeleteDiceX("Del", 2, alt, lowerUpper, color)
+	SelectDeleteDiceX("Del", 2, alt, lowerUpper, color)
 end
 function clearDice3(obj, color, alt)
-    SelectDeleteDiceX("Del", 3, alt, lowerUpper, color)
+	SelectDeleteDiceX("Del", 3, alt, lowerUpper, color)
 end
 function clearDice4(obj, color, alt)
-    SelectDeleteDiceX("Del", 4, alt, lowerUpper, color)
+	SelectDeleteDiceX("Del", 4, alt, lowerUpper, color)
 end
 function clearDice5(obj, color, alt)
-    SelectDeleteDiceX("Del", 5, alt, lowerUpper, color)
+	SelectDeleteDiceX("Del", 5, alt, lowerUpper, color)
 end
 function clearDice6(obj, color, alt)
-    SelectDeleteDiceX("Del", 6, alt, lowerUpper, color)
+	SelectDeleteDiceX("Del", 6, alt, lowerUpper, color)
 end
 
 function clearDiceX(n, deleteLower, color)
@@ -736,22 +925,22 @@ function clearDiceX(n, deleteLower, color)
 end
 
 function spawnDice1(obj, player, alt)
-    spawnDice(1,player)
+	spawnDice(1, player)
 end
 function spawnDice2(obj, player, alt)
-    spawnDice(2,player)
+	spawnDice(2, player)
 end
 function spawnDice3(obj, player, alt)
-    spawnDice(3,player)
+	spawnDice(3, player)
 end
 function spawnDice4(obj, player, alt)
-    spawnDice(4,player)
+	spawnDice(4, player)
 end
 function spawnDice5(obj, player, alt)
-    spawnDice(5,player)
+	spawnDice(5, player)
 end
 function spawnDice10(obj, player, alt)
-    spawnDice(10,player)
+	spawnDice(10, player)
 end
 function spawnDice25(obj, player, alt)
     spawnDice(25,player)
@@ -782,31 +971,33 @@ function spawnDie(data)
     return die
 end
 
-function spawnDice(n,player)
-    local playerDiceSpeed = player == "Red" and Global.getVar("redDiceSpawnTime") or Global.getVar("blueDiceSpawnTime")
-    local currentTime = os.time()
-    local disableTime = (playerDiceSpeed == "slow") and 0.6 or 0.2
-    if currentTime-lastClick<disableTime then
-        printToColor("Wait a bit!", player, "Yellow")
-        return
-    end
-    lastClick=currentTime
-    local offset=#getDice()
-    if offset+n>128 then printToColor("Dice limit reached!", player, "Orange")  end
-    local grid=0
-    local row=0
-    local col=0
-    for i=1, offset do
-        col=col+1
-        if col>4 then
-            col=0
-            row= row+1
-            if row > 4 then
-                row=0
-                grid=grid+1
-            end
-        end
-    end
+function spawnDice(n, player)
+	local playerDiceSpeed = player == "Red" and Global.getVar("redDiceSpawnTime") or Global.getVar("blueDiceSpawnTime")
+	local currentTime = os.time()
+	local disableTime = (playerDiceSpeed == "slow") and 0.6 or 0.2
+	if currentTime - lastClick < disableTime then
+		printToColor("Wait a bit!", player, "Yellow")
+		return
+	end
+	lastClick = currentTime
+	local offset = #getDice()
+	if offset + n > 128 then
+		printToColor("Dice limit reached!", player, "Orange")
+	end
+	local grid = 0
+	local row = 0
+	local col = 0
+	for i = 1, offset do
+		col = col + 1
+		if col > 4 then
+			col = 0
+			row = row + 1
+			if row > 4 then
+				row = 0
+				grid = grid + 1
+			end
+		end
+	end
 
     if offset+n>128 then n=128-offset end
     for i=1, n do
@@ -852,7 +1043,7 @@ function onLoad()
 		alignment=2
     })
 
-	if self.getDescription() == '' then
+	if self.getDescription() == "" then
 		setDefaultState()
 	end
 
@@ -916,16 +1107,16 @@ function onLoad()
 end
 
 function modifyMenu1()
-    modifyMenu("Red")
+	modifyMenu("Red")
 end
 function modifyMenu2()
-    modifyMenu("Blue")
+	modifyMenu("Blue")
 end
 function modifyMenu3()
-    modifyMenu("Black")
+	modifyMenu("Black")
 end
 function modifyMenu4()
-    modifyMenu("Green")
+	modifyMenu("Green")
 end
 function modifyMenu(color, img)
     customDiceImage = img
@@ -941,13 +1132,13 @@ function modifyMenu(color, img)
 end
 
 function setDiceType()
-    if customDiceImage ~= nil then
-        diceType = "Custom_Dice"
-    elseif pipColorBtn.color == "White" then
-        diceType = "Die_6_Rounded"
-    else
-        diceType = "Die_6"
-    end
+	if customDiceImage ~= nil then
+		diceType = "Custom_Dice"
+	elseif pipColorBtn.color == "White" then
+		diceType = "Die_6_Rounded"
+	else
+		diceType = "Die_6"
+	end
 end
 
 function renderStats() 
