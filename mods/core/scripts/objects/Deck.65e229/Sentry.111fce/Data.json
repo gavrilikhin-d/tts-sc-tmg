@@ -1,0 +1,55 @@
+{
+  "GUID": "111fce",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 35.0719223,
+    "posY": 0.913318,
+    "posZ": -74.6210861,
+    "rotX": 0.00306127965,
+    "rotY": 179.970566,
+    "rotZ": 359.980835,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Sentry",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 150100,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1501": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17756676165891300119/31D209008000BD71AA00535B130F1CE4684228EB/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14554074873990885760/434C6EA0356F6EB06E951243E766F7989BE3F386/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}
