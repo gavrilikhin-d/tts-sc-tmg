@@ -191,21 +191,6 @@ local revertRollBtn = {
     scale = {0.5, 0.5, 0.5}
 }
 
-local redoRollBtn = {
-    label          = "Redo Roll",
-    tooltip        = "Redo previously reverted roll",
-    click_function = "redoRoll",
-    function_owner = self,
-    position       = {-6.0, Yoffset, -0.16},
-    rotation       = { 0, 0, 0 },
-    width = 800, height = 300, font_size = 120,
-    color = {0.13, 0.13, 0.13, 1},
-    font_color = {1, 1, 1},
-    hover_color = {0.2, 0.2, 0.2, 1},
-    press_color = {0.27, 0.27, 0.27, 1},
-    scale = {0.5, 0.5, 0.5}
-}
-
 -- Background Box (Soft Off-White for a Professional Look)
 local customDiceInputBG = {
     label = "", click_function = "none", function_owner = self,
@@ -350,31 +335,6 @@ function revertRoll(obj, player, alt)
     printToColor("Reverted to roll #" .. tostring(previousRollIndex) .. " of " .. tostring(#previousRollStack), player, "Green")
     -- Move pointer back so another click reverts another step
     previousRollIndex = math.max(0, previousRollIndex - 1)
-    previousRollData = previousRollStack[previousRollIndex] or {}
-end
-
-function redoRoll(obj, player, alt)
-    -- Move forward in the previousRollStack if possible
-    if not previousRollStack or #previousRollStack == 0 then
-        printToColor("No roll history available.", player, "Red")
-        return
-    end
-    if previousRollIndex >= #previousRollStack then
-        printToColor("No newer roll to redo.", player, "Red")
-        return
-    end
-    previousRollIndex = previousRollIndex + 1
-    local snapshot = previousRollStack[previousRollIndex]
-    if not snapshot or #snapshot == 0 then
-        printToColor("No roll data at this index.", player, "Red")
-        return
-    end
-
-    clearMat()
-    for _, data in ipairs(snapshot) do
-        spawnDie(data)
-    end
-    printToColor("Redone to roll #" .. tostring(previousRollIndex) .. " of " .. tostring(#previousRollStack), player, "Green")
     previousRollData = previousRollStack[previousRollIndex] or {}
 end
 
