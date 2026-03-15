@@ -881,7 +881,6 @@ function moveDiceToRoller(color, dice)
 	roller.call("setPlayerColor", { color = color })
 
 	for _, die in ipairs(dice) do
-		roller.call("setLastHolder", { obj = die, color = color })
 		roller.putObject(die)
 	end
 

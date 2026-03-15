@@ -221,7 +221,6 @@ end
 
 --Initialize Global Variables and pRNG Seed
 ver = "BCB-2022-12-30"
-lastHolder = {}
 customFace = { 4, 6, 8, 10, 12, 20 }
 diceGuidFaces = {}
 sortedKeys = {}
@@ -250,14 +249,6 @@ function clearDataForGC(data)
 	for n, element in ipairs(data) do
 		element = nil
 	end
-end
-
-function onObjectPickedUp(playerColor, obj)
-	lastHolder[obj] = playerColor
-end
-
-function onObjectDestroyed(obj)
-	lastHolder[obj] = nil
 end
 
 function onLoad(save_state)
@@ -465,10 +456,6 @@ end
 
 function setPlayerColor(params)
 	playerColor = params.color
-end
-
-function setLastHolder(params)
-	lastHolder[params.obj] = params.color
 end
 
 function printResultsTable()
