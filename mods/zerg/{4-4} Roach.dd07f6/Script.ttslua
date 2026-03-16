@@ -137,8 +137,7 @@ function handleGroupAction(player_color, function_name)
 	if #selectedObjects > 1 then
 		for _, obj in ipairs(selectedObjects) do
 			if obj.hasTag("WeaponModel") then
-				obj.call(function_name, { color = 
-player_color })
+				obj.call(function_name, { color = player_color })
 				foundAny = true
 			end
 		end
