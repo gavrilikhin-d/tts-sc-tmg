@@ -1,0 +1,58 @@
+{
+  "GUID": "cc384e",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 64.04091,
+    "posY": 1.0459832,
+    "posZ": -64.20838,
+    "rotX": 0.000801096554,
+    "rotY": 179.999985,
+    "rotZ": -0.00224898825,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Barracks (Proxy) ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 153000,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1530": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/13057535021753083092/8E0FCCC7FB873001EF09135BD5F3D5ED0C3F62F1/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12018734542705647727/C283E602EEA01C2CCF4FC34F20A906ED940885AC/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

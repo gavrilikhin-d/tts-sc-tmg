@@ -1,0 +1,58 @@
+{
+  "GUID": "e261c2",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 40.73307,
+    "posY": 0.913217664,
+    "posZ": -78.04481,
+    "rotX": 0.00239285524,
+    "rotY": 180.0,
+    "rotZ": 359.983551,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Spawning Pool ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 154200,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1542": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/14730359296443122491/4D4869CE62A3B62FCAF25BF00EAE078FBF641A5F/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/18032977612742865998/678AB6D1D8BA7CDF4C8C1FDF2E45F5E52AB27843/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}
