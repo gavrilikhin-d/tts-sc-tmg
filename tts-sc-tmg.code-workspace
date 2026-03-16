@@ -30,6 +30,10 @@
 		{
 			"name": "gauntlet",
 			"path": "mods/maps/gauntlet"
+		},
+		{
+			"name": "acropolis",
+			"path": "mods/maps/acropolis"
 		}
 	],
 	"settings": {}
