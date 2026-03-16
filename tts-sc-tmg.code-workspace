@@ -14,6 +14,10 @@
 		},
 		{
 			"path": "mods/zerg"
+		},
+		{
+			"name": "typhoon",
+			"path": "mods/maps/typhoon"
 		}
 	],
 	"settings": {}
