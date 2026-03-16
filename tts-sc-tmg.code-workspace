@@ -18,6 +18,10 @@
 		{
 			"name": "typhoon",
 			"path": "mods/maps/typhoon"
+		},
+		{
+			"name": "breach",
+			"path": "mods/maps/breach"
 		}
 	],
 	"settings": {}
