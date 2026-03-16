@@ -22,6 +22,10 @@
 		{
 			"name": "breach",
 			"path": "mods/maps/breach"
+		},
+		{
+			"name": "provingGrounds",
+			"path": "mods/maps/provingGrounds"
 		}
 	],
 	"settings": {}
