@@ -1,0 +1,36 @@
+<Defaults>
+    <Button fontSize="18" textColor="#FFFFFF" colors="#353839|#353839|#353839|#353839" />
+    <HorizontalLayout preferredHeight="50" />
+</Defaults>
+
+<VerticalLayout position="0 0 -100" width="350" height="300" scale="2 2 2">
+    <HorizontalLayout preferredHeight="35">
+        <Button id="redInitiativeButton" onClick="setInitiative(Red)" textColor="Red" colors="#353839|#353839|#353839|White" preferredWidth="105">
+            Red
+        </Button>
+        <Button interactible="false" preferredWidth="90">
+            Initiative
+        </Button>
+        <Button id="blueInitiativeButton" onClick="setInitiative(Blue)" textColor="Blue" colors="#353839|#353839|#353839|White" preferredWidth="105">
+            Blue
+        </Button>
+    </HorizontalLayout>
+    <Button id="roundButton" onClick="toggleRound" preferredHeight="50">Round 1</Button>
+    <Button id="availableSupplyButton" onClick="toggleAvailableSupply"  preferredHeight="50">Available Supply 6</Button>
+    <HorizontalLayout>
+        <Button id="redSupply" onClick="toggleRedSupply">Red Supply 0</Button>
+        <Button id="blueSupply" onClick="toggleBlueSupply">Blue Supply 0</Button>
+    </HorizontalLayout>
+    <HorizontalLayout>
+        <Button id="redSupplyDestroyed" onClick="toggleRedSupplyDestroyed">Red Supply Destroyed 0</Button>
+        <Button id="blueSupplyDestroyed" onClick="toggleBlueSupplyDestroyed">Blue Supply Destroyed 0</Button>
+    </HorizontalLayout>
+    <HorizontalLayout>
+        <Button id="redMissionVP" onClick="toggleRedMissionVP">Red Mission VP 0</Button>
+        <Button id="blueMissionVP" onClick="toggleBlueMissionVP">Blue Mission VP 0</Button>
+    </HorizontalLayout>
+    <HorizontalLayout preferredHeight="50" spacing="125" childAlignment="MiddleCenter" childForceExpandWidth="false">
+        <Button id="redTotal" preferredWidth="50" fontSize="24">0</Button>
+        <Button id="blueTotal" preferredWidth="50" fontSize="24">0</Button>
+    </HorizontalLayout>
+</VerticalLayout>
