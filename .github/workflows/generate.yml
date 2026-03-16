@@ -3,12 +3,16 @@ name: Generate save files
 on:
   push:
     branches: ["master"]
+    tags: ["v*"]
   pull_request:
     branches: ["master"]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -37,3 +41,10 @@ jobs:
       - name: Package Core
         working-directory: mods/core/scripts/objects
         run: node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" package . -i . -o Core.json
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: mods/core/scripts/objects/Core.json
+          generate_release_notes: true
