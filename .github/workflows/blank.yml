@@ -17,13 +17,14 @@ jobs:
         with:
           version: 10
 
+      - name: Clone TTS tools
+        run: git clone https://github.com/gavrilikhin-d/tts-tools
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-
-      - name: Clone TTS tools
-        run: git clone https://github.com/gavrilikhin-d/tts-tools
+          cache-dependency-path: tts-tools/pnpm-lock.yaml
 
       - name: Install TTS tools deps
         working-directory: tts-tools
