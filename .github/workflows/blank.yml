@@ -2,24 +2,32 @@ name: Generate save files
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request: 
-    branches: [ "master" ]
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      cli: node tts-tools/packages/cli/dist/index.js
 
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4.4.0
+
+      - uses: pnpm/action-setup@v4
         with:
-          version: latest
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
 
       - name: Clone TTS tools
         run: git clone https://github.com/gavrilikhin-d/tts-tools
+
+      - name: Install TTS tools deps
+        working-directory: tts-tools
+        run: pnpm install --frozen-lockfile
 
       - name: Build TTS tools
         working-directory: tts-tools
@@ -27,4 +35,4 @@ jobs:
 
       - name: Package Core
         working-directory: mods/core/scripts/objects
-        run: ${{ env.cli }} package . -i _impl -o Core.json
+        run: node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" package . -i . -o Core.json
