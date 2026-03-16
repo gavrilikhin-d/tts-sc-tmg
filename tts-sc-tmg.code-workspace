@@ -26,6 +26,10 @@
 		{
 			"name": "provingGrounds",
 			"path": "mods/maps/provingGrounds"
+		},
+		{
+			"name": "gauntlet",
+			"path": "mods/maps/gauntlet"
 		}
 	],
 	"settings": {}
