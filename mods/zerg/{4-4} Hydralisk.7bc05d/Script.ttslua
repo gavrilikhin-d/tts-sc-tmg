@@ -1,0 +1,159 @@
+self.max_typed_number = 2
+local typedBuffer = ""
+local waitID = nil
+
+-- НАСТРОЙКИ БАЗЫ (в миллиметрах)
+local baseWidthMM  = 40  -- Длина (вдоль оси X)
+local baseLengthMM = 100  -- Ширина (вдоль оси Z)
+local mtoi = 0.0393701   -- Константа мм -> дюймы
+
+local modelMeasureLineRadius = 0.05
+local baseLineRadius = 0.0125
+local rangeShown = true
+local measureColor = {0.5, 0.5, 0.5}
+local measureRange = 0
+
+local mySavedPos = nil
+local mySavedRot = nil
+
+function onLoad(saved_data)
+    self.addTag("WeaponModel")
+
+    if saved_data ~= "" and saved_data ~= nil then
+        local loaded_data = JSON.decode(saved_data)
+        mySavedPos = loaded_data.pos
+        mySavedRot = loaded_data.rot
+    end
+
+    -- Контекстное меню
+    self.addContextMenuItem("Save Position", function(color)
+        handleGroupAction(color, "savePositionInternal")
+    end)
+    
+    self.addContextMenuItem("Restore Position", function(color)
+        handleGroupAction(color, "xmlLoadPos")
+    end)
+
+    -- НОВАЯ КНОПКА: Переключение видимости радиуса
+    self.addContextMenuItem("Toggle Range", function(color)
+        handleGroupAction(color, "toggleRangeInternal")
+    end)
+
+    refreshVectors()
+end
+
+function onNumberTyped(pc, n)
+    if waitID then Wait.stop(waitID) end
+    typedBuffer = typedBuffer .. tostring(n)
+    
+    if #typedBuffer >= self.max_typed_number then
+        processTypedNumber(pc)
+    else
+        waitID = Wait.time(function() processTypedNumber(pc) end, 0.5)
+    end
+end
+
+function processTypedNumber(pc)
+    local n = tonumber(typedBuffer)
+    typedBuffer = ""
+    waitID = nil
+    if not n then return end
+
+    rangeShown = n > 0
+    measureColor = Color.fromString(pc)
+    measureRange = n
+    refreshVectors(pc)
+end
+
+-- Внутренняя функция для переключения (вызывается через групповой экшен)
+function toggleRangeInternal(params)
+    rangeShown = not rangeShown
+    refreshVectors(params.color)
+end
+
+function refreshVectors(pc)
+    local op = pc and Player[pc]
+    local s = self.getScale()
+    local scaleFactor = {x=1/s.x, y=1/s.y, z=1/s.z}
+
+    local newLines = {
+        {
+            -- Отрисовка края самой базы
+            points = getEllipsePoints(0, 0.02, scaleFactor),
+            color = op and Color.fromString(op.color) or {0.3, 0.3, 0.3},
+            thickness = baseLineRadius * scaleFactor.x
+        }
+    }
+
+    if rangeShown and measureRange > 0 then
+        table.insert(newLines, {
+            -- Отрисовка ауры
+            points = getEllipsePoints(measureRange, 0.01, scaleFactor),
+            color = measureColor,
+            thickness = modelMeasureLineRadius * scaleFactor.x
+        })
+    end
+
+    self.setVectorLines(newLines)
+end
+
+function getEllipsePoints(offsetInches, height, scale)
+    local result = {}
+    local steps = 64
+    local toRads = math.rad
+    
+    local radiusX = (baseWidthMM * 0.5) * mtoi
+    local radiusZ = (baseLengthMM * 0.5) * mtoi
+
+    for i = 0, steps do
+        local angle = toRads((360 / steps) * i)
+        table.insert(result, {
+            x = math.cos(angle) * (radiusX + offsetInches) * scale.x,
+            z = math.sin(angle) * (radiusZ + offsetInches) * scale.z,
+            y = height + 0.2 * scale.y
+        })
+    end
+    return result
+end
+
+-- Групповой контроллер
+function handleGroupAction(player_color, function_name)
+    local selectedObjects = Player[player_color].getSelectedObjects()
+    local foundAny = false
+
+    if #selectedObjects > 1 then
+        for _, obj in ipairs(selectedObjects) do
+            if obj.hasTag("WeaponModel") and obj.getLuaScript() ~= "" then
+                obj.call(function_name, {color = player_color})
+                foundAny = true
+            end
+        end
+    end
+
+    if not foundAny then
+        self.call(function_name, {color = player_color})
+    end
+end
+
+function savePositionInternal(params)
+    mySavedPos = self.getPosition()
+    mySavedRot = self.getRotation()
+    if params and params.color then
+        print("Position Saved: " .. self.getName())
+    end
+end
+
+function xmlLoadPos(params)
+    if mySavedPos ~= nil then
+        self.setPositionSmooth(mySavedPos, false, false)
+        self.setRotationSmooth(mySavedRot, false, false)
+    else
+        if params and params.color then
+            broadcastToColor("No save for " .. self.getName(), params.color, "Red")
+        end
+    end
+end
+
+function onSave()
+    return JSON.encode({pos = mySavedPos, rot = mySavedRot})
+end

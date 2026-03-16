@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "mods/terran"
+		},
+		{
+			"path": "mods/zerg"
 		}
 	],
 	"settings": {}

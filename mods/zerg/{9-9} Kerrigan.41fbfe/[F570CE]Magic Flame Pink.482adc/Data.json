@@ -1,0 +1,49 @@
+{
+  "GUID": "482adc",
+  "Name": "Custom_Assetbundle",
+  "Transform": {
+    "posX": -0.0895581841,
+    "posY": 1.8766923,
+    "posZ": 0.1875168,
+    "rotX": 5.0254017E-05,
+    "rotY": 207.411224,
+    "rotZ": -5.6015062E-05,
+    "scaleX": 0.09999999,
+    "scaleY": 0.1,
+    "scaleZ": 0.09999999
+  },
+  "Nickname": "[F570CE]Magic Flame Pink",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomAssetbundle": {
+    "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/1697279045394202226/1679EF075AC7A302ACB6F5A0E8FE83E382DE7BBF/",
+    "AssetbundleSecondaryURL": "",
+    "MaterialIndex": 0,
+    "TypeIndex": 0,
+    "LoopingEffectIndex": 0
+  }
+}
