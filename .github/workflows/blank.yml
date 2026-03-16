@@ -1,0 +1,25 @@
+name: Generate save files
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      cli: node tts-tools/packages/cli/dist/index.js
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone TTS tools
+        run: git clone https://github.com/gavrilikhin-d/tts-tools
+
+      - name: Build TTS tools
+        working-directory: tts-tools
+        run: pnpm -r --if-present build
+
+      - name: Package Core
+        working-directory: mods/core/scripts/objects
+        run: ${{ env.cli }} package . -i _impl -o Core.json
