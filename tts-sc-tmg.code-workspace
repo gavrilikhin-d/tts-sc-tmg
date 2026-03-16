@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "mods/protoss"
+		},
+		{
+			"path": "mods/terran"
 		}
 	],
 	"settings": {}

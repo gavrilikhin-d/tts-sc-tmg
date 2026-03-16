@@ -1,0 +1,42 @@
+{
+  "GUID": "aabd81",
+  "Name": "Tileset_Rock",
+  "Transform": {
+    "posX": 0.2008786,
+    "posY": 0.06962963,
+    "posZ": 0.07779797,
+    "rotX": 2.053316,
+    "rotY": 116.455917,
+    "rotZ": 82.36942,
+    "scaleX": 0.09797326,
+    "scaleY": 0.147047713,
+    "scaleZ": 0.147059172
+  },
+  "Nickname": "",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.9117647,
+    "g": 0.9117647,
+    "b": 0.9117647
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false
+}

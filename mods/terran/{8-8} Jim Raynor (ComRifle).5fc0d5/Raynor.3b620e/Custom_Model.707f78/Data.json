@@ -1,0 +1,52 @@
+{
+  "GUID": "707f78",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": 0.178296447,
+    "posY": 0.114543594,
+    "posZ": -0.09711858,
+    "rotX": 312.8498,
+    "rotY": 211.819122,
+    "rotZ": 329.193237,
+    "scaleX": 0.882352948,
+    "scaleY": 0.8823535,
+    "scaleZ": 1.12595809
+  },
+  "Nickname": "",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/15204139026327633997/AE89A9712BE411A328CEDFB383B2E6D77FB0935A/",
+    "DiffuseURL": "https://i.postimg.cc/gjYG15Q3/Ghostred.png",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 1,
+    "TypeIndex": 0,
+    "CastShadows": true
+  }
+}
