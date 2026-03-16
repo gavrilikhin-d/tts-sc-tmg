@@ -14,6 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4.4.0
 
       - name: Clone TTS tools
         run: git clone https://github.com/gavrilikhin-d/tts-tools
