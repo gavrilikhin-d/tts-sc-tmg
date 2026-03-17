@@ -1,0 +1,19 @@
+{
+  "name": "cardGen",
+  "version": "1.0.0",
+  "main": "dist/db.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "dev": "tsx index.ts"
+  },
+  "dependencies": {
+    "firebase": "^12.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
