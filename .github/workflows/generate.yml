@@ -43,19 +43,45 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p artifacts/mod-json
+
+          package_one() {
+            local package_name="$1"
+            local input_dir="$2"
+            local include_dir="$3"
+            local safe_name
+            safe_name="$(echo "$package_name" | sed -E 's/[^A-Za-z0-9._-]+/_/g')"
+            local output_file="artifacts/mod-json/${safe_name}.json"
+            echo "Packaging ${package_name} from ${input_dir} -> ${output_file}"
+            node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" \
+              package "$input_dir" -i "$include_dir" -o "$output_file"
+          }
+
           for mod_dir in mods/*; do
             [ -d "$mod_dir" ] || continue
             mod_name="$(basename "$mod_dir")"
-            input_dir="$mod_dir"
-            include_dir="$mod_dir"
+
             if [ "$mod_name" = "core" ]; then
-              input_dir="$mod_dir/scripts/objects"
-              include_dir="$input_dir"
+              package_one "$mod_name" "$mod_dir/scripts/objects" "$mod_dir/scripts/objects"
+              continue
             fi
-            output_file="artifacts/mod-json/${mod_name}.json"
-            echo "Packaging $mod_name from $input_dir -> $output_file"
-            node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" \
-              package "$input_dir" -i "$include_dir" -o "$output_file"
+
+            if [ -f "$mod_dir/Data.json" ]; then
+              package_one "$mod_name" "$mod_dir" "$mod_dir"
+              continue
+            fi
+
+            child_count=0
+            for child_data in "$mod_dir"/*/Data.json; do
+              [ -f "$child_data" ] || continue
+              child_dir="$(dirname "$child_data")"
+              child_name="$(basename "$child_dir")"
+              package_one "${mod_name}__${child_name}" "$child_dir" "$child_dir"
+              child_count=$((child_count + 1))
+            done
+
+            if [ "$child_count" -eq 0 ]; then
+              echo "Skipping $mod_name (no Data.json found at root or immediate children)"
+            fi
           done
 
       - name: Zip mod JSON files
