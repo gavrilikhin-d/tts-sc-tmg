@@ -1,0 +1,109 @@
+{
+  "upgrades": [
+    {
+      "costL": 0,
+      "linkedTo": "",
+      "costS": 0,
+      "activation": "<Active>\n(1 Command Point)",
+      "phase": "Movement Phase",
+      "name": "Stimpack",
+      "description": "This Unit suffers NON-LETHAL DAMAGE (2). This Unit gains BUFF Speed (3). Additionally, its C-14 Rifle and all Close Combat Weapons gain PRECISION (3)."
+    },
+    {
+      "linkedTo": "",
+      "costS": 0,
+      "activation": "<Passive>",
+      "phase": "Movement Phase",
+      "costL": 0,
+      "name": "Raiders Roll!",
+      "description": "When this Unit is nominated to deploy from Reserves, it may resolve its Stimpack ability with the CP cost reduced by 1 (to a minimum of 0)."
+    },
+    {
+      "description": "When this Unit is nominated to deploy from Reserves, it may resolve the PLACE (10) effect from another Friendly Unit. No model may be set Within 8\" of any Enemy model. This Unit's Activation ends.",
+      "name": "Rapid Reinforcements",
+      "phase": "Movement Phase",
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "costS": 0,
+      "costL": 0
+    },
+    {
+      "description": "RANGE: 12 | TARGET: All | RoA: 2 | HIT: 3+ | DMG: 1\nSURGE: Light (D3)",
+      "name": "C-14 rifle",
+      "costL": 0,
+      "activation": "",
+      "phase": "Assault Phase",
+      "linkedTo": "-",
+      "costS": 0
+    },
+    {
+      "costS": 0,
+      "activation": "<Passive>",
+      "phase": "Assault Phase",
+      "linkedTo": "",
+      "costL": 0,
+      "name": "Slugthrower",
+      "description": "When this Unit makes a Ranged Attack with a C-14 Rifle and the target is Within 8\", that weapon gains ANTI-EVADE (1)."
+    },
+    {
+      "description": "When this Unit makes a Ranged Attack with a C-14 Rifle and the target is Within 8\", that weapon’s S Dice is replaced by D6.",
+      "costL": 0,
+      "activation": "<Passive>",
+      "costS": 0,
+      "phase": "Assault Phase",
+      "linkedTo": "",
+      "name": "Grenades - Frag"
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 5+ | DMG: 1\nSURGE: -",
+      "name": "Bayonet",
+      "costL": 0,
+      "linkedTo": "-",
+      "activation": "",
+      "phase": "Combat Phase",
+      "costS": 0
+    }
+  ],
+  "small": {
+    "cost": 230,
+    "supply": 1,
+    "models": 6
+  },
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "modelCount": "-"
+    },
+    {
+      "modelCount": "1 - 6",
+      "supply": 1,
+      "tier": 2
+    },
+    {
+      "tier": 3,
+      "supply": 0,
+      "modelCount": "-"
+    }
+  ],
+  "large": {
+    "cost": 0,
+    "supply": 0,
+    "models": 0
+  },
+  "faction": "Terran",
+  "name": "Raynor's Raider (Marine)",
+  "combatRange": "4",
+  "tags": "Biological, Light, Ground",
+  "id": "raynor_s_raider__marine_",
+  "stats": {
+    "armor": "5+",
+    "evade": "5+",
+    "size": "2",
+    "speed": "4/7",
+    "hp": "2",
+    "shield": "-"
+  },
+  "unitType": "Core",
+  "keywords": "Raynor's Raiders"
+}

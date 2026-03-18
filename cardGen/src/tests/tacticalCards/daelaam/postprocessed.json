@@ -1,0 +1,41 @@
+{
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Elite": 1,
+    "Core": 3,
+    "Support": 1
+  },
+  "resource": 1,
+  "isUnique": true,
+  "factionTags": [],
+  "isFactionCard": true,
+  "id": "daelaam",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "faction": "Protoss",
+  "name": "Daelaam",
+  "cost": 0,
+  "tags": [],
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "Once per Game. Place a Faction Indicator anywhere on the battlefield. All Friendly Protoss Units Within 6\" of this Faction Indicator are removed from the battlefield and placed in Reserves."
+      },
+      "name": "Mass Recall"
+    },
+    {
+      "description": {
+        "type": "Reaction",
+        "phase": "Any",
+        "description": "When a Friendly Unit receives Damage, reduce the Total Damage by 2 (to a minimum of 1)."
+      },
+      "name": "Dae’Uhl"
+    }
+  ]
+}

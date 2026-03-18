@@ -1,0 +1,49 @@
+{
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "Select one Friendly, Unengaged Ground Zerg Unit on the battlefield. That Unit gains the Burrowed Status, even if it has already been Activated this Round."
+      },
+      "name": "Rapid Burrowing"
+    },
+    {
+      "description": {
+        "type": "Reaction",
+        "phase": "Any",
+        "description": "Use before a Friendly Unit makes an Evade Roll. Apply a +1 Modifier to that roll."
+      },
+      "name": "Brood Instinct"
+    },
+    {
+      "name": "Zerg Creep",
+      "description": {
+        "type": "Passive",
+        "phase": "Any",
+        "description": "During Army Building, select exactly one Creep Card and add it to their Army List, paying its listed cost (if any)."
+      }
+    }
+  ],
+  "cost": 0,
+  "tags": [],
+  "name": "Zerg Swarm",
+  "faction": "Zerg",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "zerg_swarm",
+  "isFactionCard": true,
+  "factionTags": [],
+  "isUnique": true,
+  "resource": 1,
+  "slots": {
+    "Elite": 1,
+    "Core": 3,
+    "Support": 1,
+    "Air": 0,
+    "Hero": 0
+  }
+}

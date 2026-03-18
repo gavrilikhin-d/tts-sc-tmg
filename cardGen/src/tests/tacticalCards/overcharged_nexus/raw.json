@@ -1,0 +1,33 @@
+{
+  "faction": "Protoss",
+  "name": "Overcharged Nexus",
+  "tags": "",
+  "cost": 35,
+  "boosts": [
+    {
+      "name": "Photon Overcharge",
+      "description": "Photon Overcharge <Reaction> <Any Phase>: Use when an Enemy Unit enters the battlefield from Reserves via a location other than its own Entry Edge. That Unit immediately suffers HITS 3 (1)."
+    },
+    {
+      "name": "Strategic Recall",
+      "description": "Strategic Recall <Active> <Movement Phase>: The active, Unengaged Ground Unit is placed in Reserves instead of performing an action."
+    }
+  ],
+  "factionTags": [],
+  "isFactionCard": false,
+  "id": "overcharged_nexus",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isUnique": true,
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Core": 1,
+    "Support": 0,
+    "Elite": 1
+  },
+  "resource": 1
+}

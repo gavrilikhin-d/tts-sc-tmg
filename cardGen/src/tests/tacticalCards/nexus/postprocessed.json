@@ -1,0 +1,41 @@
+{
+  "factionTags": [],
+  "isFactionCard": false,
+  "id": "nexus",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "faction": "Protoss",
+  "name": "Nexus",
+  "cost": 35,
+  "tags": [],
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Any",
+        "description": "The active Unit’s first Weapon used gains INSTANT."
+      },
+      "name": "Ancient Pride"
+    },
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "The active, Unengaged Ground Unit is placed in Reserves instead of performing an action."
+      },
+      "name": "Strategic Recall"
+    }
+  ],
+  "slots": {
+    "Hero": 0,
+    "Air": 0,
+    "Support": 0,
+    "Core": 2,
+    "Elite": 0
+  },
+  "resource": 1,
+  "isUnique": true
+}

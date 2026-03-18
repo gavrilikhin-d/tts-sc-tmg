@@ -1,0 +1,29 @@
+{
+  "slots": {
+    "Elite": 2,
+    "Support": 0,
+    "Core": 0,
+    "Hero": 0,
+    "Air": 0
+  },
+  "resource": 1,
+  "isUnique": false,
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "hydralisk_den",
+  "factionTags": [],
+  "boosts": [
+    {
+      "name": "Missile Attacks",
+      "description": "Missile Attacks <Active> <Assault Phase>: The active Unit’s first Ranged Weapon used gains PRECISION (1)."
+    }
+  ],
+  "name": "Hydralisk Den",
+  "faction": "Zerg",
+  "tags": "",
+  "cost": 35
+}

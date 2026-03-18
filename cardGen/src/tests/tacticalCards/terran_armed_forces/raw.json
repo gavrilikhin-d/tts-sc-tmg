@@ -1,0 +1,34 @@
+{
+  "tags": "",
+  "faction": "Terran",
+  "id": "terran_armed_forces",
+  "factionTags": [],
+  "isUnique": true,
+  "resource": 1,
+  "slots": {
+    "Hero": 0,
+    "Air": 0,
+    "Support": 1,
+    "Core": 3,
+    "Elite": 1
+  },
+  "boosts": [
+    {
+      "name": "Tactical Retreat",
+      "description": "Tactical Retreat <Active> <Movement Phase>: The active Unit ignores the Disengage penalty for the remainder of the Round."
+    },
+    {
+      "name": "Terran Tenacity",
+      "description": "Terran Tenacity <Active> <Movement Phase>: Once per Game. Immediately claim the First Player Marker. No other player may claim the First Player Marker for the remainder of this Phase."
+    }
+  ],
+  "cost": 0,
+  "name": "Terran Armed Forces",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isFactionCard": true,
+  "frontUrl": "https://firebasestorage.googleapis.com/v0/b/starcrafttmgbeta.firebasestorage.app/o/faction_art%2F1773092278832_armed_forces.jpg?alt=media&token=2bb22d58-472f-43ff-8233-cbc86f7b4b7a"
+}

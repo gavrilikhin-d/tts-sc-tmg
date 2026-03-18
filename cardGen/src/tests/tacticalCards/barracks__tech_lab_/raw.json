@@ -1,0 +1,33 @@
+{
+  "resource": 2,
+  "slots": {
+    "Elite": 1,
+    "Support": 0,
+    "Core": 1,
+    "Hero": 0,
+    "Air": 0
+  },
+  "isUnique": true,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "barracks__tech_lab_",
+  "isFactionCard": false,
+  "factionTags": [],
+  "boosts": [
+    {
+      "description": "Go! Go! Go! <Active> <Movement Phase>: The active Biological Unit performs a 2\" Move action. This does not count towards its action limit.",
+      "name": "Go! Go! Go!"
+    },
+    {
+      "description": "Let's Have a Blast! <Active> <Assault Phase>: The active Biological Unit’s first Ranged Weapon used gain ANTI-EVADE (1).",
+      "name": "Let's Have a Blast!"
+    }
+  ],
+  "tags": "",
+  "cost": 45,
+  "name": "Barracks (Tech Lab)",
+  "faction": "Terran"
+}

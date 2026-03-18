@@ -1,0 +1,144 @@
+{
+  "tags": [
+    "Light",
+    "Mechanical",
+    "Psionic",
+    "Ground"
+  ],
+  "combatRange": "4",
+  "large": {
+    "supply": 0,
+    "cost": 0,
+    "models": 0
+  },
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "minModels": 1,
+      "maxModels": 1
+    },
+    {
+      "supply": 1,
+      "tier": 2,
+      "minModels": 2,
+      "maxModels": 2
+    },
+    {
+      "supply": 0,
+      "tier": 3,
+      "minModels": 0,
+      "maxModels": 0
+    }
+  ],
+  "faction": "Protoss",
+  "name": "Sentry",
+  "small": {
+    "models": 2,
+    "supply": 1,
+    "cost": 130
+  },
+  "upgrades": [
+    {
+      "costL": 0,
+      "costS": 0,
+      "phase": "Any",
+      "activation": {
+        "type": "Reaction",
+        "cost": 1
+      },
+      "name": "Restoration",
+      "description": "Use when a Friendly Unit Within 4\" receives a DEBUFF. Remove all DEBUFFS from it."
+    },
+    {
+      "description": "Set a Force Field token Within 8\" in an unoccupied space. Units of Size 2 or lower cannot move across Force Fields. Models of Size 3 or more can move over it, and it's then removed.",
+      "name": "Force Field",
+      "costL": 0,
+      "phase": "Movement",
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      }
+    },
+    {
+      "name": "Guardian Shield",
+      "costS": 0,
+      "phase": "Movement",
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "costL": 0,
+      "description": "All Ranged Attacks targeting a Friendly Unit Within 4\" (Line of Sight is not required) are made with 1 fewer die in the Attack Pool."
+    },
+    {
+      "costL": 20,
+      "costS": 20,
+      "phase": "Movement",
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "name": "Solid-Field Projectors",
+      "description": "Set a Force Field token Within 8\" in an unoccupied space. Units of Size 2 or lower cannot move across Force Fields. Models of Size 3 or more can move over it, and it's then removed."
+    },
+    {
+      "description": {
+        "range": 8,
+        "target": "All",
+        "roa": 2,
+        "hit": 2,
+        "dmg": 1,
+        "keywords": [
+          "INSTANT"
+        ]
+      },
+      "name": "Disruption Beam",
+      "costL": 0,
+      "phase": "Assault",
+      "costS": 0,
+      "linkedTo": "-"
+    },
+    {
+      "description": "When an Enemy Unit declares a Ranged Attack against a Friendly Unit Within 4\", the targeted Friendly Unit is eligible to make an Evade Roll against that attack.",
+      "phase": "Assault",
+      "activation": {
+        "type": "Reaction",
+        "cost": 0
+      },
+      "costS": 30,
+      "costL": 30,
+      "name": "Hallucination"
+    },
+    {
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 3,
+        "dmg": 1,
+        "keywords": []
+      },
+      "linkedTo": "-",
+      "costS": 0,
+      "phase": "Combat",
+      "costL": 0,
+      "name": "Beam"
+    }
+  ],
+  "id": "sentry",
+  "stats": {
+    "size": 1,
+    "speed": {
+      "multipleModels": 4,
+      "singleModel": 7
+    },
+    "evade": 6,
+    "hp": 4,
+    "armor": 5,
+    "shield": 2
+  },
+  "unitType": "Support",
+  "keywords": []
+}

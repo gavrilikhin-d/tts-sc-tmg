@@ -1,0 +1,33 @@
+{
+  "id": "lair",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isFactionCard": false,
+  "factionTags": [],
+  "boosts": [
+    {
+      "description": "Predation <Active> <Any Phase>: The active Unit’s Close Combat Weapons gain INSTANT.",
+      "name": "Predation"
+    },
+    {
+      "name": "Creep Spread",
+      "description": "Creep Spread <Active> <Movement Phase>: Place a Creep Tumor token on the battlefield Within 6\" (Line of Sight is not required) of either a Friendly Entry Edge or an existing Friendly Creep Tumor token."
+    }
+  ],
+  "cost": 35,
+  "tags": "",
+  "faction": "Zerg",
+  "name": "Lair",
+  "resource": 1,
+  "slots": {
+    "Hero": 0,
+    "Air": 0,
+    "Elite": 1,
+    "Support": 0,
+    "Core": 1
+  },
+  "isUnique": true
+}

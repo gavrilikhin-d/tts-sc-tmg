@@ -1,0 +1,176 @@
+{
+  "name": "Jim Raynor",
+  "faction": "Terran",
+  "large": {
+    "supply": 0,
+    "cost": 0,
+    "models": 0
+  },
+  "squadProfile": [
+    {
+      "supply": 0,
+      "tier": 1,
+      "minModels": 0,
+      "maxModels": 0
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "minModels": 1,
+      "maxModels": 1
+    },
+    {
+      "tier": 3,
+      "supply": 0,
+      "minModels": 0,
+      "maxModels": 0
+    }
+  ],
+  "combatRange": "4",
+  "tags": [
+    "Biological",
+    "Ground",
+    "Unique"
+  ],
+  "upgrades": [
+    {
+      "costL": 0,
+      "costS": 0,
+      "activation": {
+        "type": "Passive"
+      },
+      "phase": "Any",
+      "name": "Commander",
+      "description": "Treat this Unit’s Supply characteristic as increased by 1 for Controlling and Contesting Mission Markers, completing objectives, and resolving Disengage checks."
+    },
+    {
+      "description": "The Supply Value of all Friendly Units Within 8\" of this Unit cannot be reduced below 1 for Contesting Mission Markers and completing objectives.",
+      "costL": 0,
+      "activation": {
+        "type": "Passive"
+      },
+      "phase": "Any",
+      "costS": 0,
+      "name": "Freedom Fighters"
+    },
+    {
+      "costL": 0,
+      "activation": {
+        "type": "Active",
+        "cost": "X"
+      },
+      "phase": "Movement",
+      "costS": 0,
+      "name": "Orders",
+      "description": "REPEATABLE. Select another Friendly Biological Unit Within 8\", spend CP and apply one of the following effects:\n\n1 CP: That Unit’s first used weapon gains the CRITICAL HIT (2).\n\n1 CP: That Unit ignores the Disengage penalty for the remainder of the Round.\n\n2 CP: Remove the Activation Marker from that Unit."
+    },
+    {
+      "costL": 0,
+      "costS": 0,
+      "phase": "Assault",
+      "linkedTo": "-",
+      "name": "Commando Rifle",
+      "description": {
+        "range": 18,
+        "target": "All",
+        "roa": 3,
+        "hit": 3,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Armoured"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": [
+          "BULKY",
+          "PIERCE Armoured (3)"
+        ]
+      }
+    },
+    {
+      "costS": 0,
+      "phase": "Assault",
+      "linkedTo": "Commando Rifle",
+      "costL": 0,
+      "name": "C-14 rifle",
+      "description": {
+        "range": 12,
+        "target": "All",
+        "roa": 6,
+        "hit": 3,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light"
+          ],
+          "die": "D3",
+          "plus": 1
+        },
+        "keywords": [
+          "BURST FIRE 8\" (3)"
+        ]
+      }
+    },
+    {
+      "description": {
+        "range": 6,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 3,
+        "dmg": 2,
+        "keywords": [
+          "ANTI-EVADE (2)",
+          "SIDEARM",
+          "PINPOINT"
+        ]
+      },
+      "phase": "Assault",
+      "costS": 0,
+      "linkedTo": "-",
+      "costL": 0,
+      "name": "“Justice” Revolver"
+    },
+    {
+      "costS": 0,
+      "phase": "Combat",
+      "linkedTo": "-",
+      "costL": 0,
+      "name": "Bayonet",
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 4,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      }
+    }
+  ],
+  "small": {
+    "supply": 1,
+    "cost": 230,
+    "models": 1
+  },
+  "stats": {
+    "size": 2,
+    "speed": {
+      "multipleModels": 7,
+      "singleModel": 7
+    },
+    "evade": 5,
+    "hp": 8,
+    "armor": 4
+  },
+  "id": "jim_raynor",
+  "unitType": "Hero",
+  "keywords": []
+}

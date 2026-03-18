@@ -1,0 +1,109 @@
+{
+  "keywords": "Khalai",
+  "unitType": "Elite",
+  "id": "praetor_guard__zealot_",
+  "stats": {
+    "shield": "3",
+    "hp": "4",
+    "speed": "4/7",
+    "size": "2",
+    "armor": "5+",
+    "evade": "5+"
+  },
+  "upgrades": [
+    {
+      "description": "This Unit gains TOUGH (2) on the first Armour Roll each Round.",
+      "name": "Shield Overcharge",
+      "costL": 0,
+      "linkedTo": "",
+      "costS": 0,
+      "activation": "<Passive>",
+      "phase": "Any Phase"
+    },
+    {
+      "description": "This Unit performs a 2\" Move action. This does not count towards its action limit.",
+      "phase": "Movement Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "costL": 0,
+      "name": "Leg Enhancements"
+    },
+    {
+      "description": "When determining Charge Distance for this Unit, roll 2D6 instead of D6 and use the higher result to add to the Unit’s Speed characteristic.",
+      "name": "Charge",
+      "phase": "Assault Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "costL": 0
+    },
+    {
+      "name": "Devastating Charge",
+      "phase": "Assault Phase",
+      "activation": "<Passive>",
+      "costS": 0,
+      "linkedTo": "",
+      "costL": 0,
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (3) 4+ effect."
+    },
+    {
+      "costL": 0,
+      "linkedTo": "-",
+      "costS": 0,
+      "activation": "",
+      "phase": "Combat Phase",
+      "name": "Psi Blades",
+      "description": "RANGE: E | TARGET: Ground | RoA: 4 | HIT: 3+ | DMG: 1\nSURGE: Light (D3)"
+    },
+    {
+      "costL": 0,
+      "phase": "Combat Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "name": "Titan Killers",
+      "description": "When this Unit makes a Close Combat Attack, and the target is Size 3 or larger, the weapon’s Damage characteristic is treated as 2."
+    },
+    {
+      "name": "Precognition",
+      "costL": 0,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "phase": "Combat Phase",
+      "costS": 0,
+      "description": "This Unit is eligible to make an Evade roll against all attacks targeting it."
+    }
+  ],
+  "small": {
+    "supply": 2,
+    "cost": 280,
+    "models": 3
+  },
+  "squadProfile": [
+    {
+      "modelCount": "1 - 1",
+      "supply": 1,
+      "tier": 1
+    },
+    {
+      "modelCount": "2 - 3",
+      "supply": 2,
+      "tier": 2
+    },
+    {
+      "modelCount": "-",
+      "tier": 3,
+      "supply": 0
+    }
+  ],
+  "large": {
+    "models": 0,
+    "cost": 0,
+    "supply": 0
+  },
+  "faction": "Protoss",
+  "name": "Praetor Guard (Zealot)",
+  "combatRange": "1",
+  "tags": "Biological, Light, Ground, Unique"
+}

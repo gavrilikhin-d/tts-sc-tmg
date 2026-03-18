@@ -1,0 +1,41 @@
+{
+  "isUnique": false,
+  "resource": 1,
+  "slots": {
+    "Hero": 0,
+    "Air": 0,
+    "Elite": 0,
+    "Support": 0,
+    "Core": 1
+  },
+  "tags": [],
+  "cost": 30,
+  "faction": "Zerg",
+  "name": "Evolution Chamber",
+  "boosts": [
+    {
+      "name": "Extended Claws",
+      "description": {
+        "type": "Active",
+        "phase": "Assault",
+        "description": "The active Unit gains a +1 Modifier to all IMPACT Hit Rolls."
+      }
+    },
+    {
+      "name": "Carapace",
+      "description": {
+        "type": "Reaction",
+        "phase": "Any",
+        "description": "Use before a Friendly Unit makes an Armour Roll. That Unit gains TOUGH (1) for this roll."
+      }
+    }
+  ],
+  "factionTags": [],
+  "id": "evolution_chamber",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isFactionCard": false
+}

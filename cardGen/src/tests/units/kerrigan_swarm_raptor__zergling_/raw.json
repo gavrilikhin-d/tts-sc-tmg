@@ -1,0 +1,100 @@
+{
+  "large": {
+    "models": 0,
+    "supply": 0,
+    "cost": 0
+  },
+  "squadProfile": [
+    {
+      "modelCount": "1 - 3",
+      "supply": 0,
+      "tier": 1
+    },
+    {
+      "modelCount": "4 - 6",
+      "supply": 1,
+      "tier": 2
+    },
+    {
+      "tier": 3,
+      "supply": 0,
+      "modelCount": "-"
+    }
+  ],
+  "faction": "Zerg",
+  "name": "Kerrigan Swarm Raptor (Zergling)",
+  "tags": "Biological, Light, Ground, Unique",
+  "combatRange": "1",
+  "upgrades": [
+    {
+      "description": "This Unit’s Horizontal Coherency is 4\".",
+      "name": "Squadron",
+      "activation": "<Passive>",
+      "phase": "Any Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "costL": 0
+    },
+    {
+      "description": "This Unit can move through IMPASSABLE TERRAIN of Size 4 or less and change elevation without using ACCESS POINTS.",
+      "costL": 0,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "costS": 0,
+      "phase": "Any Phase",
+      "name": "Raptor Strain"
+    },
+    {
+      "costL": 0,
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "costS": 0,
+      "activation": "<Active>\n(1 Biomass)",
+      "name": "Leap",
+      "description": "When determining Charge Distance for this Unit, add 2 to the Charge Distance."
+    },
+    {
+      "costL": 0,
+      "phase": "Assault Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Biomass)",
+      "name": "Adrenal Overload",
+      "description": "This Unit gains a +1 Modifier to all IMPACT Hit Rolls."
+    },
+    {
+      "costL": 0,
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "activation": "<Passive>",
+      "costS": 0,
+      "name": "Devastating Charge",
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (2) 5+ effect."
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 3+ | DMG: 1\nSURGE: Light, Armoured (D6)\n\nINSTANT",
+      "name": "Claws",
+      "phase": "Combat Phase",
+      "activation": "",
+      "linkedTo": "-",
+      "costS": 0,
+      "costL": 0
+    }
+  ],
+  "small": {
+    "models": 6,
+    "supply": 1,
+    "cost": 250
+  },
+  "id": "kerrigan_swarm_raptor__zergling_",
+  "stats": {
+    "shield": "-",
+    "hp": "2",
+    "size": "1",
+    "speed": "5/9",
+    "evade": "4+",
+    "armor": "5+"
+  },
+  "unitType": "Elite",
+  "keywords": "Kerrigan's Swarm"
+}

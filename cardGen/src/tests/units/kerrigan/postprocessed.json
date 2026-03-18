@@ -1,0 +1,149 @@
+{
+  "name": "Kerrigan",
+  "faction": "Zerg",
+  "large": {
+    "models": 0,
+    "cost": 0,
+    "supply": 0
+  },
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "minModels": 0,
+      "maxModels": 0
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "minModels": 1,
+      "maxModels": 1
+    },
+    {
+      "tier": 3,
+      "supply": 0,
+      "minModels": 0,
+      "maxModels": 0
+    }
+  ],
+  "combatRange": "2",
+  "tags": [
+    "Biological",
+    "Psionic",
+    "Ground",
+    "Unique"
+  ],
+  "upgrades": [
+    {
+      "description": "Treat this Unit’s Supply characteristic as increased by 1 for Controlling and Contesting Mission Markers, completing objectives, and resolving Disengage checks.",
+      "costL": 0,
+      "phase": "Any",
+      "costS": 0,
+      "activation": {
+        "type": "Passive"
+      },
+      "name": "Commander"
+    },
+    {
+      "costL": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "phase": "Movement",
+      "costS": 0,
+      "name": "Crushing Grip",
+      "description": "Select one Enemy Unit Within 12\". That Unit counts as Activated in this Phase (set an Activation Marker next to it)."
+    },
+    {
+      "description": "Select one Enemy Unit Within 18\". This Unit is eligible to make an Evade Roll against all attacks made by the selected Enemy Unit, with a +2 Modifier applied to those Evade Rolls.",
+      "costL": 0,
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "phase": "Movement",
+      "name": "Mutating Carapace"
+    },
+    {
+      "name": "Energy Blast",
+      "linkedTo": "-",
+      "phase": "Assault",
+      "costS": 0,
+      "costL": 0,
+      "description": {
+        "range": 8,
+        "target": "All",
+        "roa": 5,
+        "hit": 3,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light",
+            "Armoured"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      }
+    },
+    {
+      "description": "If Unengaged, resolve the PLACE (6) effect.",
+      "name": "Leaping Strike",
+      "costL": 0,
+      "phase": "Assault",
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      }
+    },
+    {
+      "name": "Devastating Charge",
+      "costL": 0,
+      "activation": {
+        "type": "Passive"
+      },
+      "phase": "Assault",
+      "costS": 0,
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (4) 4+ effect."
+    },
+    {
+      "name": "Blades",
+      "costL": 0,
+      "costS": 0,
+      "linkedTo": "-",
+      "phase": "Combat",
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 6,
+        "hit": 4,
+        "dmg": 2,
+        "keywords": [
+          "CRITICAL HIT (2)"
+        ]
+      }
+    }
+  ],
+  "small": {
+    "supply": 1,
+    "cost": 250,
+    "models": 1
+  },
+  "id": "kerrigan",
+  "stats": {
+    "size": 2,
+    "speed": {
+      "multipleModels": 7,
+      "singleModel": 7
+    },
+    "evade": 6,
+    "hp": 9,
+    "armor": 5
+  },
+  "unitType": "Hero",
+  "keywords": []
+}

@@ -1,0 +1,33 @@
+{
+  "factionTags": [],
+  "id": "roach_warren",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isFactionCard": false,
+  "cost": 25,
+  "tags": [],
+  "faction": "Zerg",
+  "name": "Roach Warren",
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Assault",
+        "description": "The active Ground Unit loses the Burrowed Status."
+      },
+      "name": "Nasty Surprise"
+    }
+  ],
+  "resource": 1,
+  "slots": {
+    "Elite": 0,
+    "Core": 1,
+    "Support": 0,
+    "Air": 0,
+    "Hero": 0
+  },
+  "isUnique": false
+}

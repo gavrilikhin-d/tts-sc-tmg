@@ -1,0 +1,109 @@
+{
+  "tags": "Light, Mechanical, Psionic, Ground",
+  "combatRange": "4",
+  "large": {
+    "supply": 0,
+    "cost": 0,
+    "models": 0
+  },
+  "squadProfile": [
+    {
+      "modelCount": "1 - 1",
+      "tier": 1,
+      "supply": 0
+    },
+    {
+      "supply": 1,
+      "tier": 2,
+      "modelCount": "2 - 2"
+    },
+    {
+      "supply": 0,
+      "tier": 3,
+      "modelCount": "-"
+    }
+  ],
+  "faction": "Protoss",
+  "name": "Sentry",
+  "small": {
+    "models": 2,
+    "supply": 1,
+    "cost": 130
+  },
+  "upgrades": [
+    {
+      "costL": 0,
+      "costS": 0,
+      "phase": "Any Phase",
+      "linkedTo": "",
+      "activation": "<Reaction>\n(1 Psionic Energy)",
+      "name": "Restoration",
+      "description": "Use when a Friendly Unit Within 4\" receives a DEBUFF. Remove all DEBUFFS from it."
+    },
+    {
+      "description": "Set a Force Field token Within 8\" in an unoccupied space. Units of Size 2 or lower cannot move across Force Fields. Models of Size 3 or more can move over it, and it's then removed.",
+      "name": "Force Field",
+      "costL": 0,
+      "linkedTo": "",
+      "phase": "Movement Phase",
+      "costS": 0,
+      "activation": "<Active>\n(1 Psionic Energy)"
+    },
+    {
+      "name": "Guardian Shield",
+      "costS": 0,
+      "phase": "Movement Phase",
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "costL": 0,
+      "description": "All Ranged Attacks targeting a Friendly Unit Within 4\" (Line of Sight is not required) are made with 1 fewer die in the Attack Pool."
+    },
+    {
+      "costL": 20,
+      "linkedTo": "",
+      "costS": 20,
+      "phase": "Movement Phase",
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "name": "Solid-Field Projectors",
+      "description": "Set a Force Field token Within 8\" in an unoccupied space. Units of Size 2 or lower cannot move across Force Fields. Models of Size 3 or more can move over it, and it's then removed."
+    },
+    {
+      "description": "RANGE: 8 | TARGET: All | RoA: 2 | HIT: 2+ | DMG: 1\nSURGE: -\n\nINSTANT",
+      "name": "Disruption Beam",
+      "costL": 0,
+      "phase": "Assault Phase",
+      "costS": 0,
+      "linkedTo": "-",
+      "activation": ""
+    },
+    {
+      "description": "When an Enemy Unit declares a Ranged Attack against a Friendly Unit Within 4\", the targeted Friendly Unit is eligible to make an Evade Roll against that attack.",
+      "phase": "Assault Phase",
+      "activation": "<Reaction>\n(0 Psionic Energy)",
+      "costS": 30,
+      "linkedTo": "",
+      "costL": 30,
+      "name": "Hallucination"
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 3+ | DMG: 1\nSURGE: -",
+      "linkedTo": "-",
+      "costS": 0,
+      "phase": "Combat Phase",
+      "activation": "",
+      "costL": 0,
+      "name": "Beam"
+    }
+  ],
+  "id": "sentry",
+  "stats": {
+    "evade": "6+",
+    "armor": "5+",
+    "size": "1",
+    "speed": "4/7",
+    "hp": "4",
+    "shield": "2"
+  },
+  "unitType": "Support",
+  "keywords": ""
+}

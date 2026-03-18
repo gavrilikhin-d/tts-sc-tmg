@@ -1,0 +1,189 @@
+{
+  "unitType": "Support",
+  "keywords": [],
+  "combatRange": "2",
+  "tags": [
+    "Armoured",
+    "Biological",
+    "Psionic",
+    "Ground"
+  ],
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "minModels": 0,
+      "maxModels": 0
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "minModels": 1,
+      "maxModels": 1
+    },
+    {
+      "tier": 3,
+      "supply": 0,
+      "minModels": 0,
+      "maxModels": 0
+    }
+  ],
+  "large": {
+    "models": 0,
+    "cost": 0,
+    "supply": 0
+  },
+  "faction": "Zerg",
+  "name": "Queen",
+  "small": {
+    "supply": 1,
+    "cost": 150,
+    "models": 1
+  },
+  "upgrades": [
+    {
+      "description": "Set a Creep Tumor token in base-to-base contact with this Unit.",
+      "phase": "Any",
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "costL": 0,
+      "name": "Spawn Creep Tumor"
+    },
+    {
+      "phase": "Any",
+      "activation": {
+        "type": "Reaction",
+        "cost": 1
+      },
+      "costS": 0,
+      "costL": 0,
+      "name": "Transfusion",
+      "description": "Use when another Friendly Biological Unit (including a Structure) suffers Damage Within 4\". Reduce the Total Damage before allocation by 2."
+    },
+    {
+      "name": "Restoration",
+      "costL": 0,
+      "phase": "Any",
+      "costS": 0,
+      "activation": {
+        "type": "Reaction",
+        "cost": 1
+      },
+      "description": "Use when a Friendly Unit Within 4\" receives a DEBUFF. Remove all DEBUFFS from it."
+    },
+    {
+      "name": "Psionic Link",
+      "activation": {
+        "type": "Passive"
+      },
+      "costS": 0,
+      "phase": "Any",
+      "costL": 0,
+      "description": "Once per Round, if there are at least 7 Friendly models Within 6\" of this Unit, it may resolve its Special Ability with the BM cost reduced by 1."
+    },
+    {
+      "description": "While this Unit is ON CREEP, increase this Unit's Speed characteristic by 2.",
+      "name": "Creep Speed",
+      "costS": 10,
+      "phase": "Any",
+      "activation": {
+        "type": "Passive"
+      },
+      "costL": 10
+    },
+    {
+      "description": "Select another Friendly Unit Within 6\" (Line of Sight is not required). That Unit’s Supply characteristic is increased by 1 for Controlling and Contesting Mission Markers and completing objectives.",
+      "costL": 10,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "phase": "Movement",
+      "costS": 10,
+      "name": "Domineering Presence"
+    },
+    {
+      "costS": 0,
+      "linkedTo": "-",
+      "phase": "Assault",
+      "costL": 0,
+      "name": "Talons",
+      "description": {
+        "range": 6,
+        "target": "Ground",
+        "roa": 4,
+        "hit": 4,
+        "dmg": 2,
+        "surge": {
+          "against": [
+            "Light"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      }
+    },
+    {
+      "description": {
+        "range": 12,
+        "target": "Flying",
+        "roa": 4,
+        "hit": 4,
+        "dmg": 2,
+        "surge": {
+          "against": [
+            "Light",
+            "Armoured"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      },
+      "name": "Acid spines",
+      "costL": 0,
+      "costS": 0,
+      "phase": "Assault",
+      "linkedTo": "-"
+    },
+    {
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (4) 3+ effect.",
+      "costL": 0,
+      "costS": 0,
+      "phase": "Assault",
+      "activation": {
+        "type": "Passive"
+      },
+      "name": "Devastating Charge"
+    },
+    {
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 3,
+        "hit": 4,
+        "dmg": 1,
+        "keywords": []
+      },
+      "name": "Talons",
+      "costL": 0,
+      "linkedTo": "-",
+      "costS": 0,
+      "phase": "Combat"
+    }
+  ],
+  "id": "queen",
+  "stats": {
+    "size": 3,
+    "speed": {
+      "multipleModels": 4,
+      "singleModel": 4
+    },
+    "hp": 9,
+    "armor": 4
+  }
+}

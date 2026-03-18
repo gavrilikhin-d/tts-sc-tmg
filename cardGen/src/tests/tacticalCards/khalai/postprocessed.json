@@ -1,0 +1,45 @@
+{
+  "slots": {
+    "Core": 3,
+    "Support": 0,
+    "Elite": 2,
+    "Air": 0,
+    "Hero": 1
+  },
+  "resource": 1,
+  "isUnique": true,
+  "isFactionCard": true,
+  "id": "khalai",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "factionTags": [
+    "Khalai"
+  ],
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "If there is no Friendly Pylon on the battlefield, place a Friendly Pylon Unit anywhere on the GROUND LEVEL of the battlefield more than 10\" away from any Enemy model. This Round, the Pylon is not eligible to use its Special Abilities (excluding Structure)."
+      },
+      "name": "Pylon Warp-In"
+    },
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "At the end of the active Unit’s Activation, select one other Friendly Unit eligible to Activate in the current Phase. Immediately Activate that Unit."
+      },
+      "name": "Bound by the Khala"
+    }
+  ],
+  "faction": "Protoss",
+  "name": "Khalai",
+  "cost": 0,
+  "tags": [
+    "Khalai"
+  ]
+}

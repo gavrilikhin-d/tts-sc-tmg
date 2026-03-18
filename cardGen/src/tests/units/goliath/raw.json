@@ -1,0 +1,136 @@
+{
+  "stats": {
+    "hp": "10",
+    "shield": "-",
+    "evade": "-",
+    "armor": "4+",
+    "size": "3",
+    "speed": "7"
+  },
+  "id": "goliath",
+  "combatRange": "5",
+  "tags": "Armoured, Mechanical, Ground",
+  "squadProfile": [
+    {
+      "supply": 0,
+      "tier": 1,
+      "modelCount": "-"
+    },
+    {
+      "supply": 2,
+      "tier": 2,
+      "modelCount": "1 - 1"
+    },
+    {
+      "modelCount": "-",
+      "supply": 0,
+      "tier": 3
+    }
+  ],
+  "large": {
+    "cost": 0,
+    "supply": 0,
+    "models": 0
+  },
+  "faction": "Terran",
+  "name": "Goliath",
+  "small": {
+    "models": 1,
+    "supply": 2,
+    "cost": 190
+  },
+  "upgrades": [
+    {
+      "description": "This Unit’s Autocannon and Underbelly Machine Gun weapons gain PRECISION (1).",
+      "name": "Ares-Class Targeting System",
+      "phase": "Any Phase",
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "costS": 20,
+      "costL": 20
+    },
+    {
+      "description": "Select one Enemy Unit Within 12\". Whenever a Friendly Goliath Unit targets that enemy with an Autocannon, that weapon gains Surge Type: Light, Armoured, and S Dice: D3+1.",
+      "name": "Target Lock",
+      "phase": "Movement Phase",
+      "activation": "<Active>\n(1 Command Point)",
+      "linkedTo": "",
+      "costS": 0,
+      "costL": 0
+    },
+    {
+      "phase": "Assault Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "costL": 0,
+      "name": "Indomitable",
+      "description": "While Engaged, this Unit may target and be targeted by Unengaged Enemy Units. In both cases, the defending Unit gains an Evade Roll against those attacks."
+    },
+    {
+      "phase": "Assault Phase",
+      "activation": "",
+      "costS": 0,
+      "linkedTo": "-",
+      "costL": 0,
+      "name": "Autocannon",
+      "description": "RANGE: 12 | TARGET: Ground | RoA: 9 | HIT: 4+ | DMG: 1\nSURGE: -\n\nLONG RANGE (18\")"
+    },
+    {
+      "phase": "Assault Phase",
+      "activation": "",
+      "linkedTo": "-",
+      "costS": 0,
+      "costL": 0,
+      "name": "Underbelly Machine Gun",
+      "description": "RANGE: 8 | TARGET: Ground | RoA: 6 | HIT: 3+ | DMG: 1\nSURGE: Light (D3)\n\nPINPOINT, SIDEARM"
+    },
+    {
+      "description": "RANGE: 16 | TARGET: Flying | RoA: 6 | HIT: 3+ | DMG: 1\nSURGE: Light (D3)\n\nANTI-EVADE (1), SIDEARM",
+      "costL": 0,
+      "linkedTo": "-",
+      "costS": 0,
+      "activation": "",
+      "phase": "Assault Phase",
+      "name": "Hellfire Missiles"
+    },
+    {
+      "costL": 30,
+      "activation": "",
+      "costS": 30,
+      "linkedTo": "Hellfire Missiles",
+      "phase": "Assault Phase",
+      "name": "Scatter Missiles",
+      "description": "RANGE: 18 | TARGET: Ground | RoA: 6 | HIT: 5+ | DMG: 1\nSURGE: Light (D3)\n\nINDIRECT FIRE, LOCKED IN (6), LONG RANGE (24\"), SIDEARM"
+    },
+    {
+      "description": "RANGE: 12 | TARGET: Ground | RoA: 3 | HIT: 3+ | DMG: 1\nSURGE: Armoured (D3)\n\nPIERCE Armoured (3), SIDEARM",
+      "activation": "",
+      "linkedTo": "Hellfire Missiles",
+      "costS": 40,
+      "phase": "Assault Phase",
+      "costL": 40,
+      "name": "Haywire Missiles"
+    },
+    {
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (4) 3+ effect.",
+      "linkedTo": "",
+      "costS": 0,
+      "activation": "<Passive>",
+      "phase": "Assault Phase",
+      "costL": 0,
+      "name": "Devastating Charge"
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 4 | HIT: 5+ | DMG: 1\nSURGE: -",
+      "name": "Stomp",
+      "phase": "Combat Phase",
+      "costS": 0,
+      "linkedTo": "-",
+      "activation": "",
+      "costL": 0
+    }
+  ],
+  "keywords": "",
+  "unitType": "Elite"
+}

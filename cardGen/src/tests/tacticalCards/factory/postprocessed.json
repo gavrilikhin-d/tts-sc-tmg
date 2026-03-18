@@ -1,0 +1,33 @@
+{
+  "slots": {
+    "Support": 0,
+    "Core": 0,
+    "Elite": 2,
+    "Hero": 0,
+    "Air": 0
+  },
+  "resource": 1,
+  "isUnique": false,
+  "isFactionCard": false,
+  "id": "factory",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "factionTags": [],
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "The active Mechanical Unit resolves the HEAL (2) effect."
+      },
+      "name": "Field Repair"
+    }
+  ],
+  "faction": "Terran",
+  "name": "Factory",
+  "tags": [],
+  "cost": 35
+}

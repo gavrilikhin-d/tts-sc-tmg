@@ -1,0 +1,29 @@
+{
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "gateway",
+  "factionTags": [],
+  "boosts": [
+    {
+      "name": "Quick Strikes",
+      "description": "Quick Strikes <Active> <Combat Phase>: The active Unit’s first Close Combat Weapon used gains PRECISION (2)."
+    }
+  ],
+  "name": "Gateway",
+  "faction": "Protoss",
+  "tags": "",
+  "cost": 25,
+  "slots": {
+    "Hero": 0,
+    "Air": 0,
+    "Support": 0,
+    "Core": 1,
+    "Elite": 0
+  },
+  "resource": 1,
+  "isUnique": false
+}

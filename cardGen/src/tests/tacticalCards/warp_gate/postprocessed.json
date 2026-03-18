@@ -1,0 +1,41 @@
+{
+  "isUnique": true,
+  "resource": 1,
+  "slots": {
+    "Hero": 0,
+    "Air": 0,
+    "Support": 0,
+    "Core": 2,
+    "Elite": 0
+  },
+  "cost": 40,
+  "tags": [],
+  "faction": "Protoss",
+  "name": "Warp Gate",
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Combat",
+        "description": "The active Unit’s first Close Combat Weapon used gains PRECISION (2)."
+      },
+      "name": "Quick Strikes"
+    },
+    {
+      "name": "Warp In",
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "The active Ground Unit Deploys from any table edge that is not a player’s Entry Edge. This deployment must end more than 10\" away from any Enemy model. The controlling player cannot use this ability if another Friendly Ground Unit has already Deployed this Round."
+      }
+    }
+  ],
+  "factionTags": [],
+  "id": "warp_gate",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isFactionCard": false
+}

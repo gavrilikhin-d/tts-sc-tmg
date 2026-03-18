@@ -1,0 +1,135 @@
+{
+  "combatRange": "5",
+  "tags": [
+    "Armoured",
+    "Mechanical",
+    "Ground"
+  ],
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "minModels": 0,
+      "maxModels": 0
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "minModels": 1,
+      "maxModels": 1
+    },
+    {
+      "supply": 2,
+      "tier": 3,
+      "minModels": 2,
+      "maxModels": 2
+    }
+  ],
+  "large": {
+    "models": 2,
+    "supply": 2,
+    "cost": 260
+  },
+  "faction": "Protoss",
+  "name": "Stalker",
+  "small": {
+    "supply": 1,
+    "cost": 160,
+    "models": 1
+  },
+  "upgrades": [
+    {
+      "description": "This Unit’s Horizontal Coherency is 4\".",
+      "costS": 0,
+      "phase": "Any",
+      "activation": {
+        "type": "Passive"
+      },
+      "costL": 0,
+      "name": "Squadron"
+    },
+    {
+      "costL": 40,
+      "costS": 20,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "phase": "Any",
+      "name": "Path of Shadows",
+      "description": "This Unit gains HIDDEN Status until it performs another action."
+    },
+    {
+      "description": "Resolve the PLACE (6) effect. Models set by this effect cannot be set up Within the Engagement Range of any Enemy Unit.",
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "costS": 0,
+      "phase": "Movement",
+      "costL": 0,
+      "name": "Blink"
+    },
+    {
+      "description": "When this Unit attacks an Enemy Unit that has already been Activated during this Phase, its Particle Disruptors gain INSTANT for that attack.",
+      "name": "Fury of the Nerazim",
+      "costL": 30,
+      "activation": {
+        "type": "Passive"
+      },
+      "phase": "Assault",
+      "costS": 20
+    },
+    {
+      "description": {
+        "range": 12,
+        "target": "All",
+        "roa": 4,
+        "hit": 3,
+        "dmg": 2,
+        "surge": {
+          "against": [
+            "Armoured"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      },
+      "name": "Particle Disruptors",
+      "costL": 0,
+      "linkedTo": "-",
+      "costS": 0,
+      "phase": "Assault"
+    },
+    {
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 5,
+        "dmg": 1,
+        "keywords": []
+      },
+      "name": "Stomp",
+      "costL": 0,
+      "linkedTo": "-",
+      "phase": "Combat",
+      "costS": 0
+    }
+  ],
+  "id": "stalker",
+  "stats": {
+    "size": 3,
+    "speed": {
+      "multipleModels": 4,
+      "singleModel": 8
+    },
+    "evade": 6,
+    "hp": 6,
+    "armor": 4,
+    "shield": 3
+  },
+  "unitType": "Elite",
+  "keywords": []
+}

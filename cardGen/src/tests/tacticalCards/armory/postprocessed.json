@@ -1,0 +1,41 @@
+{
+  "isUnique": false,
+  "resource": 1,
+  "slots": {
+    "Support": 0,
+    "Core": 0,
+    "Elite": 1,
+    "Hero": 0,
+    "Air": 0
+  },
+  "cost": 30,
+  "tags": [],
+  "name": "Armory",
+  "faction": "Terran",
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Assault",
+        "description": "The active Mechanical Unit’s first Ranged Weapon used gain CRITICAL HIT (1)."
+      },
+      "name": "Vehicle Weapons"
+    },
+    {
+      "name": "Vehicle Plating",
+      "description": {
+        "type": "Reaction",
+        "phase": "Any",
+        "description": "Use before a Friendly Mechanical Unit makes an Armour Roll. That Unit gains TOUGH (1) for this roll."
+      }
+    }
+  ],
+  "factionTags": [],
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "armory",
+  "isFactionCard": false
+}

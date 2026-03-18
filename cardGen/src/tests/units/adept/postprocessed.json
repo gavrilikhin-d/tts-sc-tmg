@@ -1,0 +1,161 @@
+{
+  "keywords": [],
+  "unitType": "Core",
+  "stats": {
+    "size": 2,
+    "speed": {
+      "multipleModels": 5,
+      "singleModel": 8
+    },
+    "evade": 5,
+    "hp": 3,
+    "armor": 5,
+    "shield": 2
+  },
+  "id": "adept",
+  "small": {
+    "models": 4,
+    "supply": 1,
+    "cost": 150
+  },
+  "upgrades": [
+    {
+      "description": "All Weapons of Friendly Units targeting an Enemy Unit Within 4\" of this Unit’s Shade token gain PRECISION (1).",
+      "name": "Psionic Presence",
+      "costS": 0,
+      "phase": "Any",
+      "activation": {
+        "type": "Passive"
+      },
+      "costL": 0
+    },
+    {
+      "description": "Set a Shade token Wholly Within 12\" of any model in this Unit. At the End of the Round, the controlling player may set all models of this Unit in Coherency, treating the Shade token as the Leading Model. The Shade token has DISPLACEMENT.",
+      "phase": "Movement",
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "costL": 0,
+      "name": "Psionic Transfer"
+    },
+    {
+      "name": "Glaive Cannon",
+      "linkedTo": "-",
+      "phase": "Assault",
+      "costS": 0,
+      "costL": 0,
+      "description": {
+        "range": 8,
+        "target": "All",
+        "roa": 2,
+        "hit": 3,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light"
+          ],
+          "die": "D3",
+          "plus": 1
+        },
+        "keywords": [
+          "ANTI-EVADE (1)"
+        ]
+      }
+    },
+    {
+      "description": "This Unit's Glaive Cannon gains BUFF RoA (1).",
+      "costL": 20,
+      "costS": 20,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "phase": "Assault",
+      "name": "Resonating Glaives"
+    },
+    {
+      "costL": 10,
+      "phase": "Assault",
+      "costS": 10,
+      "activation": {
+        "type": "Passive"
+      },
+      "name": "Guidance",
+      "description": "This Unit's Glaive Cannon Ranged weapon gains ANTI-EVADE (2)."
+    },
+    {
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 1,
+        "hit": 4,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": [
+          "PIERCE Light (2)"
+        ]
+      },
+      "costL": 20,
+      "linkedTo": "Strike",
+      "phase": "Combat",
+      "costS": 20,
+      "name": "Glaive Strike"
+    },
+    {
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 1,
+        "hit": 4,
+        "dmg": 1,
+        "keywords": []
+      },
+      "costL": 0,
+      "phase": "Combat",
+      "linkedTo": "-",
+      "costS": 0,
+      "name": "Strike"
+    }
+  ],
+  "combatRange": "3",
+  "tags": [
+    "Biological",
+    "Light",
+    "Ground"
+  ],
+  "squadProfile": [
+    {
+      "supply": 0,
+      "tier": 1,
+      "minModels": 1,
+      "maxModels": 2
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "minModels": 3,
+      "maxModels": 4
+    },
+    {
+      "supply": 0,
+      "tier": 3,
+      "minModels": 0,
+      "maxModels": 0
+    }
+  ],
+  "large": {
+    "supply": 0,
+    "cost": 0,
+    "models": 0
+  },
+  "faction": "Protoss",
+  "name": "Adept"
+}

@@ -1,0 +1,151 @@
+{
+  "upgrades": [
+    {
+      "name": "Squadron",
+      "costL": 0,
+      "costS": 0,
+      "phase": "Any",
+      "activation": {
+        "type": "Passive"
+      },
+      "description": "This Unit’s Horizontal Coherency is 4\"."
+    },
+    {
+      "name": "Burrow Ambush",
+      "phase": "Movement",
+      "costS": 20,
+      "activation": {
+        "type": "Passive"
+      },
+      "costL": 30,
+      "description": "When this Unit is nominated to deploy from the Reserves, it may resolve the PLACE (18) effect from the controlling player's Entry Edge. No model may be set Within 10\" of any Enemy model. This Unit's Activation ends."
+    },
+    {
+      "name": "Metabolic Boost",
+      "costL": 0,
+      "phase": "Assault",
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "description": "When determining Charge Distance for this Unit, roll 2D6 instead of D6 and use the higher result to add to the Unit’s Speed characteristic."
+    },
+    {
+      "phase": "Assault",
+      "costS": 0,
+      "activation": {
+        "type": "Passive"
+      },
+      "costL": 0,
+      "name": "Devastating Charge",
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (1) 5+ effect."
+    },
+    {
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 4,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      },
+      "costL": 0,
+      "linkedTo": "-",
+      "phase": "Combat",
+      "costS": 0,
+      "name": "Claws"
+    },
+    {
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 4,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light",
+            "Armoured"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      },
+      "phase": "Combat",
+      "costS": 20,
+      "linkedTo": "Claws",
+      "costL": 20,
+      "name": "Shredding Claws"
+    },
+    {
+      "description": "This Unit’s Claws and Shredding Claws weapons gain PRECISION (2).",
+      "name": "Adrenal Glands",
+      "costL": 30,
+      "costS": 30,
+      "phase": "Combat",
+      "activation": {
+        "type": "Passive"
+      }
+    }
+  ],
+  "small": {
+    "models": 12,
+    "supply": 1,
+    "cost": 180
+  },
+  "name": "Zergling",
+  "faction": "Zerg",
+  "large": {
+    "models": 18,
+    "supply": 2,
+    "cost": 220
+  },
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "minModels": 1,
+      "maxModels": 6
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "minModels": 7,
+      "maxModels": 12
+    },
+    {
+      "tier": 3,
+      "supply": 2,
+      "minModels": 13,
+      "maxModels": 18
+    }
+  ],
+  "combatRange": "1",
+  "tags": [
+    "Biological",
+    "Light",
+    "Ground"
+  ],
+  "id": "zergling",
+  "stats": {
+    "size": 1,
+    "speed": {
+      "multipleModels": 4,
+      "singleModel": 8
+    },
+    "evade": 4,
+    "hp": 1,
+    "armor": 6
+  },
+  "unitType": "Core",
+  "keywords": []
+}

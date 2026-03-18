@@ -1,0 +1,33 @@
+{
+  "factionTags": [],
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "twilight_council",
+  "isFactionCard": false,
+  "tags": "",
+  "cost": 40,
+  "faction": "Protoss",
+  "name": "Twilight Council",
+  "boosts": [
+    {
+      "name": "Weapons of the Firstborn",
+      "description": "Weapons of the Firstborn <Active> <Assault Phase>: The active Ground Unit’s first Ranged Weapon used gains BUFF Range (4)."
+    },
+    {
+      "description": "Veil of Shadows <Reaction> <Any Phase>: Use after a Friendly Unit resolves a PLACE effect. That Unit immediately resolves the HEAL (2) effect.",
+      "name": "Veil of Shadows"
+    }
+  ],
+  "resource": 1,
+  "slots": {
+    "Core": 0,
+    "Support": 1,
+    "Elite": 1,
+    "Air": 0,
+    "Hero": 0
+  },
+  "isUnique": true
+}

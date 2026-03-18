@@ -1,0 +1,82 @@
+{
+  "id": "omega_worm",
+  "stats": {
+    "speed": "-",
+    "size": "3",
+    "evade": "-",
+    "armor": "5+",
+    "shield": "-",
+    "hp": "10"
+  },
+  "large": {
+    "models": 0,
+    "supply": 0,
+    "cost": 0
+  },
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "modelCount": "-"
+    },
+    {
+      "supply": 0,
+      "tier": 2,
+      "modelCount": "1 - 1"
+    },
+    {
+      "modelCount": "-",
+      "supply": 0,
+      "tier": 3
+    }
+  ],
+  "faction": "Zerg",
+  "name": "Omega Worm",
+  "tags": "Armoured, Biological, Ground",
+  "combatRange": "-",
+  "upgrades": [
+    {
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "phase": "Any Phase",
+      "costS": 0,
+      "costL": 0,
+      "name": "Detection",
+      "description": "While Enemy Units are Within 6\" of this Unit, they lose HIDDEN Status."
+    },
+    {
+      "activation": "<Passive>",
+      "costS": 0,
+      "phase": "Any Phase",
+      "linkedTo": "",
+      "costL": 0,
+      "name": "Source of Creep",
+      "description": "A Friendly or Enemy Ground Zerg Unit Within 6\" of this Unit, counts as being ON CREEP."
+    },
+    {
+      "costS": 0,
+      "phase": "Any Phase",
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "costL": 0,
+      "name": "Structure",
+      "description": "This Unit cannot be Activated in any Phase and cannot perform actions. Additionally, its Current Supply Value is treated as 0, and it can never Control or Contest Mission Markers, ignoring the standard Zero Supply Exception. This Unit cannot be a target of an ability, unless stated otherwise."
+    },
+    {
+      "description": "The base of the Omega Worm counts as an Entry Edge. Each Round, Friendly Units with a combined Supply cost of 2 or less may be Deployed via this Entry Edge.\n\nIf a Friendly Leading model finishes a Move, Disengage, or Run action in base-to-base contact with the Omega Worm, the controlling player may remove that Unit from the battlefield and return it to Reserves.",
+      "costL": 0,
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "phase": "Any Phase",
+      "name": "Omega Network"
+    }
+  ],
+  "small": {
+    "cost": 0,
+    "supply": 0,
+    "models": 1
+  },
+  "keywords": "Kerrigan's Swarm",
+  "unitType": "Other"
+}

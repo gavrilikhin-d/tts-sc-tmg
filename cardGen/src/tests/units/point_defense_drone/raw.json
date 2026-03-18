@@ -1,0 +1,73 @@
+{
+  "upgrades": [
+    {
+      "description": "When another Friendly Unit Within 4\" is targeted by a Ranged Attack without the INSTANT keyword, remove up to 2 dice from the Attack Pool. Then remove this Unit from the battlefield.",
+      "name": "Point Defense Laser",
+      "costL": 0,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "costS": 0
+    },
+    {
+      "description": "This model has DISPLACEMENT.",
+      "name": "Gliding",
+      "linkedTo": "",
+      "costS": 0,
+      "activation": "<Passive>",
+      "phase": "Any Phase",
+      "costL": 0
+    },
+    {
+      "description": "This Unit cannot be Activated in any Phase and cannot perform actions. Additionally, its Current Supply Value is treated as 0, and it can never Control or Contest Mission Markers, ignoring the standard Zero Supply Exception. This Unit cannot be a target of an ability, unless stated otherwise.",
+      "name": "Structure",
+      "costL": 0,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "costS": 0
+    }
+  ],
+  "small": {
+    "models": 1,
+    "cost": 0,
+    "supply": 0
+  },
+  "large": {
+    "models": 0,
+    "supply": 0,
+    "cost": 0
+  },
+  "squadProfile": [
+    {
+      "modelCount": "-",
+      "supply": 0,
+      "tier": 1
+    },
+    {
+      "tier": 2,
+      "supply": 0,
+      "modelCount": "1 - 1"
+    },
+    {
+      "tier": 3,
+      "supply": 0,
+      "modelCount": "-"
+    }
+  ],
+  "faction": "Terran",
+  "name": "Point Defense Drone",
+  "tags": "Armoured, Flying, Mechanical",
+  "combatRange": "-",
+  "id": "point_defense_drone",
+  "stats": {
+    "hp": "3",
+    "shield": "-",
+    "evade": "6+",
+    "armor": "6+",
+    "speed": "-",
+    "size": "-"
+  },
+  "unitType": "Other",
+  "keywords": "Raynor's Raiders"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Accelerating Creep",
+  "faction": "Zerg",
+  "cost": 0,
+  "tags": [],
+  "boosts": [
+    {
+      "name": "Speed on Creep",
+      "description": {
+        "type": "Passive",
+        "phase": "Any",
+        "description": "If the active Friendly Zerg Unit is ON CREEP, increase its Speed characteristic by 1."
+      }
+    },
+    {
+      "name": "Living Glob of Tissue",
+      "description": {
+        "type": "Passive",
+        "phase": "Any",
+        "description": "Creep Tumor tokens have STAY IN PLAY and DISPLACEMENT."
+      }
+    },
+    {
+      "description": {
+        "type": "Passive",
+        "phase": "Any",
+        "description": "If an Enemy Unit ends a Move, Deploy, Run, Charge or Disengage action Within 1\" of a Friendly Creep Tumor token, remove that token from the battlefield."
+      },
+      "name": "Creep Removal"
+    }
+  ],
+  "factionTags": [],
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "accelerating_creep",
+  "isUnique": true,
+  "slots": {
+    "Elite": 0,
+    "Core": 0,
+    "Support": 0,
+    "Air": 0,
+    "Hero": 0
+  },
+  "resource": 0
+}

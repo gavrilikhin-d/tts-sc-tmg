@@ -1,0 +1,73 @@
+{
+  "upgrades": [
+    {
+      "costL": 0,
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "costS": 0,
+      "activation": "<Passive>",
+      "name": "Structure",
+      "description": "This Unit cannot be Activated in any Phase and cannot perform actions. Additionally, its Current Supply Value is treated as 0, and it can never Control or Contest Mission Markers, ignoring the standard Zero Supply Exception. This Unit cannot be a target of an ability, unless stated otherwise."
+    },
+    {
+      "name": "Khalai Ingenuity",
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "costS": 0,
+      "phase": "Any Phase",
+      "costL": 0,
+      "description": "Once per Round, when a Friendly Unit Within 4\" of this Pylon uses a Special Ability that costs Psionic Energy, that ability’s PE cost is reduced by 1."
+    },
+    {
+      "name": "Warp Conduit",
+      "linkedTo": "",
+      "phase": "Movement Phase",
+      "costS": 0,
+      "activation": "<Passive>",
+      "costL": 0,
+      "description": "Once per Round, the controlling player may deploy a Ground Unit from Reserves using this Pylon base as the Entry Edge. This Unit's Activation ends."
+    }
+  ],
+  "small": {
+    "models": 1,
+    "cost": 0,
+    "supply": 0
+  },
+  "large": {
+    "supply": 0,
+    "cost": 0,
+    "models": 0
+  },
+  "squadProfile": [
+    {
+      "modelCount": "-",
+      "tier": 1,
+      "supply": 0
+    },
+    {
+      "tier": 2,
+      "supply": 0,
+      "modelCount": "1 - 1"
+    },
+    {
+      "modelCount": "-",
+      "supply": 0,
+      "tier": 3
+    }
+  ],
+  "faction": "Protoss",
+  "name": "Pylon",
+  "tags": "Armored, Ground",
+  "combatRange": "-",
+  "id": "pylon",
+  "stats": {
+    "shield": "2",
+    "hp": "8",
+    "size": "3",
+    "speed": "-",
+    "armor": "5+",
+    "evade": "-"
+  },
+  "unitType": "Other",
+  "keywords": "Khalai"
+}

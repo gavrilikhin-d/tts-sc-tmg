@@ -1,0 +1,41 @@
+{
+  "cost": 40,
+  "tags": [],
+  "name": "Gate Chronoboosted",
+  "faction": "Protoss",
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Combat",
+        "description": "The active Unit’s first Close Combat Weapon used gains PRECISION (2)."
+      },
+      "name": "Quick Strikes"
+    },
+    {
+      "name": "Zealous Charge",
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "The active Unit gains BUFF Speed (2)."
+      }
+    }
+  ],
+  "factionTags": [],
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "gate_chronoboosted",
+  "isFactionCard": false,
+  "isUnique": true,
+  "resource": 1,
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Elite": 1,
+    "Core": 1,
+    "Support": 0
+  }
+}
