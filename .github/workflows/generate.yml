@@ -91,9 +91,61 @@ jobs:
           cd artifacts
           zip -r mods.zip mods
 
+      - name: Build changed mods archive
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/changedMods artifacts/previous
+
+          current_tag="${GITHUB_REF_NAME}"
+          previous_mods_url="$(
+            curl -fsSL \
+              -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases?per_page=50" \
+            | jq -r --arg current "$current_tag" '
+                .[]
+                | select(.tag_name != $current)
+                | .assets[]
+                | select(.name == "mods.zip")
+                | .browser_download_url
+              ' \
+            | head -n 1
+          )"
+
+          if [ -z "${previous_mods_url}" ]; then
+            echo "No previous mods.zip release asset found; including all current mods as changed."
+            cp -R artifacts/mods/. artifacts/changedMods/
+          else
+            echo "Downloading previous mods.zip from: ${previous_mods_url}"
+            curl -fsSL \
+              -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+              -o artifacts/previous/mods.zip \
+              "${previous_mods_url}"
+
+            unzip -q artifacts/previous/mods.zip -d artifacts/previous
+
+            while IFS= read -r -d '' current_file; do
+              rel_path="${current_file#artifacts/mods/}"
+              previous_file="artifacts/previous/mods/${rel_path}"
+              if [ ! -f "${previous_file}" ] || ! cmp -s "${current_file}" "${previous_file}"; then
+                mkdir -p "artifacts/changedMods/$(dirname "${rel_path}")"
+                cp "${current_file}" "artifacts/changedMods/${rel_path}"
+              fi
+            done < <(find artifacts/mods -type f -name "*.json" -print0)
+          fi
+
+          cd artifacts
+          zip -r changedMods.zip changedMods
+
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: artifacts/mods.zip
+          files: |
+            artifacts/mods.zip
+            artifacts/changedMods.zip
           generate_release_notes: false
