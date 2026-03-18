@@ -1,4 +1,4 @@
-import type { Ability, AbilityType, ModelsAmount, Phase, SquadProfile, TacticalCard, UnitCard } from "./types";
+import type { Ability, AbilityType, HP, Inches, ModelsAmount, Phase, Roll, Size, Speed, SquadProfile, TacticalCard, UnitCard, UnitStats } from "./types";
 
 const postprocessAbility = (
   ability: Ability<"Raw">,
@@ -57,9 +57,37 @@ const postprocessSquadProfile = ({ modelCount, ...rest }: SquadProfile<"Raw">): 
     }
 }
 
+const postprocessRoll = (roll: Roll<"Raw">): Roll<"Parsed"> => {
+    return parseInt(roll.substring(0, 1)) as Roll<"Parsed">;
+}
+
+const postprocessSpeed = (speed: Speed<"Raw">): Speed<"Parsed"> => {
+    const [, multipleModels, singleModel] =
+        speed.replace(/\s+/g, "").match(/^(\d+)(?:\/(\d+))?$/) ?? [];
+    if (!multipleModels) {
+        throw new Error("Invalid speed: " + speed);
+    }
+
+    return {
+        multipleModels: parseInt(multipleModels) as Inches,
+        singleModel: parseInt(singleModel ?? multipleModels) as Inches,
+    }
+}
+
+export const postprocessUnitStats = (stats: UnitStats<"Raw">): UnitStats<"Parsed"> => {
+    return {
+        size: parseInt(stats.size) as Size<"Parsed">,
+        speed: stats.speed === "-" ? undefined : postprocessSpeed(stats.speed),
+        evade: stats.evade === "-" ? undefined : postprocessRoll(stats.evade),
+        hp: parseInt(stats.hp) as HP<"Parsed">,
+        armor: postprocessRoll(stats.armor),
+    }
+}
+
 export const postprocessUnitCard = (card: UnitCard<"Raw">): UnitCard<"Parsed"> => {
     return {
         ...card,
+        stats: postprocessUnitStats(card.stats),
         squadProfile: card.squadProfile.map(postprocessSquadProfile),
     }
 }

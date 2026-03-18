@@ -74,18 +74,22 @@ export type UnitProfile = {
     models: ModelsAmount;
 }
 
-export type Size = `${number}`;
-export type Speed = `${number}/${number}`;
-export type Roll = `${2 | 3 | 4 | 5 | 6}+`;
-export type HP = Distinct<"HP", `${number}`>;
+export type Size<S extends State = "Parsed"> = S extends "Raw" ? `${number}` : Distinct<"Size", number>;
+export type Inches = Distinct<"Inches", number>;
+export type Speed<S extends State = "Parsed"> = S extends "Raw" ? `${Inches}` | `${Inches}/${Inches}` : {
+    multipleModels: Inches;
+    singleModel: Inches;
+};
+export type Roll<S extends State = "Parsed"> = S extends "Raw" ? `${2 | 3 | 4 | 5 | 6}+` : Distinct<"Roll", 2 | 3 | 4 | 5 | 6>;
+export type HP<S extends State = "Parsed"> = S extends "Raw" ? `${number}` : Distinct<"HP", number>;
 export type KeywordsString = Distinct<"KeywordsString", string>;
 
-export type UnitStats = {
-    size: Size;
-    speed: Speed;
-    evade: Roll | "-"
-    hp: HP
-    armor: Roll
+export type UnitStats<S extends State = "Parsed"> = {
+    size: Size<S>;
+    speed: S extends "Raw" ? Speed<"Raw"> | "-" : Speed<"Parsed"> | undefined;
+    evade: S extends "Raw" ? Roll<"Raw"> | "-" : Roll<"Parsed"> | undefined
+    hp: HP<S>
+    armor: Roll<S>
 }
 
 export type UpgradeName = Distinct<"UpgradeName", string>;
@@ -126,7 +130,7 @@ export type UnitCard<S extends State = "Parsed"> = {
     combatRange: CombatRange;
     small: UnitProfile;
     large: UnitProfile;
-    stats: UnitStats;
+    stats: UnitStats<S>;
     keywords: KeywordsString;
     upgrades: Upgrade[]
     squadProfile: SquadProfile<S>[];
