@@ -2,12 +2,12 @@
   "GUID": "af8cdd",
   "Name": "Deck",
   "Transform": {
-    "posX": 29.7281837,
+    "posX": 29.72819,
     "posY": 0.9787001,
     "posZ": -60.2698441,
-    "rotX": -1.60939362E-06,
-    "rotY": 179.956268,
-    "rotZ": 5.430505E-07,
+    "rotX": -1.61924811E-06,
+    "rotY": 179.956314,
+    "rotZ": 4.62906115E-07,
     "scaleX": 1.44999969,
     "scaleY": 1.0,
     "scaleZ": 1.44999969
@@ -50,7 +50,7 @@
     148800,
     148900,
     148700,
-    148600,
+    154900,
     148500,
     148400
   ],
@@ -67,15 +67,6 @@
     "1485": {
       "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/18212787255733000048/490BC52B18F0DB9FBCAF468A24AF439F228B29B4/",
       "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12843095087856709040/384218E0148F837F69FE0EF48CDFAEC2751E87B6/",
-      "NumWidth": 1,
-      "NumHeight": 1,
-      "BackIsHidden": true,
-      "UniqueBack": false,
-      "Type": 0
-    },
-    "1486": {
-      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12378048824885860436/89465169BF49249A5635DCAE74AC0D0B701FEBAA/",
-      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/12657761805157689849/284E09C4ED0054F36595534A02D462FBDC757307/",
       "NumWidth": 1,
       "NumHeight": 1,
       "BackIsHidden": true,
@@ -157,6 +148,15 @@
     "1495": {
       "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12016959590082591336/DD06B1B000E6FE93EC06DBDED1CE70E185D0F697/",
       "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/18415416548566706193/F2BE9DFE6518B4D8B0111916E6A0E544FA6D865F/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    },
+    "1549": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12433213463349685972/9FA79755D079B7A2FDA9B30B9389E99DB02F4753/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/16652367253946038231/C77833ACD5A0E53BF1083F7A21BEDE7B930EFA2B/",
       "NumWidth": 1,
       "NumHeight": 1,
       "BackIsHidden": true,

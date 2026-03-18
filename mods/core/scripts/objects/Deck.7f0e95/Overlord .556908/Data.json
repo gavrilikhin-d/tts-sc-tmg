@@ -1,0 +1,58 @@
+{
+  "GUID": "556908",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 41.2630272,
+    "posY": 0.995916545,
+    "posZ": -77.70487,
+    "rotX": 0.00274394942,
+    "rotY": 180.000122,
+    "rotZ": -0.00312704663,
+    "scaleX": 1.59999955,
+    "scaleY": 1.0,
+    "scaleZ": 1.59999955
+  },
+  "Nickname": "Overlord ",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "Tags": [
+    "_Inquisitorial_Agents"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 154000,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1540": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/10156184990681235907/1A4F4FD1D9C094B47AA513D0A627FB8D4653FFD4/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/18032977612742865998/678AB6D1D8BA7CDF4C8C1FDF2E45F5E52AB27843/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}
