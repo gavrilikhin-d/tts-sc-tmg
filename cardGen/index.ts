@@ -1,9 +1,11 @@
 import * as api from "./src/api";
-import { postprocessTacticalCards } from "./src/postprocessing";
+import { postprocessUnitCard } from "./src/postprocessing";
 
-api.fetchTacticalCards().then((cards) => {
-  const parsedCards = postprocessTacticalCards(cards);
-  parsedCards.forEach((card) => {
-    console.log(card.boosts);
-  });
+api.fetchUnitCards().then((cards) => {
+    cards.map(postprocessUnitCard).forEach(card => {
+        console.log(card)
+        console.log(card.squadProfile);
+        console.log(card.upgrades);
+    });
 });
+

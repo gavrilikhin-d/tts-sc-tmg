@@ -25,6 +25,7 @@ export type Slots = {
   Elite: Supply;
   Core: Supply;
 };
+export type UnitType = keyof Slots;
 
 export type AbilityName = Distinct<"AbilityName", string>;
 export type RawAbilityDescription = Distinct<"RawAbilityDescription", string>;
@@ -59,3 +60,74 @@ export type TacticalCard<S extends State = "Parsed"> = {
   boosts: Ability<S>[];
   frontUrl?: ImageUrl;
 };
+
+export type UnitId = Distinct<"UnitId", string>;
+export type UnitName = Distinct<"UnitName", string>;
+export type CombatRange = Distinct<"CombatRange", string>;
+
+export type Minerals = Distinct<"Minerals", number>;
+export type ModelsAmount = Distinct<"ModelsAmount", number>;
+
+export type UnitProfile = {
+    supply: Supply;
+    cost: Minerals;
+    models: ModelsAmount;
+}
+
+export type Size = `${number}`;
+export type Speed = `${number}/${number}`;
+export type Roll = `${2 | 3 | 4 | 5 | 6}+`;
+export type HP = Distinct<"HP", `${number}`>;
+export type KeywordsString = Distinct<"KeywordsString", string>;
+
+export type UnitStats = {
+    size: Size;
+    speed: Speed;
+    evade: Roll | "-"
+    hp: HP
+    armor: Roll
+}
+
+export type UpgradeName = Distinct<"UpgradeName", string>;
+export type PointsName = "Biomass"
+export type Target = "Ground" | "Air" | "All"
+export type Die = "D3" | "D6"
+export type SurgeType = "Light" | "Armoured"
+export type SurgeDescription = `${SurgeType | `${SurgeType}, ${SurgeType}`} (${Die})`
+export type WeaponDescription = `RANGE: ${number} | TARGET: ${Target} | RoA: ${number} | HIT: ${Roll} | DMG: ${number}\nSURGE: ${SurgeDescription | "-"}`;
+export type Upgrade = {
+    name: UpgradeName;
+    linkedTo: '' | '-' | UpgradeName;
+    activation: `<${AbilityType}>` | `<${AbilityType}>\n(${CP} ${PointsName})`
+    phase: `${Phase} Phase`
+    /** Cost in large squar */
+    costL: Minerals
+    /** Cost in small squad */ 
+    costS: Minerals
+    description: string
+}
+
+export type SquadProfile<S extends State = "Parsed"> = {
+    supply: Supply;
+    tier: 1 | 2 | 3;
+} & (S extends "Raw" ? {
+    modelCount: `${ModelsAmount} - ${ModelsAmount}` | "-";
+}: {
+    minModels: ModelsAmount;
+    maxModels: ModelsAmount;
+})
+
+export type UnitCard<S extends State = "Parsed"> = {
+    id: UnitId
+    name: UnitName;
+    unitType: UnitType;
+    fraction: Fraction;
+    tags: TagsString;
+    combatRange: CombatRange;
+    small: UnitProfile;
+    large: UnitProfile;
+    stats: UnitStats;
+    keywords: KeywordsString;
+    upgrades: Upgrade[]
+    squadProfile: SquadProfile<S>[];
+}
