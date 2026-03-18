@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": ".",
     "outDir": "dist",
     "target": "ES2020",
     "module": "NodeNext",
@@ -10,5 +10,5 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "firebaseConfig.json"]
+  "include": ["**/*.ts", "firebaseConfig.json"]
 }
