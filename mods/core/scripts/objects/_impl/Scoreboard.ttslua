@@ -3,7 +3,7 @@ require("_impl/Utility")
 stats = {
 	initiative = "None",
 	round = 1,
-	availableSupply = 6,
+	availableSupply = 0,
 	redSupply = 0,
 	blueSupply = 0,
 	redSupplyDestroyed = 0,

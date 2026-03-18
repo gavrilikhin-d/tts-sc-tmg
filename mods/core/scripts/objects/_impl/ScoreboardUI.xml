@@ -1,36 +1,38 @@
 <Defaults>
-    <Button fontSize="18" textColor="#FFFFFF" colors="#353839|#353839|#353839|#353839" />
-    <HorizontalLayout preferredHeight="50" />
+    <Button fontSize="72" textColor="#f8f8f8" colors="#353839|#424546|#353839|#f8f8f8fa" fontStyle="Bold" outline="White" outlineSize="1"/>
+    <HorizontalLayout preferredHeight="185" spacing="8" />
 </Defaults>
 
-<VerticalLayout position="0 0 -100" width="350" height="300" scale="2 2 2">
-    <HorizontalLayout preferredHeight="35">
-        <Button id="redInitiativeButton" onClick="setInitiative(Red)" textColor="Red" colors="#353839|#353839|#353839|White" preferredWidth="105">
+<!-- Scaling down for highres fonts -->
+<VerticalLayout position="0 0 -100" width="2000" height="1650" scale="0.3 0.3 0.3" spacing="8">
+    <HorizontalLayout preferredHeight="180">
+        <Button id="redInitiativeButton" onClick="setInitiative(Red)" preferredWidth="700" textColor="Red" fontSize="110">
             Red
         </Button>
-        <Button interactible="false" preferredWidth="90">
+        <Button preferredWidth="584" interactible="false" colors="#353839|#353839|#353839" fontSize="100">
             Initiative
         </Button>
-        <Button id="blueInitiativeButton" onClick="setInitiative(Blue)" textColor="Blue" colors="#353839|#353839|#353839|White" preferredWidth="105">
+        <Button  id="blueInitiativeButton" onClick="setInitiative(Blue)" preferredWidth="700" textColor="Blue" fontSize="110">
             Blue
         </Button>
     </HorizontalLayout>
-    <Button id="roundButton" onClick="toggleRound" preferredHeight="50">Round 1</Button>
-    <Button id="availableSupplyButton" onClick="toggleAvailableSupply"  preferredHeight="50">Available Supply 6</Button>
+    <Button id="roundButton" onClick="toggleRound" preferredHeight="185" fontSize="120">Round 1</Button>
+    <!-- "&#xA;" is a new line character -->
+    <Button id="availableSupplyButton" onClick="toggleAvailableSupply" preferredHeight="230" fontSize="100">Available Supply&#xA;0</Button>    
     <HorizontalLayout>
         <Button id="redSupply" onClick="toggleRedSupply">Red Supply 0</Button>
         <Button id="blueSupply" onClick="toggleBlueSupply">Blue Supply 0</Button>
     </HorizontalLayout>
     <HorizontalLayout>
-        <Button id="redSupplyDestroyed" onClick="toggleRedSupplyDestroyed">Red Supply Destroyed 0</Button>
+        <Button id="redSupplyDestroyed" onClick="toggleRedSupplyDestroyed">Red Supply Destroyed 0</Button> 
         <Button id="blueSupplyDestroyed" onClick="toggleBlueSupplyDestroyed">Blue Supply Destroyed 0</Button>
     </HorizontalLayout>
     <HorizontalLayout>
         <Button id="redMissionVP" onClick="toggleRedMissionVP">Red Mission VP 0</Button>
         <Button id="blueMissionVP" onClick="toggleBlueMissionVP">Blue Mission VP 0</Button>
     </HorizontalLayout>
-    <HorizontalLayout preferredHeight="50" spacing="125" childAlignment="MiddleCenter" childForceExpandWidth="false">
-        <Button id="redTotal" preferredWidth="50" fontSize="24">0</Button>
-        <Button id="blueTotal" preferredWidth="50" fontSize="24">0</Button>
+    <HorizontalLayout preferredHeight="290" spacing="680" childAlignment="MiddleCenter" childForceExpandWidth="false">
+        <Button id="redTotal" preferredWidth="320" fontSize="250" colors="#353839|#353839|#353839">0</Button>
+        <Button id="blueTotal" preferredWidth="320" fontSize="250" colors="#353839|#353839|#353839">0</Button>
     </HorizontalLayout>
 </VerticalLayout>
