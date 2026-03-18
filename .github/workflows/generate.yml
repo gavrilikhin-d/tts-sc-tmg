@@ -48,9 +48,9 @@ jobs:
             local package_name="$1"
             local input_dir="$2"
             local include_dir="$3"
-            local safe_name
-            safe_name="$(echo "$package_name" | sed -E 's/[^A-Za-z0-9._-]+/_/g')"
-            local output_file="artifacts/mod-json/${safe_name}.json"
+            local output_rel="${4:-$package_name.json}"
+            local output_file="artifacts/mod-json/${output_rel}"
+            mkdir -p "$(dirname "$output_file")"
             echo "Packaging ${package_name} from ${input_dir} -> ${output_file}"
             node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" \
               package "$input_dir" -i "$include_dir" -o "$output_file"
@@ -75,7 +75,7 @@ jobs:
               [ -f "$child_data" ] || continue
               child_dir="$(dirname "$child_data")"
               child_name="$(basename "$child_dir")"
-              package_one "${mod_name}__${child_name}" "$child_dir" "$child_dir"
+              package_one "${mod_name}/${child_name}" "$child_dir" "$child_dir" "${mod_name}/${child_name}.json"
               child_count=$((child_count + 1))
             done
 
