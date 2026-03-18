@@ -1,4 +1,4 @@
-import type { Ability, AbilityType, Activation, CP, DiceAmount, Die, HP, Inches, Keyword, ModelsAmount, Phase, RoA, Roll, Shield, Size, Speed, SquadProfile, SurgeType, TacticalCard, Target, UnitCard, UnitStats, Upgrade, UpgradeDescription } from "./types";
+import type { Ability, AbilityType, Activation, CP, DiceAmount, Die, HP, Inches, Keyword, ModelsAmount, Phase, RoA, Roll, Shield, Size, Speed, SquadProfile, SurgeType, TacticalCard, Tag, Target, UnitCard, UnitStats, Upgrade, UpgradeDescription } from "./types";
 
 const postprocessAbility = (
   ability: Ability<"Raw">,
@@ -32,6 +32,7 @@ export const postprocessTacticalCard = (
 ): TacticalCard<"Parsed"> => {
   return {
     ...card,
+    tags: card.tags.split(",").map(k => k.trim() as Tag),
     boosts: card.boosts.map(postprocessAbility),
   };
 };
@@ -154,6 +155,7 @@ export const postprocessUpgrade = (upgrade: Upgrade<"Raw">): Upgrade<"Parsed"> =
 export const postprocessUnitCard = (card: UnitCard<"Raw">): UnitCard<"Parsed"> => {
     return {
         ...card,
+        tags: card.tags.split(",").map(k => k.trim() as Tag),
         keywords: card.keywords.split(",").map(k => k.trim() as Keyword),
         stats: postprocessUnitStats(card.stats),
         squadProfile: card.squadProfile.map(postprocessSquadProfile),

@@ -15,7 +15,8 @@ export type Supply = Distinct<"Supply", number>;
 
 export type ImageUrl = Distinct<"ImageUrl", string>;
 
-export type TagsString = Distinct<"TagsString", string>;
+export type Tag = Distinct<"Tag", string>;
+export type Tags<S extends State> = S extends "Raw" ? string : Tag[];
 export type Subfraction = Distinct<"Subfraction", string>;
 
 export type Slots = {
@@ -55,7 +56,7 @@ export type TacticalCard<S extends State> = {
   isUnique: boolean;
   slots: Slots;
   timestamp: Timestamp;
-  tags: TagsString;
+  tags: Tags<S>;
   fractionTags: Subfraction[];
   boosts: Ability<S>[];
   frontUrl?: ImageUrl;
@@ -152,7 +153,7 @@ export type UnitCard<S extends State> = {
     name: UnitName;
     unitType: UnitType;
     fraction: Fraction;
-    tags: TagsString;
+    tags: Tags<S>;
     combatRange: CombatRange;
     small: UnitProfile;
     large: UnitProfile;
