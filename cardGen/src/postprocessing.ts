@@ -146,6 +146,7 @@ export const postprocessUpgrade = (upgrade: Upgrade<"Raw">): Upgrade<"Parsed"> =
 
     return {
         ...upgrade,
+        linkedTo: upgrade.linkedTo === "" ? undefined : upgrade.linkedTo,
         description: postprocessUpgradeDescription(upgrade.description),
         activation: upgrade.activation ? postprocessActivation(upgrade.activation) : undefined,
         phase: phase as Phase,

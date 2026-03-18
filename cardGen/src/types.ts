@@ -125,10 +125,11 @@ export type Activation<S extends State> = S extends "Raw" ? `<${AbilityType}>` |
 };
 
 export type UpgradeDescription<S extends State> = S extends "Raw" ? string | WeaponDescription<"Raw"> : string | WeaponDescription<"Parsed">;
+export type LinkedTo<S extends State> = S extends "Raw" ? '' | '-' | UpgradeName : UpgradeName | '-' | undefined;
 
 export type Upgrade<S extends State> = {
     name: UpgradeName;
-    linkedTo: '' | '-' | UpgradeName;
+    linkedTo: LinkedTo<S>;
     activation: S extends "Raw" ? Activation<"Raw"> | '' : Activation<"Parsed"> | undefined;
     phase: S extends "Raw" ? `${Phase} Phase` : Phase;
     /** Cost in large squar */
