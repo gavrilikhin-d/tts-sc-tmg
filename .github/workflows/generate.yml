@@ -42,14 +42,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p artifacts/mod-json
+          mkdir -p artifacts/mods
 
           package_one() {
             local package_name="$1"
             local input_dir="$2"
             local include_dir="$3"
             local output_rel="${4:-$package_name.json}"
-            local output_file="artifacts/mod-json/${output_rel}"
+            local output_file="artifacts/mods/${output_rel}"
             mkdir -p "$(dirname "$output_file")"
             echo "Packaging ${package_name} from ${input_dir} -> ${output_file}"
             node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" \
@@ -89,7 +89,7 @@ jobs:
         run: |
           set -euo pipefail
           cd artifacts
-          zip -r mods.zip mod-json
+          zip -r mods.zip mods
 
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
