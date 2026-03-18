@@ -83,7 +83,8 @@ export type Speed<S extends State> = S extends "Raw" ? `${Inches}` | `${Inches}/
 export type Roll<S extends State> = S extends "Raw" ? `${2 | 3 | 4 | 5 | 6}+` : Distinct<"Roll", 2 | 3 | 4 | 5 | 6>;
 export type HP<S extends State> = S extends "Raw" ? `${number}` : Distinct<"HP", number>;
 export type Shield<S extends State> = S extends "Raw" ? `${number}` : Distinct<"Shield", number>;
-export type KeywordsString = Distinct<"KeywordsString", string>;
+export type Keyword = Distinct<"Keyword", string>;
+export type Keywords<S extends State> = S extends "Raw" ? string : Keyword[];
 
 export type UnitStats<S extends State> = {
     size: Size<S>;
@@ -114,7 +115,7 @@ export type WeaponDescription<S extends State> = S extends "Raw" ? `RANGE: ${Inc
         /** E.g. +1 from D3+1 */
         plus: DiceAmount
     };
-    keywords: KeywordsString;
+    keywords: Keywords<S>;
 };
 export type Activation<S extends State> = S extends "Raw" ? `<${AbilityType}>` | `<${AbilityType}>\n(${CP} ${PointsName})` : {
     type: AbilityType;
@@ -156,7 +157,7 @@ export type UnitCard<S extends State> = {
     small: UnitProfile;
     large: UnitProfile;
     stats: UnitStats<S>;
-    keywords: KeywordsString;
+    keywords: Keywords<S>;
     upgrades: Upgrade<S>[]
     squadProfile: SquadProfile<S>[];
 }
