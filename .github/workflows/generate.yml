@@ -96,4 +96,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: artifacts/mods.zip
-          generate_release_notes: true
+          generate_release_notes: false
