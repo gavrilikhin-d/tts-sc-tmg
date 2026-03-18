@@ -18,7 +18,7 @@
     </HorizontalLayout>
     <Button id="roundButton" onClick="toggleRound" preferredHeight="185" fontSize="120">Round 1</Button>
     <!-- "&#xA;" is a new line character -->
-    <Button id="availableSupplyButton" onClick="toggleAvailableSupply" preferredHeight="300" fontSize="100">Available Supply&#xA;0</Button>    
+    <Button id="availableSupplyButton" onClick="toggleAvailableSupply" preferredHeight="200" fontSize="100">Available Supply&#xA;0</Button>    
     <HorizontalLayout>
         <Button id="redSupply" onClick="toggleRedSupply">Red Supply 0</Button>
         <Button id="blueSupply" onClick="toggleBlueSupply">Blue Supply 0</Button>
