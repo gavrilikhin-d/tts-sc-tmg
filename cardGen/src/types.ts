@@ -26,7 +26,7 @@ export type Slots = {
   Elite: Supply;
   Core: Supply;
 };
-export type UnitType = keyof Slots;
+export type UnitType = keyof Slots | "Other";
 
 export type AbilityName = Distinct<"AbilityName", string>;
 export type RawAbilityDescription = Distinct<"RawAbilityDescription", string>;
