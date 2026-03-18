@@ -31,11 +31,11 @@ blueControlBoard_GUID = "32ed4c"
 RedSelectionHighlighter = "27de4f"
 BlueSelectionHighlighter = "84c3a4"
 
-redCustomDiceMat_GUID = "acae21" -- diceTable
-blueCustomDiceMat_GUID = "839fcc" -- diceTable
+RedCustomDiceMat_GUID = "acae21"
+BlueCustomDiceMat_GUID = "839fcc"
 
-redCustomDiceRoller_GUID = "17ca2b" -- kustom40kDiceRoller
-blueCustomDiceRoller_GUID = "927ca1" -- kustom40kDiceRoller
+RedCustomDiceRoller_GUID = "17ca2b"
+BlueCustomDiceRoller_GUID = "927ca1"
 
 redLethalHits_GUID = "7ac8ba"
 blueLethalHits_GUID = "71ab21"
