@@ -88,7 +88,7 @@ export type Keyword = Distinct<"Keyword", string>;
 export type Keywords<S extends State> = S extends "Raw" ? string : Keyword[];
 
 export type UnitStats<S extends State> = {
-    size: Size<S>;
+    size: S extends "Raw" ? Size<"Raw"> | "-" : Size<"Parsed"> | undefined;
     speed: S extends "Raw" ? Speed<"Raw"> | "-" : Speed<"Parsed"> | undefined;
     evade: S extends "Raw" ? Roll<"Raw"> | "-" : Roll<"Parsed"> | undefined
     hp: HP<S>

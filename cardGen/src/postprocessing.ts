@@ -83,7 +83,7 @@ const postprocessSpeed = (speed: Speed<"Raw">): Speed<"Parsed"> => {
 
 const postprocessUnitStats = (stats: UnitStats<"Raw">): UnitStats<"Parsed"> => {
     return {
-        size: parseInt(stats.size) as Size<"Parsed">,
+        size: stats.size === "-" ? undefined : parseInt(stats.size) as Size<"Parsed">,
         speed: stats.speed === "-" ? undefined : postprocessSpeed(stats.speed),
         evade: stats.evade === "-" ? undefined : postprocessRoll(stats.evade),
         hp: parseInt(stats.hp) as HP<"Parsed">,
