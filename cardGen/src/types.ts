@@ -101,11 +101,17 @@ export type Die = "D3" | "D6"
 export type SurgeType = "Light" | "Armoured"
 export type SurgeDescription = `${SurgeType | `${SurgeType}, ${SurgeType}`} (${Die})`
 export type WeaponDescription = `RANGE: ${number} | TARGET: ${Target} | RoA: ${number} | HIT: ${Roll} | DMG: ${number}\nSURGE: ${SurgeDescription | "-"}`;
-export type Upgrade = {
+export type Activation<S extends State = "Parsed"> = S extends "Raw" ? `<${AbilityType}>` | `<${AbilityType}>\n(${CP} ${PointsName})` : {
+    type: AbilityType;
+    /** Abilities like Raynor's "Orders" may have a cost of "X" */
+    cost?: CP | "X";
+};
+
+export type Upgrade<S extends State = "Parsed"> = {
     name: UpgradeName;
     linkedTo: '' | '-' | UpgradeName;
-    activation: `<${AbilityType}>` | `<${AbilityType}>\n(${CP} ${PointsName})`
-    phase: `${Phase} Phase`
+    activation: S extends "Raw" ? Activation<"Raw"> | '' : Activation<"Parsed"> | undefined;
+    phase: S extends "Raw" ? `${Phase} Phase` : Phase;
     /** Cost in large squar */
     costL: Minerals
     /** Cost in small squad */ 
@@ -134,6 +140,6 @@ export type UnitCard<S extends State = "Parsed"> = {
     large: UnitProfile;
     stats: UnitStats<S>;
     keywords: KeywordsString;
-    upgrades: Upgrade[]
+    upgrades: Upgrade<S>[]
     squadProfile: SquadProfile<S>[];
 }

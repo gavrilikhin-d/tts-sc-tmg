@@ -1,4 +1,4 @@
-import type { Ability, AbilityType, HP, Inches, ModelsAmount, Phase, Roll, Shield, Size, Speed, SquadProfile, TacticalCard, UnitCard, UnitStats } from "./types";
+import type { Ability, AbilityType, Activation, CP, HP, Inches, ModelsAmount, Phase, Roll, Shield, Size, Speed, SquadProfile, TacticalCard, UnitCard, UnitStats, Upgrade } from "./types";
 
 const postprocessAbility = (
   ability: Ability<"Raw">,
@@ -85,10 +85,45 @@ export const postprocessUnitStats = (stats: UnitStats<"Raw">): UnitStats<"Parsed
     }
 }
 
+export const postprocessActivation = (activation: Activation<"Raw">): Activation<"Parsed"> => {
+    const normalized = activation.replace(/[ \n<>()]/g, "");
+    const [, type, cost] =
+        normalized.match(/^(Active|Passive|Reaction)(?:(X|\d+).*)?$/) ?? [];
+    if (!type) {
+        throw new Error("Invalid activation: " + activation);
+    }
+
+    if (cost === "X") {
+        return {
+            type: type as AbilityType,
+            cost: "X",
+        }
+    }
+
+    return {
+        type: type as AbilityType,
+        cost: cost ? parseInt(cost) as CP : undefined,
+    }
+}
+
+export const postprocessUpgrade = (upgrade: Upgrade<"Raw">): Upgrade<"Parsed"> => {
+    const phase = upgrade.phase.match(/^(Movement|Assault|Combat|Any) Phase$/)?.[1]
+    if (!phase) {
+        throw new Error("Invalid phase: " + upgrade.phase);
+    }
+
+    return {
+        ...upgrade,
+        activation: upgrade.activation ? postprocessActivation(upgrade.activation) : undefined,
+        phase: phase as Phase,
+    }
+}
+
 export const postprocessUnitCard = (card: UnitCard<"Raw">): UnitCard<"Parsed"> => {
     return {
         ...card,
         stats: postprocessUnitStats(card.stats),
         squadProfile: card.squadProfile.map(postprocessSquadProfile),
+        upgrades: card.upgrades.map(postprocessUpgrade),
     }
 }
