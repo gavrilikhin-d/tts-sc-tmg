@@ -38,13 +38,36 @@ jobs:
         working-directory: tts-tools
         run: pnpm -r --if-present build
 
-      - name: Package Core
-        working-directory: mods/core/scripts/objects
-        run: node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" package . -i . -o Core.json
+      - name: Package all mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/mod-json
+          for mod_dir in mods/*; do
+            [ -d "$mod_dir" ] || continue
+            mod_name="$(basename "$mod_dir")"
+            input_dir="$mod_dir"
+            include_dir="$mod_dir"
+            if [ "$mod_name" = "core" ]; then
+              input_dir="$mod_dir/scripts/objects"
+              include_dir="$input_dir"
+            fi
+            output_file="artifacts/mod-json/${mod_name}.json"
+            echo "Packaging $mod_name from $input_dir -> $output_file"
+            node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" \
+              package "$input_dir" -i "$include_dir" -o "$output_file"
+          done
+
+      - name: Zip mod JSON files
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd artifacts
+          zip -r mods.zip mod-json
 
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: mods/core/scripts/objects/Core.json
+          files: artifacts/mods.zip
           generate_release_notes: true
