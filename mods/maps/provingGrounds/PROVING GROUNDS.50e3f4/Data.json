@@ -1,0 +1,55 @@
+{
+  "GUID": "50e3f4",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 30.1264782,
+    "posY": 0.9729899,
+    "posZ": 0.0883002356,
+    "rotX": -3.421955E-05,
+    "rotY": 180.026825,
+    "rotZ": 0.0382004231,
+    "scaleX": 1.34999979,
+    "scaleY": 1.0,
+    "scaleZ": 1.34999979
+  },
+  "Nickname": "PROVING GROUNDS",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 115000,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1150": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/13660697689220270257/B04359594BBA2FF0F780338BF6F9901636A4FE10/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/13284451636925832120/562CE09B5E3263E633EC12512F54D6B7ECBC9D2C/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

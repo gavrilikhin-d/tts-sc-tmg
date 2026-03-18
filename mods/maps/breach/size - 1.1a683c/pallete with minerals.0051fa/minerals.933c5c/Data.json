@@ -1,0 +1,53 @@
+{
+  "GUID": "933c5c",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": 0.0975506455,
+    "posY": 0.593731344,
+    "posZ": 0.120318465,
+    "rotX": -2.29219768E-05,
+    "rotY": 30.00513,
+    "rotZ": -9.291926E-06,
+    "scaleX": 0.4500006,
+    "scaleY": 0.450000465,
+    "scaleZ": 0.4500007
+  },
+  "Nickname": "minerals",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.5015509,
+    "g": 0.902743042,
+    "b": 0.9564459,
+    "a": 0.843137264
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/8552036288036725/A715343647FF77B2E62F9FE904C3AF523C1E3D15/",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/8552036288036976/A6BB51F2EEF5CD7E48853509F66E7BC50A226D1F/",
+    "NormalURL": "",
+    "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/8552585324071203/9AF2290BE51B201B49C9356387786EF3417192E8/",
+    "Convex": true,
+    "MaterialIndex": 0,
+    "TypeIndex": 1,
+    "CastShadows": true
+  }
+}

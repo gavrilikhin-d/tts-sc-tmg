@@ -1,0 +1,62 @@
+{
+  "GUID": "e76046",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": -10.8724508,
+    "posY": 1.0,
+    "posZ": -9.500526,
+    "rotX": 1.963415E-05,
+    "rotY": 270.0,
+    "rotZ": 2.51884667E-05,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Szie - 2",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/8552585324019548/FD37A4D0A1EE139BFFB5EB80CFEDDFE94A45B640/",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/8552585324018833/DD3C5424565BF8329D491FAA0454787EE0723B9F/",
+    "NormalURL": "",
+    "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/16151356854038615736/02541462DA645DC2EA8C21776A99B7089FEE1788/",
+    "Convex": true,
+    "MaterialIndex": 3,
+    "TypeIndex": 1,
+    "CustomShader": {
+      "SpecularColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "SpecularIntensity": 0.0,
+      "SpecularSharpness": 4.899999,
+      "FresnelStrength": 0.4833335
+    },
+    "CastShadows": true
+  }
+}

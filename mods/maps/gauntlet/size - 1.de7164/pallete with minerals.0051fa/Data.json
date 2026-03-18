@@ -1,0 +1,52 @@
+{
+  "GUID": "0051fa",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": -0.229812324,
+    "posY": -0.208012372,
+    "posZ": 0.5256716,
+    "rotX": 0.5951193,
+    "rotY": 52.9271355,
+    "rotZ": 0.400548816,
+    "scaleX": 0.684210956,
+    "scaleY": 0.684210658,
+    "scaleZ": 0.6842108
+  },
+  "Nickname": "pallete with minerals",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/8552036277259871/6C4E62AF22116087FCA70B4F34B4D927A390E8BE/",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/8552036277260412/FE3EB6DD01C921CFD84DFC20898185F2326574E0/",
+    "NormalURL": "",
+    "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/8552036277259871/6C4E62AF22116087FCA70B4F34B4D927A390E8BE/",
+    "Convex": true,
+    "MaterialIndex": 1,
+    "TypeIndex": 1,
+    "CastShadows": true
+  }
+}
