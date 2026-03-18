@@ -40,6 +40,9 @@
   "HideWhenFaceDown": false,
   "Hands": false,
   "MaterialIndex": 0,
+  "Tags": [
+    "Dice"
+  ],
   "RotationValues": [
     {
       "Value": "1",
