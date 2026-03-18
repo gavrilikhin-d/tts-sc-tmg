@@ -1,5 +1,11 @@
 import type { Ability, AbilityType, Activation, CP, DiceAmount, Die, HP, Inches, Keyword, ModelsAmount, Phase, RoA, Roll, Shield, Size, Speed, SquadProfile, SurgeType, TacticalCard, Tag, Target, UnitCard, UnitStats, Upgrade, UpgradeDescription } from "./types";
 
+const parseKeywords = (value: string): Keyword[] =>
+    value
+        .split(",")
+        .map((k) => k.trim())
+        .filter((k) => k.length > 0) as Keyword[];
+
 const postprocessAbility = (
   ability: Ability<"Raw">,
 ): Ability<"Parsed"> => {
@@ -134,7 +140,7 @@ const postprocessUpgradeDescription = (description: UpgradeDescription<"Raw">): 
             die: (surge.match(/\((D3|D6)(?:\+\d+)?\)/)?.[1] ?? "D3") as Die,
             plus: parseInt(surge.match(/\((?:D3|D6)\+(\d+)\)/)?.[1] ?? "0") as DiceAmount,
         },
-        keywords: keywords?.trim().split(",").map(k => k.trim() as Keyword) ?? [],
+        keywords: keywords ? parseKeywords(keywords) : [],
     }
 }
 
@@ -157,7 +163,7 @@ export const postprocessUnitCard = (card: UnitCard<"Raw">): UnitCard<"Parsed"> =
     return {
         ...card,
         tags: card.tags.split(",").map(k => k.trim() as Tag),
-        keywords: card.keywords.split(",").map(k => k.trim() as Keyword),
+        keywords: parseKeywords(card.keywords),
         stats: postprocessUnitStats(card.stats),
         squadProfile: card.squadProfile.map(postprocessSquadProfile),
         upgrades: card.upgrades.map(postprocessUpgrade),
