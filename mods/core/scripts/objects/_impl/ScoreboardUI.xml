@@ -1,6 +1,6 @@
 <Defaults>
     <Button fontSize="72" textColor="#f8f8f8" colors="#353839|#424546|#353839|#f8f8f8fa" fontStyle="Bold" outline="White" outlineSize="1"/>
-    <HorizontalLayout/>
+    <HorizontalLayout preferredHeight="185" spacing="8" />
 </Defaults>
 
 <!-- Scaling down for highres fonts -->
@@ -18,15 +18,15 @@
     </HorizontalLayout>
     <Button id="roundButton" onClick="toggleRound" preferredHeight="185" fontSize="120">Round 1</Button>
     <Button id="availableSupplyButton" onClick="toggleAvailableSupply" preferredHeight="300" fontSize="100">Available Supply&#xA;0</Button>    
-    <HorizontalLayout preferredHeight="185">
+    <HorizontalLayout>
         <Button id="redSupply" onClick="toggleRedSupply">Red Supply 0</Button>
         <Button id="blueSupply" onClick="toggleBlueSupply">Blue Supply 0</Button>
     </HorizontalLayout>
-    <HorizontalLayout preferredHeight="185">
+    <HorizontalLayout>
         <Button id="redSupplyDestroyed" onClick="toggleRedSupplyDestroyed">Red Supply Destroyed 0</Button> 
         <Button id="blueSupplyDestroyed" onClick="toggleBlueSupplyDestroyed">Blue Supply Destroyed 0</Button>
     </HorizontalLayout>
-    <HorizontalLayout preferredHeight="185">
+    <HorizontalLayout>
         <Button id="redMissionVP" onClick="toggleRedMissionVP">Red Mission VP 0</Button>
         <Button id="blueMissionVP" onClick="toggleBlueMissionVP">Blue Mission VP 0</Button>
     </HorizontalLayout>
