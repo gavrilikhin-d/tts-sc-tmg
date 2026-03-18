@@ -1,0 +1,55 @@
+{
+  "GUID": "fb5e7a",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 30.17038,
+    "posY": 0.943712234,
+    "posZ": 0.9068255,
+    "rotX": 3.99193123E-09,
+    "rotY": 180.004044,
+    "rotZ": 1.938273E-08,
+    "scaleX": 1.34999979,
+    "scaleY": 1.0,
+    "scaleZ": 1.34999979
+  },
+  "Nickname": "BREACH",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 114500,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1145": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12257870899824129497/04B6DCCB44FC7CAC887EDA092A189E99FF18AB62/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/13284451636925832120/562CE09B5E3263E633EC12512F54D6B7ECBC9D2C/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

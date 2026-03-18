@@ -1,0 +1,55 @@
+{
+  "GUID": "6dc03c",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 30.1134377,
+    "posY": 1.00013423,
+    "posZ": -1.52072012,
+    "rotX": -0.000202144831,
+    "rotY": 179.999619,
+    "rotZ": 0.03984018,
+    "scaleX": 1.34999979,
+    "scaleY": 1.0,
+    "scaleZ": 1.34999979
+  },
+  "Nickname": "GAUNTLET",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 114900,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1149": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15467476568032772253/A2C5900AECF8850CCB52818FC6D755D1106DC975/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/13284451636925832120/562CE09B5E3263E633EC12512F54D6B7ECBC9D2C/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

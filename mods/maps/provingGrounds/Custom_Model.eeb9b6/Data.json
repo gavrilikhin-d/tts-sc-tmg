@@ -1,0 +1,169 @@
+{
+  "GUID": "eeb9b6",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": 0.0,
+    "posY": -9.520047,
+    "posZ": 0.0,
+    "rotX": 0.0,
+    "rotY": 0.0,
+    "rotZ": 0.0,
+    "scaleX": 1.50132239,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978796176/4A5A65543B98BCFBF57E910D06EC984208223D38/",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/13192425378537188907/F6833EA9142BFCBD719D6E5BFF17ECCB7461F24C/",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 3,
+    "TypeIndex": 0,
+    "CustomShader": {
+      "SpecularColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "SpecularIntensity": 0.0,
+      "SpecularSharpness": 2.0,
+      "FresnelStrength": 0.0
+    },
+    "CastShadows": true
+  },
+  "AttachedVectorLines": [
+    {
+      "OwnerSteamID": 76561198032657186,
+      "points3": [
+        {
+          "x": 5.987492,
+          "y": 10.4915009,
+          "z": 17.9848022
+        },
+        {
+          "x": -0.06552101,
+          "y": 10.4915028,
+          "z": 17.9915237
+        }
+      ],
+      "color": {
+        "r": 0.0,
+        "g": 0.152416229,
+        "b": 1.0
+      },
+      "thickness": 0.1
+    },
+    {
+      "OwnerSteamID": 76561198032657186,
+      "points3": [
+        {
+          "x": -6.06586361,
+          "y": 10.4915028,
+          "z": 17.9819
+        },
+        {
+          "x": -0.0322566926,
+          "y": 10.4915009,
+          "z": 17.9786644
+        }
+      ],
+      "color": {
+        "r": 0.0,
+        "g": 0.152416229,
+        "b": 1.0
+      },
+      "thickness": 0.1
+    },
+    {
+      "OwnerSteamID": 76561198032657186,
+      "points3": [
+        {
+          "x": -6.018073,
+          "y": 10.4915009,
+          "z": 17.9877014
+        },
+        {
+          "x": 6.03711271,
+          "y": 10.4915028,
+          "z": 17.9892082
+        }
+      ],
+      "color": {
+        "r": 0.0,
+        "g": 0.152416229,
+        "b": 1.0
+      },
+      "thickness": 0.1
+    },
+    {
+      "OwnerSteamID": 76561198032657186,
+      "points3": [
+        {
+          "x": -17.972908,
+          "y": 10.4915028,
+          "z": 17.9740257
+        },
+        {
+          "x": -17.9842587,
+          "y": 10.491498,
+          "z": -17.946043
+        }
+      ],
+      "color": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "thickness": 0.1
+    },
+    {
+      "OwnerSteamID": 76561198032657186,
+      "points3": [
+        {
+          "x": 18.0019951,
+          "y": 10.4911842,
+          "z": 17.963459
+        },
+        {
+          "x": 17.9646378,
+          "y": 10.491498,
+          "z": -17.9495983
+        }
+      ],
+      "color": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "thickness": 0.1
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "GUID": "1cc3b0",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 46.0620575,
+    "posY": 0.913220644,
+    "posZ": -66.4807,
+    "rotX": 0.004686238,
+    "rotY": 179.9843,
+    "rotZ": 359.973541,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Hydralisk",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 148700,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1487": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12438712501424139631/90E6004586A3D8A5FB701A5106AF2AB0694D87E7/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/13048756208324613341/2D799FCC8130332BB211E5CA2A4D09915DD4FB47/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

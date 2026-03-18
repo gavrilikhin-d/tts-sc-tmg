@@ -1,0 +1,62 @@
+{
+  "GUID": "8e3677",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": -0.000122411846,
+    "posY": 0.1274001,
+    "posZ": -1.84820838E-05,
+    "rotX": -3.77035872E-06,
+    "rotY": -0.00284306635,
+    "rotZ": -1.44876021E-05,
+    "scaleX": 1.300001,
+    "scaleY": 1.29999971,
+    "scaleZ": 1.300001
+  },
+  "Nickname": "Goliath",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "https://gist.githubusercontent.com/Rord64/0427430475377bdabb40701c56f54bb3/raw/87c73a1bd083b3f4be523664525b5f2c5035b213/gistfile1.txt",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/17562368819467097564/9C29F8903CAA2CE64248EE9E8C7535B3CE8BA463/",
+    "NormalURL": "",
+    "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/1750180373835528071/337710D75B8C8EF24710E08C2BA869A2D916C8A6/",
+    "Convex": true,
+    "MaterialIndex": 0,
+    "TypeIndex": 0,
+    "CustomShader": {
+      "SpecularColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "SpecularIntensity": 0.0,
+      "SpecularSharpness": 7.0,
+      "FresnelStrength": 0.4
+    },
+    "CastShadows": true
+  }
+}
