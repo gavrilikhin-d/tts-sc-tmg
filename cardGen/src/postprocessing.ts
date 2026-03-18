@@ -1,10 +1,10 @@
 import type { Ability, AbilityType, Activation, CP, DiceAmount, Die, HP, Inches, Keyword, ModelsAmount, Phase, RoA, Roll, Shield, Size, Speed, SquadProfile, SurgeType, TacticalCard, Tag, Target, UnitCard, UnitStats, Upgrade, UpgradeDescription } from "./types";
 
-const parseKeywords = (value: string): Keyword[] =>
+const parseCSV = <T>(value: string): T[] =>
     value
         .split(",")
         .map((k) => k.trim())
-        .filter((k) => k.length > 0) as Keyword[];
+        .filter((k) => k.length > 0) as T[];
 
 const postprocessAbility = (
   ability: Ability<"Raw">,
@@ -38,7 +38,7 @@ export const postprocessTacticalCard = (
 ): TacticalCard<"Parsed"> => {
   return {
     ...card,
-    tags: card.tags.split(",").map(k => k.trim() as Tag),
+    tags: parseCSV<Tag>(card.tags),
     boosts: card.boosts.map(postprocessAbility),
   };
 };
@@ -140,7 +140,7 @@ const postprocessUpgradeDescription = (description: UpgradeDescription<"Raw">): 
             die: (surge.match(/\((D3|D6)(?:\+\d+)?\)/)?.[1] ?? "D3") as Die,
             plus: parseInt(surge.match(/\((?:D3|D6)\+(\d+)\)/)?.[1] ?? "0") as DiceAmount,
         },
-        keywords: keywords ? parseKeywords(keywords) : [],
+        keywords: keywords ? parseCSV<Keyword>(keywords) : [],
     }
 }
 
@@ -162,8 +162,8 @@ export const postprocessUpgrade = (upgrade: Upgrade<"Raw">): Upgrade<"Parsed"> =
 export const postprocessUnitCard = (card: UnitCard<"Raw">): UnitCard<"Parsed"> => {
     return {
         ...card,
-        tags: card.tags.split(",").map(k => k.trim() as Tag),
-        keywords: parseKeywords(card.keywords),
+        tags: parseCSV<Tag>(card.tags),
+        keywords: parseCSV<Keyword>(card.keywords),
         stats: postprocessUnitStats(card.stats),
         squadProfile: card.squadProfile.map(postprocessSquadProfile),
         upgrades: card.upgrades.map(postprocessUpgrade),
