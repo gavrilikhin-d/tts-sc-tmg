@@ -40,12 +40,12 @@ export type AbilityDescription = {
 
 type State = "Raw" | "Parsed";
 
-export type Ability<S extends State = "Parsed"> = {
+export type Ability<S extends State> = {
   name: AbilityName;
   description: S extends "Parsed" ? AbilityDescription : RawAbilityDescription;
 };
 
-export type TacticalCard<S extends State = "Parsed"> = {
+export type TacticalCard<S extends State> = {
   id: CardId;
   name: CardName;
   cost: Vespene;
@@ -74,18 +74,18 @@ export type UnitProfile = {
     models: ModelsAmount;
 }
 
-export type Size<S extends State = "Parsed"> = S extends "Raw" ? `${number}` : Distinct<"Size", number>;
+export type Size<S extends State> = S extends "Raw" ? `${number}` : Distinct<"Size", number>;
 export type Inches = Distinct<"Inches", number>;
-export type Speed<S extends State = "Parsed"> = S extends "Raw" ? `${Inches}` | `${Inches}/${Inches}` : {
+export type Speed<S extends State> = S extends "Raw" ? `${Inches}` | `${Inches}/${Inches}` : {
     multipleModels: Inches;
     singleModel: Inches;
 };
-export type Roll<S extends State = "Parsed"> = S extends "Raw" ? `${2 | 3 | 4 | 5 | 6}+` : Distinct<"Roll", 2 | 3 | 4 | 5 | 6>;
-export type HP<S extends State = "Parsed"> = S extends "Raw" ? `${number}` : Distinct<"HP", number>;
-export type Shield<S extends State = "Parsed"> = S extends "Raw" ? `${number}` : Distinct<"Shield", number>;
+export type Roll<S extends State> = S extends "Raw" ? `${2 | 3 | 4 | 5 | 6}+` : Distinct<"Roll", 2 | 3 | 4 | 5 | 6>;
+export type HP<S extends State> = S extends "Raw" ? `${number}` : Distinct<"HP", number>;
+export type Shield<S extends State> = S extends "Raw" ? `${number}` : Distinct<"Shield", number>;
 export type KeywordsString = Distinct<"KeywordsString", string>;
 
-export type UnitStats<S extends State = "Parsed"> = {
+export type UnitStats<S extends State> = {
     size: Size<S>;
     speed: S extends "Raw" ? Speed<"Raw"> | "-" : Speed<"Parsed"> | undefined;
     evade: S extends "Raw" ? Roll<"Raw"> | "-" : Roll<"Parsed"> | undefined
@@ -96,18 +96,35 @@ export type UnitStats<S extends State = "Parsed"> = {
 
 export type UpgradeName = Distinct<"UpgradeName", string>;
 export type PointsName = "Biomass"
-export type Target = "Ground" | "Air" | "All"
+export type Target = "Ground" | "All" | "Flying"
 export type Die = "D3" | "D6"
 export type SurgeType = "Light" | "Armoured"
 export type SurgeDescription = `${SurgeType | `${SurgeType}, ${SurgeType}`} (${Die})`
-export type WeaponDescription = `RANGE: ${number} | TARGET: ${Target} | RoA: ${number} | HIT: ${Roll} | DMG: ${number}\nSURGE: ${SurgeDescription | "-"}`;
-export type Activation<S extends State = "Parsed"> = S extends "Raw" ? `<${AbilityType}>` | `<${AbilityType}>\n(${CP} ${PointsName})` : {
+export type RoA = Distinct<"RoA", number>;
+export type DiceAmount = Distinct<"DiceAmount", number>;
+export type WeaponDescription<S extends State> = S extends "Raw" ? `RANGE: ${Inches | "E"} | TARGET: ${Target} | RoA: ${RoA} | HIT: ${Roll<"Raw">} | DMG: ${number}\nSURGE: ${SurgeDescription | "-"}` : {
+    range: Inches;
+    target: Target;
+    roa: RoA;
+    hit: Roll<"Parsed">;
+    dmg: number;
+    surge?: {
+        against: SurgeType[]
+        die: Die
+        /** E.g. +1 from D3+1 */
+        plus: DiceAmount
+    };
+    keywords: KeywordsString;
+};
+export type Activation<S extends State> = S extends "Raw" ? `<${AbilityType}>` | `<${AbilityType}>\n(${CP} ${PointsName})` : {
     type: AbilityType;
     /** Abilities like Raynor's "Orders" may have a cost of "X" */
     cost?: CP | "X";
 };
 
-export type Upgrade<S extends State = "Parsed"> = {
+export type UpgradeDescription<S extends State> = S extends "Raw" ? string | WeaponDescription<"Raw"> : string | WeaponDescription<"Parsed">;
+
+export type Upgrade<S extends State> = {
     name: UpgradeName;
     linkedTo: '' | '-' | UpgradeName;
     activation: S extends "Raw" ? Activation<"Raw"> | '' : Activation<"Parsed"> | undefined;
@@ -116,10 +133,10 @@ export type Upgrade<S extends State = "Parsed"> = {
     costL: Minerals
     /** Cost in small squad */ 
     costS: Minerals
-    description: string
+    description: UpgradeDescription<S>;
 }
 
-export type SquadProfile<S extends State = "Parsed"> = {
+export type SquadProfile<S extends State> = {
     supply: Supply;
     tier: 1 | 2 | 3;
 } & (S extends "Raw" ? {
@@ -129,7 +146,7 @@ export type SquadProfile<S extends State = "Parsed"> = {
     maxModels: ModelsAmount;
 })
 
-export type UnitCard<S extends State = "Parsed"> = {
+export type UnitCard<S extends State> = {
     id: UnitId
     name: UnitName;
     unitType: UnitType;

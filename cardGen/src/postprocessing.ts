@@ -1,4 +1,4 @@
-import type { Ability, AbilityType, Activation, CP, HP, Inches, ModelsAmount, Phase, Roll, Shield, Size, Speed, SquadProfile, TacticalCard, UnitCard, UnitStats, Upgrade } from "./types";
+import type { Ability, AbilityType, Activation, CP, DiceAmount, Die, HP, Inches, KeywordsString, ModelsAmount, Phase, RoA, Roll, Shield, Size, Speed, SquadProfile, SurgeType, TacticalCard, Target, UnitCard, UnitStats, Upgrade, UpgradeDescription } from "./types";
 
 const postprocessAbility = (
   ability: Ability<"Raw">,
@@ -74,7 +74,7 @@ const postprocessSpeed = (speed: Speed<"Raw">): Speed<"Parsed"> => {
     }
 }
 
-export const postprocessUnitStats = (stats: UnitStats<"Raw">): UnitStats<"Parsed"> => {
+const postprocessUnitStats = (stats: UnitStats<"Raw">): UnitStats<"Parsed"> => {
     return {
         size: parseInt(stats.size) as Size<"Parsed">,
         speed: stats.speed === "-" ? undefined : postprocessSpeed(stats.speed),
@@ -85,7 +85,7 @@ export const postprocessUnitStats = (stats: UnitStats<"Raw">): UnitStats<"Parsed
     }
 }
 
-export const postprocessActivation = (activation: Activation<"Raw">): Activation<"Parsed"> => {
+const postprocessActivation = (activation: Activation<"Raw">): Activation<"Parsed"> => {
     const normalized = activation.replace(/[ \n<>()]/g, "");
     const [, type, cost] =
         normalized.match(/^(Active|Passive|Reaction)(?:(X|\d+).*)?$/) ?? [];
@@ -106,6 +106,37 @@ export const postprocessActivation = (activation: Activation<"Raw">): Activation
     }
 }
 
+const postprocessUpgradeDescription = (description: UpgradeDescription<"Raw">): UpgradeDescription<"Parsed"> => {
+    if (!description.startsWith("RANGE:")) {
+        return description;
+    }
+
+    const normalized = description.replace(/\n/g, " | ");
+
+    const [, range, target, roa, hit, dmg, surge, keywords] =
+        normalized.match(
+            /^RANGE:\s*(E|\d+)\s*\|\s*TARGET:\s*(Ground|All|Flying)\s*\|\s*RoA:\s*(\d+)\s*\|\s*HIT:\s*([2-6])\+\s*\|\s*DMG:\s*(\d+)\s*\|\s*SURGE:\s*([^|]+?)(?:\s*\|\s*\|\s*(.*))?$/,
+        ) ?? [];
+    if (!range || !target || !roa || !hit || !dmg || !surge) {
+        throw new Error("Invalid upgrade description: " + normalized);
+    }
+
+    
+    return {
+        range: range === "E" ? 0 as Inches : parseInt(range) as Inches,
+        target: target as Target,
+        roa: parseInt(roa) as RoA,
+        hit: parseInt(hit) as Roll<"Parsed">,
+        dmg: parseInt(dmg),
+        surge: surge.trim() === "-" ? undefined : {
+            against: (surge.match(/^(Light|Armoured)(?:,\s*(Light|Armoured))?/)?.slice(1).filter(Boolean) ?? []) as SurgeType[],
+            die: (surge.match(/\((D3|D6)(?:\+\d+)?\)/)?.[1] ?? "D3") as Die,
+            plus: parseInt(surge.match(/\((?:D3|D6)\+(\d+)\)/)?.[1] ?? "0") as DiceAmount,
+        },
+        keywords: (keywords?.trim() ?? "") as KeywordsString,
+    }
+}
+
 export const postprocessUpgrade = (upgrade: Upgrade<"Raw">): Upgrade<"Parsed"> => {
     const phase = upgrade.phase.match(/^(Movement|Assault|Combat|Any) Phase$/)?.[1]
     if (!phase) {
@@ -114,6 +145,7 @@ export const postprocessUpgrade = (upgrade: Upgrade<"Raw">): Upgrade<"Parsed"> =
 
     return {
         ...upgrade,
+        description: postprocessUpgradeDescription(upgrade.description),
         activation: upgrade.activation ? postprocessActivation(upgrade.activation) : undefined,
         phase: phase as Phase,
     }
