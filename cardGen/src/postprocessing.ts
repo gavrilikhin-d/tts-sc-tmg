@@ -1,4 +1,4 @@
-import type { Ability, AbilityType, HP, Inches, ModelsAmount, Phase, Roll, Size, Speed, SquadProfile, TacticalCard, UnitCard, UnitStats } from "./types";
+import type { Ability, AbilityType, HP, Inches, ModelsAmount, Phase, Roll, Shield, Size, Speed, SquadProfile, TacticalCard, UnitCard, UnitStats } from "./types";
 
 const postprocessAbility = (
   ability: Ability<"Raw">,
@@ -81,6 +81,7 @@ export const postprocessUnitStats = (stats: UnitStats<"Raw">): UnitStats<"Parsed
         evade: stats.evade === "-" ? undefined : postprocessRoll(stats.evade),
         hp: parseInt(stats.hp) as HP<"Parsed">,
         armor: postprocessRoll(stats.armor),
+        shield: stats.shield === "-" ? undefined : parseInt(stats.shield) as Shield<"Parsed">,
     }
 }
 

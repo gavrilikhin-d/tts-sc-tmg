@@ -82,6 +82,7 @@ export type Speed<S extends State = "Parsed"> = S extends "Raw" ? `${Inches}` | 
 };
 export type Roll<S extends State = "Parsed"> = S extends "Raw" ? `${2 | 3 | 4 | 5 | 6}+` : Distinct<"Roll", 2 | 3 | 4 | 5 | 6>;
 export type HP<S extends State = "Parsed"> = S extends "Raw" ? `${number}` : Distinct<"HP", number>;
+export type Shield<S extends State = "Parsed"> = S extends "Raw" ? `${number}` : Distinct<"Shield", number>;
 export type KeywordsString = Distinct<"KeywordsString", string>;
 
 export type UnitStats<S extends State = "Parsed"> = {
@@ -90,6 +91,7 @@ export type UnitStats<S extends State = "Parsed"> = {
     evade: S extends "Raw" ? Roll<"Raw"> | "-" : Roll<"Parsed"> | undefined
     hp: HP<S>
     armor: Roll<S>
+    shield: S extends "Raw" ? Shield<"Raw"> | "-" : Shield<"Parsed"> | undefined
 }
 
 export type UpgradeName = Distinct<"UpgradeName", string>;
