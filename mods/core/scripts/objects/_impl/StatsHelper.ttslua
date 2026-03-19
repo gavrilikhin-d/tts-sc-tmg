@@ -277,6 +277,7 @@ function spawnDices(count, color, weaponName, offset, roa, hit, surge, columnOff
 			callback_function = function(dice)
 				setDieTint(dice, color)
 				dice.setName(tooltip)
+				dice.addTag("Dice")
 			end,
 		})
 		setDieCustomObject(die)
