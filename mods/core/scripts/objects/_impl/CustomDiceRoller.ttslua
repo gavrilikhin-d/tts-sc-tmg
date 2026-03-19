@@ -348,102 +348,46 @@ function takeDiceOut()
 		printToAll('Warning - "step" can\'t be lower than 1. Restored default configuration.', { 0.8, 0.5, 0 })
 	end
 
-	clearDataForGC(diceGuids)
-	diceGuids = {}
+    local position = objectToPlaceDiceOn.getPosition()
+	local rotation = objectToPlaceDiceOn.getRotation()
+	local Rows = { 0, 0, 0, 0, 0, 0}
+
 	local objs = self.getObjects()
 	for _, die in pairs(objs) do
-		diceGuids[die.guid] = math.random(getFaces(die))
-	end
+        local roll = math.random(getFaces(die))
+        resultsTable[roll] = resultsTable[roll] + 1
+        resultsTotal[roll] = resultsTotal[roll] + 1
+        Rows[roll] = Rows[roll] + 1
 
-	local ordered = orderedOnNextRoll
-	orderedOnNextRoll = false
-	local groupSize = groupSizeOnNextRoll
-	groupSizeOnNextRoll = 1
+        local params = {}
+        params.guid = die.guid
 
-	local position = objectToPlaceDiceOn.getPosition()
-	rotation = objectToPlaceDiceOn.getRotation()
-	local displayInRows = true
-	if data.Rows == "no" then
-		displayInRows = false
-	end
-	if ordered then
-		displayInRows = false
-	end
-	local sortType = data.SortNoRows
-	if ordered then
-		sortType = "none"
-	end
-	sortedKeys = sortByVal(diceGuids, sortType)
-	clearDataForGC(Rows)
-	Rows = {}
-	n = 1
+        local newXPos = 0 - 20.4 + (Rows[roll] * data.Step)
+        local newZPos = -3.17 + ((((roll - 1) % 6) + 1) * data.Step)
 
-	for _, key in pairs(sortedKeys) do
-		if diceGuids[key] == math.floor(diceGuids[key]) then
-			resultsTable[diceGuids[key]] = resultsTable[diceGuids[key]] + 1
-			resultsTotal[diceGuids[key]] = resultsTotal[diceGuids[key]] + 1
-		end
+        params.position = {
+            position.x + (newXPos * math.cos((180 + rotation.y) * 0.0174532)) - (newZPos * math.sin(
+                (180 + rotation.y) * 0.0174532
+            )),
+            position.y + 2,
+            position.z + (newXPos * math.sin(rotation.y * 0.0174532)) + (newZPos * math.cos(
+                (0 + rotation.y) * 0.0174532
+            )),
+        }
+        params.rotation = rotation
+        params.callback = "setValueCallback"
+        params.params = { roll }
+        params.smooth = false
+        if data.SmoothDice == "yes" then
+            params.smooth = true
+        end
 
-		if hasGuid(objs, key) then
-			if Rows[diceGuids[key]] == nil then
-				Rows[diceGuids[key]] = 0
-			end
-			Rows[diceGuids[key]] = Rows[diceGuids[key]] + 1
-			params = {}
-			params.guid = key
-			local d12Xoffset = 0
-			if diceGuids[key] > 6 then
-				d12Xoffset = -24
-			end
-
-			local newXPos
-			local newZPos
-			if displayInRows then
-				newXPos = 0 - d12Xoffset - 20.4 + (Rows[diceGuids[key]] * data.Step)
-				newZPos = -3.17 + ((((diceGuids[key] - 1) % 6) + 1) * data.Step)
-			else
-				local pos = n - 1
-				local limit = 25
-				if groupSize > 1 then
-					pos = pos + math.floor(pos / groupSize)
-					local step = groupSize + 1
-					local maxGroups = math.floor(limit / step)
-					local remainder = limit % (step * maxGroups)
-					limit = limit - remainder
-				end
-				row = math.floor(pos / limit) + 1
-				col = pos % limit
-				newXPos = 0 - 15.0 + (col * data.Step)
-				newZPos = -3.17 + (row * data.Step)
-			end
-
-			params.position = {
-				position.x + (newXPos * math.cos((180 + rotation.y) * 0.0174532)) - (newZPos * math.sin(
-					(180 + rotation.y) * 0.0174532
-				)),
-				position.y + 2,
-				position.z + (newXPos * math.sin(rotation.y * 0.0174532)) + (newZPos * math.cos(
-					(0 + rotation.y) * 0.0174532
-				)),
-			}
-			params.rotation = rotation
-			params.callback = "setValueCallback"
-			params.params = { diceGuids[key] }
-			params.smooth = false
-			if data.SmoothDice == "yes" then
-				params.smooth = true
-			end
-
-			self.takeObject(params)
-			n = n + 1
-		end
+        self.takeObject(params)
 	end
 
 	printResultsTable()
-	Wait.time(function()
-		-- "objectToPlaceDiceOn" is your dice-mat object
-		objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
-	end, 1)
+    
+    objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
 end
 
 function sum(t)
