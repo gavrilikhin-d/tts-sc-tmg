@@ -311,7 +311,7 @@ function hasGuid(t, g)
 end
 
 function getFaces(dice)
-	return tonumber(string.match(dice.name, ".*(%d+).*"))
+    return dice.name == "BCB-D3" and 3 or 6
 end
 
 -- Forbid objects other than dice from entering the dice roller
