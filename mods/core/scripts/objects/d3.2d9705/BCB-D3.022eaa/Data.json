@@ -39,6 +39,9 @@
   "GridProjection": false,
   "HideWhenFaceDown": false,
   "Hands": false,
+  "Tags": [
+    "Dice"
+  ],
   "CustomImage": {
     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/786374678935714518/5D8654504536CD97FEA40F29B6446E43556B2432/",
     "ImageSecondaryURL": "",

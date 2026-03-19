@@ -38,13 +38,114 @@ jobs:
         working-directory: tts-tools
         run: pnpm -r --if-present build
 
-      - name: Package Core
-        working-directory: mods/core/scripts/objects
-        run: node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" package . -i . -o Core.json
+      - name: Package all mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/mods
+
+          package_one() {
+            local package_name="$1"
+            local input_dir="$2"
+            local include_dir="$3"
+            local output_rel="${4:-$package_name.json}"
+            local output_file="artifacts/mods/${output_rel}"
+            mkdir -p "$(dirname "$output_file")"
+            echo "Packaging ${package_name} from ${input_dir} -> ${output_file}"
+            node "${{ github.workspace }}/tts-tools/packages/cli/dist/index.js" \
+              package "$input_dir" -i "$include_dir" -o "$output_file"
+          }
+
+          for mod_dir in mods/*; do
+            [ -d "$mod_dir" ] || continue
+            mod_name="$(basename "$mod_dir")"
+
+            if [ "$mod_name" = "core" ]; then
+              package_one "$mod_name" "$mod_dir/scripts/objects" "$mod_dir/scripts/objects"
+              continue
+            fi
+
+            if [ -f "$mod_dir/Data.json" ]; then
+              package_one "$mod_name" "$mod_dir" "$mod_dir"
+              continue
+            fi
+
+            child_count=0
+            for child_data in "$mod_dir"/*/Data.json; do
+              [ -f "$child_data" ] || continue
+              child_dir="$(dirname "$child_data")"
+              child_name="$(basename "$child_dir")"
+              package_one "${mod_name}/${child_name}" "$child_dir" "$child_dir" "${mod_name}/${child_name}.json"
+              child_count=$((child_count + 1))
+            done
+
+            if [ "$child_count" -eq 0 ]; then
+              echo "Skipping $mod_name (no Data.json found at root or immediate children)"
+            fi
+          done
+
+      - name: Zip mod JSON files
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd artifacts
+          zip -r mods.zip mods
+
+      - name: Build changed mods archive
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/changedMods artifacts/previous
+
+          current_tag="${GITHUB_REF_NAME}"
+          previous_mods_url="$(
+            curl -fsSL \
+              -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases?per_page=50" \
+            | jq -r --arg current "$current_tag" '
+                .[]
+                | select(.tag_name != $current)
+                | .assets[]
+                | select(.name == "mods.zip")
+                | .browser_download_url
+              ' \
+            | head -n 1
+          )"
+
+          if [ -z "${previous_mods_url}" ]; then
+            echo "No previous mods.zip release asset found; including all current mods as changed."
+            cp -R artifacts/mods/. artifacts/changedMods/
+          else
+            echo "Downloading previous mods.zip from: ${previous_mods_url}"
+            curl -fsSL \
+              -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+              -o artifacts/previous/mods.zip \
+              "${previous_mods_url}"
+
+            unzip -q artifacts/previous/mods.zip -d artifacts/previous
+
+            while IFS= read -r -d '' current_file; do
+              rel_path="${current_file#artifacts/mods/}"
+              previous_file="artifacts/previous/mods/${rel_path}"
+              if [ ! -f "${previous_file}" ] || ! cmp -s "${current_file}" "${previous_file}"; then
+                mkdir -p "artifacts/changedMods/$(dirname "${rel_path}")"
+                cp "${current_file}" "artifacts/changedMods/${rel_path}"
+              fi
+            done < <(find artifacts/mods -type f -name "*.json" -print0)
+          fi
+
+          cd artifacts
+          zip -r changedMods.zip changedMods
 
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: mods/core/scripts/objects/Core.json
-          generate_release_notes: true
+          files: |
+            artifacts/mods.zip
+            artifacts/changedMods.zip
+          generate_release_notes: false

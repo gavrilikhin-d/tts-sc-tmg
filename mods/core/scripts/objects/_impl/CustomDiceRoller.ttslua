@@ -221,7 +221,6 @@ end
 
 --Initialize Global Variables and pRNG Seed
 ver = "BCB-2022-12-30"
-lastHolder = {}
 customFace = { 4, 6, 8, 10, 12, 20 }
 diceGuidFaces = {}
 sortedKeys = {}
@@ -229,15 +228,15 @@ resultsTable = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 resultsTotal = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 seedCounter = 0
 
-thisBoxIsBlue = (self.guid == Global.getVar("blueCustomDiceRoller_GUID")) and true or false
+thisBoxIsBlue = (self.guid == Global.getVar("BlueCustomDiceRoller_GUID")) and true or false
 seed = os.time() + (thisBoxIsBlue and 1 or 0)
 math.randomseed(seed)
 
 orderedOnNextRoll = false
 groupSizeOnNextRoll = 1
 
-objectToPlaceDiceOnGUID = thisBoxIsBlue and Global.getVar("blueCustomDiceMat_GUID")
-	or Global.getVar("redCustomDiceMat_GUID")
+objectToPlaceDiceOnGUID = thisBoxIsBlue and Global.getVar("BlueCustomDiceMat_GUID")
+	or Global.getVar("RedCustomDiceMat_GUID")
 objectToPlaceDiceOn = getObjectFromGUID(objectToPlaceDiceOnGUID)
 if objectToPlaceDiceOn == nil then
 	objectToPlaceDiceOn = self
@@ -250,14 +249,6 @@ function clearDataForGC(data)
 	for n, element in ipairs(data) do
 		element = nil
 	end
-end
-
-function onObjectPickedUp(playerColor, obj)
-	lastHolder[obj] = playerColor
-end
-
-function onObjectDestroyed(obj)
-	lastHolder[obj] = nil
 end
 
 function onLoad(save_state)
@@ -319,49 +310,31 @@ function hasGuid(t, g)
 	return false
 end
 
-function onObjectEnterContainer(container, obj)
-	if container == self then
-		if obj.tag == "Dice" then
-			collision_info = { collision_object = obj }
-			onCollisionEnter(collision_info)
-			Wait.time(function()
-				takeDiceOut()
-			end, 0.1)
-		else
-			local pos = self.getPosition()
-			local f = self.getTransformRight()
-			self.takeObject({
-				position = { pos.x + 20, pos.y + 50, pos.z + 20 },
-				smooth = false,
-			})
-		end
-	end
+function getFaces(dice)
+	return tonumber(string.match(dice.name, ".*(%d+).*"))
+end
+
+-- Forbid objects other than dice from entering the dice roller
+-- @tts
+function tryObjectEnter(object)
+	return object.tag == "Dice"
 end
 
 function onCollisionEnter(collision_info)
-	playerColor = lastHolder[collision_info.collision_object]
-	if collision_info.collision_object.getGUID() == nil then
+	local obj = collision_info.collision_object
+	-- onCollisionEnter is called even when the object is not a dice
+	-- and it is fired every frame, so let's get rid of this object
+	if obj.tag ~= "Dice" then
+		obj.destruct()
 		return
 	end
-	clearDataForGC(diceGuidFaces)
-	clearDataForGC(sortedKeys)
-	diceGuidFaces = {}
-	sortedKeys = {}
 
-	for k, v in ipairs(getAllObjects()) do
-		if v.tag == "Dice" then
-			objType = tostring(v)
-			faces = tonumber(string.match(objType, "Die_(%d+).*"))
-			if faces == nil then
-				faces = tonumber(customFace[v.getCustomObject().type + 1])
-			end
-			diceGuidFaces[v.getGUID()] = faces
-			table.insert(sortedKeys, v.getGUID())
-		end
-	end
+	self.putObject(obj)
+
+	takeDiceOut()
 end
 
-function takeDiceOut(tab)
+function takeDiceOut()
 	local data = JSON.decode(self.getDescription())
 	if data == nil then
 		setDefaultState()
@@ -377,13 +350,9 @@ function takeDiceOut(tab)
 
 	clearDataForGC(diceGuids)
 	diceGuids = {}
-	for k, v in pairs(self.getObjects()) do
-		faces = diceGuidFaces[v.guid]
-		if v.name == "BCB-D3" then
-			faces = 3
-		end
-		r = math.random(faces)
-		diceGuids[v.guid] = r
+	local objs = self.getObjects()
+	for _, die in pairs(objs) do
+		diceGuids[die.guid] = math.random(getFaces(die))
 	end
 
 	local ordered = orderedOnNextRoll
@@ -391,7 +360,6 @@ function takeDiceOut(tab)
 	local groupSize = groupSizeOnNextRoll
 	groupSizeOnNextRoll = 1
 
-	local objs = self.getObjects()
 	local position = objectToPlaceDiceOn.getPosition()
 	rotation = objectToPlaceDiceOn.getRotation()
 	local displayInRows = true
@@ -471,7 +439,7 @@ function takeDiceOut(tab)
 		end
 	end
 
-	printresultsTable()
+	printResultsTable()
 	Wait.time(function()
 		-- "objectToPlaceDiceOn" is your dice-mat object
 		objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
@@ -490,11 +458,7 @@ function setPlayerColor(params)
 	playerColor = params.color
 end
 
-function setLastHolder(params)
-	lastHolder[params.obj] = params.color
-end
-
-function printresultsTable()
+function printResultsTable()
 	local data = JSON.decode(self.getDescription())
 	local description = {
 		"Ones.",

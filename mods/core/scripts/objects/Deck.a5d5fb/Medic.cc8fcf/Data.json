@@ -1,0 +1,55 @@
+{
+  "GUID": "cc8fcf",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 38.10582,
+    "posY": 0.971123934,
+    "posZ": -74.26301,
+    "rotX": -0.00252880971,
+    "rotY": 179.989822,
+    "rotZ": -0.005141179,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Medic",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 150900,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1509": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/13727261225805341463/F014B272576FAAEA00F7E6554BBFACFF0DF174CA/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/14812961730976894955/BAA85871EB10ECEC84DFF798D3D387AB0FA40D5C/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

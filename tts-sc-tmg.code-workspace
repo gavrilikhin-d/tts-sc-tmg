@@ -5,6 +5,35 @@
 		},
 		{
 			"path": "mods/core/scripts/objects"
+		},
+		{
+			"path": "mods/protoss"
+		},
+		{
+			"path": "mods/terran"
+		},
+		{
+			"path": "mods/zerg"
+		},
+		{
+			"name": "typhoon",
+			"path": "mods/maps/typhoon"
+		},
+		{
+			"name": "breach",
+			"path": "mods/maps/breach"
+		},
+		{
+			"name": "provingGrounds",
+			"path": "mods/maps/provingGrounds"
+		},
+		{
+			"name": "gauntlet",
+			"path": "mods/maps/gauntlet"
+		},
+		{
+			"name": "acropolis",
+			"path": "mods/maps/acropolis"
 		}
 	],
 	"settings": {}

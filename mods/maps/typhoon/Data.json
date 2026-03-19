@@ -1,0 +1,3537 @@
+{
+  "SaveName": "Mod development",
+  "EpochTime": 1773672383,
+  "Date": "3/16/2026 11:46:23 PM",
+  "VersionNumber": "v14.2.1",
+  "GameMode": "Starcraft TMG map",
+  "GameType": "Game",
+  "GameComplexity": "Low Complexity",
+  "PlayingTime": [
+    0,
+    0
+  ],
+  "PlayerCounts": [
+    0,
+    4
+  ],
+  "Tags": [
+    "Wargames",
+    "Strategy Games",
+    "Miniature Games",
+    "Thematic Games",
+    "Scripting",
+    "Figurines",
+    "Dice",
+    "English"
+  ],
+  "Gravity": 0.5000001,
+  "PlayArea": 1.0,
+  "Table": "Table_None",
+  "Sky": "Sky_Museum",
+  "SkyURL": "https://i.imgur.com/abYzBG5.jpg",
+  "Note": "",
+  "TabStates": {
+    "0": {
+      "title": "Rules",
+      "body": "",
+      "color": "Grey",
+      "visibleColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+      },
+      "id": 0
+    },
+    "1": {
+      "title": "White",
+      "body": "",
+      "color": "White",
+      "visibleColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "id": 1
+    },
+    "2": {
+      "title": "Brown",
+      "body": "",
+      "color": "Brown",
+      "visibleColor": {
+        "r": 0.443,
+        "g": 0.231,
+        "b": 0.09
+      },
+      "id": 2
+    },
+    "3": {
+      "title": "Red",
+      "body": "",
+      "color": "Red",
+      "visibleColor": {
+        "r": 0.856,
+        "g": 0.1,
+        "b": 0.094
+      },
+      "id": 3
+    },
+    "4": {
+      "title": "Orange",
+      "body": "",
+      "color": "Orange",
+      "visibleColor": {
+        "r": 0.956,
+        "g": 0.392,
+        "b": 0.113
+      },
+      "id": 4
+    },
+    "5": {
+      "title": "Yellow",
+      "body": "",
+      "color": "Yellow",
+      "visibleColor": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.172
+      },
+      "id": 5
+    },
+    "6": {
+      "title": "Green",
+      "body": "",
+      "color": "Green",
+      "visibleColor": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168
+      },
+      "id": 6
+    },
+    "7": {
+      "title": "Blue",
+      "body": "",
+      "color": "Blue",
+      "visibleColor": {
+        "r": 0.118,
+        "g": 0.53,
+        "b": 1.0
+      },
+      "id": 7
+    },
+    "8": {
+      "title": "Teal",
+      "body": "",
+      "color": "Teal",
+      "visibleColor": {
+        "r": 0.129,
+        "g": 0.694,
+        "b": 0.607
+      },
+      "id": 8
+    },
+    "9": {
+      "title": "Purple",
+      "body": "",
+      "color": "Purple",
+      "visibleColor": {
+        "r": 0.627,
+        "g": 0.125,
+        "b": 0.941
+      },
+      "id": 9
+    },
+    "10": {
+      "title": "Pink",
+      "body": "",
+      "color": "Pink",
+      "visibleColor": {
+        "r": 0.96,
+        "g": 0.439,
+        "b": 0.807
+      },
+      "id": 10
+    },
+    "11": {
+      "title": "Black",
+      "body": "",
+      "color": "Black",
+      "visibleColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+      },
+      "id": 11
+    }
+  },
+  "MusicPlayer": {
+    "RepeatSong": true,
+    "PlaylistEntry": -1,
+    "CurrentAudioTitle": "Ultramarines Chant",
+    "CurrentAudioURL": "https://steamusercontent-a.akamaihd.net/ugc/773976977327440295/17C1CAA1F70F178395E93C05E55946061E695598/",
+    "AudioLibrary": [
+      {
+        "Item1": "https://steamusercontent-a.akamaihd.net/ugc/773976977327440295/17C1CAA1F70F178395E93C05E55946061E695598/",
+        "Item2": "Ultramarines Chant"
+      }
+    ]
+  },
+  "Grid": {
+    "Type": 0,
+    "Lines": true,
+    "Color": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0
+    },
+    "Opacity": 0.8499998,
+    "ThickLines": false,
+    "Snapping": false,
+    "Offset": false,
+    "BothSnapping": false,
+    "xSize": 1.0,
+    "ySize": 1.0,
+    "PosOffset": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0
+    }
+  },
+  "Lighting": {
+    "LightIntensity": 0.54,
+    "LightColor": {
+      "r": 1.0,
+      "g": 0.9804,
+      "b": 0.8902
+    },
+    "AmbientIntensity": 1.3,
+    "AmbientType": 0,
+    "AmbientSkyColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "AmbientEquatorColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "AmbientGroundColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "ReflectionIntensity": 1.0,
+    "LutIndex": 0,
+    "LutContribution": 1.0
+  },
+  "Hands": {
+    "Enable": true,
+    "DisableUnused": true,
+    "Hiding": 0
+  },
+  "ComponentTags": {
+    "labels": [
+      {
+        "displayed": "Objective Card",
+        "normalized": "objective_card"
+      },
+      {
+        "displayed": "Kill Team Dashboard",
+        "normalized": "kill_team_dashboard"
+      },
+      {
+        "displayed": "Kill Team Scoreboard",
+        "normalized": "kill_team_scoreboard"
+      },
+      {
+        "displayed": "KT Model",
+        "normalized": "kt_model"
+      },
+      {
+        "displayed": "None",
+        "normalized": "none"
+      },
+      {
+        "displayed": "regular",
+        "normalized": "regular"
+      },
+      {
+        "displayed": "Demolitions",
+        "normalized": "demolitions"
+      },
+      {
+        "displayed": "specialist",
+        "normalized": "specialist"
+      },
+      {
+        "displayed": "Sniper",
+        "normalized": "sniper"
+      },
+      {
+        "displayed": "Comms",
+        "normalized": "comms"
+      },
+      {
+        "displayed": "Combat",
+        "normalized": "combat"
+      },
+      {
+        "displayed": "Zealot",
+        "normalized": "zealot"
+      },
+      {
+        "displayed": "leader",
+        "normalized": "leader"
+      },
+      {
+        "displayed": "KTUIToken",
+        "normalized": "ktuitoken"
+      },
+      {
+        "displayed": "Kill_Team",
+        "normalized": "kill_team"
+      },
+      {
+        "displayed": "_Traitor_Space_Marines_card_12",
+        "normalized": "_traitor_space_marines_card_12"
+      },
+      {
+        "displayed": "775d-45f4-c884-a440",
+        "normalized": "775d-45f4-c884-a440"
+      },
+      {
+        "displayed": "Anathema Psykana",
+        "normalized": "anathema_psykana"
+      },
+      {
+        "displayed": "Imperium",
+        "normalized": "imperium"
+      },
+      {
+        "displayed": "Operative",
+        "normalized": "operative"
+      },
+      {
+        "displayed": "Sister of Silence",
+        "normalized": "sister_of_silence"
+      },
+      {
+        "displayed": "TALONS OF THE EMPEROR",
+        "normalized": "talons_of_the_emperor"
+      },
+      {
+        "displayed": "Vigilator",
+        "normalized": "vigilator"
+      },
+      {
+        "displayed": "db5a-aea8-ccfc-c638",
+        "normalized": "db5a-aea8-ccfc-c638"
+      },
+      {
+        "displayed": "Adeptus Custodes",
+        "normalized": "adeptus_custodes"
+      },
+      {
+        "displayed": "Custodian Guard",
+        "normalized": "custodian_guard"
+      },
+      {
+        "displayed": "d030-234d-2efd-e40a",
+        "normalized": "d030-234d-2efd-e40a"
+      },
+      {
+        "displayed": "Warrior",
+        "normalized": "warrior"
+      },
+      {
+        "displayed": "4eee-5e93-41f6-a516",
+        "normalized": "4eee-5e93-41f6-a516"
+      },
+      {
+        "displayed": "0f0e-379f-28d2-b78f",
+        "normalized": "0f0e-379f-28d2-b78f"
+      },
+      {
+        "displayed": "Superior",
+        "normalized": "superior"
+      },
+      {
+        "displayed": "4a8a-74d7-eed8-38cc",
+        "normalized": "4a8a-74d7-eed8-38cc"
+      },
+      {
+        "displayed": "bf04-7db8-a5d7-b9ce",
+        "normalized": "bf04-7db8-a5d7-b9ce"
+      },
+      {
+        "displayed": "Prosecutor",
+        "normalized": "prosecutor"
+      },
+      {
+        "displayed": "7579-018b-ce00-b4fb",
+        "normalized": "7579-018b-ce00-b4fb"
+      },
+      {
+        "displayed": "1243-2489-e27f-9f6e",
+        "normalized": "1243-2489-e27f-9f6e"
+      },
+      {
+        "displayed": "9086-d814-2c69-2c2d",
+        "normalized": "9086-d814-2c69-2c2d"
+      },
+      {
+        "displayed": "6bbc-19d0-a423-826f",
+        "normalized": "6bbc-19d0-a423-826f"
+      },
+      {
+        "displayed": "149b-e382-f14f-4d8a",
+        "normalized": "149b-e382-f14f-4d8a"
+      },
+      {
+        "displayed": "625f-b7d9-3dc6-856d",
+        "normalized": "625f-b7d9-3dc6-856d"
+      },
+      {
+        "displayed": "0ac7-14da-a2c9-accf",
+        "normalized": "0ac7-14da-a2c9-accf"
+      },
+      {
+        "displayed": "b027-2184-7bbc-5e2d",
+        "normalized": "b027-2184-7bbc-5e2d"
+      },
+      {
+        "displayed": "e853-b0fd-5023-d444",
+        "normalized": "e853-b0fd-5023-d444"
+      },
+      {
+        "displayed": "31ef-e080-4d9b-8076",
+        "normalized": "31ef-e080-4d9b-8076"
+      },
+      {
+        "displayed": "3b61-ccc9-daa8-99a5",
+        "normalized": "3b61-ccc9-daa8-99a5"
+      },
+      {
+        "displayed": "Witchseeker",
+        "normalized": "witchseeker"
+      },
+      {
+        "displayed": "2ef8-51d4-9b9a-030f",
+        "normalized": "2ef8-51d4-9b9a-030f"
+      },
+      {
+        "displayed": "2a2b-52d0-8227-fa61",
+        "normalized": "2a2b-52d0-8227-fa61"
+      },
+      {
+        "displayed": "_Talons_of_the_Emperor_card_1",
+        "normalized": "_talons_of_the_emperor_card_1"
+      },
+      {
+        "displayed": "_Talons_of_the_Emperor_card_12",
+        "normalized": "_talons_of_the_emperor_card_12"
+      },
+      {
+        "displayed": "_Novitiate_card_1",
+        "normalized": "_novitiate_card_1"
+      },
+      {
+        "displayed": "_Novitiate_card_2",
+        "normalized": "_novitiate_card_2"
+      },
+      {
+        "displayed": "_Imperial_Guard_card_2",
+        "normalized": "_imperial_guard_card_2"
+      },
+      {
+        "displayed": "_Imperial_Guard_card_1",
+        "normalized": "_imperial_guard_card_1"
+      },
+      {
+        "displayed": "_Troupes_card_2",
+        "normalized": "_troupes_card_2"
+      },
+      {
+        "displayed": "_Troupes_card_1",
+        "normalized": "_troupes_card_1"
+      },
+      {
+        "displayed": "_Craftworlds",
+        "normalized": "_craftworlds"
+      },
+      {
+        "displayed": "Aeldari",
+        "normalized": "aeldari"
+      },
+      {
+        "displayed": "Asuryani",
+        "normalized": "asuryani"
+      },
+      {
+        "displayed": "CRAFTWORLD",
+        "normalized": "craftworld"
+      },
+      {
+        "displayed": "def4-f261-e9e5-0a3f",
+        "normalized": "def4-f261-e9e5-0a3f"
+      },
+      {
+        "displayed": "Guardian Defender",
+        "normalized": "guardian_defender"
+      },
+      {
+        "displayed": "Heavy Weapon Platform",
+        "normalized": "heavy_weapon_platform"
+      },
+      {
+        "displayed": "7767-d517-830b-40e4",
+        "normalized": "7767-d517-830b-40e4"
+      },
+      {
+        "displayed": "Storm Guardian",
+        "normalized": "storm_guardian"
+      },
+      {
+        "displayed": "7643-d531-ee51-c540",
+        "normalized": "7643-d531-ee51-c540"
+      },
+      {
+        "displayed": "da76-9161-c2c8-a603",
+        "normalized": "da76-9161-c2c8-a603"
+      },
+      {
+        "displayed": "Ranger",
+        "normalized": "ranger"
+      },
+      {
+        "displayed": "ae7f-10da-ac3a-208e",
+        "normalized": "ae7f-10da-ac3a-208e"
+      },
+      {
+        "displayed": "Dire Avenger",
+        "normalized": "dire_avenger"
+      },
+      {
+        "displayed": "Exarch",
+        "normalized": "exarch"
+      },
+      {
+        "displayed": "996a-1b3e-8e9e-4b1d",
+        "normalized": "996a-1b3e-8e9e-4b1d"
+      },
+      {
+        "displayed": "5359-328b-e981-d9c7",
+        "normalized": "5359-328b-e981-d9c7"
+      },
+      {
+        "displayed": "2b96-83eb-785c-f1e2",
+        "normalized": "2b96-83eb-785c-f1e2"
+      },
+      {
+        "displayed": "7766-9ae8-4a81-d00e",
+        "normalized": "7766-9ae8-4a81-d00e"
+      },
+      {
+        "displayed": "dace-b0c4-eff5-8d6f",
+        "normalized": "dace-b0c4-eff5-8d6f"
+      },
+      {
+        "displayed": "1b95-6c5d-6fe2-8592",
+        "normalized": "1b95-6c5d-6fe2-8592"
+      },
+      {
+        "displayed": "8e37-dd45-defc-63aa",
+        "normalized": "8e37-dd45-defc-63aa"
+      },
+      {
+        "displayed": "3f19-c21f-a7b9-5631",
+        "normalized": "3f19-c21f-a7b9-5631"
+      },
+      {
+        "displayed": "Heavy Gunner",
+        "normalized": "heavy_gunner"
+      },
+      {
+        "displayed": "a00b-d29c-3680-e1e2",
+        "normalized": "a00b-d29c-3680-e1e2"
+      },
+      {
+        "displayed": "0f5e-36b8-b9f0-92ce",
+        "normalized": "0f5e-36b8-b9f0-92ce"
+      },
+      {
+        "displayed": "8a96-f80f-9c30-1b56",
+        "normalized": "8a96-f80f-9c30-1b56"
+      },
+      {
+        "displayed": "794c-8dbf-7d8e-460c",
+        "normalized": "794c-8dbf-7d8e-460c"
+      },
+      {
+        "displayed": "d9f5-2edd-b1ac-6a31",
+        "normalized": "d9f5-2edd-b1ac-6a31"
+      },
+      {
+        "displayed": "a8a4-e930-85c7-a954",
+        "normalized": "a8a4-e930-85c7-a954"
+      },
+      {
+        "displayed": "0380-6de4-bd90-0363",
+        "normalized": "0380-6de4-bd90-0363"
+      },
+      {
+        "displayed": "Gunner",
+        "normalized": "gunner"
+      },
+      {
+        "displayed": "_Craftworlds_models_2",
+        "normalized": "_craftworlds_models_2"
+      },
+      {
+        "displayed": "_Craftworlds_models_1",
+        "normalized": "_craftworlds_models_1"
+      },
+      {
+        "displayed": "_Craftworlds_card_1",
+        "normalized": "_craftworlds_card_1"
+      },
+      {
+        "displayed": "_Veteran_Guard",
+        "normalized": "_veteran_guard"
+      },
+      {
+        "displayed": "Adeptus Mechanicus",
+        "normalized": "adeptus_mechanicus"
+      },
+      {
+        "displayed": "ed02-6f61-e023-ba6c",
+        "normalized": "ed02-6f61-e023-ba6c"
+      },
+      {
+        "displayed": "FORGE WORLD",
+        "normalized": "forge_world"
+      },
+      {
+        "displayed": "Skitarii",
+        "normalized": "skitarii"
+      },
+      {
+        "displayed": "f50e-9e5f-0f60-cacd",
+        "normalized": "f50e-9e5f-0f60-cacd"
+      },
+      {
+        "displayed": "Trooper",
+        "normalized": "trooper"
+      },
+      {
+        "displayed": "Vanguard",
+        "normalized": "vanguard"
+      },
+      {
+        "displayed": "7ae3-da04-8061-4f2f",
+        "normalized": "7ae3-da04-8061-4f2f"
+      },
+      {
+        "displayed": "b9a5-f736-4e87-4578",
+        "normalized": "b9a5-f736-4e87-4578"
+      },
+      {
+        "displayed": "Infiltrator",
+        "normalized": "infiltrator"
+      },
+      {
+        "displayed": "Sicarian",
+        "normalized": "sicarian"
+      },
+      {
+        "displayed": "908e-f9c1-7b2b-e41b",
+        "normalized": "908e-f9c1-7b2b-e41b"
+      },
+      {
+        "displayed": "da61-131a-8c06-9263",
+        "normalized": "da61-131a-8c06-9263"
+      },
+      {
+        "displayed": "bf62-b9a8-febd-d55c",
+        "normalized": "bf62-b9a8-febd-d55c"
+      },
+      {
+        "displayed": "Princeps",
+        "normalized": "princeps"
+      },
+      {
+        "displayed": "6f63-e3c3-ebbb-01d2",
+        "normalized": "6f63-e3c3-ebbb-01d2"
+      },
+      {
+        "displayed": "Ruststalker",
+        "normalized": "ruststalker"
+      },
+      {
+        "displayed": "f954-a149-df64-c6f0",
+        "normalized": "f954-a149-df64-c6f0"
+      },
+      {
+        "displayed": "52fa-766c-c961-90b8",
+        "normalized": "52fa-766c-c961-90b8"
+      },
+      {
+        "displayed": "2b79-ce64-b237-ca57",
+        "normalized": "2b79-ce64-b237-ca57"
+      },
+      {
+        "displayed": "56f1-a681-1b23-23ef",
+        "normalized": "56f1-a681-1b23-23ef"
+      },
+      {
+        "displayed": "032a-82fb-a24c-7f6f",
+        "normalized": "032a-82fb-a24c-7f6f"
+      },
+      {
+        "displayed": "Vanguard, Alpha",
+        "normalized": "vanguard,_alpha"
+      },
+      {
+        "displayed": "77f8-3002-256d-897d",
+        "normalized": "77f8-3002-256d-897d"
+      },
+      {
+        "displayed": "afb2-8b5d-9ab3-4c6a",
+        "normalized": "afb2-8b5d-9ab3-4c6a"
+      },
+      {
+        "displayed": "647b-b7b1-7fef-057f",
+        "normalized": "647b-b7b1-7fef-057f"
+      },
+      {
+        "displayed": "3a71-e0ce-ac98-0577",
+        "normalized": "3a71-e0ce-ac98-0577"
+      },
+      {
+        "displayed": "a407-4b4a-4113-229d",
+        "normalized": "a407-4b4a-4113-229d"
+      },
+      {
+        "displayed": "110e-a036-d9a1-e257",
+        "normalized": "110e-a036-d9a1-e257"
+      },
+      {
+        "displayed": "5a3d-2752-25a1-7390",
+        "normalized": "5a3d-2752-25a1-7390"
+      },
+      {
+        "displayed": "_Forge_World_Models_1",
+        "normalized": "_forge_world_models_1"
+      },
+      {
+        "displayed": "_Forge_World_Models_2",
+        "normalized": "_forge_world_models_2"
+      },
+      {
+        "displayed": "_Greenskins",
+        "normalized": "_greenskins"
+      },
+      {
+        "displayed": "445f-423f-b267-a475",
+        "normalized": "445f-423f-b267-a475"
+      },
+      {
+        "displayed": "Boy, Gretchin",
+        "normalized": "boy,_gretchin"
+      },
+      {
+        "displayed": "GREENSKIN",
+        "normalized": "greenskin"
+      },
+      {
+        "displayed": "Ork",
+        "normalized": "ork"
+      },
+      {
+        "displayed": "31c9-28f3-6d94-e700",
+        "normalized": "31c9-28f3-6d94-e700"
+      },
+      {
+        "displayed": "Loota",
+        "normalized": "loota"
+      },
+      {
+        "displayed": "Speshulist",
+        "normalized": "speshulist"
+      },
+      {
+        "displayed": "Boy",
+        "normalized": "boy"
+      },
+      {
+        "displayed": "e3ad-ffc4-f556-180b",
+        "normalized": "e3ad-ffc4-f556-180b"
+      },
+      {
+        "displayed": "Fighter",
+        "normalized": "fighter"
+      },
+      {
+        "displayed": "972b-47c3-f633-1f01",
+        "normalized": "972b-47c3-f633-1f01"
+      },
+      {
+        "displayed": "8059-b860-b92b-ba94",
+        "normalized": "8059-b860-b92b-ba94"
+      },
+      {
+        "displayed": "Boy, Boss Nob",
+        "normalized": "boy,_boss_nob"
+      },
+      {
+        "displayed": "eb7e-7a12-7f12-4ad8",
+        "normalized": "eb7e-7a12-7f12-4ad8"
+      },
+      {
+        "displayed": "0c70-3a12-d59f-39a0",
+        "normalized": "0c70-3a12-d59f-39a0"
+      },
+      {
+        "displayed": "6b36-cebb-ccd5-6ecf",
+        "normalized": "6b36-cebb-ccd5-6ecf"
+      },
+      {
+        "displayed": "Burna Boy",
+        "normalized": "burna_boy"
+      },
+      {
+        "displayed": "2ca9-9e43-b135-0e08",
+        "normalized": "2ca9-9e43-b135-0e08"
+      },
+      {
+        "displayed": "4f06-f34d-0bb2-c5fb",
+        "normalized": "4f06-f34d-0bb2-c5fb"
+      },
+      {
+        "displayed": "9d90-6093-ce43-72ae",
+        "normalized": "9d90-6093-ce43-72ae"
+      },
+      {
+        "displayed": "d1f7-38a1-d907-cdae",
+        "normalized": "d1f7-38a1-d907-cdae"
+      },
+      {
+        "displayed": "0e64-c3bb-d9d9-0368",
+        "normalized": "0e64-c3bb-d9d9-0368"
+      },
+      {
+        "displayed": "0652-1c64-e0a9-22e3",
+        "normalized": "0652-1c64-e0a9-22e3"
+      },
+      {
+        "displayed": "9bd0-c36d-a65a-b294",
+        "normalized": "9bd0-c36d-a65a-b294"
+      },
+      {
+        "displayed": "6f0b-aa84-f059-bef8",
+        "normalized": "6f0b-aa84-f059-bef8"
+      },
+      {
+        "displayed": "f7d8-269f-4503-cae1",
+        "normalized": "f7d8-269f-4503-cae1"
+      },
+      {
+        "displayed": "Spanner",
+        "normalized": "spanner"
+      },
+      {
+        "displayed": "5a5f-cefb-13b1-766d",
+        "normalized": "5a5f-cefb-13b1-766d"
+      },
+      {
+        "displayed": "4eba-00eb-62f8-b7ea",
+        "normalized": "4eba-00eb-62f8-b7ea"
+      },
+      {
+        "displayed": "1c24-32cf-3a9d-2053",
+        "normalized": "1c24-32cf-3a9d-2053"
+      },
+      {
+        "displayed": "_Greenskins_Models_2",
+        "normalized": "_greenskins_models_2"
+      },
+      {
+        "displayed": "_Greenskins_Models_1",
+        "normalized": "_greenskins_models_1"
+      },
+      {
+        "displayed": "2712-8a82-1650-3332",
+        "normalized": "2712-8a82-1650-3332"
+      },
+      {
+        "displayed": "BROOD COVEN",
+        "normalized": "brood_coven"
+      },
+      {
+        "displayed": "Genestealer Cults",
+        "normalized": "genestealer_cults"
+      },
+      {
+        "displayed": "Hybrid Metamorph",
+        "normalized": "hybrid_metamorph"
+      },
+      {
+        "displayed": "KTUIMini",
+        "normalized": "ktuimini"
+      },
+      {
+        "displayed": "KTUITokenSimple",
+        "normalized": "ktuitokensimple"
+      },
+      {
+        "displayed": "KTUITokenAdvanced",
+        "normalized": "ktuitokenadvanced"
+      },
+      {
+        "displayed": "KTUITokenEquipment",
+        "normalized": "ktuitokenequipment"
+      },
+      {
+        "displayed": "_Brood_Covens_card2",
+        "normalized": "_brood_covens_card2"
+      },
+      {
+        "displayed": "_Cadre_Mercenary_card_2",
+        "normalized": "_cadre_mercenary_card_2"
+      },
+      {
+        "displayed": "_Comorrites_card_2",
+        "normalized": "_comorrites_card_2"
+      },
+      {
+        "displayed": "_Craftworlds_card_2",
+        "normalized": "_craftworlds_card_2"
+      },
+      {
+        "displayed": "_Greenskins_card_2",
+        "normalized": "_greenskins_card_2"
+      },
+      {
+        "displayed": "_Grey_Knights_card_2",
+        "normalized": "_grey_knights_card_2"
+      },
+      {
+        "displayed": "_Kommandos_card_2",
+        "normalized": "_kommandos_card_2"
+      },
+      {
+        "displayed": "22b4-f5e7-c5e6-37ee",
+        "normalized": "22b4-f5e7-c5e6-37ee"
+      },
+      {
+        "displayed": "80f1-ca17-8c9c-ad79",
+        "normalized": "80f1-ca17-8c9c-ad79"
+      },
+      {
+        "displayed": "Acolyte Hybrid",
+        "normalized": "acolyte_hybrid"
+      },
+      {
+        "displayed": "dd4c-685d-14bb-37a4",
+        "normalized": "dd4c-685d-14bb-37a4"
+      },
+      {
+        "displayed": "Icon Bearer",
+        "normalized": "icon_bearer"
+      },
+      {
+        "displayed": "Neophyte Hybrid",
+        "normalized": "neophyte_hybrid"
+      },
+      {
+        "displayed": "64d1-1912-6a23-3593",
+        "normalized": "64d1-1912-6a23-3593"
+      },
+      {
+        "displayed": "9c54-5fea-25eb-0aff",
+        "normalized": "9c54-5fea-25eb-0aff"
+      },
+      {
+        "displayed": "6276-7b32-7f13-fc7e",
+        "normalized": "6276-7b32-7f13-fc7e"
+      },
+      {
+        "displayed": "c60b-20be-d6fc-0126",
+        "normalized": "c60b-20be-d6fc-0126"
+      },
+      {
+        "displayed": "4fb6-c34a-fdd4-3151",
+        "normalized": "4fb6-c34a-fdd4-3151"
+      },
+      {
+        "displayed": "ca17-ae24-71d4-2bc1",
+        "normalized": "ca17-ae24-71d4-2bc1"
+      },
+      {
+        "displayed": "2016-bd07-6d50-7fa5",
+        "normalized": "2016-bd07-6d50-7fa5"
+      },
+      {
+        "displayed": "8d7c-3bc5-12de-d933",
+        "normalized": "8d7c-3bc5-12de-d933"
+      },
+      {
+        "displayed": "9f93-b2d4-1bd1-4456",
+        "normalized": "9f93-b2d4-1bd1-4456"
+      },
+      {
+        "displayed": "67b3-ed58-51a5-015b",
+        "normalized": "67b3-ed58-51a5-015b"
+      },
+      {
+        "displayed": "f179-b4df-9ca3-707f",
+        "normalized": "f179-b4df-9ca3-707f"
+      },
+      {
+        "displayed": "0dde-da17-8482-1bf6",
+        "normalized": "0dde-da17-8482-1bf6"
+      },
+      {
+        "displayed": "6174-13e2-e174-bbd5",
+        "normalized": "6174-13e2-e174-bbd5"
+      },
+      {
+        "displayed": "1c7e-5e78-4bfa-9274",
+        "normalized": "1c7e-5e78-4bfa-9274"
+      },
+      {
+        "displayed": "e200-ae10-f76a-c062",
+        "normalized": "e200-ae10-f76a-c062"
+      },
+      {
+        "displayed": "7230-e23a-5ec5-b235",
+        "normalized": "7230-e23a-5ec5-b235"
+      },
+      {
+        "displayed": "_WACeq_infi",
+        "normalized": "_waceq_infi"
+      },
+      {
+        "displayed": "_WACeq",
+        "normalized": "_waceq"
+      },
+      {
+        "displayed": "KTUIDiceRoller",
+        "normalized": "ktuidiceroller"
+      },
+      {
+        "displayed": "_Faction_Decks",
+        "normalized": "_faction_decks"
+      },
+      {
+        "displayed": "_Kommandos",
+        "normalized": "_kommandos"
+      },
+      {
+        "displayed": "_Tomb_World",
+        "normalized": "_tomb_world"
+      },
+      {
+        "displayed": "_HIVeq_infi",
+        "normalized": "_hiveq_infi"
+      },
+      {
+        "displayed": "_HIVeq",
+        "normalized": "_hiveq"
+      },
+      {
+        "displayed": "_Phobos",
+        "normalized": "_phobos"
+      },
+      {
+        "displayed": "_Legionary",
+        "normalized": "_legionary"
+      },
+      {
+        "displayed": "_ESeq_infi",
+        "normalized": "_eseq_infi"
+      },
+      {
+        "displayed": "_Talons",
+        "normalized": "_talons"
+      },
+      {
+        "displayed": "_BLOeq_infi",
+        "normalized": "_bloeq_infi"
+      },
+      {
+        "displayed": "_KOeq",
+        "normalized": "_koeq"
+      },
+      {
+        "displayed": "_INTeq_infi",
+        "normalized": "_inteq_infi"
+      },
+      {
+        "displayed": "_PHOeq",
+        "normalized": "_phoeq"
+      },
+      {
+        "displayed": "_SMeq",
+        "normalized": "_smeq"
+      },
+      {
+        "displayed": "_Intercession",
+        "normalized": "_intercession"
+      },
+      {
+        "displayed": "_Farstalker",
+        "normalized": "_farstalker"
+      },
+      {
+        "displayed": "_Starstriders",
+        "normalized": "_starstriders"
+      },
+      {
+        "displayed": "_Gellerpox",
+        "normalized": "_gellerpox"
+      },
+      {
+        "displayed": "_KROeq_infi",
+        "normalized": "_kroeq_infi"
+      },
+      {
+        "displayed": "_Breachers",
+        "normalized": "_breachers"
+      },
+      {
+        "displayed": "_Novitiates",
+        "normalized": "_novitiates"
+      },
+      {
+        "displayed": "_Void_Dancer",
+        "normalized": "_void_dancer"
+      },
+      {
+        "displayed": "_TRO2eq_infi",
+        "normalized": "_tro2eq_infi"
+      },
+      {
+        "displayed": "_TRO2eq",
+        "normalized": "_tro2eq"
+      },
+      {
+        "displayed": "DealExample",
+        "normalized": "dealexample"
+      },
+      {
+        "displayed": "CritOpMission",
+        "normalized": "critopmission"
+      },
+      {
+        "displayed": "_KASRKIN",
+        "normalized": "_kasrkin"
+      },
+      {
+        "displayed": "_KAReq_infi",
+        "normalized": "_kareq_infi"
+      },
+      {
+        "displayed": "ITD_Piece",
+        "normalized": "itd_piece"
+      },
+      {
+        "displayed": "305a-366d-16a0-5099",
+        "normalized": "305a-366d-16a0-5099"
+      },
+      {
+        "displayed": "HUNTER CLADE",
+        "normalized": "hunter_clade"
+      },
+      {
+        "displayed": "Surveyor",
+        "normalized": "surveyor"
+      },
+      {
+        "displayed": "646c-b581-0969-c90d",
+        "normalized": "646c-b581-0969-c90d"
+      },
+      {
+        "displayed": "Shocktrooper",
+        "normalized": "shocktrooper"
+      },
+      {
+        "displayed": "fec6-59a0-f53f-e686",
+        "normalized": "fec6-59a0-f53f-e686"
+      },
+      {
+        "displayed": "da7b-5141-7a5d-739e",
+        "normalized": "da7b-5141-7a5d-739e"
+      },
+      {
+        "displayed": "Alpha",
+        "normalized": "alpha"
+      },
+      {
+        "displayed": "eb8e-837a-77f5-ac7c",
+        "normalized": "eb8e-837a-77f5-ac7c"
+      },
+      {
+        "displayed": "d86d-70c4-a59e-158c",
+        "normalized": "d86d-70c4-a59e-158c"
+      },
+      {
+        "displayed": "4d03-4bcf-8be6-f535",
+        "normalized": "4d03-4bcf-8be6-f535"
+      },
+      {
+        "displayed": "Diktat",
+        "normalized": "diktat"
+      },
+      {
+        "displayed": "a26b-aa16-737e-4cce",
+        "normalized": "a26b-aa16-737e-4cce"
+      },
+      {
+        "displayed": "42cb-40b6-e774-c54b",
+        "normalized": "42cb-40b6-e774-c54b"
+      },
+      {
+        "displayed": "Assassin",
+        "normalized": "assassin"
+      },
+      {
+        "displayed": "8146-0cc2-fed8-acb4",
+        "normalized": "8146-0cc2-fed8-acb4"
+      },
+      {
+        "displayed": "7bf2-5bd2-d265-28ae",
+        "normalized": "7bf2-5bd2-d265-28ae"
+      },
+      {
+        "displayed": "5d4d-7cbf-64c2-97e8",
+        "normalized": "5d4d-7cbf-64c2-97e8"
+      },
+      {
+        "displayed": "f0d2-e7b9-18da-d2fc",
+        "normalized": "f0d2-e7b9-18da-d2fc"
+      },
+      {
+        "displayed": "fe10-83c6-06d6-4e82",
+        "normalized": "fe10-83c6-06d6-4e82"
+      },
+      {
+        "displayed": "6467-3701-f525-734a",
+        "normalized": "6467-3701-f525-734a"
+      },
+      {
+        "displayed": "Tracker",
+        "normalized": "tracker"
+      },
+      {
+        "displayed": "eb31-8c8c-8d4a-6460",
+        "normalized": "eb31-8c8c-8d4a-6460"
+      },
+      {
+        "displayed": "8ae5-e2cf-e0c2-d68f",
+        "normalized": "8ae5-e2cf-e0c2-d68f"
+      },
+      {
+        "displayed": "936c-4d3a-541e-6c07",
+        "normalized": "936c-4d3a-541e-6c07"
+      },
+      {
+        "displayed": "8b0f-89ca-3129-fad4",
+        "normalized": "8b0f-89ca-3129-fad4"
+      },
+      {
+        "displayed": "c198-2234-f46b-b264",
+        "normalized": "c198-2234-f46b-b264"
+      },
+      {
+        "displayed": "_Hunter_Clade",
+        "normalized": "_hunter_clade"
+      },
+      {
+        "displayed": "_HotA",
+        "normalized": "_hota"
+      },
+      {
+        "displayed": "_HotAeq_infi",
+        "normalized": "_hotaeq_infi"
+      },
+      {
+        "displayed": "_Hierotek_Circle",
+        "normalized": "_hierotek_circle"
+      },
+      {
+        "displayed": "_Voidscarred",
+        "normalized": "_voidscarred"
+      },
+      {
+        "displayed": "_VoSeq_infi",
+        "normalized": "_voseq_infi"
+      },
+      {
+        "displayed": "_VoSeq",
+        "normalized": "_voseq"
+      },
+      {
+        "displayed": "_Wyrmblade",
+        "normalized": "_wyrmblade"
+      },
+      {
+        "displayed": "_Pathfinders",
+        "normalized": "_pathfinders"
+      },
+      {
+        "displayed": "_Blooded",
+        "normalized": "_blooded"
+      },
+      {
+        "displayed": "_Hive_Fleet",
+        "normalized": "_hive_fleet"
+      },
+      {
+        "displayed": "_EXACTION_SQUAD",
+        "normalized": "_exaction_squad"
+      },
+      {
+        "displayed": "_Warp_Coven",
+        "normalized": "_warp_coven"
+      },
+      {
+        "displayed": "_Brood_Coven",
+        "normalized": "_brood_coven"
+      },
+      {
+        "displayed": "_Cadre_Mercenary",
+        "normalized": "_cadre_mercenary"
+      },
+      {
+        "displayed": "_Daemons",
+        "normalized": "_daemons"
+      },
+      {
+        "displayed": "_Commorites",
+        "normalized": "_commorites"
+      },
+      {
+        "displayed": "_Death_Guard",
+        "normalized": "_death_guard"
+      },
+      {
+        "displayed": "_Ecclesiarchy",
+        "normalized": "_ecclesiarchy"
+      },
+      {
+        "displayed": "_Forge_World",
+        "normalized": "_forge_world"
+      },
+      {
+        "displayed": "_Grey_Knights",
+        "normalized": "_grey_knights"
+      },
+      {
+        "displayed": "_Hunter_Cadre",
+        "normalized": "_hunter_cadre"
+      },
+      {
+        "displayed": "_Imperial_Guard",
+        "normalized": "_imperial_guard"
+      },
+      {
+        "displayed": "_Space_Marines",
+        "normalized": "_space_marines"
+      },
+      {
+        "displayed": "_Thousand_sons",
+        "normalized": "_thousand_sons"
+      },
+      {
+        "displayed": "_Traitor_Space_Marines",
+        "normalized": "_traitor_space_marines"
+      },
+      {
+        "displayed": "_Troupe",
+        "normalized": "_troupe"
+      },
+      {
+        "displayed": "Barrier",
+        "normalized": "barrier"
+      },
+      {
+        "displayed": "Command Node",
+        "normalized": "command_node"
+      },
+      {
+        "displayed": "_Fellgor_Ravager",
+        "normalized": "_fellgor_ravager"
+      },
+      {
+        "displayed": "KT_Objective",
+        "normalized": "kt_objective"
+      },
+      {
+        "displayed": "_Hearthkyn_Salvager",
+        "normalized": "_hearthkyn_salvager"
+      },
+      {
+        "displayed": "_HeartKeq_infi",
+        "normalized": "_heartkeq_infi"
+      },
+      {
+        "displayed": "_ECCeq_infi",
+        "normalized": "_ecceq_infi"
+      },
+      {
+        "displayed": "_ECCeq",
+        "normalized": "_ecceq"
+      },
+      {
+        "displayed": "_DGeq",
+        "normalized": "_dgeq"
+      },
+      {
+        "displayed": "_CSM2eq_infi",
+        "normalized": "_csm2eq_infi"
+      },
+      {
+        "displayed": "_CSM2eq",
+        "normalized": "_csm2eq"
+      },
+      {
+        "displayed": "_DEMeq_infi",
+        "normalized": "_demeq_infi"
+      },
+      {
+        "displayed": "_INBeq_infi",
+        "normalized": "_inbeq_infi"
+      },
+      {
+        "displayed": "_INBeq",
+        "normalized": "_inbeq"
+      },
+      {
+        "displayed": "_Inquisitorial_Agents",
+        "normalized": "_inquisitorial_agents"
+      },
+      {
+        "displayed": "_Chaos_Cult",
+        "normalized": "_chaos_cult"
+      },
+      {
+        "displayed": "_Scout_Squad",
+        "normalized": "_scout_squad"
+      },
+      {
+        "displayed": "_Nemesis_Claw",
+        "normalized": "_nemesis_claw"
+      },
+      {
+        "displayed": "_Mandrakes",
+        "normalized": "_mandrakes"
+      },
+      {
+        "displayed": "_Yaegir_Hernkyn",
+        "normalized": "_yaegir_hernkyn"
+      },
+      {
+        "displayed": "1801-8822-1fb7-f828",
+        "normalized": "1801-8822-1fb7-f828"
+      },
+      {
+        "displayed": "Astra Militarum",
+        "normalized": "astra_militarum"
+      },
+      {
+        "displayed": "KASRKIN",
+        "normalized": "kasrkin"
+      },
+      {
+        "displayed": "Kasrkin Sergeant",
+        "normalized": "kasrkin_sergeant"
+      },
+      {
+        "displayed": "5ebd-b7a2-0e9f-c186",
+        "normalized": "5ebd-b7a2-0e9f-c186"
+      },
+      {
+        "displayed": "Kasrkin Gunner",
+        "normalized": "kasrkin_gunner"
+      },
+      {
+        "displayed": "007c-cf37-d79e-c179",
+        "normalized": "007c-cf37-d79e-c179"
+      },
+      {
+        "displayed": "Kasrkin Trooper",
+        "normalized": "kasrkin_trooper"
+      },
+      {
+        "displayed": "6e23-9dfd-6fd4-507e",
+        "normalized": "6e23-9dfd-6fd4-507e"
+      },
+      {
+        "displayed": "Kasrkin Sharpshooter",
+        "normalized": "kasrkin_sharpshooter"
+      },
+      {
+        "displayed": "b68e-eb72-7399-2e91",
+        "normalized": "b68e-eb72-7399-2e91"
+      },
+      {
+        "displayed": "c5c1-b3ae-83c1-af70",
+        "normalized": "c5c1-b3ae-83c1-af70"
+      },
+      {
+        "displayed": "Kasrkin Demo-Trooper",
+        "normalized": "kasrkin_demo-trooper"
+      },
+      {
+        "displayed": "2e5b-2527-b1d9-f52c",
+        "normalized": "2e5b-2527-b1d9-f52c"
+      },
+      {
+        "displayed": "dbb2-6597-d4fa-6b5a",
+        "normalized": "dbb2-6597-d4fa-6b5a"
+      },
+      {
+        "displayed": "a819-3b69-303b-eade",
+        "normalized": "a819-3b69-303b-eade"
+      },
+      {
+        "displayed": "uuid:d30ed48c",
+        "normalized": "uuid:d30ed48c"
+      },
+      {
+        "displayed": "1c7d-259b-ed89-47be",
+        "normalized": "1c7d-259b-ed89-47be"
+      },
+      {
+        "displayed": "2b2c-629c-2434-2311",
+        "normalized": "2b2c-629c-2434-2311"
+      },
+      {
+        "displayed": "Drone",
+        "normalized": "drone"
+      },
+      {
+        "displayed": "Fly",
+        "normalized": "fly"
+      },
+      {
+        "displayed": "HUNTER CADRE",
+        "normalized": "hunter_cadre"
+      },
+      {
+        "displayed": "MV7 Marker Drone",
+        "normalized": "mv7_marker_drone"
+      },
+      {
+        "displayed": "T''au",
+        "normalized": "t''au"
+      },
+      {
+        "displayed": "PrimaryCard",
+        "normalized": "primarycard"
+      },
+      {
+        "displayed": "Objective",
+        "normalized": "objective"
+      },
+      {
+        "displayed": "Chaos",
+        "normalized": "chaos"
+      },
+      {
+        "displayed": "Heretic Astartes",
+        "normalized": "heretic_astartes"
+      },
+      {
+        "displayed": "lutso8eub5utyjg66if",
+        "normalized": "lutso8eub5utyjg66if"
+      },
+      {
+        "displayed": "Night Lord",
+        "normalized": "night_lord"
+      },
+      {
+        "displayed": "lutsos7aluzylufhht",
+        "normalized": "lutsos7aluzylufhht"
+      },
+      {
+        "displayed": "NEMESIS CLAW",
+        "normalized": "nemesis_claw"
+      },
+      {
+        "displayed": "Psyker",
+        "normalized": "psyker"
+      },
+      {
+        "displayed": "Ventrilokar",
+        "normalized": "ventrilokar"
+      },
+      {
+        "displayed": "lutso7dzy8uiisidtyi",
+        "normalized": "lutso7dzy8uiisidtyi"
+      },
+      {
+        "displayed": "Visionary",
+        "normalized": "visionary"
+      },
+      {
+        "displayed": "lutsoqgurz1xx998x6c",
+        "normalized": "lutsoqgurz1xx998x6c"
+      },
+      {
+        "displayed": "Screecher",
+        "normalized": "screecher"
+      },
+      {
+        "displayed": "lutsortqm9aomqvc9t",
+        "normalized": "lutsortqm9aomqvc9t"
+      },
+      {
+        "displayed": "Skinthief",
+        "normalized": "skinthief"
+      },
+      {
+        "displayed": "Fearmonger",
+        "normalized": "fearmonger"
+      },
+      {
+        "displayed": "lutso7wm3tcba3lk10c",
+        "normalized": "lutso7wm3tcba3lk10c"
+      },
+      {
+        "displayed": "lutsoou6yrako0mcr1",
+        "normalized": "lutsoou6yrako0mcr1"
+      },
+      {
+        "displayed": "lutsoniuqtxnzulgztm",
+        "normalized": "lutsoniuqtxnzulgztm"
+      },
+      {
+        "displayed": "66efc3cc17b19ffdf04fa2d5",
+        "normalized": "66efc3cc17b19ffdf04fa2d5"
+      },
+      {
+        "displayed": "66efc3c017b19ffdf04fa2d3",
+        "normalized": "66efc3c017b19ffdf04fa2d3"
+      },
+      {
+        "displayed": "lutsokh2amflzgb75uv",
+        "normalized": "lutsokh2amflzgb75uv"
+      },
+      {
+        "displayed": "bc00-3834-5c2d-f87d",
+        "normalized": "bc00-3834-5c2d-f87d"
+      },
+      {
+        "displayed": "HERNKYN YAEGIR",
+        "normalized": "hernkyn_yaegir"
+      },
+      {
+        "displayed": "Votann",
+        "normalized": "votann"
+      },
+      {
+        "displayed": "fe14-fc47-c00b-0da2",
+        "normalized": "fe14-fc47-c00b-0da2"
+      },
+      {
+        "displayed": "Theyn",
+        "normalized": "theyn"
+      },
+      {
+        "displayed": "f584-e89f-40ac-5ac4",
+        "normalized": "f584-e89f-40ac-5ac4"
+      },
+      {
+        "displayed": "a504-ab62-1b54-f644",
+        "normalized": "a504-ab62-1b54-f644"
+      },
+      {
+        "displayed": "Bladekyn",
+        "normalized": "bladekyn"
+      },
+      {
+        "displayed": "919a-e32e-a7c2-9852",
+        "normalized": "919a-e32e-a7c2-9852"
+      },
+      {
+        "displayed": "Bombast",
+        "normalized": "bombast"
+      },
+      {
+        "displayed": "c572-e365-4e30-b47e",
+        "normalized": "c572-e365-4e30-b47e"
+      },
+      {
+        "displayed": "Ironbraek",
+        "normalized": "ironbraek"
+      },
+      {
+        "displayed": "e5da-8786-8a33-314c",
+        "normalized": "e5da-8786-8a33-314c"
+      },
+      {
+        "displayed": "c3e0-4d36-bbee-e37a",
+        "normalized": "c3e0-4d36-bbee-e37a"
+      },
+      {
+        "displayed": "570f-9e78-5182-1792",
+        "normalized": "570f-9e78-5182-1792"
+      },
+      {
+        "displayed": "Riflekyn",
+        "normalized": "riflekyn"
+      },
+      {
+        "displayed": "6df1-e35c-2f62-1bc2",
+        "normalized": "6df1-e35c-2f62-1bc2"
+      },
+      {
+        "displayed": "fbcb-54aa-ab91-c167",
+        "normalized": "fbcb-54aa-ab91-c167"
+      },
+      {
+        "displayed": "4ce9-09f4-f4cc-884e",
+        "normalized": "4ce9-09f4-f4cc-884e"
+      },
+      {
+        "displayed": "4ccb-74ff-3543-62c1",
+        "normalized": "4ccb-74ff-3543-62c1"
+      },
+      {
+        "displayed": "BLOODED",
+        "normalized": "blooded"
+      },
+      {
+        "displayed": "m1exmhvd46jz2rn64m2",
+        "normalized": "m1exmhvd46jz2rn64m2"
+      },
+      {
+        "displayed": "Militarum Traitoris",
+        "normalized": "militarum_traitoris"
+      },
+      {
+        "displayed": "Traitor Gunner",
+        "normalized": "traitor_gunner"
+      },
+      {
+        "displayed": "m1exmih4wi8ook0i03b",
+        "normalized": "m1exmih4wi8ook0i03b"
+      },
+      {
+        "displayed": "m1exmfrcyt1rgdgg5bl",
+        "normalized": "m1exmfrcyt1rgdgg5bl"
+      },
+      {
+        "displayed": "Traitor Brimstone Grenadier",
+        "normalized": "traitor_brimstone_grenadier"
+      },
+      {
+        "displayed": "m1exmhlc4xnhremayxr",
+        "normalized": "m1exmhlc4xnhremayxr"
+      },
+      {
+        "displayed": "m1exmi5sl9tpx7em87l",
+        "normalized": "m1exmi5sl9tpx7em87l"
+      },
+      {
+        "displayed": "m1exmjpdytej2o1obe",
+        "normalized": "m1exmjpdytej2o1obe"
+      },
+      {
+        "displayed": "Traitor Trench Sweeper",
+        "normalized": "traitor_trench_sweeper"
+      },
+      {
+        "displayed": "Four of:",
+        "normalized": "four_of:"
+      },
+      {
+        "displayed": "m1exmrrkxwavrlv39bp",
+        "normalized": "m1exmrrkxwavrlv39bp"
+      },
+      {
+        "displayed": "Traitor Trooper",
+        "normalized": "traitor_trooper"
+      },
+      {
+        "displayed": "m1exms4gjosz5fe33he",
+        "normalized": "m1exms4gjosz5fe33he"
+      },
+      {
+        "displayed": "66f152a89a80b19177593314",
+        "normalized": "66f152a89a80b19177593314"
+      },
+      {
+        "displayed": "Traitor Chieftain",
+        "normalized": "traitor_chieftain"
+      },
+      {
+        "displayed": "m1exmh8hyyyyf6xhnpi",
+        "normalized": "m1exmh8hyyyyf6xhnpi"
+      },
+      {
+        "displayed": "Traitor Flenser",
+        "normalized": "traitor_flenser"
+      },
+      {
+        "displayed": "m1exmiuguiswp3abycs",
+        "normalized": "m1exmiuguiswp3abycs"
+      },
+      {
+        "displayed": "Traitor Sharpshooter",
+        "normalized": "traitor_sharpshooter"
+      },
+      {
+        "displayed": "m1exmrw9e49pn62dzp",
+        "normalized": "m1exmrw9e49pn62dzp"
+      },
+      {
+        "displayed": "m1exms0gicx8w8r57ql",
+        "normalized": "m1exms0gicx8w8r57ql"
+      },
+      {
+        "displayed": "m1exll3bq0vvus7pxga",
+        "normalized": "m1exll3bq0vvus7pxga"
+      },
+      {
+        "displayed": "m1exlm1916t5vusx871",
+        "normalized": "m1exlm1916t5vusx871"
+      },
+      {
+        "displayed": "m1exmjawuojyxko3m3g",
+        "normalized": "m1exmjawuojyxko3m3g"
+      },
+      {
+        "displayed": "Traitor Thug",
+        "normalized": "traitor_thug"
+      },
+      {
+        "displayed": "m1exmg5476risqh4g0r",
+        "normalized": "m1exmg5476risqh4g0r"
+      },
+      {
+        "displayed": "Traitor Butcher",
+        "normalized": "traitor_butcher"
+      },
+      {
+        "displayed": "m1exllogjyr1m7c7mkm",
+        "normalized": "m1exllogjyr1m7c7mkm"
+      },
+      {
+        "displayed": "m1exmgrdh08fof2ia5b",
+        "normalized": "m1exmgrdh08fof2ia5b"
+      },
+      {
+        "displayed": "Traitor Corpseman",
+        "normalized": "traitor_corpseman"
+      },
+      {
+        "displayed": "m1exmgfukl23x0hoen",
+        "normalized": "m1exmgfukl23x0hoen"
+      },
+      {
+        "displayed": "Traitor Commsman",
+        "normalized": "traitor_commsman"
+      },
+      {
+        "displayed": "m1exmnddjkz34icvw0f",
+        "normalized": "m1exmnddjkz34icvw0f"
+      },
+      {
+        "displayed": "Traitor Ogryn",
+        "normalized": "traitor_ogryn"
+      },
+      {
+        "displayed": "m1exmmztdi0wkby6twp",
+        "normalized": "m1exmmztdi0wkby6twp"
+      },
+      {
+        "displayed": "Traitor Enforcer",
+        "normalized": "traitor_enforcer"
+      },
+      {
+        "displayed": "3bf4-1124-1aea-65ef",
+        "normalized": "3bf4-1124-1aea-65ef"
+      },
+      {
+        "displayed": "Anhrathe",
+        "normalized": "anhrathe"
+      },
+      {
+        "displayed": "CORSAIR VOIDSCARRED",
+        "normalized": "corsair_voidscarred"
+      },
+      {
+        "displayed": "Voidscarred Fate Dealer",
+        "normalized": "voidscarred_fate_dealer"
+      },
+      {
+        "displayed": "m1f95hsp0uou49etsjy",
+        "normalized": "m1f95hsp0uou49etsjy"
+      },
+      {
+        "displayed": "Voidscarred Felarch",
+        "normalized": "voidscarred_felarch"
+      },
+      {
+        "displayed": "66f19e69ba3f1a559a0d1102",
+        "normalized": "66f19e69ba3f1a559a0d1102"
+      },
+      {
+        "displayed": "dbe3-6dd4-05c3-30d6",
+        "normalized": "dbe3-6dd4-05c3-30d6"
+      },
+      {
+        "displayed": "Voidscarred Way Seeker",
+        "normalized": "voidscarred_way_seeker"
+      },
+      {
+        "displayed": "ba0b-0009-6078-61fa",
+        "normalized": "ba0b-0009-6078-61fa"
+      },
+      {
+        "displayed": "Voidscarred Starstorm Duellist",
+        "normalized": "voidscarred_starstorm_duellist"
+      },
+      {
+        "displayed": "a9e0-b400-8ffe-8a2d",
+        "normalized": "a9e0-b400-8ffe-8a2d"
+      },
+      {
+        "displayed": "Voidscarred Gunner",
+        "normalized": "voidscarred_gunner"
+      },
+      {
+        "displayed": "154f-8238-c6b8-a74a",
+        "normalized": "154f-8238-c6b8-a74a"
+      },
+      {
+        "displayed": "Voidscarred Shade Runner",
+        "normalized": "voidscarred_shade_runner"
+      },
+      {
+        "displayed": "18f3-cda6-f5cd-ffb7",
+        "normalized": "18f3-cda6-f5cd-ffb7"
+      },
+      {
+        "displayed": "4ecc-2d75-d8ff-f040",
+        "normalized": "4ecc-2d75-d8ff-f040"
+      },
+      {
+        "displayed": "Medic",
+        "normalized": "medic"
+      },
+      {
+        "displayed": "Voidscarred Soul Weaver",
+        "normalized": "voidscarred_soul_weaver"
+      },
+      {
+        "displayed": "2781-92c1-499b-6c80",
+        "normalized": "2781-92c1-499b-6c80"
+      },
+      {
+        "displayed": "Voidscarred Kurnite Hunter",
+        "normalized": "voidscarred_kurnite_hunter"
+      },
+      {
+        "displayed": "m1f95naxlfmqw3a6nsr",
+        "normalized": "m1f95naxlfmqw3a6nsr"
+      },
+      {
+        "displayed": "Voidscarred Heavy Gunner",
+        "normalized": "voidscarred_heavy_gunner"
+      },
+      {
+        "displayed": "98a3-96d3-7a69-9c2a",
+        "normalized": "98a3-96d3-7a69-9c2a"
+      },
+      {
+        "displayed": "Voidscarred Kurnathi",
+        "normalized": "voidscarred_kurnathi"
+      },
+      {
+        "displayed": "m1f95nrl1nrch7tjsrp",
+        "normalized": "m1f95nrl1nrch7tjsrp"
+      },
+      {
+        "displayed": "8400-481b-1a34-ac28",
+        "normalized": "8400-481b-1a34-ac28"
+      },
+      {
+        "displayed": "Brood-Adept",
+        "normalized": "brood-adept"
+      },
+      {
+        "displayed": "Neophyte",
+        "normalized": "neophyte"
+      },
+      {
+        "displayed": "Tyranids",
+        "normalized": "tyranids"
+      },
+      {
+        "displayed": "WYRMBLADE",
+        "normalized": "wyrmblade"
+      },
+      {
+        "displayed": "e508-9f07-a869-3460",
+        "normalized": "e508-9f07-a869-3460"
+      },
+      {
+        "displayed": "4749-88fa-63bf-536c",
+        "normalized": "4749-88fa-63bf-536c"
+      },
+      {
+        "displayed": "82c1-dcda-9b7e-6541",
+        "normalized": "82c1-dcda-9b7e-6541"
+      },
+      {
+        "displayed": "9cf3-d74a-eb53-d776",
+        "normalized": "9cf3-d74a-eb53-d776"
+      },
+      {
+        "displayed": "ab24-8f75-48aa-6640",
+        "normalized": "ab24-8f75-48aa-6640"
+      },
+      {
+        "displayed": "fc52-07bf-37ed-baf5",
+        "normalized": "fc52-07bf-37ed-baf5"
+      },
+      {
+        "displayed": "830a-fd8b-4252-91f2",
+        "normalized": "830a-fd8b-4252-91f2"
+      },
+      {
+        "displayed": "5502-5616-9f3e-074e",
+        "normalized": "5502-5616-9f3e-074e"
+      },
+      {
+        "displayed": "Cult Agent",
+        "normalized": "cult_agent"
+      },
+      {
+        "displayed": "fffa-8d60-6bce-52b1",
+        "normalized": "fffa-8d60-6bce-52b1"
+      },
+      {
+        "displayed": "Sanctus",
+        "normalized": "sanctus"
+      },
+      {
+        "displayed": "89fb-6f84-ffe7-0e67",
+        "normalized": "89fb-6f84-ffe7-0e67"
+      },
+      {
+        "displayed": "Locus",
+        "normalized": "locus"
+      },
+      {
+        "displayed": "7f6f-6d54-12e9-a4bf",
+        "normalized": "7f6f-6d54-12e9-a4bf"
+      },
+      {
+        "displayed": "6a7e-2b5d-b9ea-84a9",
+        "normalized": "6a7e-2b5d-b9ea-84a9"
+      },
+      {
+        "displayed": "5d84-69e1-dba2-e6b0",
+        "normalized": "5d84-69e1-dba2-e6b0"
+      },
+      {
+        "displayed": "ed6d-d452-00b5-8779",
+        "normalized": "ed6d-d452-00b5-8779"
+      },
+      {
+        "displayed": "ea86-53b2-55c4-aca8",
+        "normalized": "ea86-53b2-55c4-aca8"
+      },
+      {
+        "displayed": "242a-4b58-a9cd-b96c",
+        "normalized": "242a-4b58-a9cd-b96c"
+      },
+      {
+        "displayed": "8a50-5010-fcc3-eb49",
+        "normalized": "8a50-5010-fcc3-eb49"
+      },
+      {
+        "displayed": "Kelermorph",
+        "normalized": "kelermorph"
+      },
+      {
+        "displayed": "_Vespid_Stingwings",
+        "normalized": "_vespid_stingwings"
+      },
+      {
+        "displayed": "_Tempestus_Aquilons",
+        "normalized": "_tempestus_aquilons"
+      },
+      {
+        "displayed": "KOMMANDO",
+        "normalized": "kommando"
+      },
+      {
+        "displayed": "m1hfxplbly0jbcyt5fk",
+        "normalized": "m1hfxplbly0jbcyt5fk"
+      },
+      {
+        "displayed": "Snipa Boy",
+        "normalized": "snipa_boy"
+      },
+      {
+        "displayed": "m1hfxp4niwijq96qutf",
+        "normalized": "m1hfxp4niwijq96qutf"
+      },
+      {
+        "displayed": "Slasha Boy",
+        "normalized": "slasha_boy"
+      },
+      {
+        "displayed": "m1hfxojswjdzu1eyhm",
+        "normalized": "m1hfxojswjdzu1eyhm"
+      },
+      {
+        "displayed": "Rokkit Boy",
+        "normalized": "rokkit_boy"
+      },
+      {
+        "displayed": "Kommando Nob",
+        "normalized": "kommando_nob"
+      },
+      {
+        "displayed": "m1hfxi55gc2znc7pub5",
+        "normalized": "m1hfxi55gc2znc7pub5"
+      },
+      {
+        "displayed": "m1hfxhuouex572y598",
+        "normalized": "m1hfxhuouex572y598"
+      },
+      {
+        "displayed": "Kommando Grot",
+        "normalized": "kommando_grot"
+      },
+      {
+        "displayed": "m1hfxo422atuj4wye95",
+        "normalized": "m1hfxo422atuj4wye95"
+      },
+      {
+        "displayed": "Dakka Boy",
+        "normalized": "dakka_boy"
+      },
+      {
+        "displayed": "m1hfxndcybzo18hlhd",
+        "normalized": "m1hfxndcybzo18hlhd"
+      },
+      {
+        "displayed": "Comms Boy",
+        "normalized": "comms_boy"
+      },
+      {
+        "displayed": "m1hfxms96vcc4vdg09",
+        "normalized": "m1hfxms96vcc4vdg09"
+      },
+      {
+        "displayed": "m1hfxmgglut0z79y4r",
+        "normalized": "m1hfxmgglut0z79y4r"
+      },
+      {
+        "displayed": "Breacha Boy",
+        "normalized": "breacha_boy"
+      },
+      {
+        "displayed": "m1hfxlc0m6970xxdx1",
+        "normalized": "m1hfxlc0m6970xxdx1"
+      },
+      {
+        "displayed": "Kommando Boy",
+        "normalized": "kommando_boy"
+      },
+      {
+        "displayed": "m1hfxm14icl2fuyxuem",
+        "normalized": "m1hfxm14icl2fuyxuem"
+      },
+      {
+        "displayed": "m1hfxl01uwdqd5nwcgr",
+        "normalized": "m1hfxl01uwdqd5nwcgr"
+      },
+      {
+        "displayed": "Bomb Squig",
+        "normalized": "bomb_squig"
+      },
+      {
+        "displayed": "m1hfxkpyzf2fi3e3vji",
+        "normalized": "m1hfxkpyzf2fi3e3vji"
+      },
+      {
+        "displayed": "Adeptus Astartes",
+        "normalized": "adeptus_astartes"
+      },
+      {
+        "displayed": "m1logpejq2tpow71lhh",
+        "normalized": "m1logpejq2tpow71lhh"
+      },
+      {
+        "displayed": "Scout",
+        "normalized": "scout"
+      },
+      {
+        "displayed": "SCOUT SQUAD",
+        "normalized": "scout_squad"
+      },
+      {
+        "displayed": "Sergeant",
+        "normalized": "sergeant"
+      },
+      {
+        "displayed": "Hunter",
+        "normalized": "hunter"
+      },
+      {
+        "displayed": "m1loh2uys8aoqnl9nel",
+        "normalized": "m1loh2uys8aoqnl9nel"
+      },
+      {
+        "displayed": "m1lohl8ahg7nqgb0zua",
+        "normalized": "m1lohl8ahg7nqgb0zua"
+      },
+      {
+        "displayed": "m1loh5ua1sjpn8qzx5s",
+        "normalized": "m1loh5ua1sjpn8qzx5s"
+      },
+      {
+        "displayed": "m1loh34y7agfzfd1wja",
+        "normalized": "m1loh34y7agfzfd1wja"
+      },
+      {
+        "displayed": "m1logubfjgh9q8na42",
+        "normalized": "m1logubfjgh9q8na42"
+      },
+      {
+        "displayed": "m1logrv85tznsjdnyn8",
+        "normalized": "m1logrv85tznsjdnyn8"
+      },
+      {
+        "displayed": "m1loh0lf1p3l58y4dfk",
+        "normalized": "m1loh0lf1p3l58y4dfk"
+      },
+      {
+        "displayed": "m1logyurcwvwxb3ad7",
+        "normalized": "m1logyurcwvwxb3ad7"
+      },
+      {
+        "displayed": "da9c-8826-bb2c-4e0e",
+        "normalized": "da9c-8826-bb2c-4e0e"
+      },
+      {
+        "displayed": "Drukhari",
+        "normalized": "drukhari"
+      },
+      {
+        "displayed": "e907-6937-b4a4-4e22",
+        "normalized": "e907-6937-b4a4-4e22"
+      },
+      {
+        "displayed": "MANDRAKE",
+        "normalized": "mandrake"
+      },
+      {
+        "displayed": "Shadeweaver",
+        "normalized": "shadeweaver"
+      },
+      {
+        "displayed": "Abyssal",
+        "normalized": "abyssal"
+      },
+      {
+        "displayed": "ac8f-551c-5447-3d97",
+        "normalized": "ac8f-551c-5447-3d97"
+      },
+      {
+        "displayed": "19fe-32db-7fae-0724",
+        "normalized": "19fe-32db-7fae-0724"
+      },
+      {
+        "displayed": "710f-f0a7-96c4-38bd",
+        "normalized": "710f-f0a7-96c4-38bd"
+      },
+      {
+        "displayed": "Nightfiend",
+        "normalized": "nightfiend"
+      },
+      {
+        "displayed": "57b9-6608-077a-3b2f",
+        "normalized": "57b9-6608-077a-3b2f"
+      },
+      {
+        "displayed": "355f-6454-33ba-9e2f",
+        "normalized": "355f-6454-33ba-9e2f"
+      },
+      {
+        "displayed": "b22b-7458-5404-8c45",
+        "normalized": "b22b-7458-5404-8c45"
+      },
+      {
+        "displayed": "Chooser of the Flesh",
+        "normalized": "chooser_of_the_flesh"
+      },
+      {
+        "displayed": "7b9c-70b2-56e2-24b3",
+        "normalized": "7b9c-70b2-56e2-24b3"
+      },
+      {
+        "displayed": "7f61-aca0-38ef-2d4b",
+        "normalized": "7f61-aca0-38ef-2d4b"
+      },
+      {
+        "displayed": "Dirgemaw",
+        "normalized": "dirgemaw"
+      },
+      {
+        "displayed": "m1lohlci2kk3puezk3",
+        "normalized": "m1lohlci2kk3puezk3"
+      },
+      {
+        "displayed": "m1loh5yq5ax0tjgwn9m",
+        "normalized": "m1loh5yq5ax0tjgwn9m"
+      },
+      {
+        "displayed": "m1loh6z6v0eo8b2a1s",
+        "normalized": "m1loh6z6v0eo8b2a1s"
+      },
+      {
+        "displayed": "m1lohlga3d379o25q1b",
+        "normalized": "m1lohlga3d379o25q1b"
+      },
+      {
+        "displayed": "m1loh6uqhys75z8sk1",
+        "normalized": "m1loh6uqhys75z8sk1"
+      },
+      {
+        "displayed": "m1loh73uipbapxus75l",
+        "normalized": "m1loh73uipbapxus75l"
+      },
+      {
+        "displayed": "m1loh582i412pmnztod",
+        "normalized": "m1loh582i412pmnztod"
+      },
+      {
+        "displayed": "m1loh3g2jtqfnhqehkc",
+        "normalized": "m1loh3g2jtqfnhqehkc"
+      },
+      {
+        "displayed": "66efc3c017b19ffdf04fa2d4",
+        "normalized": "66efc3c017b19ffdf04fa2d4"
+      },
+      {
+        "displayed": "a173-a6f6-665e-a789",
+        "normalized": "a173-a6f6-665e-a789"
+      },
+      {
+        "displayed": "IMPERIAL NAVY BREACHER",
+        "normalized": "imperial_navy_breacher"
+      },
+      {
+        "displayed": "Navis",
+        "normalized": "navis"
+      },
+      {
+        "displayed": "Sergeant-at-Arms",
+        "normalized": "sergeant-at-arms"
+      },
+      {
+        "displayed": "Armsman",
+        "normalized": "armsman"
+      },
+      {
+        "displayed": "f3c7-f469-da72-01dc",
+        "normalized": "f3c7-f469-da72-01dc"
+      },
+      {
+        "displayed": "610f-dafa-37d3-1d6b",
+        "normalized": "610f-dafa-37d3-1d6b"
+      },
+      {
+        "displayed": "Void-jammer",
+        "normalized": "void-jammer"
+      },
+      {
+        "displayed": "c2da-ced4-1ae0-60f4",
+        "normalized": "c2da-ced4-1ae0-60f4"
+      },
+      {
+        "displayed": "2348-b87d-6aa4-7a4d",
+        "normalized": "2348-b87d-6aa4-7a4d"
+      },
+      {
+        "displayed": "Hatchcutter",
+        "normalized": "hatchcutter"
+      },
+      {
+        "displayed": "ad66-f1c6-f5da-06d8",
+        "normalized": "ad66-f1c6-f5da-06d8"
+      },
+      {
+        "displayed": "Axejack",
+        "normalized": "axejack"
+      },
+      {
+        "displayed": "f793-7575-4547-eca1",
+        "normalized": "f793-7575-4547-eca1"
+      },
+      {
+        "displayed": "d734-f7aa-3d8b-8322",
+        "normalized": "d734-f7aa-3d8b-8322"
+      },
+      {
+        "displayed": "1293-93f1-f8e9-a87a",
+        "normalized": "1293-93f1-f8e9-a87a"
+      },
+      {
+        "displayed": "Grenadier",
+        "normalized": "grenadier"
+      },
+      {
+        "displayed": "e95f-669f-7c98-4db1",
+        "normalized": "e95f-669f-7c98-4db1"
+      },
+      {
+        "displayed": "5a1a-569e-366e-454d",
+        "normalized": "5a1a-569e-366e-454d"
+      },
+      {
+        "displayed": "Captain Justian",
+        "normalized": "captain_justian"
+      },
+      {
+        "displayed": "m1ukvhfbw2l7cltx8dr",
+        "normalized": "m1ukvhfbw2l7cltx8dr"
+      },
+      {
+        "displayed": "STRIKE FORCE JUSTIAN",
+        "normalized": "strike_force_justian"
+      },
+      {
+        "displayed": "Brother Flavian",
+        "normalized": "brother_flavian"
+      },
+      {
+        "displayed": "m1ukvgipza5kszjxq9m",
+        "normalized": "m1ukvgipza5kszjxq9m"
+      },
+      {
+        "displayed": "Brother Acules",
+        "normalized": "brother_acules"
+      },
+      {
+        "displayed": "m1ukvfw6ojya0831m9",
+        "normalized": "m1ukvfw6ojya0831m9"
+      },
+      {
+        "displayed": "Assault Intercessor",
+        "normalized": "assault_intercessor"
+      },
+      {
+        "displayed": "INTERCESSION SQUAD",
+        "normalized": "intercession_squad"
+      },
+      {
+        "displayed": "m1ul543ay9wz67ac3ai",
+        "normalized": "m1ul543ay9wz67ac3ai"
+      },
+      {
+        "displayed": "66ffc3cd7344315e7a0978fb",
+        "normalized": "66ffc3cd7344315e7a0978fb"
+      },
+      {
+        "displayed": "66ffc3697344315e7a0978f8",
+        "normalized": "66ffc3697344315e7a0978f8"
+      },
+      {
+        "displayed": "66ffc36b7344315e7a0978f9",
+        "normalized": "66ffc36b7344315e7a0978f9"
+      },
+      {
+        "displayed": "m1ul1soedrw9kitme8m",
+        "normalized": "m1ul1soedrw9kitme8m"
+      },
+      {
+        "displayed": "66ffc3c57344315e7a0978fa",
+        "normalized": "66ffc3c57344315e7a0978fa"
+      },
+      {
+        "displayed": "m1ul52724cszam97h97",
+        "normalized": "m1ul52724cszam97h97"
+      },
+      {
+        "displayed": "m1ul52fzwaboy37ssn",
+        "normalized": "m1ul52fzwaboy37ssn"
+      },
+      {
+        "displayed": "m1ul52lah25zkp83g3",
+        "normalized": "m1ul52lah25zkp83g3"
+      },
+      {
+        "displayed": "Intercessor",
+        "normalized": "intercessor"
+      },
+      {
+        "displayed": "m1ul56vi8bh1ay5jx7a",
+        "normalized": "m1ul56vi8bh1ay5jx7a"
+      },
+      {
+        "displayed": "66ffc4127344315e7a0978fd",
+        "normalized": "66ffc4127344315e7a0978fd"
+      },
+      {
+        "displayed": "66ffc4127344315e7a0978fe",
+        "normalized": "66ffc4127344315e7a0978fe"
+      },
+      {
+        "displayed": "m1ul461cz7iw8rmceoe",
+        "normalized": "m1ul461cz7iw8rmceoe"
+      },
+      {
+        "displayed": "m1ul46bi6bys3s01ov8",
+        "normalized": "m1ul46bi6bys3s01ov8"
+      },
+      {
+        "displayed": "m1ul45gezowi3nyr0dp",
+        "normalized": "m1ul45gezowi3nyr0dp"
+      },
+      {
+        "displayed": "66ffc3e47344315e7a0978fc",
+        "normalized": "66ffc3e47344315e7a0978fc"
+      },
+      {
+        "displayed": "66ffc4347344315e7a097900",
+        "normalized": "66ffc4347344315e7a097900"
+      },
+      {
+        "displayed": "m1ul5mxqrwut5g70v8c",
+        "normalized": "m1ul5mxqrwut5g70v8c"
+      },
+      {
+        "displayed": "m1ul5p1zudosqmjgnvg",
+        "normalized": "m1ul5p1zudosqmjgnvg"
+      },
+      {
+        "displayed": "66ffc4347344315e7a0978ff",
+        "normalized": "66ffc4347344315e7a0978ff"
+      },
+      {
+        "displayed": "2a51-3751-5e3b-b96f",
+        "normalized": "2a51-3751-5e3b-b96f"
+      },
+      {
+        "displayed": "C.A.T. Unit",
+        "normalized": "c.a.t._unit"
+      },
+      {
+        "displayed": "eb5a-d6f0-f1fa-8c7e",
+        "normalized": "eb5a-d6f0-f1fa-8c7e"
+      },
+      {
+        "displayed": "Gheistskull",
+        "normalized": "gheistskull"
+      },
+      {
+        "displayed": "1fbe-5db4-354a-3217",
+        "normalized": "1fbe-5db4-354a-3217"
+      },
+      {
+        "displayed": "Endurant",
+        "normalized": "endurant"
+      },
+      {
+        "displayed": "e34f-8740-7966-3b67",
+        "normalized": "e34f-8740-7966-3b67"
+      },
+      {
+        "displayed": "Gunner Veteran",
+        "normalized": "gunner_veteran"
+      },
+      {
+        "displayed": "VETERAN GUARDSMAN",
+        "normalized": "veteran_guardsman"
+      },
+      {
+        "displayed": "01e7-587a-3419-cfb8",
+        "normalized": "01e7-587a-3419-cfb8"
+      },
+      {
+        "displayed": "Bruiser Veteran",
+        "normalized": "bruiser_veteran"
+      },
+      {
+        "displayed": "4cdc-b042-7bd7-86bd",
+        "normalized": "4cdc-b042-7bd7-86bd"
+      },
+      {
+        "displayed": "Zealot Veteran",
+        "normalized": "zealot_veteran"
+      },
+      {
+        "displayed": "5734-1fa5-bea4-a687",
+        "normalized": "5734-1fa5-bea4-a687"
+      },
+      {
+        "displayed": "Medic Veteran",
+        "normalized": "medic_veteran"
+      },
+      {
+        "displayed": "11c1-dead-d353-6588",
+        "normalized": "11c1-dead-d353-6588"
+      },
+      {
+        "displayed": "Trooper Veteran",
+        "normalized": "trooper_veteran"
+      },
+      {
+        "displayed": "7ae2-033d-efdb-53fa",
+        "normalized": "7ae2-033d-efdb-53fa"
+      },
+      {
+        "displayed": "Sniper Veteran",
+        "normalized": "sniper_veteran"
+      },
+      {
+        "displayed": "6524-cdc0-63ae-d8bc",
+        "normalized": "6524-cdc0-63ae-d8bc"
+      },
+      {
+        "displayed": "Confidant Veteran",
+        "normalized": "confidant_veteran"
+      },
+      {
+        "displayed": "Comms Veteran",
+        "normalized": "comms_veteran"
+      },
+      {
+        "displayed": "d9fc-e8e2-90e9-dcbd",
+        "normalized": "d9fc-e8e2-90e9-dcbd"
+      },
+      {
+        "displayed": "d3dc-12a0-7113-8760",
+        "normalized": "d3dc-12a0-7113-8760"
+      },
+      {
+        "displayed": "Demolition Veteran",
+        "normalized": "demolition_veteran"
+      },
+      {
+        "displayed": "3034-fe96-a136-0511",
+        "normalized": "3034-fe96-a136-0511"
+      },
+      {
+        "displayed": "Hardened Veteran",
+        "normalized": "hardened_veteran"
+      },
+      {
+        "displayed": "6546-e1c2-941c-f91a",
+        "normalized": "6546-e1c2-941c-f91a"
+      },
+      {
+        "displayed": "Spotter Veteran",
+        "normalized": "spotter_veteran"
+      },
+      {
+        "displayed": "595e-e2e6-82b4-f325",
+        "normalized": "595e-e2e6-82b4-f325"
+      },
+      {
+        "displayed": "Sergeant Veteran",
+        "normalized": "sergeant_veteran"
+      },
+      {
+        "displayed": "0b45-339a-ae36-ea7e",
+        "normalized": "0b45-339a-ae36-ea7e"
+      },
+      {
+        "displayed": "Archsybarite",
+        "normalized": "archsybarite"
+      },
+      {
+        "displayed": "HAND OF THE ARCHON",
+        "normalized": "hand_of_the_archon"
+      },
+      {
+        "displayed": "Kabalite",
+        "normalized": "kabalite"
+      },
+      {
+        "displayed": "2425-8ab2-8942-4ba9",
+        "normalized": "2425-8ab2-8942-4ba9"
+      },
+      {
+        "displayed": "Agent",
+        "normalized": "agent"
+      },
+      {
+        "displayed": "367e-0da0-f2b1-efc1",
+        "normalized": "367e-0da0-f2b1-efc1"
+      },
+      {
+        "displayed": "d418-f9ac-6f8f-4726",
+        "normalized": "d418-f9ac-6f8f-4726"
+      },
+      {
+        "displayed": "cdf7-2e9a-1960-3427",
+        "normalized": "cdf7-2e9a-1960-3427"
+      },
+      {
+        "displayed": "Skysplinter Assassin",
+        "normalized": "skysplinter_assassin"
+      },
+      {
+        "displayed": "89a6-8d6c-c7d0-8d34",
+        "normalized": "89a6-8d6c-c7d0-8d34"
+      },
+      {
+        "displayed": "Disciple of Yaelindra",
+        "normalized": "disciple_of_yaelindra"
+      },
+      {
+        "displayed": "ee61-9bd1-35c9-a89c",
+        "normalized": "ee61-9bd1-35c9-a89c"
+      },
+      {
+        "displayed": "b2c2-3f92-28ad-d8fa",
+        "normalized": "b2c2-3f92-28ad-d8fa"
+      },
+      {
+        "displayed": "f4a6-9bc4-dc3e-8480",
+        "normalized": "f4a6-9bc4-dc3e-8480"
+      },
+      {
+        "displayed": "c68c-8947-7e17-5bc7",
+        "normalized": "c68c-8947-7e17-5bc7"
+      },
+      {
+        "displayed": "c749-0908-bb9c-d3cf",
+        "normalized": "c749-0908-bb9c-d3cf"
+      },
+      {
+        "displayed": "721c-77a2-04df-960a",
+        "normalized": "721c-77a2-04df-960a"
+      },
+      {
+        "displayed": "554f-d062-c03e-a3b2",
+        "normalized": "554f-d062-c03e-a3b2"
+      },
+      {
+        "displayed": "Elixicant",
+        "normalized": "elixicant"
+      },
+      {
+        "displayed": "c688-460c-3be8-b15e",
+        "normalized": "c688-460c-3be8-b15e"
+      },
+      {
+        "displayed": "Flayer",
+        "normalized": "flayer"
+      },
+      {
+        "displayed": "14a3-39ed-520c-d3c1",
+        "normalized": "14a3-39ed-520c-d3c1"
+      },
+      {
+        "displayed": "Crimson Dueliist",
+        "normalized": "crimson_dueliist"
+      },
+      {
+        "displayed": "a675-0156-6a2b-d469",
+        "normalized": "a675-0156-6a2b-d469"
+      },
+      {
+        "displayed": "Incursor",
+        "normalized": "incursor"
+      },
+      {
+        "displayed": "Marksman",
+        "normalized": "marksman"
+      },
+      {
+        "displayed": "PHOBOS STRIKE TEAM",
+        "normalized": "phobos_strike_team"
+      },
+      {
+        "displayed": "Primaris",
+        "normalized": "primaris"
+      },
+      {
+        "displayed": "b7ea-2724-6a01-77fb",
+        "normalized": "b7ea-2724-6a01-77fb"
+      },
+      {
+        "displayed": "Voxbreaker",
+        "normalized": "voxbreaker"
+      },
+      {
+        "displayed": "9543-ce64-a1d2-e71b",
+        "normalized": "9543-ce64-a1d2-e71b"
+      },
+      {
+        "displayed": "Kasrkin Vox-Trooper",
+        "normalized": "kasrkin_vox-trooper"
+      },
+      {
+        "displayed": "ec5f-64f5-6005-337a",
+        "normalized": "ec5f-64f5-6005-337a"
+      },
+      {
+        "displayed": "b661-2d99-d3a6-7f04",
+        "normalized": "b661-2d99-d3a6-7f04"
+      },
+      {
+        "displayed": "d488-3482-b444-f605",
+        "normalized": "d488-3482-b444-f605"
+      },
+      {
+        "displayed": "59af-931a-e580-b41b",
+        "normalized": "59af-931a-e580-b41b"
+      },
+      {
+        "displayed": "56a6-6f5e-cf06-b09d",
+        "normalized": "56a6-6f5e-cf06-b09d"
+      },
+      {
+        "displayed": "062e-1637-e83c-a349",
+        "normalized": "062e-1637-e83c-a349"
+      },
+      {
+        "displayed": "4f58-492e-8e75-9d94",
+        "normalized": "4f58-492e-8e75-9d94"
+      },
+      {
+        "displayed": "aa64-f0d2-be73-b82f",
+        "normalized": "aa64-f0d2-be73-b82f"
+      },
+      {
+        "displayed": "Kasrkin Recon-Trooper",
+        "normalized": "kasrkin_recon-trooper"
+      },
+      {
+        "displayed": "9eae-3518-c762-88cb",
+        "normalized": "9eae-3518-c762-88cb"
+      },
+      {
+        "displayed": "f982-3a31-fe7b-7c9e",
+        "normalized": "f982-3a31-fe7b-7c9e"
+      },
+      {
+        "displayed": "Kasrkin Combat Medic",
+        "normalized": "kasrkin_combat_medic"
+      },
+      {
+        "displayed": "a33a-bf7d-0334-f958",
+        "normalized": "a33a-bf7d-0334-f958"
+      },
+      {
+        "displayed": "2943-91c7-3051-0edf",
+        "normalized": "2943-91c7-3051-0edf"
+      },
+      {
+        "displayed": "Reiver",
+        "normalized": "reiver"
+      },
+      {
+        "displayed": "ab6e-ae71-855e-555e",
+        "normalized": "ab6e-ae71-855e-555e"
+      },
+      {
+        "displayed": "c409-ebce-92bd-10e1",
+        "normalized": "c409-ebce-92bd-10e1"
+      },
+      {
+        "displayed": "Veteran",
+        "normalized": "veteran"
+      },
+      {
+        "displayed": "2d82-cc3b-370f-d7a9",
+        "normalized": "2d82-cc3b-370f-d7a9"
+      },
+      {
+        "displayed": "3142-e327-a53d-c2b9",
+        "normalized": "3142-e327-a53d-c2b9"
+      },
+      {
+        "displayed": "1594-e531-4e92-9ed9",
+        "normalized": "1594-e531-4e92-9ed9"
+      },
+      {
+        "displayed": "cfff-0462-e7d2-f1f2",
+        "normalized": "cfff-0462-e7d2-f1f2"
+      },
+      {
+        "displayed": "Commsman",
+        "normalized": "commsman"
+      },
+      {
+        "displayed": "CHAOS CULT",
+        "normalized": "chaos_cult"
+      },
+      {
+        "displayed": "Devotee",
+        "normalized": "devotee"
+      },
+      {
+        "displayed": "m0l5ykrjrkpkk3e7sl",
+        "normalized": "m0l5ykrjrkpkk3e7sl"
+      },
+      {
+        "displayed": "Blessed Blade",
+        "normalized": "blessed_blade"
+      },
+      {
+        "displayed": "Dark Commune",
+        "normalized": "dark_commune"
+      },
+      {
+        "displayed": "m0l5ykq4naezl0f20hl",
+        "normalized": "m0l5ykq4naezl0f20hl"
+      },
+      {
+        "displayed": "m0l61ol6prmeycb2xwf",
+        "normalized": "m0l61ol6prmeycb2xwf"
+      },
+      {
+        "displayed": "Torment",
+        "normalized": "torment"
+      },
+      {
+        "displayed": "9968-da7b-9f9c-0b21",
+        "normalized": "9968-da7b-9f9c-0b21"
+      },
+      {
+        "displayed": "Adeptus Arbites",
+        "normalized": "adeptus_arbites"
+      },
+      {
+        "displayed": "Arbites",
+        "normalized": "arbites"
+      },
+      {
+        "displayed": "EXACTION SQUAD",
+        "normalized": "exaction_squad"
+      },
+      {
+        "displayed": "Malocator",
+        "normalized": "malocator"
+      },
+      {
+        "displayed": "3a90-769b-6c10-764e",
+        "normalized": "3a90-769b-6c10-764e"
+      },
+      {
+        "displayed": "Leashmaster",
+        "normalized": "leashmaster"
+      },
+      {
+        "displayed": "5542-c336-904b-95ec",
+        "normalized": "5542-c336-904b-95ec"
+      },
+      {
+        "displayed": "Revelatum",
+        "normalized": "revelatum"
+      },
+      {
+        "displayed": "8ddc-e378-262c-cab8",
+        "normalized": "8ddc-e378-262c-cab8"
+      },
+      {
+        "displayed": "R-VR Cyber Mastiff",
+        "normalized": "r-vr_cyber_mastiff"
+      },
+      {
+        "displayed": "ff8d-7b73-0aae-bbed",
+        "normalized": "ff8d-7b73-0aae-bbed"
+      },
+      {
+        "displayed": "Vox-signifier",
+        "normalized": "vox-signifier"
+      },
+      {
+        "displayed": "cb49-1c7d-4d17-6f2b",
+        "normalized": "cb49-1c7d-4d17-6f2b"
+      },
+      {
+        "displayed": "Subductor",
+        "normalized": "subductor"
+      },
+      {
+        "displayed": "4c30-e0ce-c2ac-007d",
+        "normalized": "4c30-e0ce-c2ac-007d"
+      },
+      {
+        "displayed": "m0l61nhm09pu91c9djru",
+        "normalized": "m0l61nhm09pu91c9djru"
+      },
+      {
+        "displayed": "Mutant",
+        "normalized": "mutant"
+      },
+      {
+        "displayed": "m0l61oqiir8rs8b4ka",
+        "normalized": "m0l61oqiir8rs8b4ka"
+      },
+      {
+        "displayed": "m0l61o0iw1x4m7obke",
+        "normalized": "m0l61o0iw1x4m7obke"
+      },
+      {
+        "displayed": "m0l5yks35glef1mznf6",
+        "normalized": "m0l5yks35glef1mznf6"
+      },
+      {
+        "displayed": "m0l5ykrs8b4jqle5b0h",
+        "normalized": "m0l5ykrs8b4jqle5b0h"
+      },
+      {
+        "displayed": "m0l5ykt26p9g4vo55l7",
+        "normalized": "m0l5ykt26p9g4vo55l7"
+      },
+      {
+        "displayed": "Mindwitch",
+        "normalized": "mindwitch"
+      },
+      {
+        "displayed": "Iconarch",
+        "normalized": "iconarch"
+      },
+      {
+        "displayed": "m0l5ykssicmtxxkvjvm",
+        "normalized": "m0l5ykssicmtxxkvjvm"
+      },
+      {
+        "displayed": "Cult Demagogue",
+        "normalized": "cult_demagogue"
+      },
+      {
+        "displayed": "m0l5ykpid9a8w8vbda",
+        "normalized": "m0l5ykpid9a8w8vbda"
+      },
+      {
+        "displayed": "m0l61ovufx90swid6a",
+        "normalized": "m0l61ovufx90swid6a"
+      },
+      {
+        "displayed": "m0l61nr6yfe7126uri",
+        "normalized": "m0l61nr6yfe7126uri"
+      },
+      {
+        "displayed": "m0l61n82mzxtj87in2",
+        "normalized": "m0l61n82mzxtj87in2"
+      },
+      {
+        "displayed": "m0l5yksltnryz0of6d",
+        "normalized": "m0l5yksltnryz0of6d"
+      },
+      {
+        "displayed": "m0l5yksbc2ro0i5b6qt",
+        "normalized": "m0l5yksbc2ro0i5b6qt"
+      },
+      {
+        "displayed": "m0l5ykrbm14a1pjs74",
+        "normalized": "m0l5ykrbm14a1pjs74"
+      },
+      {
+        "displayed": "m0l5ykr3iko0qkp3vu",
+        "normalized": "m0l5ykr3iko0qkp3vu"
+      },
+      {
+        "displayed": "m0l5ykquofdb2us4v6r",
+        "normalized": "m0l5ykquofdb2us4v6r"
+      },
+      {
+        "displayed": "m0l5ykqi8p57kraxyen",
+        "normalized": "m0l5ykqi8p57kraxyen"
+      },
+      {
+        "displayed": "m0l5ykpvutbb0efkq39",
+        "normalized": "m0l5ykpvutbb0efkq39"
+      },
+      {
+        "displayed": "m0l61o8i9lk0zidkjr",
+        "normalized": "m0l61o8i9lk0zidkjr"
+      },
+      {
+        "displayed": "66f0-28ed-c166-3aaa",
+        "normalized": "66f0-28ed-c166-3aaa"
+      },
+      {
+        "displayed": "Proctor-Exactant",
+        "normalized": "proctor-exactant"
+      },
+      {
+        "displayed": "bf39-d9ec-1ad0-4c3a",
+        "normalized": "bf39-d9ec-1ad0-4c3a"
+      },
+      {
+        "displayed": "f717-7eff-2b05-5659",
+        "normalized": "f717-7eff-2b05-5659"
+      },
+      {
+        "displayed": "3b2b-e173-f0ba-a162",
+        "normalized": "3b2b-e173-f0ba-a162"
+      },
+      {
+        "displayed": "8cfb-7b31-5c72-c919",
+        "normalized": "8cfb-7b31-5c72-c919"
+      },
+      {
+        "displayed": "0965-cab2-6b1a-b870",
+        "normalized": "0965-cab2-6b1a-b870"
+      },
+      {
+        "displayed": "909c-7762-4021-5595",
+        "normalized": "909c-7762-4021-5595"
+      },
+      {
+        "displayed": "_ARBeq_infi",
+        "normalized": "_arbeq_infi"
+      },
+      {
+        "displayed": "_Bheta_Decima_Op1",
+        "normalized": "_bheta_decima_op1"
+      },
+      {
+        "displayed": "98fe-e41f-894b-55f5",
+        "normalized": "98fe-e41f-894b-55f5"
+      },
+      {
+        "displayed": "MissionDealt",
+        "normalized": "missiondealt"
+      },
+      {
+        "displayed": "BLADES OF KHAINE",
+        "normalized": "blades_of_khaine"
+      },
+      {
+        "displayed": "d171-32c9-0730-b5dc",
+        "normalized": "d171-32c9-0730-b5dc"
+      },
+      {
+        "displayed": "Striking Scorpion",
+        "normalized": "striking_scorpion"
+      },
+      {
+        "displayed": "3aee-6012-d7b5-c51a",
+        "normalized": "3aee-6012-d7b5-c51a"
+      },
+      {
+        "displayed": "42a3-9888-99df-6fb7",
+        "normalized": "42a3-9888-99df-6fb7"
+      },
+      {
+        "displayed": "0b51-aa31-b65d-06d1",
+        "normalized": "0b51-aa31-b65d-06d1"
+      },
+      {
+        "displayed": "6c9b-a9f5-b753-bf48",
+        "normalized": "6c9b-a9f5-b753-bf48"
+      },
+      {
+        "displayed": "87c0-7484-84ee-a55c",
+        "normalized": "87c0-7484-84ee-a55c"
+      },
+      {
+        "displayed": "93be-9c4c-933f-062f",
+        "normalized": "93be-9c4c-933f-062f"
+      },
+      {
+        "displayed": "92a9-b1f7-a273-8f5c",
+        "normalized": "92a9-b1f7-a273-8f5c"
+      },
+      {
+        "displayed": "0aa2-4007-4684-e639",
+        "normalized": "0aa2-4007-4684-e639"
+      },
+      {
+        "displayed": "Howling Banshee",
+        "normalized": "howling_banshee"
+      },
+      {
+        "displayed": "7a6a-8cb1-8baf-b1f8",
+        "normalized": "7a6a-8cb1-8baf-b1f8"
+      },
+      {
+        "displayed": "59a3-3fa3-5824-4df2",
+        "normalized": "59a3-3fa3-5824-4df2"
+      },
+      {
+        "displayed": "ea3c-74c9-232e-08a8",
+        "normalized": "ea3c-74c9-232e-08a8"
+      },
+      {
+        "displayed": "cca5-5475-d81e-bfef",
+        "normalized": "cca5-5475-d81e-bfef"
+      },
+      {
+        "displayed": "277c-46d4-fe03-67fa",
+        "normalized": "277c-46d4-fe03-67fa"
+      },
+      {
+        "displayed": "1c7c-ed7c-1d79-be45",
+        "normalized": "1c7c-ed7c-1d79-be45"
+      },
+      {
+        "displayed": "280e-69c4-c525-26d9",
+        "normalized": "280e-69c4-c525-26d9"
+      },
+      {
+        "displayed": "84ab-87ea-87db-92ec",
+        "normalized": "84ab-87ea-87db-92ec"
+      },
+      {
+        "displayed": "677b-634d-75fc-927c",
+        "normalized": "677b-634d-75fc-927c"
+      },
+      {
+        "displayed": "974c-f53a-234a-930f",
+        "normalized": "974c-f53a-234a-930f"
+      },
+      {
+        "displayed": "602b-7f12-5848-7037",
+        "normalized": "602b-7f12-5848-7037"
+      },
+      {
+        "displayed": "4e9a-fa91-3ec5-41f4",
+        "normalized": "4e9a-fa91-3ec5-41f4"
+      },
+      {
+        "displayed": "6705-f025-998e-7e2b",
+        "normalized": "6705-f025-998e-7e2b"
+      },
+      {
+        "displayed": "_Bheta_Decima_Op6",
+        "normalized": "_bheta_decima_op6"
+      },
+      {
+        "displayed": "_Volkus_Op5",
+        "normalized": "_volkus_op5"
+      },
+      {
+        "displayed": "_Moroch",
+        "normalized": "_moroch"
+      },
+      {
+        "displayed": "6dda-9c8f-07ad-34b7",
+        "normalized": "6dda-9c8f-07ad-34b7"
+      },
+      {
+        "displayed": "_Volkus_Op4",
+        "normalized": "_volkus_op4"
+      },
+      {
+        "displayed": "_Volkus_Op3",
+        "normalized": "_volkus_op3"
+      },
+      {
+        "displayed": "_Volkus_Op2",
+        "normalized": "_volkus_op2"
+      },
+      {
+        "displayed": "_Volkus_Op1",
+        "normalized": "_volkus_op1"
+      },
+      {
+        "displayed": "_Tag_To_Search_For",
+        "normalized": "_tag_to_search_for"
+      },
+      {
+        "displayed": "0b63-793d-178d-224b",
+        "normalized": "0b63-793d-178d-224b"
+      },
+      {
+        "displayed": "d326-4d95-bbfc-ff29",
+        "normalized": "d326-4d95-bbfc-ff29"
+      },
+      {
+        "displayed": "KT24Token",
+        "normalized": "kt24token"
+      },
+      {
+        "displayed": "2310-fc88-7f5b-d5a3",
+        "normalized": "2310-fc88-7f5b-d5a3"
+      },
+      {
+        "displayed": "30f0-d028-331f-614f",
+        "normalized": "30f0-d028-331f-614f"
+      },
+      {
+        "displayed": "d900-01cc-794e-c709",
+        "normalized": "d900-01cc-794e-c709"
+      },
+      {
+        "displayed": "88e4-f4c7-d1b3-5d4d",
+        "normalized": "88e4-f4c7-d1b3-5d4d"
+      },
+      {
+        "displayed": "ee2e-1c8c-2e39-c197",
+        "normalized": "ee2e-1c8c-2e39-c197"
+      },
+      {
+        "displayed": "_Volkus_Op6",
+        "normalized": "_volkus_op6"
+      },
+      {
+        "displayed": "_Volkus_Builder",
+        "normalized": "_volkus_builder"
+      },
+      {
+        "displayed": "_Generic Open_Op1",
+        "normalized": "_generic_open_op1"
+      },
+      {
+        "displayed": "_Generic Open_Op2",
+        "normalized": "_generic_open_op2"
+      },
+      {
+        "displayed": "_Generic Open_Op3",
+        "normalized": "_generic_open_op3"
+      },
+      {
+        "displayed": "_Generic Open_Op4",
+        "normalized": "_generic_open_op4"
+      },
+      {
+        "displayed": "_Generic Open_Op5",
+        "normalized": "_generic_open_op5"
+      },
+      {
+        "displayed": "_Generic Open_Op6",
+        "normalized": "_generic_open_op6"
+      },
+      {
+        "displayed": "TacOp",
+        "normalized": "tacop"
+      },
+      {
+        "displayed": "_PHOeq_infi",
+        "normalized": "_phoeq_infi"
+      },
+      {
+        "displayed": "_Corsair_Voidscarred",
+        "normalized": "_corsair_voidscarred"
+      },
+      {
+        "displayed": "KT_Ploy_Holders",
+        "normalized": "kt_ploy_holders"
+      },
+      {
+        "displayed": "_Octarius",
+        "normalized": "_octarius"
+      },
+      {
+        "displayed": "rczsgqg",
+        "normalized": "rczsgqg"
+      },
+      {
+        "displayed": "Vox-Trooper",
+        "normalized": "vox-trooper"
+      },
+      {
+        "displayed": "Shas'vre",
+        "normalized": "shas'vre"
+      },
+      {
+        "displayed": "T'au Empire",
+        "normalized": "t'au_empire"
+      },
+      {
+        "displayed": "wvwcfgt",
+        "normalized": "wvwcfgt"
+      },
+      {
+        "displayed": "XV26 STEALTH BATTLESUIT",
+        "normalized": "xv26_stealth_battlesuit"
+      },
+      {
+        "displayed": "ddl3qjq",
+        "normalized": "ddl3qjq"
+      },
+      {
+        "displayed": "Gunner or Sharpshooter",
+        "normalized": "gunner_or_sharpshooter"
+      },
+      {
+        "displayed": "Lodestar",
+        "normalized": "lodestar"
+      },
+      {
+        "displayed": "plu47u7",
+        "normalized": "plu47u7"
+      },
+      {
+        "displayed": "secondaryCard",
+        "normalized": "secondarycard"
+      },
+      {
+        "displayed": "deploymentCard",
+        "normalized": "deploymentcard"
+      },
+      {
+        "displayed": "challengerCard",
+        "normalized": "challengercard"
+      },
+      {
+        "displayed": "Cryptek",
+        "normalized": "cryptek"
+      },
+      {
+        "displayed": "HIEROTEK CIRCLE",
+        "normalized": "hierotek_circle"
+      },
+      {
+        "displayed": "mey4iw2vtuegtwv2rha",
+        "normalized": "mey4iw2vtuegtwv2rha"
+      },
+      {
+        "displayed": "Necron",
+        "normalized": "necron"
+      },
+      {
+        "displayed": "Technomancer",
+        "normalized": "technomancer"
+      },
+      {
+        "displayed": "Despotek",
+        "normalized": "despotek"
+      },
+      {
+        "displayed": "Immortal",
+        "normalized": "immortal"
+      },
+      {
+        "displayed": "mey4j97khhftvm0xrsq",
+        "normalized": "mey4j97khhftvm0xrsq"
+      },
+      {
+        "displayed": "mey4j93vdr54ey7upcd",
+        "normalized": "mey4j93vdr54ey7upcd"
+      },
+      {
+        "displayed": "Accelerator",
+        "normalized": "accelerator"
+      },
+      {
+        "displayed": "mey4iym3krsp0ur0lp8",
+        "normalized": "mey4iym3krsp0ur0lp8"
+      },
+      {
+        "displayed": "Plasmacyte",
+        "normalized": "plasmacyte"
+      },
+      {
+        "displayed": "mey4j4ck8nu7zd9u78",
+        "normalized": "mey4j4ck8nu7zd9u78"
+      },
+      {
+        "displayed": "Reanimator",
+        "normalized": "reanimator"
+      },
+      {
+        "displayed": "mey4j3yoqsli1yyj417",
+        "normalized": "mey4j3yoqsli1yyj417"
+      },
+      {
+        "displayed": "mey4iz7dba85vxkms8c",
+        "normalized": "mey4iz7dba85vxkms8c"
+      },
+      {
+        "displayed": "htorr1",
+        "normalized": "htorr1"
+      },
+      {
+        "displayed": "69715510a005457b49fd7075",
+        "normalized": "69715510a005457b49fd7075"
+      },
+      {
+        "displayed": "Burrowers",
+        "normalized": "burrowers"
+      },
+      {
+        "displayed": "Character",
+        "normalized": "character"
+      },
+      {
+        "displayed": "Faction: Tyranids",
+        "normalized": "faction:_tyranids"
+      },
+      {
+        "displayed": "Great Devourer",
+        "normalized": "great_devourer"
+      },
+      {
+        "displayed": "Hyperadapted Raveners",
+        "normalized": "hyperadapted_raveners"
+      },
+      {
+        "displayed": "Infantry",
+        "normalized": "infantry"
+      },
+      {
+        "displayed": "q5csx6b",
+        "normalized": "q5csx6b"
+      },
+      {
+        "displayed": "Vanguard Invader",
+        "normalized": "vanguard_invader"
+      },
+      {
+        "displayed": "ay4thw6",
+        "normalized": "ay4thw6"
+      },
+      {
+        "displayed": "69715512a005457b49fd707a",
+        "normalized": "69715512a005457b49fd707a"
+      },
+      {
+        "displayed": "WeaponModel",
+        "normalized": "weaponmodel"
+      },
+      {
+        "displayed": "upgqwja",
+        "normalized": "upgqwja"
+      }
+    ]
+  },
+  "Turns": {
+    "Enable": false,
+    "Type": 1,
+    "TurnOrder": [
+      "Red",
+      "Blue"
+    ],
+    "Reverse": false,
+    "SkipEmpty": false,
+    "DisableInteractions": false,
+    "PassTurns": true,
+    "TurnColor": ""
+  },
+  "DecalPallet": [],
+  "CustomUIAssets": [
+    {
+      "Type": 0,
+      "Name": "initiativeOff",
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/1750182972143392609/48283228AFC1906F43CD6D39A402B3DC29EAE371/"
+    },
+    {
+      "Type": 0,
+      "Name": "initiativeOn",
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/1750182972143393402/5BE39A862B6C1F71A467892906E21C0CD54C257E/"
+    },
+    {
+      "Type": 0,
+      "Name": "primaryOff",
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/1750182972137668614/C48602D532FC7C6974B12FDD1B8C27CC3A9F9C32/"
+    },
+    {
+      "Type": 0,
+      "Name": "primaryOn",
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/1750182972137669364/44345B2435C44D87BB88DB3673E25ED6C4CB7F92/"
+    }
+  ]
+}

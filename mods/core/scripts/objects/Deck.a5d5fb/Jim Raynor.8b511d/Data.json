@@ -1,0 +1,55 @@
+{
+  "GUID": "8b511d",
+  "Name": "CardCustom",
+  "Transform": {
+    "posX": 40.57118,
+    "posY": 0.961304843,
+    "posZ": -66.33839,
+    "rotX": 359.987823,
+    "rotY": 179.989563,
+    "rotZ": 359.965363,
+    "scaleX": 1.0,
+    "scaleY": 1.0,
+    "scaleZ": 1.0
+  },
+  "Nickname": "Jim Raynor",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 150300,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "1503": {
+      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/13673894480847068592/4AAC2F015B46A17F5B8487703811BC54E85A834E/",
+      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/13673894480847068592/4AAC2F015B46A17F5B8487703811BC54E85A834E/",
+      "NumWidth": 1,
+      "NumHeight": 1,
+      "BackIsHidden": true,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}
