@@ -747,18 +747,28 @@ function getDice(color)
 end
 
 function customDice(obj, player, alt)
-	local dice = getDice()
+	-- Custom dice most likely don't have our Dice tag, so request all objects in zone
+	local objs = ZONES[currentMat].getObjects(true)
+	local dice = {}
+	for _, obj in pairs(objs) do
+		if obj.tag == "Dice" then
+			table.insert(dice, obj)
+		end
+	end
 	if #dice ~= 1 then
 		printToColor("To set custom die template, place a single die on the mat", player, "Yellow")
 		return
 	end
 
-	die = dice[1]
-	color = die.getColorTint()
-	img = die.getCustomObject()["image"]
+	local die = dice[1]
+	-- Add our tag to make rolls work
+	die.addTag("Dice")
+
+	local color = die.getColorTint()
+	local img = die.getCustomObject()["image"]
 	customDiceName = die.getName()
 	modifyMenu(color, img)
-	message = (img ~= nil) and "You have set a custom die!" or "You have set a custom colour!"
+	local message = (img ~= nil) and "You have set a custom die!" or "You have set a custom colour!"
 	printToColor(message, player, "Yellow")
 end
 
