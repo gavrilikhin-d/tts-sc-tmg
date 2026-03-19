@@ -311,7 +311,7 @@ function hasGuid(t, g)
 end
 
 function getFaces(dice)
-    return dice.name == "BCB-D3" and 3 or 6
+	return dice.name == "BCB-D3" and 3 or 6
 end
 
 -- Forbid objects other than dice from entering the dice roller
@@ -348,46 +348,46 @@ function takeDiceOut()
 		printToAll('Warning - "step" can\'t be lower than 1. Restored default configuration.', { 0.8, 0.5, 0 })
 	end
 
-    local position = objectToPlaceDiceOn.getPosition()
+	local position = objectToPlaceDiceOn.getPosition()
 	local rotation = objectToPlaceDiceOn.getRotation()
-	local Rows = { 0, 0, 0, 0, 0, 0}
+	local Rows = { 0, 0, 0, 0, 0, 0 }
 
 	local objs = self.getObjects()
 	for _, die in pairs(objs) do
-        local roll = math.random(getFaces(die))
-        resultsTable[roll] = resultsTable[roll] + 1
-        resultsTotal[roll] = resultsTotal[roll] + 1
-        Rows[roll] = Rows[roll] + 1
+		local roll = math.random(getFaces(die))
+		resultsTable[roll] = resultsTable[roll] + 1
+		resultsTotal[roll] = resultsTotal[roll] + 1
+		Rows[roll] = Rows[roll] + 1
 
-        local params = {}
-        params.guid = die.guid
+		local params = {}
+		params.guid = die.guid
 
-        local newXPos = 0 - 20.4 + (Rows[roll] * data.Step)
-        local newZPos = -3.17 + ((((roll - 1) % 6) + 1) * data.Step)
+		local newXPos = 0 - 20.4 + (Rows[roll] * data.Step)
+		local newZPos = -3.17 + ((((roll - 1) % 6) + 1) * data.Step)
 
-        params.position = {
-            position.x + (newXPos * math.cos((180 + rotation.y) * 0.0174532)) - (newZPos * math.sin(
-                (180 + rotation.y) * 0.0174532
-            )),
-            position.y + 2,
-            position.z + (newXPos * math.sin(rotation.y * 0.0174532)) + (newZPos * math.cos(
-                (0 + rotation.y) * 0.0174532
-            )),
-        }
-        params.rotation = rotation
-        params.callback = "setValueCallback"
-        params.params = { roll }
-        params.smooth = false
-        if data.SmoothDice == "yes" then
-            params.smooth = true
-        end
+		params.position = {
+			position.x + (newXPos * math.cos((180 + rotation.y) * 0.0174532)) - (newZPos * math.sin(
+				(180 + rotation.y) * 0.0174532
+			)),
+			position.y + 2,
+			position.z + (newXPos * math.sin(rotation.y * 0.0174532)) + (newZPos * math.cos(
+				(0 + rotation.y) * 0.0174532
+			)),
+		}
+		params.rotation = rotation
+		params.callback = "setValueCallback"
+		params.params = { roll }
+		params.smooth = false
+		if data.SmoothDice == "yes" then
+			params.smooth = true
+		end
 
-        self.takeObject(params)
+		self.takeObject(params)
 	end
 
 	printResultsTable()
-    
-    objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
+
+	objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
 end
 
 function sum(t)
