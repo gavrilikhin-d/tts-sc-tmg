@@ -57,6 +57,8 @@ CONSTANTS = {
 	},
 }
 
+MODEL_SAVER = getObjectFromGUID("17767a")
+
 ---------------
 -- Rendering --
 ---------------
@@ -156,7 +158,11 @@ function updateTotal(colorPrefix)
 	return callback
 end
 
-toggleRound = counter("round", { min = 1 })
+function saveModels()
+	MODEL_SAVER.call("saveAll")
+end
+
+toggleRound = counter("round", { min = 1, onChange = saveModels })
 toggleAvailableSupply = counter("availableSupply")
 toggleRedSupply = counter("redSupply")
 toggleBlueSupply = counter("blueSupply")
