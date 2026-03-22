@@ -13,6 +13,12 @@ valueToCounter = { 0, 0, 0, 0, 0, 0 }
 totalDice = 0
 diceSum = 0
 
+function clearStats() 
+	valueToCounter = { 0, 0, 0, 0, 0, 0 }
+	totalDice = 0
+	diceSum = 0
+end
+
 local currentMat = getColorFromObjectPosition(self)
 
 local oppMatGUID = Global.getVar(getOppositeColor(currentMat) .. "CustomDiceMat_GUID")
@@ -217,7 +223,7 @@ clearDiceBtntooltip = "LMB Delete this row\nRMB Delete this row and lowers/upper
 clearDiceBtn = {
 	label = clearDiceBtnLabel,
 	tooltip = clearDiceBtntooltip,
-	click_function = "filledInLater",
+	click_function = "clearDiceAll",
 	function_owner = self,
 	position = { -5.8, Yoffset, -0.85 },
 	rotation = { 0, 0, 0 },
@@ -396,9 +402,7 @@ function clearMat()
 		d.destroy()
 	end
 
-	valueToCounter = { 0, 0, 0, 0, 0, 0 }
-	totalDice = 0
-	diceSum = 0
+	clearStats()
 end
 
 function importOpposDice(obj, player, alt)
@@ -903,6 +907,8 @@ function clearDiceAll(obj, color, alt)
 		return
 	end
 	clearDiceX(6, true, color)
+	clearStats()
+	renderStats()
 end
 
 function clearDice1(obj, color, alt)
