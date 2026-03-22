@@ -410,9 +410,36 @@ maxPreviousRolls = 10
 rollerGUID = Global.getVar(currentMat .. "CustomDiceRoller_GUID")
 roller = getObjectFromGUID(rollerGUID)
 
+function addOnDestroyCallbackToDie(die)
+	-- onCollisionExit isn't called when die is manually destroyed by player.
+	-- Also for some reason setLuaScript("") doesn't clear added script,
+	-- so there is a check for tag
+	local script = "\
+	function onDestroy()\
+		if self.hasTag('" .. currentMat .. "') then\
+			local matGUID = Global.getVar('" .. currentMat .. "CustomDiceMat_GUID')\
+			local mat = getObjectFromGUID(matGUID)\
+			mat.call('onCollisionExit', { collision_object = self })\
+		end\
+	end\
+	"
+
+	die.setLuaScript(script)
+	die.addTag(currentMat)
+	-- Remove opposite tag (useful when copying dice from other mat)
+	die.removeTag(getOppositeColor(currentMat))
+end
+
+function destroyDie(d)
+	-- Don't invoke onDestroy script to avoid double change of stats 
+	d.setLuaScript("")
+	d.removeTag(currentMat)
+	d.destroy()
+end
+
 function clearMat()
 	for _, d in ipairs(getDice()) do
-		d.destroy()
+		destroyDie(d)
 	end
 
 	clearStats()
@@ -421,7 +448,8 @@ end
 function importOpposDice(obj, player, alt)
 	clearMat()
 
-	local toImport = getDice(getOppositeColor(currentMat))
+	local oppositeColor = getOppositeColor(currentMat)
+	local toImport = getDice(oppositeColor)
 
 	if #toImport == 0 then
 		printToColor("No dice found on the opposite mat.", player, "Yellow")
@@ -438,7 +466,9 @@ function importOpposDice(obj, player, alt)
 		local dp = die.getPosition()
 		local relX, relY, relZ = -(dp.x - cb.x), dp.y - cb.y, -(dp.z - cb.z)
 		local nx, ny, nz = mc.x + relX, mc.y + relY, mc.z + relZ
-		die.clone({ position = { nx, ny, nz }, snap_to_grid = false })
+		local newDie = die.clone({ position = { nx, ny, nz }, snap_to_grid = false })
+		addOnDestroyCallbackToDie(newDie)
+
 		count = count + 1
 	end
 
@@ -875,7 +905,7 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
 			if selDel then
 				die.addToPlayerSelection(color)
 			else
-				die.destroy()
+				destroyDie(die)
 				counter[value] = counter[value] + 1
 				changeStatsBy(-value)
 			end
@@ -949,7 +979,7 @@ function clearDiceX(n, deleteLower, color)
 	for i, die in ipairs(getDice()) do
 		value = die.getValue()
 		if value == n or (deleteLower and value < n) then
-			die.destroy()
+			destroyDie(die)
 			counter[value] = counter[value] + 1
 			changeStatsBy(-value)
 		end
@@ -1234,8 +1264,9 @@ function onCollisionEnter(info)
 
 	local v = obj.getValue()
 	changeStatsBy(v)
-
 	renderStats()
+
+	addOnDestroyCallbackToDie(obj)
 end
 
 function onCollisionExit(info)
@@ -1246,8 +1277,11 @@ function onCollisionExit(info)
 
 	local v = obj.getValue()
 	changeStatsBy(-v)
-
 	renderStats()
+
+	-- Remove listener that we set in onCollisionEnter
+	obj.setLuaScript("")
+	obj.removeTag(currentMat)
 end
 
 function swapPipColor()
