@@ -19,6 +19,19 @@ function clearStats()
 	diceSum = 0
 end
 
+function changeStatsBy(delta)
+	diceSum = diceSum + delta
+	if delta > 0 then
+		local v = delta
+		valueToCounter[v] = valueToCounter[v] + 1
+		totalDice = totalDice + 1
+	else
+		local v = -delta
+		valueToCounter[v] = valueToCounter[v] - 1
+		totalDice = totalDice - 1
+	end
+end
+
 local currentMat = getColorFromObjectPosition(self)
 
 local oppMatGUID = Global.getVar(getOppositeColor(currentMat) .. "CustomDiceMat_GUID")
@@ -864,9 +877,7 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
 			else
 				die.destroy()
 				counter[value] = counter[value] + 1
-				valueToCounter[value] = valueToCounter[value] - 1
-				totalDice = totalDice - 1
-				diceSum = diceSum - value
+				changeStatsBy(-value)
 			end
 		end
 	end
@@ -940,9 +951,7 @@ function clearDiceX(n, deleteLower, color)
 		if value == n or (deleteLower and value < n) then
 			die.destroy()
 			counter[value] = counter[value] + 1
-			valueToCounter[value] = valueToCounter[value] - 1
-			totalDice = totalDice - 1
-			diceSum = diceSum - value
+			changeStatsBy(-value)
 		end
 	end
 	for i, val in ipairs(counter) do
@@ -1224,9 +1233,7 @@ function onCollisionEnter(info)
 	end
 
 	local v = obj.getValue()
-	valueToCounter[v] = valueToCounter[v] + 1
-	diceSum = diceSum + v
-	totalDice = totalDice + 1
+	changeStatsBy(v)
 
 	renderStats()
 end
@@ -1238,9 +1245,7 @@ function onCollisionExit(info)
 	end
 
 	local v = obj.getValue()
-	valueToCounter[v] = valueToCounter[v] - 1
-	diceSum = diceSum - v
-	totalDice = totalDice - 1
+	changeStatsBy(-v)
 
 	renderStats()
 end
