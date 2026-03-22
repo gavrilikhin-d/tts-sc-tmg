@@ -13,7 +13,7 @@ valueToCounter = { 0, 0, 0, 0, 0, 0 }
 totalDice = 0
 diceSum = 0
 
-function clearStats() 
+function clearStats()
 	valueToCounter = { 0, 0, 0, 0, 0, 0 }
 	totalDice = 0
 	diceSum = 0
@@ -431,7 +431,7 @@ function addOnDestroyCallbackToDie(die)
 end
 
 function destroyDie(d)
-	-- Don't invoke onDestroy script to avoid double change of stats 
+	-- Don't invoke onDestroy script to avoid double change of stats
 	d.setLuaScript("")
 	d.removeTag(currentMat)
 	d.destroy()
