@@ -8,7 +8,6 @@ rolledFaces = {}
 currentPhase = "none" -- Tracks the current phase: "none", "hit", "wound", "special"
 previousRoll = {} -- Stores dice rolled in the last phase
 currentRoll = {} -- Stores dice rolled in the current phase
-specialRollDice = {} -- Tracks dice moved for special rolls (e.g., Lethal/Sustained Hits)
 
 -- Track stats
 totalHits = 0 -- Total successful hits
