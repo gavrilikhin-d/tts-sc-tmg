@@ -169,7 +169,7 @@ function onSave()
 end
 
 function onLoad(savedStats)
-	if savedStats ~= "" then
+	if savedStats and savedStats ~= "" then
 		stats = JSON.decode(savedStats)
 	end
 
