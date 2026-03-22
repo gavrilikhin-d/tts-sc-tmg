@@ -125,11 +125,16 @@ function clickDelta(clickType)
 	return clickType == LEFT_MOUSE_CLICK and 1 or -1
 end
 
-function counter(stat, onChange)
+-- Options:
+-- * onChange -- optional callback to fire when counter chages
+-- * min -- minimal counter value. Default is 0
+function counter(stat, options)
+	local min = options and options.min or 0
+	local onChange = options and options.onChange
 	function callback(_, clickType)
 		stats[stat] = stats[stat] + clickDelta(clickType)
-		if stats[stat] < 0 then
-			stats[stat] = 0
+		if stats[stat] < min then
+			stats[stat] = min
 		end
 		renderStat(stat)
 		if onChange then
@@ -151,14 +156,14 @@ function updateTotal(colorPrefix)
 	return callback
 end
 
-toggleRound = counter("round")
+toggleRound = counter("round", { min = 1 })
 toggleAvailableSupply = counter("availableSupply")
 toggleRedSupply = counter("redSupply")
 toggleBlueSupply = counter("blueSupply")
-toggleRedSupplyDestroyed = counter("redSupplyDestroyed", updateTotal("red"))
-toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed", updateTotal("blue"))
-toggleRedMissionVP = counter("redMissionVP", updateTotal("red"))
-toggleBlueMissionVP = counter("blueMissionVP", updateTotal("blue"))
+toggleRedSupplyDestroyed = counter("redSupplyDestroyed", { onChange = updateTotal("red") })
+toggleBlueSupplyDestroyed = counter("blueSupplyDestroyed", { onChange = updateTotal("blue") })
+toggleRedMissionVP = counter("redMissionVP", { onChange = updateTotal("red") })
+toggleBlueMissionVP = counter("blueMissionVP", { onChange = updateTotal("blue") })
 ---------------
 
 ---------------
