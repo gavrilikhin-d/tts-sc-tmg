@@ -226,29 +226,16 @@ diceGuidFaces = {}
 sortedKeys = {}
 resultsTable = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 resultsTotal = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
-seedCounter = 0
 
 thisBoxIsBlue = (self.guid == Global.getVar("BlueCustomDiceRoller_GUID")) and true or false
 seed = os.time() + (thisBoxIsBlue and 1 or 0)
 math.randomseed(seed)
-
-orderedOnNextRoll = false
-groupSizeOnNextRoll = 1
 
 objectToPlaceDiceOnGUID = thisBoxIsBlue and Global.getVar("BlueCustomDiceMat_GUID")
 	or Global.getVar("RedCustomDiceMat_GUID")
 objectToPlaceDiceOn = getObjectFromGUID(objectToPlaceDiceOnGUID)
 if objectToPlaceDiceOn == nil then
 	objectToPlaceDiceOn = self
-end
-
-function clearDataForGC(data)
-	if data == nil then
-		return
-	end
-	for n, element in ipairs(data) do
-		element = nil
-	end
 end
 
 function onLoad(save_state)
@@ -284,32 +271,6 @@ function setDefaultState()
 	}))
 end
 
-function sortByVal(t, type)
-	local keys = {}
-	for key in pairs(t) do
-		table.insert(keys, key)
-	end
-	if type == "asc" then
-		table.sort(keys, function(a, b)
-			return t[a] < t[b]
-		end)
-	elseif type == "desc" then
-		table.sort(keys, function(a, b)
-			return t[a] > t[b]
-		end)
-	end
-	return keys
-end
-
-function hasGuid(t, g)
-	for k, v in ipairs(t) do
-		if v.guid == g then
-			return true
-		end
-	end
-	return false
-end
-
 function getFaces(dice)
 	return dice.name == "BCB-D3" and 3 or 6
 end
@@ -334,6 +295,7 @@ function onCollisionEnter(collision_info)
 	takeDiceOut()
 end
 
+-- @export
 function takeDiceOut()
 	local data = JSON.decode(self.getDescription())
 	if data == nil then
@@ -398,6 +360,7 @@ function sum(t)
 	return sum
 end
 
+-- @export
 function setPlayerColor(params)
 	playerColor = params.color
 end
@@ -683,11 +646,4 @@ function setValueCallback(obj, tab)
 	end
 
 	startLuaCoroutine(self, "insidef")
-end
-
-function waitFrames(frames)
-	while frames > 0 do
-		coroutine.yield(0)
-		frames = frames - 1
-	end
 end
