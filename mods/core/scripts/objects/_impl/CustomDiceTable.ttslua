@@ -1279,7 +1279,7 @@ function onCollisionEnter(info)
 
 	processingDie[die.guid] = true
 	Wait.condition(
-		function() 
+		function()
 			if die.isDestroyed() or not die.hasTag(currentMat) then
 				processingDie[obj.guid] = false
 				return
@@ -1291,7 +1291,9 @@ function onCollisionEnter(info)
 			renderStats()
 			processingDie[die.guid] = false
 		end,
-		function() return die.resting end,
+		function()
+			return die.resting
+		end,
 		10, -- Timeout (seconds). Should be reasonably big to avoid false positives on manual rolls
 		function()
 			processingDie[die.guid] = false
