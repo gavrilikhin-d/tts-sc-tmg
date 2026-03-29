@@ -1,3 +1,5 @@
+require("_impl/Utility")
+
 -- FTC-GUID: 17ca2b,927ca1
 --Based off: https://steamcommunity.com/sharedfiles/filedetails/?id=726800282
 --Link for this mod: https://steamcommunity.com/sharedfiles/filedetails/?id=959360907
@@ -72,7 +74,7 @@ showStatsBtn = {
 function trackRoll(dice)
 	currentRoll = {}
 	for _, die in ipairs(dice) do
-		table.insert(currentRoll, die.getValue())
+		table.insert(currentRoll, getDieValue(die))
 	end
 end
 
@@ -99,7 +101,7 @@ function calculateHits(dice)
 	totalHits = 0
 	missedHits = 0
 	for _, die in ipairs(dice) do
-		if die.getValue() >= 4 then -- Assume 4+ is a hit
+		if getDieValue(die) >= 4 then -- Assume 4+ is a hit
 			totalHits = totalHits + 1
 		else
 			missedHits = missedHits + 1
@@ -111,7 +113,7 @@ end
 function calculateWounds(dice)
 	totalWounds = 0
 	for _, die in ipairs(dice) do
-		if die.getValue() >= 3 then -- Assume 3+ is a wound
+		if getDieValue(die) >= 3 then -- Assume 3+ is a wound
 			totalWounds = totalWounds + 1
 		end
 	end
@@ -121,7 +123,7 @@ end
 function calculateSpecialRoll(dice)
 	local lethalHits = 0
 	for _, die in ipairs(dice) do
-		if die.getValue() == 6 then
+		if getDieValue(die) == 6 then
 			lethalHits = lethalHits + 1
 		end
 	end
@@ -268,10 +270,6 @@ function setDefaultState()
 		Step = 1.05,
 		Version = ver,
 	}))
-end
-
-function getFaces(dice)
-	return dice.name == "BCB-D3" and 3 or 6
 end
 
 -- Forbid objects other than dice from entering the dice roller
