@@ -9,11 +9,13 @@ ZONES = {
 	Red = getObjectFromGUID("a7d7bc"),
 }
 
+lastDieValue = {}
 valueToCounter = { 0, 0, 0, 0, 0, 0 }
 totalDice = 0
 diceSum = 0
 
 function clearStats()
+	lastDieValue = {}
 	valueToCounter = { 0, 0, 0, 0, 0, 0 }
 	totalDice = 0
 	diceSum = 0
@@ -431,6 +433,7 @@ function addOnDestroyCallbackToDie(die)
 end
 
 function destroyDie(d)
+	lastDieValue[d.guid] = nil
 	-- Don't invoke onDestroy script to avoid double change of stats
 	d.setLuaScript("")
 	d.removeTag(currentMat)
@@ -1263,6 +1266,7 @@ function onCollisionEnter(info)
 	end
 
 	local v = getDieValue(obj)
+	lastDieValue[obj.guid] = v
 	changeStatsBy(v)
 	renderStats()
 
@@ -1275,7 +1279,12 @@ function onCollisionExit(info)
 		return
 	end
 
-	local v = getDieValue(obj)
+	if not lastDieValue[obj.guid] then
+		return
+	end
+
+	local v = lastDieValue[obj.guid]
+	lastDieValue[obj.guid] = nil
 	changeStatsBy(-v)
 	renderStats()
 
