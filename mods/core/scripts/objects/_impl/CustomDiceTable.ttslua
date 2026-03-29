@@ -432,11 +432,15 @@ function addOnDestroyCallbackToDie(die)
 	die.removeTag(getOppositeColor(currentMat))
 end
 
+function removeOnDestroyCallbackFromDie(die)
+	-- Don't invoke onDestroy script to avoid double change of stats
+	die.setLuaScript("")
+	die.removeTag(currentMat)
+end
+
 function destroyDie(d)
 	lastDieValue[d.guid] = nil
-	-- Don't invoke onDestroy script to avoid double change of stats
-	d.setLuaScript("")
-	d.removeTag(currentMat)
+	removeOnDestroyCallbackFromDie(d)
 	d.destroy()
 end
 
@@ -1259,18 +1263,40 @@ function renderStats()
 	self.editButton({ index = 1, label = divisionLabel })
 end
 
+processingDie = {}
 function onCollisionEnter(info)
 	local obj = info.collision_object
 	if obj.tag ~= "Dice" then
 		return
 	end
 
-	local v = getDieValue(obj)
-	lastDieValue[obj.guid] = v
-	changeStatsBy(v)
-	renderStats()
+	local die = obj
 
-	addOnDestroyCallbackToDie(obj)
+	addOnDestroyCallbackToDie(die)
+	if processingDie[die.guid] then
+		return
+	end
+
+	processingDie[die.guid] = true
+	Wait.condition(
+		function() 
+			if die.isDestroyed() or not die.hasTag(currentMat) then
+				processingDie[obj.guid] = false
+				return
+			end
+
+			local v = getDieValue(die)
+			lastDieValue[die.guid] = v
+			changeStatsBy(v)
+			renderStats()
+			processingDie[die.guid] = false
+		end,
+		function() return die.resting end,
+		10, -- Timeout (seconds). Should be reasonably big to avoid false positives on manual rolls
+		function()
+			processingDie[die.guid] = false
+		end
+	)
 end
 
 function onCollisionExit(info)
@@ -1278,6 +1304,8 @@ function onCollisionExit(info)
 	if obj.tag ~= "Dice" then
 		return
 	end
+
+	removeOnDestroyCallbackFromDie(obj)
 
 	if not lastDieValue[obj.guid] then
 		return
@@ -1287,10 +1315,6 @@ function onCollisionExit(info)
 	lastDieValue[obj.guid] = nil
 	changeStatsBy(-v)
 	renderStats()
-
-	-- Remove listener that we set in onCollisionEnter
-	obj.setLuaScript("")
-	obj.removeTag(currentMat)
 end
 
 function swapPipColor()
