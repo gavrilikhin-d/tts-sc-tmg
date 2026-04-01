@@ -1273,30 +1273,30 @@ function onCollisionEnter(info)
 	local die = obj
 
 	addOnDestroyCallbackToDie(die)
-	if processingDie[die.guid] then
+	local dieGuid = die.guid
+	if processingDie[dieGuid] then
 		return
 	end
 
-	processingDie[die.guid] = true
+	processingDie[dieGuid] = true
 	Wait.condition(
 		function()
 			if die.isDestroyed() or not die.hasTag(currentMat) then
-				processingDie[obj.guid] = false
+				processingDie[dieGuid] = false
 				return
 			end
-
 			local v = getDieValue(die)
-			lastDieValue[die.guid] = v
+			lastDieValue[dieGuid] = v
 			changeStatsBy(v)
 			renderStats()
-			processingDie[die.guid] = false
+			processingDie[dieGuid] = false
 		end,
 		function()
-			return die.resting
+			return die.isDestroyed() or die.resting
 		end,
 		10, -- Timeout (seconds). Should be reasonably big to avoid false positives on manual rolls
 		function()
-			processingDie[die.guid] = false
+			processingDie[dieGuid] = false
 		end
 	)
 end
