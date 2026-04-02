@@ -1,3 +1,5 @@
+require("_impl/Utility")
+
 -- FTC-GUID: 17ca2b,927ca1
 --Based off: https://steamcommunity.com/sharedfiles/filedetails/?id=726800282
 --Link for this mod: https://steamcommunity.com/sharedfiles/filedetails/?id=959360907
@@ -8,7 +10,6 @@ rolledFaces = {}
 currentPhase = "none" -- Tracks the current phase: "none", "hit", "wound", "special"
 previousRoll = {} -- Stores dice rolled in the last phase
 currentRoll = {} -- Stores dice rolled in the current phase
-specialRollDice = {} -- Tracks dice moved for special rolls (e.g., Lethal/Sustained Hits)
 
 -- Track stats
 totalHits = 0 -- Total successful hits
@@ -73,7 +74,7 @@ showStatsBtn = {
 function trackRoll(dice)
 	currentRoll = {}
 	for _, die in ipairs(dice) do
-		table.insert(currentRoll, die.getValue())
+		table.insert(currentRoll, getDieValue(die))
 	end
 end
 
@@ -100,7 +101,7 @@ function calculateHits(dice)
 	totalHits = 0
 	missedHits = 0
 	for _, die in ipairs(dice) do
-		if die.getValue() >= 4 then -- Assume 4+ is a hit
+		if getDieValue(die) >= 4 then -- Assume 4+ is a hit
 			totalHits = totalHits + 1
 		else
 			missedHits = missedHits + 1
@@ -112,7 +113,7 @@ end
 function calculateWounds(dice)
 	totalWounds = 0
 	for _, die in ipairs(dice) do
-		if die.getValue() >= 3 then -- Assume 3+ is a wound
+		if getDieValue(die) >= 3 then -- Assume 3+ is a wound
 			totalWounds = totalWounds + 1
 		end
 	end
@@ -122,7 +123,7 @@ end
 function calculateSpecialRoll(dice)
 	local lethalHits = 0
 	for _, die in ipairs(dice) do
-		if die.getValue() == 6 then
+		if getDieValue(die) == 6 then
 			lethalHits = lethalHits + 1
 		end
 	end
@@ -226,29 +227,16 @@ diceGuidFaces = {}
 sortedKeys = {}
 resultsTable = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 resultsTotal = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
-seedCounter = 0
 
 thisBoxIsBlue = (self.guid == Global.getVar("BlueCustomDiceRoller_GUID")) and true or false
 seed = os.time() + (thisBoxIsBlue and 1 or 0)
 math.randomseed(seed)
-
-orderedOnNextRoll = false
-groupSizeOnNextRoll = 1
 
 objectToPlaceDiceOnGUID = thisBoxIsBlue and Global.getVar("BlueCustomDiceMat_GUID")
 	or Global.getVar("RedCustomDiceMat_GUID")
 objectToPlaceDiceOn = getObjectFromGUID(objectToPlaceDiceOnGUID)
 if objectToPlaceDiceOn == nil then
 	objectToPlaceDiceOn = self
-end
-
-function clearDataForGC(data)
-	if data == nil then
-		return
-	end
-	for n, element in ipairs(data) do
-		element = nil
-	end
 end
 
 function onLoad(save_state)
@@ -284,36 +272,6 @@ function setDefaultState()
 	}))
 end
 
-function sortByVal(t, type)
-	local keys = {}
-	for key in pairs(t) do
-		table.insert(keys, key)
-	end
-	if type == "asc" then
-		table.sort(keys, function(a, b)
-			return t[a] < t[b]
-		end)
-	elseif type == "desc" then
-		table.sort(keys, function(a, b)
-			return t[a] > t[b]
-		end)
-	end
-	return keys
-end
-
-function hasGuid(t, g)
-	for k, v in ipairs(t) do
-		if v.guid == g then
-			return true
-		end
-	end
-	return false
-end
-
-function getFaces(dice)
-	return tonumber(string.match(dice.name, ".*(%d+).*"))
-end
-
 -- Forbid objects other than dice from entering the dice roller
 -- @tts
 function tryObjectEnter(object)
@@ -334,6 +292,7 @@ function onCollisionEnter(collision_info)
 	takeDiceOut()
 end
 
+-- @export
 function takeDiceOut()
 	local data = JSON.decode(self.getDescription())
 	if data == nil then
@@ -348,102 +307,46 @@ function takeDiceOut()
 		printToAll('Warning - "step" can\'t be lower than 1. Restored default configuration.', { 0.8, 0.5, 0 })
 	end
 
-	clearDataForGC(diceGuids)
-	diceGuids = {}
+	local position = objectToPlaceDiceOn.getPosition()
+	local rotation = objectToPlaceDiceOn.getRotation()
+	local Rows = { 0, 0, 0, 0, 0, 0 }
+
 	local objs = self.getObjects()
 	for _, die in pairs(objs) do
-		diceGuids[die.guid] = math.random(getFaces(die))
-	end
+		local roll = math.random(getFaces(die))
+		resultsTable[roll] = resultsTable[roll] + 1
+		resultsTotal[roll] = resultsTotal[roll] + 1
+		Rows[roll] = Rows[roll] + 1
 
-	local ordered = orderedOnNextRoll
-	orderedOnNextRoll = false
-	local groupSize = groupSizeOnNextRoll
-	groupSizeOnNextRoll = 1
+		local params = {}
+		params.guid = die.guid
 
-	local position = objectToPlaceDiceOn.getPosition()
-	rotation = objectToPlaceDiceOn.getRotation()
-	local displayInRows = true
-	if data.Rows == "no" then
-		displayInRows = false
-	end
-	if ordered then
-		displayInRows = false
-	end
-	local sortType = data.SortNoRows
-	if ordered then
-		sortType = "none"
-	end
-	sortedKeys = sortByVal(diceGuids, sortType)
-	clearDataForGC(Rows)
-	Rows = {}
-	n = 1
+		local newXPos = 0 - 20.4 + (Rows[roll] * data.Step)
+		local newZPos = -3.17 + ((((roll - 1) % 6) + 1) * data.Step)
 
-	for _, key in pairs(sortedKeys) do
-		if diceGuids[key] == math.floor(diceGuids[key]) then
-			resultsTable[diceGuids[key]] = resultsTable[diceGuids[key]] + 1
-			resultsTotal[diceGuids[key]] = resultsTotal[diceGuids[key]] + 1
+		params.position = {
+			position.x + (newXPos * math.cos((180 + rotation.y) * 0.0174532)) - (newZPos * math.sin(
+				(180 + rotation.y) * 0.0174532
+			)),
+			position.y + 2,
+			position.z + (newXPos * math.sin(rotation.y * 0.0174532)) + (newZPos * math.cos(
+				(0 + rotation.y) * 0.0174532
+			)),
+		}
+		params.rotation = rotation
+		params.callback = "setValueCallback"
+		params.params = { roll }
+		params.smooth = false
+		if data.SmoothDice == "yes" then
+			params.smooth = true
 		end
 
-		if hasGuid(objs, key) then
-			if Rows[diceGuids[key]] == nil then
-				Rows[diceGuids[key]] = 0
-			end
-			Rows[diceGuids[key]] = Rows[diceGuids[key]] + 1
-			params = {}
-			params.guid = key
-			local d12Xoffset = 0
-			if diceGuids[key] > 6 then
-				d12Xoffset = -24
-			end
-
-			local newXPos
-			local newZPos
-			if displayInRows then
-				newXPos = 0 - d12Xoffset - 20.4 + (Rows[diceGuids[key]] * data.Step)
-				newZPos = -3.17 + ((((diceGuids[key] - 1) % 6) + 1) * data.Step)
-			else
-				local pos = n - 1
-				local limit = 25
-				if groupSize > 1 then
-					pos = pos + math.floor(pos / groupSize)
-					local step = groupSize + 1
-					local maxGroups = math.floor(limit / step)
-					local remainder = limit % (step * maxGroups)
-					limit = limit - remainder
-				end
-				row = math.floor(pos / limit) + 1
-				col = pos % limit
-				newXPos = 0 - 15.0 + (col * data.Step)
-				newZPos = -3.17 + (row * data.Step)
-			end
-
-			params.position = {
-				position.x + (newXPos * math.cos((180 + rotation.y) * 0.0174532)) - (newZPos * math.sin(
-					(180 + rotation.y) * 0.0174532
-				)),
-				position.y + 2,
-				position.z + (newXPos * math.sin(rotation.y * 0.0174532)) + (newZPos * math.cos(
-					(0 + rotation.y) * 0.0174532
-				)),
-			}
-			params.rotation = rotation
-			params.callback = "setValueCallback"
-			params.params = { diceGuids[key] }
-			params.smooth = false
-			if data.SmoothDice == "yes" then
-				params.smooth = true
-			end
-
-			self.takeObject(params)
-			n = n + 1
-		end
+		self.takeObject(params)
 	end
 
 	printResultsTable()
-	Wait.time(function()
-		-- "objectToPlaceDiceOn" is your dice-mat object
-		objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
-	end, 1)
+
+	objectToPlaceDiceOn.call("storeCurrentDiceAsPreviousRoll")
 end
 
 function sum(t)
@@ -454,6 +357,7 @@ function sum(t)
 	return sum
 end
 
+-- @export
 function setPlayerColor(params)
 	playerColor = params.color
 end
@@ -739,11 +643,4 @@ function setValueCallback(obj, tab)
 	end
 
 	startLuaCoroutine(self, "insidef")
-end
-
-function waitFrames(frames)
-	while frames > 0 do
-		coroutine.yield(0)
-		frames = frames - 1
-	end
 end

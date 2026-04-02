@@ -9,9 +9,30 @@ ZONES = {
 	Red = getObjectFromGUID("a7d7bc"),
 }
 
+lastDieValue = {}
 valueToCounter = { 0, 0, 0, 0, 0, 0 }
 totalDice = 0
 diceSum = 0
+
+function clearStats()
+	lastDieValue = {}
+	valueToCounter = { 0, 0, 0, 0, 0, 0 }
+	totalDice = 0
+	diceSum = 0
+end
+
+function changeStatsBy(delta)
+	diceSum = diceSum + delta
+	if delta > 0 then
+		local v = delta
+		valueToCounter[v] = valueToCounter[v] + 1
+		totalDice = totalDice + 1
+	else
+		local v = -delta
+		valueToCounter[v] = valueToCounter[v] - 1
+		totalDice = totalDice - 1
+	end
+end
 
 local currentMat = getColorFromObjectPosition(self)
 
@@ -217,7 +238,7 @@ clearDiceBtntooltip = "LMB Delete this row\nRMB Delete this row and lowers/upper
 clearDiceBtn = {
 	label = clearDiceBtnLabel,
 	tooltip = clearDiceBtntooltip,
-	click_function = "filledInLater",
+	click_function = "clearDiceAll",
 	function_owner = self,
 	position = { -5.8, Yoffset, -0.85 },
 	rotation = { 0, 0, 0 },
@@ -391,20 +412,51 @@ maxPreviousRolls = 10
 rollerGUID = Global.getVar(currentMat .. "CustomDiceRoller_GUID")
 roller = getObjectFromGUID(rollerGUID)
 
+function addOnDestroyCallbackToDie(die)
+	-- onCollisionExit isn't called when die is manually destroyed by player.
+	-- Also for some reason setLuaScript("") doesn't clear added script,
+	-- so there is a check for tag
+	local script = "\
+	function onDestroy()\
+		if self.hasTag('" .. currentMat .. "') then\
+			local matGUID = Global.getVar('" .. currentMat .. "CustomDiceMat_GUID')\
+			local mat = getObjectFromGUID(matGUID)\
+			mat.call('onCollisionExit', { collision_object = self })\
+		end\
+	end\
+	"
+
+	die.setLuaScript(script)
+	die.addTag(currentMat)
+	-- Remove opposite tag (useful when copying dice from other mat)
+	die.removeTag(getOppositeColor(currentMat))
+end
+
+function removeOnDestroyCallbackFromDie(die)
+	-- Don't invoke onDestroy script to avoid double change of stats
+	die.setLuaScript("")
+	die.removeTag(currentMat)
+end
+
+function destroyDie(d)
+	lastDieValue[d.guid] = nil
+	removeOnDestroyCallbackFromDie(d)
+	d.destroy()
+end
+
 function clearMat()
 	for _, d in ipairs(getDice()) do
-		d.destroy()
+		destroyDie(d)
 	end
 
-	valueToCounter = { 0, 0, 0, 0, 0, 0 }
-	totalDice = 0
-	diceSum = 0
+	clearStats()
 end
 
 function importOpposDice(obj, player, alt)
 	clearMat()
 
-	local toImport = getDice(getOppositeColor(currentMat))
+	local oppositeColor = getOppositeColor(currentMat)
+	local toImport = getDice(oppositeColor)
 
 	if #toImport == 0 then
 		printToColor("No dice found on the opposite mat.", player, "Yellow")
@@ -421,7 +473,9 @@ function importOpposDice(obj, player, alt)
 		local dp = die.getPosition()
 		local relX, relY, relZ = -(dp.x - cb.x), dp.y - cb.y, -(dp.z - cb.z)
 		local nx, ny, nz = mc.x + relX, mc.y + relY, mc.z + relZ
-		die.clone({ position = { nx, ny, nz }, snap_to_grid = false })
+		local newDie = die.clone({ position = { nx, ny, nz }, snap_to_grid = false })
+		addOnDestroyCallbackToDie(newDie)
+
 		count = count + 1
 	end
 
@@ -442,7 +496,7 @@ function storeCurrentDiceAsPreviousRoll()
 			type = die.getData().Name,
 			pos = die.getPosition(),
 			rot = die.getRotation(),
-			val = die.getValue(),
+			val = getDieValue(die),
 			tint = die.getColorTint(),
 			customImage = nil,
 			name = die.getName(),
@@ -747,18 +801,28 @@ function getDice(color)
 end
 
 function customDice(obj, player, alt)
-	local dice = getDice()
+	-- Custom dice most likely don't have our Dice tag, so request all objects in zone
+	local objs = ZONES[currentMat].getObjects(true)
+	local dice = {}
+	for _, obj in pairs(objs) do
+		if obj.tag == "Dice" then
+			table.insert(dice, obj)
+		end
+	end
 	if #dice ~= 1 then
 		printToColor("To set custom die template, place a single die on the mat", player, "Yellow")
 		return
 	end
 
-	die = dice[1]
-	color = die.getColorTint()
-	img = die.getCustomObject()["image"]
+	local die = dice[1]
+	-- Add our tag to make rolls work
+	die.addTag("Dice")
+
+	local color = die.getColorTint()
+	local img = die.getCustomObject()["image"]
 	customDiceName = die.getName()
 	modifyMenu(color, img)
-	message = (img ~= nil) and "You have set a custom die!" or "You have set a custom colour!"
+	local message = (img ~= nil) and "You have set a custom die!" or "You have set a custom colour!"
 	printToColor(message, player, "Yellow")
 end
 
@@ -843,16 +907,14 @@ function SelectDeleteDiceX(action, n, selectOthers, lowUp, color)
 	local somethingToPrint = false
 
 	for i, die in ipairs(getDice()) do
-		value = die.getValue()
+		value = getDieValue(die)
 		if value == n or (selectOthers and lowUp and value < n) or (selectOthers and not lowUp and value > n) then
 			if selDel then
 				die.addToPlayerSelection(color)
 			else
-				die.destroy()
+				destroyDie(die)
 				counter[value] = counter[value] + 1
-				valueToCounter[value] = valueToCounter[value] - 1
-				totalDice = totalDice - 1
-				diceSum = diceSum - value
+				changeStatsBy(-value)
 			end
 		end
 	end
@@ -893,6 +955,8 @@ function clearDiceAll(obj, color, alt)
 		return
 	end
 	clearDiceX(6, true, color)
+	clearStats()
+	renderStats()
 end
 
 function clearDice1(obj, color, alt)
@@ -920,13 +984,11 @@ function clearDiceX(n, deleteLower, color)
 	local text = Player[color].steam_name .. " deleted "
 	local somethingToPrint = false
 	for i, die in ipairs(getDice()) do
-		value = die.getValue()
+		value = getDieValue(die)
 		if value == n or (deleteLower and value < n) then
-			die.destroy()
+			destroyDie(die)
 			counter[value] = counter[value] + 1
-			valueToCounter[value] = valueToCounter[value] - 1
-			totalDice = totalDice - 1
-			diceSum = diceSum - value
+			changeStatsBy(-value)
 		end
 	end
 	for i, val in ipairs(counter) do
@@ -1201,18 +1263,42 @@ function renderStats()
 	self.editButton({ index = 1, label = divisionLabel })
 end
 
+processingDie = {}
 function onCollisionEnter(info)
 	local obj = info.collision_object
 	if obj.tag ~= "Dice" then
 		return
 	end
 
-	local v = obj.getValue()
-	valueToCounter[v] = valueToCounter[v] + 1
-	diceSum = diceSum + v
-	totalDice = totalDice + 1
+	local die = obj
 
-	renderStats()
+	addOnDestroyCallbackToDie(die)
+	local dieGuid = die.guid
+	if processingDie[dieGuid] then
+		return
+	end
+
+	processingDie[dieGuid] = true
+	Wait.condition(
+		function()
+			if die.isDestroyed() or not die.hasTag(currentMat) then
+				processingDie[dieGuid] = false
+				return
+			end
+			local v = getDieValue(die)
+			lastDieValue[dieGuid] = v
+			changeStatsBy(v)
+			renderStats()
+			processingDie[dieGuid] = false
+		end,
+		function()
+			return die.isDestroyed() or die.resting
+		end,
+		10, -- Timeout (seconds). Should be reasonably big to avoid false positives on manual rolls
+		function()
+			processingDie[dieGuid] = false
+		end
+	)
 end
 
 function onCollisionExit(info)
@@ -1221,11 +1307,15 @@ function onCollisionExit(info)
 		return
 	end
 
-	local v = obj.getValue()
-	valueToCounter[v] = valueToCounter[v] - 1
-	diceSum = diceSum - v
-	totalDice = totalDice - 1
+	removeOnDestroyCallbackFromDie(obj)
 
+	if not lastDieValue[obj.guid] then
+		return
+	end
+
+	local v = lastDieValue[obj.guid]
+	lastDieValue[obj.guid] = nil
+	changeStatsBy(-v)
 	renderStats()
 end
 

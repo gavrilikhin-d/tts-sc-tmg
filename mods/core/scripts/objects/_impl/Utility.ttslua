@@ -16,3 +16,23 @@ function getColorFromObjectPosition(obj)
 
 	return "Red"
 end
+
+function getFaces(die)
+	local nickname = die.name
+	-- die.name isn't a nickname, if there is a getName function
+	if die.getName then
+		nickname = die.getName()
+	end
+	return nickname == "BCB-D3" and 3 or 6
+end
+
+-- Use this function instead of die.getValue() to get the value of a die
+-- because this supports d3 die
+function getDieValue(die)
+	local value = die.getValue()
+	-- Get values as 1-3 for d3 die
+	if getFaces(die) == 3 then
+		value = (value - 1) % 3 + 1
+	end
+	return value
+end
