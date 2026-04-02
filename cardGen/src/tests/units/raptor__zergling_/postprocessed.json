@@ -1,0 +1,172 @@
+{
+  "upgrades": [
+    {
+      "costL": 0,
+      "activation": {
+        "type": "Passive"
+      },
+      "phase": "Any",
+      "costS": 0,
+      "name": "Squadron",
+      "description": "This Unit’s Horizontal Coherency is 4\"."
+    },
+    {
+      "name": "Raptor Strain",
+      "costL": 0,
+      "activation": {
+        "type": "Passive"
+      },
+      "phase": "Any",
+      "costS": 0,
+      "description": "This Unit can move through IMPASSABLE TERRAIN of Size 4 or less and change elevation without using ACCESS POINTS."
+    },
+    {
+      "activation": {
+        "type": "Passive"
+      },
+      "costS": 20,
+      "phase": "Movement",
+      "costL": 30,
+      "name": "Burrow Ambush",
+      "description": "When this Unit is nominated to deploy from the Reserves, it may resolve the PLACE (18) effect from the controlling player's Entry Edge. No model may be set Within 10\" of any Enemy model. This Unit's Activation ends."
+    },
+    {
+      "name": "Adrenal Overload",
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "phase": "Assault",
+      "costL": 0,
+      "description": "This Unit gains a +1 Modifier to all IMPACT Hit Rolls."
+    },
+    {
+      "description": "When determining Charge Distance for this Unit, roll 2D6 instead of D6 and use the higher result to add to the Unit’s Speed characteristic.",
+      "phase": "Assault",
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "costL": 0,
+      "name": "Metabolic Boost"
+    },
+    {
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (1) 5+ effect.",
+      "name": "Devastating Charge",
+      "costL": 0,
+      "costS": 0,
+      "phase": "Assault",
+      "activation": {
+        "type": "Passive"
+      }
+    },
+    {
+      "costS": 0,
+      "phase": "Combat",
+      "linkedTo": "-",
+      "costL": 0,
+      "name": "Claws",
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 4,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      }
+    },
+    {
+      "phase": "Combat",
+      "costS": 20,
+      "linkedTo": "Claws",
+      "costL": 20,
+      "name": "Shredding Claws",
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 4,
+        "dmg": 1,
+        "surge": {
+          "against": [
+            "Light",
+            "Armoured"
+          ],
+          "die": "D3",
+          "plus": 0
+        },
+        "keywords": []
+      }
+    },
+    {
+      "description": "This Unit’s Claws and Shredding Claws weapons gain PRECISION (2).",
+      "costL": 30,
+      "phase": "Combat",
+      "activation": {
+        "type": "Passive"
+      },
+      "costS": 30,
+      "name": "Adrenal Glands"
+    }
+  ],
+  "small": {
+    "supply": 1,
+    "cost": 240,
+    "models": 12
+  },
+  "large": {
+    "models": 18,
+    "cost": 300,
+    "supply": 2
+  },
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "minModels": 1,
+      "maxModels": 6
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "minModels": 7,
+      "maxModels": 12
+    },
+    {
+      "supply": 2,
+      "tier": 3,
+      "minModels": 13,
+      "maxModels": 18
+    }
+  ],
+  "faction": "Zerg",
+  "name": "Raptor (Zergling)",
+  "tags": [
+    "Biological",
+    "Light",
+    "Ground"
+  ],
+  "combatRange": "1",
+  "id": "raptor__zergling_",
+  "stats": {
+    "size": 1,
+    "speed": {
+      "multipleModels": 5,
+      "singleModel": 9
+    },
+    "evade": 4,
+    "hp": 1,
+    "armor": 6
+  },
+  "unitType": "Elite",
+  "keywords": []
+}

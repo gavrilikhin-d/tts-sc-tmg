@@ -1,0 +1,34 @@
+{
+  "resource": 1,
+  "slots": {
+    "Elite": 0,
+    "Support": 0,
+    "Core": 1,
+    "Hero": 0,
+    "Air": 0
+  },
+  "isUnique": true,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isFactionCard": false,
+  "frontUrl": "https://firebasestorage.googleapis.com/v0/b/starcrafttmgbeta.firebasestorage.app/o/faction_art%2F1773092342368_cc.jpg?alt=media&token=540c96b9-690b-4307-98d6-2e13d95fb9f6",
+  "boosts": [
+    {
+      "name": "ComSat Station",
+      "description": "ComSat Station <Active> <Movement Phase>: Select one table edge that is not a player’s Entry Edge. Until the End of the Round, Enemy Units cannot Deploy from that edge."
+    },
+    {
+      "description": "Scanner Sweep <Active> <Movement Phase>: Place a Faction Indicator anywhere on the battlefield. While Enemy Units are Within 6\" of this Faction Indicator, they lose HIDDEN.",
+      "name": "Scanner Sweep"
+    }
+  ],
+  "cost": 25,
+  "name": "Orbital Command",
+  "id": "orbital_command",
+  "factionTags": [],
+  "tags": "",
+  "faction": "Terran"
+}

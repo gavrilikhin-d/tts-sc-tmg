@@ -1,0 +1,42 @@
+{
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "frontUrl": "https://firebasestorage.googleapis.com/v0/b/starcrafttmgbeta.firebasestorage.app/o/faction_art%2F1773092134296_ebay.jpg?alt=media&token=795c6c45-48ff-48c0-b531-11f6d2adf346",
+  "boosts": [
+    {
+      "name": "Infantry Weapons",
+      "description": {
+        "type": "Active",
+        "phase": "Assault",
+        "description": "The active Biological Unit’s first Ranged Weapon used gains CRITICAL HIT (1)."
+      }
+    },
+    {
+      "name": "Infantry Armor",
+      "description": {
+        "type": "Reaction",
+        "phase": "Any",
+        "description": "Use before a Friendly Biological Unit makes an Armour Roll. That Unit gains TOUGH (1) for this roll."
+      }
+    }
+  ],
+  "name": "Engineering Bay",
+  "cost": 30,
+  "slots": {
+    "Core": 1,
+    "Support": 0,
+    "Elite": 0,
+    "Air": 0,
+    "Hero": 0
+  },
+  "resource": 1,
+  "isUnique": false,
+  "id": "engineering_bay",
+  "factionTags": [],
+  "faction": "Terran",
+  "tags": []
+}

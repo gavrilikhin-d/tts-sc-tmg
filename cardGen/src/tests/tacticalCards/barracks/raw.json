@@ -1,0 +1,30 @@
+{
+  "tags": "",
+  "faction": "Terran",
+  "id": "barracks",
+  "factionTags": [],
+  "boosts": [
+    {
+      "name": "Go! Go! Go!",
+      "description": "Go! Go! Go! <Active> <Movement Phase>: The active Biological Unit performs a 2\" Move action. This does not count towards its action limit."
+    }
+  ],
+  "cost": 25,
+  "name": "Barracks",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isFactionCard": false,
+  "frontUrl": "https://firebasestorage.googleapis.com/v0/b/starcrafttmgbeta.firebasestorage.app/o/faction_art%2F1773091988209_barracks.jpg?alt=media&token=6934a398-34ae-4253-b6bc-2de43185906c",
+  "isUnique": false,
+  "resource": 1,
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Elite": 0,
+    "Core": 1,
+    "Support": 0
+  }
+}

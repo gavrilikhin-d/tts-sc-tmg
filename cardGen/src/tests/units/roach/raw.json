@@ -1,0 +1,127 @@
+{
+  "combatRange": "2",
+  "tags": "Armoured, Biological, Ground",
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "modelCount": "1 - 1"
+    },
+    {
+      "modelCount": "2 - 3",
+      "tier": 2,
+      "supply": 1
+    },
+    {
+      "tier": 3,
+      "supply": 0,
+      "modelCount": "-"
+    }
+  ],
+  "large": {
+    "models": 0,
+    "supply": 0,
+    "cost": 0
+  },
+  "faction": "Zerg",
+  "name": "Roach",
+  "small": {
+    "models": 3,
+    "cost": 170,
+    "supply": 1
+  },
+  "upgrades": [
+    {
+      "name": "Burrow",
+      "costL": 0,
+      "phase": "Any Phase",
+      "activation": "<Active>\n(2 Biomass)",
+      "costS": 0,
+      "linkedTo": "",
+      "description": "If this Unit is Unengaged, it gains or loses the Burrowed Status."
+    },
+    {
+      "name": "Tunneling Claws",
+      "costS": 10,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "costL": 10,
+      "description": "While this Unit has the Burrowed Status, it may perform the Move and Run actions without losing that Status. It may also move through other Units’ bases."
+    },
+    {
+      "name": "Burrow Ambush",
+      "linkedTo": "",
+      "phase": "Movement Phase",
+      "activation": "<Passive>",
+      "costS": 20,
+      "costL": 20,
+      "description": "When this Unit is nominated to deploy from the Reserves, it may resolve the PLACE (18) effect from the controlling player's Entry Edge. No model may be set Within 10\" of any Enemy model. This Unit's Activation ends."
+    },
+    {
+      "costL": 20,
+      "activation": "<Active>\n(1 Biomass)",
+      "phase": "Movement Phase",
+      "costS": 20,
+      "linkedTo": "",
+      "name": "Glial Reconstitution",
+      "description": "This Unit gains BUFF SPEED (1), or BUFF SPEED (2) if the Unit is ON CREEP."
+    },
+    {
+      "description": "RANGE: 8 | TARGET: Ground | RoA: 3 | HIT: 3+ | DMG: 1\nSURGE: -",
+      "name": "Acid Saliva",
+      "phase": "Assault Phase",
+      "activation": "",
+      "costS": 0,
+      "linkedTo": "-",
+      "costL": 0
+    },
+    {
+      "description": "When this Unit becomes Activated, if it has the Burrowed Status, resolve the HEAL (2) effect.",
+      "name": "Regeneration",
+      "activation": "<Passive>",
+      "costS": 0,
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "costL": 0
+    },
+    {
+      "description": "This Unit's Acid Saliva weapon gains Surge Type: Light, and S Dice: D3+1.",
+      "name": "Hydriodic Bile",
+      "phase": "Assault Phase",
+      "activation": "<Passive>",
+      "costS": 10,
+      "linkedTo": "",
+      "costL": 10
+    },
+    {
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (2) 4+ effect.",
+      "name": "Devastating Charge",
+      "costL": 0,
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "costS": 0,
+      "activation": "<Passive>"
+    },
+    {
+      "costL": 0,
+      "phase": "Combat Phase",
+      "activation": "",
+      "costS": 0,
+      "linkedTo": "-",
+      "name": "Claws",
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 4+ | DMG: 1\nSURGE: -"
+    }
+  ],
+  "id": "roach",
+  "stats": {
+    "hp": "4",
+    "shield": "-",
+    "evade": "5+",
+    "armor": "3+",
+    "size": "2",
+    "speed": "4/7"
+  },
+  "unitType": "Core",
+  "keywords": ""
+}

@@ -1,0 +1,122 @@
+{
+  "unitType": "Core",
+  "keywords": [],
+  "squadProfile": [
+    {
+      "supply": 0,
+      "tier": 1,
+      "minModels": 1,
+      "maxModels": 6
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "minModels": 7,
+      "maxModels": 18
+    },
+    {
+      "supply": 0,
+      "tier": 3,
+      "minModels": 0,
+      "maxModels": 0
+    }
+  ],
+  "large": {
+    "models": 0,
+    "supply": 0,
+    "cost": 0
+  },
+  "faction": "Zerg",
+  "name": "Swarmling (Zergling)",
+  "combatRange": "1",
+  "tags": [
+    "Biological",
+    "Light",
+    "Ground"
+  ],
+  "upgrades": [
+    {
+      "description": "This Unit’s Horizontal Coherency is 4\".",
+      "costS": 0,
+      "phase": "Any",
+      "activation": {
+        "type": "Passive"
+      },
+      "costL": 0,
+      "name": "Squadron"
+    },
+    {
+      "description": "When this Unit is nominated to deploy from the Reserves, it may resolve the PLACE (18) effect from the controlling player's Entry Edge. No model may be set Within 10\" of any Enemy model. This Unit's Activation ends.",
+      "costL": 20,
+      "activation": {
+        "type": "Passive"
+      },
+      "phase": "Movement",
+      "costS": 20,
+      "name": "Burrow Ambush"
+    },
+    {
+      "description": "Resolve the RESPAWN (2) effect, or RESPAWN (3) if the Unit is ON CREEP.",
+      "name": "Zergling Reconstitution",
+      "phase": "Movement",
+      "costS": 0,
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "costL": 0
+    },
+    {
+      "name": "Metabolic Boost",
+      "activation": {
+        "type": "Active",
+        "cost": 1
+      },
+      "phase": "Assault",
+      "costS": 0,
+      "costL": 0,
+      "description": "When determining Charge Distance for this Unit, roll 2D6 instead of D6 and use the higher result to add to the Unit’s Speed characteristic."
+    },
+    {
+      "costL": 0,
+      "activation": {
+        "type": "Passive"
+      },
+      "phase": "Assault",
+      "costS": 0,
+      "name": "Devastating Charge",
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (1) 5+ effect."
+    },
+    {
+      "name": "Claws",
+      "linkedTo": "-",
+      "costS": 0,
+      "phase": "Combat",
+      "costL": 0,
+      "description": {
+        "range": 0,
+        "target": "Ground",
+        "roa": 2,
+        "hit": 5,
+        "dmg": 1,
+        "keywords": []
+      }
+    }
+  ],
+  "small": {
+    "cost": 270,
+    "supply": 1,
+    "models": 18
+  },
+  "id": "swarmling__zergling_",
+  "stats": {
+    "size": 1,
+    "speed": {
+      "multipleModels": 4,
+      "singleModel": 8
+    },
+    "evade": 5,
+    "hp": 1,
+    "armor": 6
+  }
+}

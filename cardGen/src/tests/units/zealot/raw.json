@@ -1,0 +1,109 @@
+{
+  "tags": "Biological, Light, Ground",
+  "combatRange": "1",
+  "large": {
+    "supply": 0,
+    "cost": 0,
+    "models": 0
+  },
+  "squadProfile": [
+    {
+      "modelCount": "1 - 1",
+      "tier": 1,
+      "supply": 1
+    },
+    {
+      "supply": 2,
+      "tier": 2,
+      "modelCount": "2 - 3"
+    },
+    {
+      "modelCount": "-",
+      "tier": 3,
+      "supply": 0
+    }
+  ],
+  "faction": "Protoss",
+  "name": "Zealot",
+  "small": {
+    "models": 3,
+    "supply": 2,
+    "cost": 160
+  },
+  "upgrades": [
+    {
+      "name": "My Life for Aiur",
+      "costL": 10,
+      "costS": 10,
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "phase": "Any Phase",
+      "description": "When this Unit resolves IMPACT, each eligible model generates 1 additional IMPACT die."
+    },
+    {
+      "description": "This Unit performs a 2\" Move action. This does not count towards its action limit.",
+      "costL": 20,
+      "linkedTo": "",
+      "phase": "Movement Phase",
+      "costS": 20,
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "name": "Leg Enhancements"
+    },
+    {
+      "phase": "Assault Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "costL": 0,
+      "name": "Charge",
+      "description": "When determining Charge Distance for this Unit, roll 2D6 instead of D6 and use the higher result to add to the Unit’s Speed characteristic."
+    },
+    {
+      "name": "Devastating Charge",
+      "costL": 0,
+      "activation": "<Passive>",
+      "costS": 0,
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (3) 4+ effect."
+    },
+    {
+      "description": "When this Unit is not Activated and receives Damage, the controlling player may count this Unit as Activated in this Phase (flip its Activation Marker) to reduce the Total Damage by 2.",
+      "phase": "Assault Phase",
+      "activation": "<Reaction>\n(0 Psionic Energy)",
+      "costS": 10,
+      "linkedTo": "",
+      "costL": 10,
+      "name": "Zealous Round"
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 4 | HIT: 3+ | DMG: 1\nSURGE: Light (D3)",
+      "name": "Psi Blades",
+      "linkedTo": "-",
+      "activation": "",
+      "phase": "Combat Phase",
+      "costS": 0,
+      "costL": 0
+    },
+    {
+      "name": "We Stand as One",
+      "phase": "Combat Phase",
+      "activation": "<Passive>",
+      "costS": 20,
+      "linkedTo": "",
+      "costL": 20,
+      "description": "When this Unit makes a Close Combat Attack, if the target is Engaged with at least 1 other Friendly Unit, this Unit's Close Combat Weapon gains PRECISION (2)."
+    }
+  ],
+  "stats": {
+    "shield": "3",
+    "hp": "4",
+    "speed": "4/7",
+    "size": "2",
+    "evade": "5+",
+    "armor": "5+"
+  },
+  "id": "zealot",
+  "unitType": "Core",
+  "keywords": ""
+}

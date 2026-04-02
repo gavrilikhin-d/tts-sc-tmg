@@ -1,0 +1,41 @@
+{
+  "factionTags": [],
+  "isFactionCard": false,
+  "id": "overseer",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "faction": "Zerg",
+  "name": "Overseer",
+  "cost": 25,
+  "tags": [],
+  "boosts": [
+    {
+      "name": "Pneumatized Carapace",
+      "description": {
+        "type": "Reaction",
+        "phase": "Assault",
+        "description": "Use after a Friendly Unit rolls a D6 for Charge Distance. Roll an additional D6 and use the higher result to calculate the total Charge Distance."
+      }
+    },
+    {
+      "name": "Oversight Mode",
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "Place a Faction Indicator anywhere on the battlefield. While Enemy Units are Within 6\" of this Faction Indicator, they lose HIDDEN."
+      }
+    }
+  ],
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Core": 0,
+    "Support": 1,
+    "Elite": 0
+  },
+  "resource": 1,
+  "isUnique": true
+}

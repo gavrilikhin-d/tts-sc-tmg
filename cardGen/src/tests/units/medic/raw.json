@@ -1,0 +1,118 @@
+{
+  "id": "medic",
+  "stats": {
+    "evade": "5+",
+    "armor": "5+",
+    "speed": "4/7",
+    "size": "2",
+    "hp": "2",
+    "shield": "-"
+  },
+  "upgrades": [
+    {
+      "description": "Use when another Friendly Biological Unit suffers Damage Within 4\". Reduce the Total Damage before allocation by 1 for each model in this Unit that is Within 4\" of the damaged Unit.",
+      "costL": 0,
+      "activation": "<Reaction>\n(1 Command Point)",
+      "costS": 0,
+      "phase": "Any Phase",
+      "linkedTo": "",
+      "name": "Life Support"
+    },
+    {
+      "description": "This Unit’s Supply Value counts as 0 when calculating the Supply Pool.",
+      "name": "Advanced Medic Facilities",
+      "costL": 60,
+      "activation": "<Passive>",
+      "costS": 60,
+      "phase": "Any Phase",
+      "linkedTo": ""
+    },
+    {
+      "description": "Use when a Friendly Unit Within 4\" receives a DEBUFF. Remove all DEBUFFS from it.",
+      "name": "Restoration",
+      "costL": 0,
+      "activation": "<Reaction>\n(1 Command Point)",
+      "phase": "Any Phase",
+      "costS": 0,
+      "linkedTo": ""
+    },
+    {
+      "description": "Increase the Optical Flare special ability's Range to 16\".",
+      "phase": "Any Phase",
+      "activation": "<Passive>",
+      "costS": 20,
+      "linkedTo": "",
+      "costL": 20,
+      "name": "A-13 Flash Grenade Launcher"
+    },
+    {
+      "name": "Stabilizer Medpacks",
+      "phase": "Any Phase",
+      "activation": "<Passive>",
+      "costS": 30,
+      "linkedTo": "",
+      "costL": 30,
+      "description": "When this Unit resolves a Life Support or Medpack ability, treat it as having 1 additional model Within Range for calculating that ability's effects."
+    },
+    {
+      "description": "Select another Friendly Biological Unit Within 4\". Resolve the HEAL (X) effect for the targeted Unit, where X is the number of models in this Unit that are Within 4\" of the target Unit.",
+      "costS": 0,
+      "activation": "<Active>\n(1 Command Point)",
+      "phase": "Movement Phase",
+      "linkedTo": "",
+      "costL": 0,
+      "name": "Medpack"
+    },
+    {
+      "description": "Select one Enemy Unit Within 12\". Until the End of the Round, apply DEBUFF Range (4) to that Unit’s Ranged Weapons. That Unit cannot benefit from LONG RANGE.",
+      "name": "Optical Flare",
+      "phase": "Movement Phase",
+      "linkedTo": "",
+      "costS": 0,
+      "activation": "<Active>\n(2 Command Point)",
+      "costL": 0
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 1 | HIT: 5+ | DMG: 1\nSURGE: -",
+      "costL": 0,
+      "linkedTo": "-",
+      "activation": "",
+      "phase": "Combat Phase",
+      "costS": 0,
+      "name": "Strike"
+    }
+  ],
+  "small": {
+    "supply": 1,
+    "cost": 110,
+    "models": 3
+  },
+  "squadProfile": [
+    {
+      "modelCount": "1 - 1",
+      "tier": 1,
+      "supply": 0
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "modelCount": "2 - 3"
+    },
+    {
+      "modelCount": "-",
+      "supply": 0,
+      "tier": 3
+    }
+  ],
+  "large": {
+    "models": 0,
+    "supply": 0,
+    "cost": 0
+  },
+  "faction": "Terran",
+  "name": "Medic",
+  "combatRange": "-",
+  "tags": "Biological, Light, Ground",
+  "keywords": "",
+  "unitType": "Support"
+}

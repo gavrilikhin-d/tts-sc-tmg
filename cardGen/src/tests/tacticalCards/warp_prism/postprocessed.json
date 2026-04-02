@@ -1,0 +1,41 @@
+{
+  "isUnique": true,
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Elite": 0,
+    "Core": 2,
+    "Support": 0
+  },
+  "resource": 1,
+  "name": "Warp Prism",
+  "faction": "Protoss",
+  "tags": [],
+  "cost": 45,
+  "boosts": [
+    {
+      "name": "Phase",
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "The active Unit resolves the PLACE (3) effect."
+      }
+    },
+    {
+      "name": "Warp Conduit",
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "Place a Faction Indicator anywhere on the battlefield more than 10\" away from any Enemy model. At the End of the Round, the controlling player may Deploy one Ground Unit from Reserves in base-to-base contact with this Faction Indicator."
+      }
+    }
+  ],
+  "factionTags": [],
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "warp_prism"
+}

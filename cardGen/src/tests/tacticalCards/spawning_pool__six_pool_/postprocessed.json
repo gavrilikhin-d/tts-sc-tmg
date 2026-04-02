@@ -1,0 +1,41 @@
+{
+  "name": "Spawning Pool (Six Pool)",
+  "faction": "Zerg",
+  "tags": [],
+  "cost": 40,
+  "boosts": [
+    {
+      "name": "Feral Rage",
+      "description": {
+        "type": "Active",
+        "phase": "Combat",
+        "description": "The active Unit’s first Close Combat Weapon used gains PRECISION (2)."
+      }
+    },
+    {
+      "name": "Timing Push",
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "The active Zergling Unit Deploys from any table edge that is not a Player’s Entry Edge. This action must end more than 10\" away from any Enemy model."
+      }
+    }
+  ],
+  "factionTags": [],
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "spawning_pool__six_pool_",
+  "isUnique": true,
+  "slots": {
+    "Elite": 0,
+    "Core": 2,
+    "Support": 0,
+    "Air": 0,
+    "Hero": 0
+  },
+  "resource": 2
+}

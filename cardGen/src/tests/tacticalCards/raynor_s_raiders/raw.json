@@ -1,0 +1,36 @@
+{
+  "resource": 1,
+  "slots": {
+    "Air": 0,
+    "Hero": 1,
+    "Core": 3,
+    "Support": 1,
+    "Elite": 0
+  },
+  "isUnique": true,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "isFactionCard": true,
+  "frontUrl": "https://firebasestorage.googleapis.com/v0/b/starcrafttmgbeta.firebasestorage.app/o/faction_art%2F1773092244541_rhino_raders.jpg?alt=media&token=c3bc1627-d643-43b8-a3fe-f5822c769288",
+  "boosts": [
+    {
+      "description": "Rapid Reinforcements <Active> <Movement Phase>: Place a Friendly Point Defence Drone Unit anywhere on the battlefield, more than 1\" away from any Enemy model. Remove this Unit at the End of the Round.",
+      "name": "Rapid Reinforcements"
+    },
+    {
+      "name": "Ready for Pickup?",
+      "description": "Ready for Pickup? <Active> <Movement Phase>: Once per Game. The active Unit resolves the PLACE (12) effect. Models placed by this effect cannot be set up Within the Engagement Range of any Enemy Unit. This resolves instead of performing a standard action."
+    }
+  ],
+  "cost": 0,
+  "name": "Raynor's Raiders",
+  "id": "raynor_s_raiders",
+  "factionTags": [
+    "Raynor's Raiders"
+  ],
+  "tags": "Raynor's Raiders",
+  "faction": "Terran"
+}

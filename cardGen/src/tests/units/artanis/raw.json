@@ -1,0 +1,109 @@
+{
+  "upgrades": [
+    {
+      "description": "Treat this Unit’s Supply characteristic as increased by 1 for Controlling and Contesting Mission Markers, completing objectives, and resolving Disengage checks.",
+      "name": "Commander",
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "phase": "Any Phase",
+      "costS": 0,
+      "costL": 0
+    },
+    {
+      "description": "When Artanis is nominated to deploy from Reserves, it may resolve the PLACE (0) effect from another Friendly Unit. That Friendly Unit is removed from the battlefield and returned to Reserves. Artanis' Activation ends.",
+      "costL": 0,
+      "linkedTo": "",
+      "phase": "Movement Phase",
+      "costS": 0,
+      "activation": "<Passive>",
+      "name": "Phase Prism"
+    },
+    {
+      "linkedTo": "",
+      "costS": 0,
+      "phase": "Assault Phase",
+      "activation": "<Reaction>\n(1 Psionic Energy)",
+      "costL": 0,
+      "name": "Hierarch’s Stand",
+      "description": "When another Friendly Unit Within 8\" is declared as the target of a Ranged Attack and this Unit is a valid target, redirect the attack to this Unit. This Unit is eligible to make an Evade Roll against the redirected attack. This Special Ability remains active until the End of the current Activation."
+    },
+    {
+      "description": "After this Unit resolves a successful Charge action, it may declare a second Charge action against a different Enemy Unit, ignoring the restriction on Charging while Engaged. The Devastating Charge ability does not trigger a second time.",
+      "name": "Lightning Dash",
+      "phase": "Assault Phase",
+      "linkedTo": "",
+      "activation": "<Reaction>\n(1 Psionic Energy)",
+      "costS": 0,
+      "costL": 0
+    },
+    {
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (6) 4+ effect.",
+      "name": "Devastating Charge",
+      "costL": 0,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "costS": 0
+    },
+    {
+      "linkedTo": "-",
+      "activation": "",
+      "costS": 0,
+      "phase": "Combat Phase",
+      "costL": 0,
+      "name": "Twilight Blades Strike",
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 2+ | DMG: 3\nSURGE: Armoured (D3)"
+    },
+    {
+      "activation": "",
+      "linkedTo": "-",
+      "phase": "Combat Phase",
+      "costS": 0,
+      "costL": 0,
+      "name": "Twilight Blades Sweep",
+      "description": "RANGE: E | TARGET: Ground | RoA: 6 | HIT: 2+ | DMG: 1\nSURGE: Light (D3+1)"
+    }
+  ],
+  "small": {
+    "models": 1,
+    "supply": 1,
+    "cost": 250
+  },
+  "name": "Artanis",
+  "faction": "Protoss",
+  "large": {
+    "models": 0,
+    "cost": 0,
+    "supply": 0
+  },
+  "squadProfile": [
+    {
+      "supply": 0,
+      "tier": 1,
+      "modelCount": "-"
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "modelCount": "1 - 1"
+    },
+    {
+      "supply": 0,
+      "tier": 3,
+      "modelCount": "-"
+    }
+  ],
+  "tags": "Biological, Psionic, Ground, Unique",
+  "combatRange": "1",
+  "id": "artanis",
+  "stats": {
+    "evade": "5+",
+    "armor": "4+",
+    "size": "2",
+    "speed": "7",
+    "hp": "8",
+    "shield": "4"
+  },
+  "unitType": "Hero",
+  "keywords": ""
+}

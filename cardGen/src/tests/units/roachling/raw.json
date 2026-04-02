@@ -1,0 +1,64 @@
+{
+  "id": "roachling",
+  "stats": {
+    "shield": "-",
+    "hp": "1",
+    "size": "1",
+    "speed": "4/7",
+    "armor": "6+",
+    "evade": "6+"
+  },
+  "name": "Roachling",
+  "faction": "Zerg",
+  "large": {
+    "supply": 0,
+    "cost": 0,
+    "models": 0
+  },
+  "squadProfile": [
+    {
+      "modelCount": "-",
+      "tier": 1,
+      "supply": 0
+    },
+    {
+      "modelCount": "1 - 3",
+      "supply": 0,
+      "tier": 2
+    },
+    {
+      "modelCount": "-",
+      "tier": 3,
+      "supply": 0
+    }
+  ],
+  "combatRange": "1",
+  "tags": "Biological, Light, Ground",
+  "upgrades": [
+    {
+      "description": "This Unit cannot gain Burrowed Status.",
+      "name": "Underdeveloped Claws",
+      "costL": 0,
+      "activation": "<Passive>",
+      "costS": 0,
+      "phase": "Any Phase",
+      "linkedTo": ""
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 4+ | DMG: 1\nSURGE: -",
+      "name": "Claws",
+      "costL": 0,
+      "linkedTo": "-",
+      "phase": "Combat Phase",
+      "costS": 0,
+      "activation": ""
+    }
+  ],
+  "small": {
+    "models": 3,
+    "cost": 0,
+    "supply": 0
+  },
+  "keywords": "",
+  "unitType": "Other"
+}

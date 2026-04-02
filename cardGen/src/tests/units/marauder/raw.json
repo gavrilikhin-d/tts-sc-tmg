@@ -1,0 +1,109 @@
+{
+  "keywords": "",
+  "unitType": "Core",
+  "id": "marauder",
+  "stats": {
+    "armor": "4+",
+    "evade": "6+",
+    "speed": "4/7",
+    "size": "2",
+    "hp": "5",
+    "shield": "-"
+  },
+  "combatRange": "5",
+  "tags": "Armoured, Biological, Ground",
+  "squadProfile": [
+    {
+      "modelCount": "1 - 1",
+      "tier": 1,
+      "supply": 0
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "modelCount": "2 - 2"
+    },
+    {
+      "modelCount": "3 - 4",
+      "tier": 3,
+      "supply": 2
+    }
+  ],
+  "large": {
+    "models": 4,
+    "cost": 280,
+    "supply": 2
+  },
+  "faction": "Terran",
+  "name": "Marauder",
+  "small": {
+    "cost": 150,
+    "supply": 1,
+    "models": 2
+  },
+  "upgrades": [
+    {
+      "name": "Veteran of Tarsonis",
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "activation": "<Passive>",
+      "costS": 20,
+      "costL": 40,
+      "description": "While this Unit is Within 3\" of a Mission Marker, its Armour characteristic is increased by 1."
+    },
+    {
+      "name": "Kinetic Foam",
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "costS": 20,
+      "costL": 40,
+      "description": "Increase this Unit's Hit Points characteristic by 1."
+    },
+    {
+      "description": "This Unit suffers NON-LETHAL DAMAGE (2). This Unit gains BUFF Speed (3). Additionally, its Quad K12 and all Close Combat Weapons gain PRECISION (2).",
+      "name": "Stimpack",
+      "phase": "Movement Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Command Point)",
+      "costL": 0
+    },
+    {
+      "name": "Quad K12",
+      "costL": 0,
+      "phase": "Assault Phase",
+      "linkedTo": "-",
+      "activation": "",
+      "costS": 0,
+      "description": "RANGE: 12 | TARGET: Ground | RoA: 3 | HIT: 3+ | DMG: 1\nSURGE: Armoured (D3)\n\nPIERCE Armoured (2)"
+    },
+    {
+      "costS": 0,
+      "activation": "<Reaction>\n(1 Command Point)",
+      "phase": "Assault Phase",
+      "linkedTo": "",
+      "costL": 0,
+      "name": "Concusive Shells",
+      "description": "When an Enemy declares a Charge against a Friendly Unit Within 8\", that Enemy gains DEBUFF Speed (2)."
+    },
+    {
+      "name": "Laser Targeting Systems",
+      "costS": 20,
+      "phase": "Assault Phase",
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "costL": 40,
+      "description": "This Unit’s Quad K12 weapon gains LONG RANGE (16\")."
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 4+ | DMG: 1\nSURGE: -",
+      "name": "Strike",
+      "linkedTo": "-",
+      "costS": 0,
+      "activation": "",
+      "phase": "Combat Phase",
+      "costL": 0
+    }
+  ]
+}

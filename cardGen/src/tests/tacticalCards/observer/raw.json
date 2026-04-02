@@ -1,0 +1,33 @@
+{
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Core": 0,
+    "Support": 1,
+    "Elite": 0
+  },
+  "resource": 1,
+  "isUnique": true,
+  "isFactionCard": false,
+  "id": "observer",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "factionTags": [],
+  "boosts": [
+    {
+      "description": "Surveillance <Active> <Movement Phase>: Place a Faction Indicator anywhere on the battlefield. While Enemy Units are Within 6\" of this Faction Indicator, they lose HIDDEN.",
+      "name": "Surveillance"
+    },
+    {
+      "description": "Gravitic Boosters <Reaction> <Assault Phase>: Use after a Friendly Unit rolls a D6 for Charge Distance. Add 1 to the Charge Distance for this Unit.",
+      "name": "Gravitic Boosters"
+    }
+  ],
+  "faction": "Protoss",
+  "name": "Observer",
+  "cost": 25,
+  "tags": ""
+}

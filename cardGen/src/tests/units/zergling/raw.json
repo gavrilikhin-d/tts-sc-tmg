@@ -1,0 +1,109 @@
+{
+  "upgrades": [
+    {
+      "name": "Squadron",
+      "costL": 0,
+      "costS": 0,
+      "phase": "Any Phase",
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "description": "This Unit’s Horizontal Coherency is 4\"."
+    },
+    {
+      "name": "Burrow Ambush",
+      "phase": "Movement Phase",
+      "costS": 20,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "costL": 30,
+      "description": "When this Unit is nominated to deploy from the Reserves, it may resolve the PLACE (18) effect from the controlling player's Entry Edge. No model may be set Within 10\" of any Enemy model. This Unit's Activation ends."
+    },
+    {
+      "name": "Metabolic Boost",
+      "costL": 0,
+      "phase": "Assault Phase",
+      "costS": 0,
+      "activation": "<Active>\n(1 Biomass)",
+      "linkedTo": "",
+      "description": "When determining Charge Distance for this Unit, roll 2D6 instead of D6 and use the higher result to add to the Unit’s Speed characteristic."
+    },
+    {
+      "phase": "Assault Phase",
+      "costS": 0,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "costL": 0,
+      "name": "Devastating Charge",
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (1) 5+ effect."
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 4+ | DMG: 1\nSURGE: Light (D3)",
+      "costL": 0,
+      "activation": "",
+      "linkedTo": "-",
+      "phase": "Combat Phase",
+      "costS": 0,
+      "name": "Claws"
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 4+ | DMG: 1\nSURGE: Light, Armoured (D3)",
+      "activation": "",
+      "phase": "Combat Phase",
+      "costS": 20,
+      "linkedTo": "Claws",
+      "costL": 20,
+      "name": "Shredding Claws"
+    },
+    {
+      "description": "This Unit’s Claws and Shredding Claws weapons gain PRECISION (2).",
+      "name": "Adrenal Glands",
+      "costL": 30,
+      "costS": 30,
+      "phase": "Combat Phase",
+      "activation": "<Passive>",
+      "linkedTo": ""
+    }
+  ],
+  "small": {
+    "models": 12,
+    "supply": 1,
+    "cost": 180
+  },
+  "name": "Zergling",
+  "faction": "Zerg",
+  "large": {
+    "models": 18,
+    "supply": 2,
+    "cost": 220
+  },
+  "squadProfile": [
+    {
+      "modelCount": "1 - 6",
+      "tier": 1,
+      "supply": 0
+    },
+    {
+      "modelCount": "7 - 12",
+      "tier": 2,
+      "supply": 1
+    },
+    {
+      "modelCount": "13 - 18",
+      "tier": 3,
+      "supply": 2
+    }
+  ],
+  "combatRange": "1",
+  "tags": "Biological, Light, Ground",
+  "id": "zergling",
+  "stats": {
+    "speed": "4/8",
+    "size": "1",
+    "evade": "4+",
+    "armor": "6+",
+    "shield": "-",
+    "hp": "1"
+  },
+  "unitType": "Core",
+  "keywords": ""
+}

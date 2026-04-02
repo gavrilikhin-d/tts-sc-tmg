@@ -1,0 +1,136 @@
+{
+  "unitType": "Support",
+  "keywords": "",
+  "combatRange": "2",
+  "tags": "Armoured, Biological, Psionic, Ground",
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "modelCount": "-"
+    },
+    {
+      "tier": 2,
+      "supply": 1,
+      "modelCount": "1 - 1"
+    },
+    {
+      "tier": 3,
+      "supply": 0,
+      "modelCount": "-"
+    }
+  ],
+  "large": {
+    "models": 0,
+    "cost": 0,
+    "supply": 0
+  },
+  "faction": "Zerg",
+  "name": "Queen",
+  "small": {
+    "supply": 1,
+    "cost": 150,
+    "models": 1
+  },
+  "upgrades": [
+    {
+      "description": "Set a Creep Tumor token in base-to-base contact with this Unit.",
+      "phase": "Any Phase",
+      "costS": 0,
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Biomass)",
+      "costL": 0,
+      "name": "Spawn Creep Tumor"
+    },
+    {
+      "phase": "Any Phase",
+      "activation": "<Reaction>\n(1 Biomass)",
+      "costS": 0,
+      "linkedTo": "",
+      "costL": 0,
+      "name": "Transfusion",
+      "description": "Use when another Friendly Biological Unit (including a Structure) suffers Damage Within 4\". Reduce the Total Damage before allocation by 2."
+    },
+    {
+      "name": "Restoration",
+      "costL": 0,
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "costS": 0,
+      "activation": "<Reaction>\n(1 Biomass)",
+      "description": "Use when a Friendly Unit Within 4\" receives a DEBUFF. Remove all DEBUFFS from it."
+    },
+    {
+      "name": "Psionic Link",
+      "activation": "<Passive>",
+      "costS": 0,
+      "phase": "Any Phase",
+      "linkedTo": "",
+      "costL": 0,
+      "description": "Once per Round, if there are at least 7 Friendly models Within 6\" of this Unit, it may resolve its Special Ability with the BM cost reduced by 1."
+    },
+    {
+      "description": "While this Unit is ON CREEP, increase this Unit's Speed characteristic by 2.",
+      "name": "Creep Speed",
+      "costS": 10,
+      "phase": "Any Phase",
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "costL": 10
+    },
+    {
+      "description": "Select another Friendly Unit Within 6\" (Line of Sight is not required). That Unit’s Supply characteristic is increased by 1 for Controlling and Contesting Mission Markers and completing objectives.",
+      "costL": 10,
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Biomass)",
+      "phase": "Movement Phase",
+      "costS": 10,
+      "name": "Domineering Presence"
+    },
+    {
+      "costS": 0,
+      "activation": "",
+      "linkedTo": "-",
+      "phase": "Assault Phase",
+      "costL": 0,
+      "name": "Talons",
+      "description": "RANGE: 6 | TARGET: Ground | RoA: 4 | HIT: 4+ | DMG: 2\nSURGE: Light (D3)"
+    },
+    {
+      "description": "RANGE: 12 | TARGET: Flying | RoA: 4 | HIT: 4+ | DMG: 2\nSURGE: Light, Armoured (D3)",
+      "name": "Acid spines",
+      "costL": 0,
+      "activation": "",
+      "costS": 0,
+      "phase": "Assault Phase",
+      "linkedTo": "-"
+    },
+    {
+      "description": "Immediately after this Unit completes a successful Charge, resolve the IMPACT (4) 3+ effect.",
+      "costL": 0,
+      "costS": 0,
+      "phase": "Assault Phase",
+      "linkedTo": "",
+      "activation": "<Passive>",
+      "name": "Devastating Charge"
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 3 | HIT: 4+ | DMG: 1\nSURGE: -",
+      "name": "Talons",
+      "costL": 0,
+      "linkedTo": "-",
+      "activation": "",
+      "costS": 0,
+      "phase": "Combat Phase"
+    }
+  ],
+  "id": "queen",
+  "stats": {
+    "size": "3",
+    "speed": "4",
+    "evade": "-",
+    "armor": "4+",
+    "shield": "-",
+    "hp": "9"
+  }
+}

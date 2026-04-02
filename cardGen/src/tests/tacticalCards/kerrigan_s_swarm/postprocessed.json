@@ -1,0 +1,53 @@
+{
+  "resource": 1,
+  "slots": {
+    "Hero": 1,
+    "Air": 0,
+    "Support": 0,
+    "Core": 3,
+    "Elite": 2
+  },
+  "isUnique": true,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "kerrigan_s_swarm",
+  "isFactionCard": true,
+  "factionTags": [
+    "Kerrigan's Swarm"
+  ],
+  "boosts": [
+    {
+      "name": "Omega Network",
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "If there is no Friendly Omega Worm on the battlefield, place a Friendly Omega Worm Unit anywhere on GROUND LEVEL of the battlefield, more than 10\" away from any Enemy model. This Round, the Omega Worm is not eligible to use its Special Abilities (excluding Structure)."
+      }
+    },
+    {
+      "name": "Wild Mutation",
+      "description": {
+        "type": "Active",
+        "phase": "Any",
+        "description": "If the active unit is ON CREEP, the Unit gains BUFF Speed (1) and its first Weapon used gains PRECISION (1)."
+      }
+    },
+    {
+      "name": "Zerg Creep",
+      "description": {
+        "type": "Passive",
+        "phase": "Any",
+        "description": "During Army Building, select exactly one Creep Card and add it to their Army List, paying its listed cost (if any)."
+      }
+    }
+  ],
+  "cost": 0,
+  "tags": [
+    "Kerrigan's Swarm"
+  ],
+  "name": "Kerrigan's Swarm",
+  "faction": "Zerg"
+}

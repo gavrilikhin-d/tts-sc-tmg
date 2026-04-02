@@ -1,0 +1,33 @@
+{
+  "tags": "",
+  "cost": 30,
+  "name": "Hatchery",
+  "faction": "Zerg",
+  "boosts": [
+    {
+      "description": "Lie in Wait <Active> <Movement Phase>: The active, Unengaged Ground Unit gains the Burrowed Status.",
+      "name": "Lie in Wait"
+    },
+    {
+      "description": "Creep Spread <Active> <Movement Phase>: Place a Creep Tumor token on the battlefield Within 6\" (Line of Sight is not required) of either a Friendly Entry Edge or an existing Friendly Creep Tumor token.",
+      "name": "Creep Spread"
+    }
+  ],
+  "factionTags": [],
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "hatchery",
+  "isFactionCard": false,
+  "isUnique": false,
+  "resource": 1,
+  "slots": {
+    "Core": 0,
+    "Support": 1,
+    "Elite": 0,
+    "Air": 0,
+    "Hero": 0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "factionTags": [],
+  "isFactionCard": false,
+  "id": "malignant_creep",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "faction": "Kerrigan's Swarm",
+  "name": "Malignant Creep",
+  "tags": [],
+  "cost": 10,
+  "boosts": [
+    {
+      "description": {
+        "type": "Passive",
+        "phase": "Assault",
+        "description": "If the active Friendly Zerg Unit declares a Charge action while ON CREEP, it gains +1 Modifier to IMPACT Hit Rolls."
+      },
+      "name": "Malevolent Matriarch"
+    },
+    {
+      "name": "Living Glob of Tissue",
+      "description": {
+        "type": "Passive",
+        "phase": "Any",
+        "description": "Creep Tumor tokens have STAY IN PLAY and DISPLACEMENT."
+      }
+    },
+    {
+      "name": "Creep Removal",
+      "description": {
+        "type": "Passive",
+        "phase": "Any",
+        "description": "If an Enemy Unit ends a Move, Deploy, Run, Charge or Disengage action Within 1\" of a Friendly Creep Tumor token, remove that token from the battlefield."
+      }
+    }
+  ],
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Core": 0,
+    "Support": 0,
+    "Elite": 0
+  },
+  "resource": 0,
+  "isUnique": true
+}

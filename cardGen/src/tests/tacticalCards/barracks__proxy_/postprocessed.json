@@ -1,0 +1,41 @@
+{
+  "isUnique": true,
+  "resource": 2,
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Elite": 0,
+    "Core": 2,
+    "Support": 0
+  },
+  "cost": 40,
+  "tags": [],
+  "name": "Barracks (Proxy)",
+  "faction": "Terran",
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "The active Biological Unit performs a 2\" Move action. This does not count towards its action limit."
+      },
+      "name": "Go! Go! Go!"
+    },
+    {
+      "name": "Armed and Ready",
+      "description": {
+        "type": "Active",
+        "phase": "Movement",
+        "description": "The active Biological Unit Deploys from any table edge that is not a player's Entry Edge. No model may be placed Within 10\" of any Enemy model. This ability cannot be used if another Friendly Biological Unit has already been Deployed this Round."
+      }
+    }
+  ],
+  "factionTags": [],
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "barracks__proxy_",
+  "isFactionCard": false
+}

@@ -1,0 +1,34 @@
+{
+  "boosts": [
+    {
+      "name": "Strap in!",
+      "description": "Strap in! <Active> <Movement Phase>: The active, Unengaged Ground Unit is placed in Reserves instead of performing an action."
+    },
+    {
+      "description": "Ready For Dust-off <Active> <Movement Phase>: Place a Faction Indicator anywhere on the battlefield more than 10\" away from any Enemy model. At the End of the Round, the controlling player may Deploy one Ground Unit from Reserves in base-to-base contact with this Faction Indicator.",
+      "name": "Ready For Dust-off"
+    }
+  ],
+  "name": "Dropship",
+  "cost": 40,
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "frontUrl": "https://firebasestorage.googleapis.com/v0/b/starcrafttmgbeta.firebasestorage.app/o/faction_art%2F1773092126772_dropship.jpg?alt=media&token=00a5b0b7-dad3-45a0-b8af-0fe53ef0715c",
+  "isUnique": true,
+  "slots": {
+    "Air": 0,
+    "Hero": 0,
+    "Elite": 0,
+    "Core": 1,
+    "Support": 1
+  },
+  "resource": 1,
+  "faction": "Terran",
+  "tags": "",
+  "id": "dropship",
+  "factionTags": []
+}

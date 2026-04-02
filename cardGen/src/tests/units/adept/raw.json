@@ -1,0 +1,109 @@
+{
+  "keywords": "",
+  "unitType": "Core",
+  "stats": {
+    "shield": "2",
+    "hp": "3",
+    "speed": "5/8",
+    "size": "2",
+    "armor": "5+",
+    "evade": "5+"
+  },
+  "id": "adept",
+  "small": {
+    "models": 4,
+    "supply": 1,
+    "cost": 150
+  },
+  "upgrades": [
+    {
+      "description": "All Weapons of Friendly Units targeting an Enemy Unit Within 4\" of this Unit’s Shade token gain PRECISION (1).",
+      "name": "Psionic Presence",
+      "costS": 0,
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "activation": "<Passive>",
+      "costL": 0
+    },
+    {
+      "description": "Set a Shade token Wholly Within 12\" of any model in this Unit. At the End of the Round, the controlling player may set all models of this Unit in Coherency, treating the Shade token as the Leading Model. The Shade token has DISPLACEMENT.",
+      "phase": "Movement Phase",
+      "costS": 0,
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "linkedTo": "",
+      "costL": 0,
+      "name": "Psionic Transfer"
+    },
+    {
+      "name": "Glaive Cannon",
+      "linkedTo": "-",
+      "phase": "Assault Phase",
+      "costS": 0,
+      "activation": "",
+      "costL": 0,
+      "description": "RANGE: 8 | TARGET: All | RoA: 2 | HIT: 3+ | DMG: 1\nSURGE: Light (D3+1)\n\nANTI-EVADE (1)"
+    },
+    {
+      "description": "This Unit's Glaive Cannon gains BUFF RoA (1).",
+      "costL": 20,
+      "linkedTo": "",
+      "costS": 20,
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "phase": "Assault Phase",
+      "name": "Resonating Glaives"
+    },
+    {
+      "costL": 10,
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "costS": 10,
+      "activation": "<Passive>",
+      "name": "Guidance",
+      "description": "This Unit's Glaive Cannon Ranged weapon gains ANTI-EVADE (2)."
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 1 | HIT: 4+ | DMG: 1\nSURGE: Light (D3)\n\nPIERCE Light (2)",
+      "costL": 20,
+      "linkedTo": "Strike",
+      "phase": "Combat Phase",
+      "costS": 20,
+      "activation": "",
+      "name": "Glaive Strike"
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 1 | HIT: 4+ | DMG: 1\nSURGE: -",
+      "costL": 0,
+      "phase": "Combat Phase",
+      "linkedTo": "-",
+      "activation": "",
+      "costS": 0,
+      "name": "Strike"
+    }
+  ],
+  "combatRange": "3",
+  "tags": "Biological, Light, Ground",
+  "squadProfile": [
+    {
+      "supply": 0,
+      "tier": 1,
+      "modelCount": "1 - 2"
+    },
+    {
+      "modelCount": "3 - 4",
+      "tier": 2,
+      "supply": 1
+    },
+    {
+      "modelCount": "-",
+      "supply": 0,
+      "tier": 3
+    }
+  ],
+  "large": {
+    "supply": 0,
+    "cost": 0,
+    "models": 0
+  },
+  "faction": "Protoss",
+  "name": "Adept"
+}

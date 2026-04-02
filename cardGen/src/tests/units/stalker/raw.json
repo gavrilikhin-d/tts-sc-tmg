@@ -1,0 +1,100 @@
+{
+  "combatRange": "5",
+  "tags": "Armoured, Mechanical, Ground",
+  "squadProfile": [
+    {
+      "tier": 1,
+      "supply": 0,
+      "modelCount": "-"
+    },
+    {
+      "modelCount": "1 - 1",
+      "tier": 2,
+      "supply": 1
+    },
+    {
+      "modelCount": "2 - 2",
+      "supply": 2,
+      "tier": 3
+    }
+  ],
+  "large": {
+    "models": 2,
+    "supply": 2,
+    "cost": 260
+  },
+  "faction": "Protoss",
+  "name": "Stalker",
+  "small": {
+    "supply": 1,
+    "cost": 160,
+    "models": 1
+  },
+  "upgrades": [
+    {
+      "description": "This Unit’s Horizontal Coherency is 4\".",
+      "costS": 0,
+      "phase": "Any Phase",
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "costL": 0,
+      "name": "Squadron"
+    },
+    {
+      "costL": 40,
+      "costS": 20,
+      "linkedTo": "",
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "phase": "Any Phase",
+      "name": "Path of Shadows",
+      "description": "This Unit gains HIDDEN Status until it performs another action."
+    },
+    {
+      "description": "Resolve the PLACE (6) effect. Models set by this effect cannot be set up Within the Engagement Range of any Enemy Unit.",
+      "activation": "<Active>\n(1 Psionic Energy)",
+      "linkedTo": "",
+      "costS": 0,
+      "phase": "Movement Phase",
+      "costL": 0,
+      "name": "Blink"
+    },
+    {
+      "description": "When this Unit attacks an Enemy Unit that has already been Activated during this Phase, its Particle Disruptors gain INSTANT for that attack.",
+      "name": "Fury of the Nerazim",
+      "costL": 30,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "costS": 20
+    },
+    {
+      "description": "RANGE: 12 | TARGET: All | RoA: 4 | HIT: 3+ | DMG: 2\nSURGE: Armoured (D3)",
+      "name": "Particle Disruptors",
+      "costL": 0,
+      "linkedTo": "-",
+      "costS": 0,
+      "activation": "",
+      "phase": "Assault Phase"
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 5+ | DMG: 1\nSURGE: -",
+      "name": "Stomp",
+      "costL": 0,
+      "linkedTo": "-",
+      "activation": "",
+      "phase": "Combat Phase",
+      "costS": 0
+    }
+  ],
+  "id": "stalker",
+  "stats": {
+    "armor": "4+",
+    "evade": "6+",
+    "size": "3",
+    "speed": "4/8",
+    "hp": "6",
+    "shield": "3"
+  },
+  "unitType": "Elite",
+  "keywords": ""
+}

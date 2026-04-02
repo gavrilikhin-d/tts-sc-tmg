@@ -1,0 +1,33 @@
+{
+  "isUnique": false,
+  "resource": 1,
+  "slots": {
+    "Support": 0,
+    "Core": 0,
+    "Elite": 1,
+    "Hero": 0,
+    "Air": 0
+  },
+  "boosts": [
+    {
+      "description": "Ground Weapons <Active> <Assault Phase>: The active Ground Unit’s first Ranged Weapon used gains CRITICAL HIT (1).",
+      "name": "Ground Weapons"
+    },
+    {
+      "name": "Ground Armor",
+      "description": "Ground Armor <Reaction> <Any Phase>: Use before a Friendly Ground Unit makes an Armour Roll. That Unit gains TOUGH (1) for this roll."
+    }
+  ],
+  "tags": "",
+  "cost": 30,
+  "name": "Forge",
+  "faction": "Protoss",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "forge",
+  "isFactionCard": false,
+  "factionTags": []
+}

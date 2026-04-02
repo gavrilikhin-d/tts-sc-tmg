@@ -1,0 +1,118 @@
+{
+  "upgrades": [
+    {
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "costS": 0,
+      "phase": "Any Phase",
+      "costL": 0,
+      "name": "Squadron",
+      "description": "This Unit’s Horizontal Coherency is 4\"."
+    },
+    {
+      "description": "This Unit gains TOUGH (1) on the first Armour Roll of each Activation.",
+      "costL": 40,
+      "activation": "<Passive>",
+      "costS": 20,
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "name": "Ancillary Carapace"
+    },
+    {
+      "linkedTo": "",
+      "phase": "Any Phase",
+      "activation": "<Passive>",
+      "costS": 10,
+      "costL": 20,
+      "name": "Lurking",
+      "description": "If this Unit has Stationary Status, it is eligible to make an Evade Roll against the first Ranged Attack targeting it this Round. If this Unit is ON CREEP, it gains +1 Modifier to this Evade Roll."
+    },
+    {
+      "description": "When this Unit is nominated to deploy from the Reserves, it may resolve the PLACE (18) effect from the controlling player's Entry Edge. No model may be set Within 10\" of any Enemy model. This Unit's Activation ends.",
+      "costS": 20,
+      "activation": "<Passive>",
+      "linkedTo": "",
+      "phase": "Movement Phase",
+      "costL": 40,
+      "name": "Burrow Ambush"
+    },
+    {
+      "name": "Needle Spines",
+      "costL": 0,
+      "costS": 0,
+      "phase": "Assault Phase",
+      "activation": "",
+      "linkedTo": "-",
+      "description": "RANGE: 12 | TARGET: All | RoA: 3 | HIT: 3+ | DMG: 2\nSURGE: Light, Armoured (D3+1)"
+    },
+    {
+      "costL": 0,
+      "linkedTo": "",
+      "activation": "<Reaction>\n(1 Biomass)",
+      "phase": "Assault Phase",
+      "costS": 0,
+      "name": "Lunge",
+      "description": "When another Friendly Unit Within 10\" is the target of a Ranged Attack, after the attack is fully resolved, this Unit, if Unengaged, may perform a Move action Directly Towards the attacking Unit."
+    },
+    {
+      "name": "Grooved Spines",
+      "linkedTo": "",
+      "phase": "Assault Phase",
+      "activation": "<Passive>",
+      "costS": 20,
+      "costL": 40,
+      "description": "This Unit's Needle Spines ranged weapon gains LONG RANGE (16\")."
+    },
+    {
+      "description": "RANGE: E | TARGET: Ground | RoA: 2 | HIT: 4+ | DMG: 1\nSURGE: -",
+      "activation": "",
+      "phase": "Combat Phase",
+      "linkedTo": "-",
+      "costS": 0,
+      "costL": 0,
+      "name": "Scythe"
+    }
+  ],
+  "small": {
+    "cost": 140,
+    "supply": 2,
+    "models": 2
+  },
+  "large": {
+    "models": 4,
+    "cost": 260,
+    "supply": 3
+  },
+  "squadProfile": [
+    {
+      "modelCount": "1 - 1",
+      "tier": 1,
+      "supply": 1
+    },
+    {
+      "tier": 2,
+      "supply": 2,
+      "modelCount": "2 - 2"
+    },
+    {
+      "tier": 3,
+      "supply": 3,
+      "modelCount": "3 - 4"
+    }
+  ],
+  "faction": "Zerg",
+  "name": "Hydralisk",
+  "tags": "Biological, Light, Ground",
+  "combatRange": "5",
+  "stats": {
+    "speed": "4/8",
+    "size": "2",
+    "armor": "5+",
+    "evade": "5+",
+    "shield": "-",
+    "hp": "4"
+  },
+  "id": "hydralisk",
+  "unitType": "Elite",
+  "keywords": ""
+}

@@ -1,0 +1,33 @@
+{
+  "factionTags": [],
+  "isFactionCard": false,
+  "id": "spawning_pool",
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "faction": "Zerg",
+  "name": "Spawning Pool",
+  "cost": 25,
+  "tags": [],
+  "boosts": [
+    {
+      "description": {
+        "type": "Active",
+        "phase": "Combat",
+        "description": "The active Unit’s first Close Combat Weapon used gains PRECISION (2)."
+      },
+      "name": "Feral Rage"
+    }
+  ],
+  "slots": {
+    "Core": 1,
+    "Support": 0,
+    "Elite": 0,
+    "Air": 0,
+    "Hero": 0
+  },
+  "resource": 1,
+  "isUnique": false
+}

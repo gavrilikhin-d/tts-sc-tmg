@@ -1,0 +1,34 @@
+{
+  "id": "academy",
+  "factionTags": [],
+  "faction": "Terran",
+  "tags": [],
+  "slots": {
+    "Support": 2,
+    "Core": 0,
+    "Elite": 0,
+    "Hero": 0,
+    "Air": 0
+  },
+  "resource": 1,
+  "isUnique": true,
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "frontUrl": "https://firebasestorage.googleapis.com/v0/b/starcrafttmgbeta.firebasestorage.app/o/faction_art%2F1773091932292_academy.jpg?alt=media&token=4a562ff2-1d44-4d02-a136-8689901ea2b8",
+  "boosts": [
+    {
+      "name": "Advanced Training",
+      "description": {
+        "type": "Reaction",
+        "phase": "Any",
+        "description": "Once per Round, when a Friendly Support Unit activates a Special Ability that costs CP, resolve that ability with its CP cost reduced by 1 (to a minimum of 0). Do not Exhaust this card."
+      }
+    }
+  ],
+  "name": "Academy",
+  "cost": 35
+}

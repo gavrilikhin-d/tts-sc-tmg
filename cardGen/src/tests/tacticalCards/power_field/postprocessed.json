@@ -1,0 +1,33 @@
+{
+  "name": "Power Field",
+  "faction": "Protoss",
+  "cost": 40,
+  "tags": [],
+  "boosts": [
+    {
+      "description": {
+        "type": "Reaction",
+        "phase": "Any",
+        "description": "Use before a Friendly Ground Unit makes an Armour Roll. That Unit gains DODGE (2) for this roll."
+      },
+      "name": "Guardian Shell"
+    }
+  ],
+  "factionTags": [],
+  "isFactionCard": false,
+  "timestamp": {
+    "type": "firestore/timestamp/1.0",
+    "seconds": 1773078754,
+    "nanoseconds": 196000000
+  },
+  "id": "power_field",
+  "isUnique": true,
+  "slots": {
+    "Hero": 1,
+    "Air": 0,
+    "Elite": 1,
+    "Support": 0,
+    "Core": 1
+  },
+  "resource": 1
+}
